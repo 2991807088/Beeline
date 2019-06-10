@@ -1,0 +1,297 @@
+<template>
+    <div id="card-center">
+        <header>
+            <p @click="goBack">
+                <span>
+                    <van-icon name="arrow-left" />
+                </span>
+               
+            </p>
+            <p>信用卡办理</p>
+            <p>
+                <span></span>
+            </p>
+        </header>
+        <div class="container">
+            <div class="housekeeper">
+                <!-- <router-link to='/home/cardCenter/consultation' tag="div" class="consultation" >
+                     <img src="../../../static/images/flower.jpg.jpg" alt=""> 
+                </router-link> -->
+                <div class="consultation">钱夹<br>
+                    资讯</div>
+                <div class="ring">
+                    <van-notice-bar
+                        text="恭喜黄金会员陈**于09：40:25完成智能还款计划  订单尾号 8888，推荐人获得7.5元总收益。"
+                    />
+                </div>
+            </div>
+            <div class="center">
+                <ul>
+                    <li v-for="(item, index) in cardList" :key="index" >
+                        <div class="card">
+                            <img :src="item.merCardImg" > 
+                            <p>
+                                <span>{{item.merCardName}}</span>
+                            </p>
+                            <p>{{item.labelTitle}}</p>
+                        </div>
+                        <div class="ads">
+                            <div class="bottom">
+                                <p><span>通过率：{{item.througRate}}</span> </p>
+                                <p> 
+                                    <span><van-icon name="gold-coin" />
+                                    </span><span>高额奖金</span>
+                                </p>
+                                
+                            </div>
+                            <p @click="getCard(item)"><span class="handle">免费办卡</span></p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+             <div class="bottom">
+                 <ul>
+                     <li @click="handleExpect">
+                         <h3>
+                             <p>信用卡商务合作</p>
+                             <p>可上传当地银行业务</p>
+                         </h3>
+                         <span><van-icon name="http://sbs.91dianji.com.cn/306.png" /></span>
+                     </li>
+                      <router-link tag="li"  to="/home/cardCenter/noviceGuide">
+                         <h3>
+                             <p>新手指南</p>
+                             <p>快速掌握办卡秘籍</p>
+                         </h3>
+                         <span><van-icon name="http://sbs.91dianji.com.cn/311.png" /></span>
+                      </router-link>
+                      <li  @click="handleExpect">
+                         <h3>
+                             <p>信用卡提额</p>
+                             <p>在线免费提额</p>
+                         </h3>
+                         <span><van-icon name="http://sbs.91dianji.com.cn/307.png" /></span>
+                      </li>
+                      <li  @click="handleExpect">
+                         <h3>
+                             <p>进度查询</p>
+                             <p>快速查询办卡详情</p>
+                         </h3>
+                         <span><van-icon name="http://sbs.91dianji.com.cn/310.png" /></span>
+                      </li>
+                 </ul>
+             </div>
+        </div>
+        <loading :componentload="componentload"></loading>
+    </div>
+</template>
+
+<script>
+import loading from '@/components/loading'
+import {axiosPost} from '@/lib/http'
+export default {
+    components:{
+      loading
+    },
+    data(){
+        return {
+            componentload: true,
+            cardList:[]
+        }
+    },
+    methods:{
+        goBack(){
+            this.$router.push('/home')
+        },
+         handleExpect(){
+            this.$toast('敬请期待')
+        },
+        getCardList(){
+            let that= this
+            axiosPost("/creditCard/getBankList")
+            .then(function(res){
+                if(!res.data.success){
+                    that.$toast({
+                        message:res.data.message
+                    })
+                }else{
+                    let data = res.data.data.data
+                    that.cardList.push(...data.notSingleCardList)
+                    that.cardList.push(...data.singleCardList)
+                    setTimeout(() =>{
+                        that.componentload = false;
+                    },500)
+                }
+            })
+            .catch(function(err){
+            })
+        },
+        getCard(item){
+            this.$router.push({
+                path:"/home/cardCenter/applyCard",
+                query:{
+                    info:item
+                }
+            })
+
+            
+        },
+    },
+    created() {
+        this.getCardList()
+    },
+}
+</script>
+
+<style lang="less" >
+    #card-center {
+        >header {
+            height: 86px;
+            line-height: 86px;
+            width:100%;
+            background-color: #29305C;
+            display: flex;
+            justify-content: space-between;
+            color:#fff;
+            padding-top:10px;
+            position:fixed;
+            z-index:999;
+            font-size:28px;
+            >p {
+                &:nth-of-type(1){
+                    margin-left:10px;
+                }
+                &:nth-of-type(3){
+                    margin-right: 10px;
+                }
+            }
+        }
+        >.container {
+            background-color: #ECF0F3;
+            padding-top:96px;
+            padding-bottom: 50px;
+            >.housekeeper {
+                display: flex;
+                height: 100px;
+                justify-content: space-between;
+                // background-color: #fff;
+                border-bottom: 3px solid #ccc;
+                >.consultation {
+                    color:#29305C;
+                    width:100px;
+                    font-size: 36px;
+                   text-align: center;
+                   padding-top:20px;
+                   .van-notice-bar{
+                       color:red;
+                   }
+                    >img {
+                        width:100%;
+                    }
+                }
+                >.ring {
+                    flex:1;
+                    margin-top:25px;
+                    margin-left:20px;
+                    margin-bottom: 25px;
+                    padding-left:10px;
+                    border-left: 2px solid #ccc;
+                    .van-notice-bar__wrap{
+                        color:#29305C;
+                    }
+
+                }
+            }
+            >.center {
+                margin-top:10px;
+                >ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                  justify-content: space-between;
+                    >li {
+                        width:49%;
+                        padding-bottom:25px;
+                        margin-bottom: 5px;
+                        background-color: #fff;
+                        >.card {
+                            text-align: center;
+                            padding-top:10px;
+                            width:100%;
+                            border-bottom: 1px dashed #DADADA;
+                            >img {
+                                width:100%;
+                            }
+                            >p {
+                                &:nth-of-type(1) {
+                                    padding-top:10px;
+                                    margin-bottom:20px;
+                                }
+                            }>p {
+                                &:nth-of-type(2){
+                                    padding-bottom: 10px;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        >.ads {
+                            >.bottom {
+                                display: flex;
+                                justify-content: space-around;
+                                margin-top:15px;
+                                margin-bottom: 10px;
+                                padding-bottom: 10px;
+                            }
+                            >P {
+                                text-align: center;
+                                >.handle {
+                                background-color: #29305C;
+                                padding:10px 30px;
+                                border-radius: 10px;
+                                color:#eee;
+                            }
+                          }
+                        }
+                    }
+                }
+            }
+            >.bottom {
+                margin-top:40px;
+                margin-bottom: 20px;
+                >ul{
+                    background-color: #fff;
+                    box-sizing: border-box;
+                    display: flex;
+                    flex-wrap: wrap;
+                    >li{
+                        width:49.5%;
+                        padding-top:20px;
+                        display: flex;
+                        padding-bottom: 20px;
+                        justify-content: space-around;
+                        border-bottom: 1px solid #ccc;
+                        &:nth-of-type(1),
+                        &:nth-of-type(3) {
+                            border-right:5px solid #ddd;
+                        }
+                        >h3 {
+                            >p{
+                                &:nth-of-type(1){
+                                    font-size:34px;
+                                    font-weight: bold;
+                                }
+                                &:nth-of-type(2) {
+                                    color:#BEBEBE;
+                                    margin-top:20px;
+                                }
+                            }
+                        }
+                        >span {
+                                font-size:80px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</style>
