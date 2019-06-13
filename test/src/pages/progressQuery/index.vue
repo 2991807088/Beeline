@@ -5,7 +5,7 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <!-- <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe> -->
+        <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
     </div>
 
 </template>
@@ -22,7 +22,7 @@ export default {
     },
     methods:{
         goBack() {
-            plus.webview.close( "yinlian")
+            // plus.webview.close( "yinlian")
             this.$router.push("/home")
         },
        
@@ -93,7 +93,8 @@ export default {
 <style lang="less">
    #progress-query{
        header {
-            background-color: #4965AE;
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
        }
         .box {
                overflow-x: hidden;

@@ -110,7 +110,7 @@ export default {
         sharewxCirMessage(){
               let that=this
           that.sharewx.send(
-                { content: "随便刷综合金融服务推广平台，点滴成就未来",title:"随便刷",
+                { content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
                 thumbs:["http://sbs.91dianji.com.cn/sbs.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
                  href: "http://sbs.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
@@ -124,7 +124,7 @@ export default {
              let that=this
              that.sharewx.send(
                  { 
-                     content: "随便刷综合金融服务推广平台，点滴成就未来",title:"随便刷", 
+                     content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
                      thumbs:["http://sbs.91dianji.com.cn/sbs.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],
                      href: "http://sbs.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode,

@@ -1,164 +1,197 @@
 <template>
-<div id="financial-circle-component">
-    <header class="header">
-        <div class="more end-center">
-            <van-icon name="weapp-nav" size='20px' @click="handleMore" />
+    <div id="radar">
+        <div class="header">
+            <div class="title center">AI雷达</div>
+            <div class="more center" @click="handleExpect"><van-icon name="weapp-nav" size="28px"/></div>
+            <div class="AI start-center"><van-icon size="20px" name="aim"/>&nbsp;AI雷达</div>
+            <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
+            <router-link tag="div" to="/radar" class="circle center">
+                <img src="http://fx.91dianji.com.cn/AI@2x.png" alt="">
+                <img src="http://fx.91dianji.com.cn/fengxing_AI_center@2x.png" alt="">
+            </router-link>
+            <div class="btn">
+                <div class="center" @click="handleExpect">AI报表</div>
+                <div class="center" @click="handleExpect">客户表单</div>
+            </div>
         </div>
-        <div class="topTwo row center">
-            <div class="center" :class="{ checked: isActive == '1' }" @click="getIndex">金融人脉圈</div>
-            <!-- <div class="center" :class="{ checked: isActive == '2' }" @click="getIndex">红包任务</div> -->
+        <div class="menus">
+            <router-link tag="div" to="/share/poster" class="per_menu row">
+                <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
+                <div class="title start-center van-hairline--bottom">海报分享</div>
+                <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
+            </router-link>
+            <div class="per_menu row">
+                <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_tuiguang.png"/></div>
+                <div class="title start-center van-hairline--bottom">信用卡图推广</div>
+                <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
+            </div>       
+            <div class="per_menu row">
+                <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_sucai.png"/></div>
+                <div class="title start-center van-hairline--bottom">推广素材图</div>
+                <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
+            </div>
         </div>
-    </header>
-    <div class="container">
-        <van-tabs v-model="topactive" :swipe-threshold="threshold" background="black" color="rgb(244, 197, 128)" title-inactive-color="white" title-active-color="rgb(244, 197, 128)">
-            <van-tab title="综合">
-                <financ></financ>
-            </van-tab>
-            <van-tab title="信用卡">
-                 <financ></financ>
-            </van-tab>
-            <van-tab title="贷款">
-                 <financ></financ>
-            </van-tab>
-            <van-tab title="POS机">
-                 <financ></financ>
-            </van-tab>
-            <van-tab title="无卡支付">
-                 <financ></financ>
-            </van-tab>
-            <van-tab title="保险">
-                 <financ></financ>
-            </van-tab>
-        </van-tabs>
-        <div class="share" v-show="showShare">
-            <ul>
-               <ul>
-                                <li id="wxF"  @click="wxfri">
-                                    <p><van-icon name="http://sbs.91dianji.com.cn/wx.png"/></p>
-                                    <p>好友</p>
-                                </li>
-                                <li @click="wxcir">
-                                    <p><van-icon color="white" size="20px" name="http://sbs.91dianji.com.cn/pyq.png"/></p>
-                                    <p>朋友圈</p>
-                                </li>
-                            </ul>
-            </ul>
-        </div>
+        <footerMenu :active="active" @getChange="changeActive"></footerMenu>
     </div>
-    
-    <footerMenu :active="active" @getChange="changeActive"></footerMenu>
-</div>
 </template>
 
 <script>
-import financ from '@/components/financial/index'
 import footerMenu from '@/components/footer'
-// import {nativeShare} from '@/lib/share.js'
 export default {
     data(){
         return{
-            topTwo: 0,
-            topactive: 0,
-            threshold: 6,
-            isActive: '1',
             active: 4,
-            showShare:false,
-            shares:null,
-            sharewx:null,
         }
     },
     components: {
-        financ,
         footerMenu
     },
     methods: {
-        getIndex(val){
-            val.target.innerText == '金融人脉圈' ? this.isActive = '1' : this.isActive = '2';
-        },
-        wxfri(){
-            let that=this
-            plus.share.getServices(function (s) {
-                that.shares = s;
-                for (var i in s) {
-                    if ('weixin' == s[i].id) {
-                        that.sharewx = s[i];
-                    }
-                }
-                    that.shareWeixinMessage()
-
-            }, function (e) {
-                alert("获取分享服务列表失败：" + e.message);
-            });
-        },
-       
-         shareWeixinMessage() {
-             let that=this
-             that.sharewx.send({ content: "随便刷综合金融服务推广平台，点滴成就未来",title:"随便刷", href: "http://sbs.91dianji.com.cn/#/home?promotioncode=02400219", extra: { scene: "WXSceneSession" } }, function () {
-            // alert("分享成功！");
-        }, function (e) {
-            alert("分享失败：" + e.message);
-        });
-    },
-
-        // 获取更多
-        handleMore(){
-            this.showShare=true
-            // this.$toast("敬请期待")
-           
+         // 获取更多
+        handleExpect(){
+            this.$toast("敬请期待")
         },
         changeActive(obj){
-            // console.log('obj', obj);
+            console.log('obj', obj);
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
-#financial-circle-component{
-        color: white;
-        .more{
+    #radar{
+        width: 100vw;
+        height: calc(100vh - 100px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        .header{
             width: 100%;
-            height: 86px;
-            font-size: 28px;
-             background-color: #29305C;
-        }
-        .topTwo{
-            width: 50%;
-            height: 100px;
-            margin: auto;
-            font-size: 28px;
-            font-weight: 400;
-        >div{
-            width: 50%;
-            height: 60px;
-            border: solid 1px white;
-        }                                                                                                                                                                         
-}
-        >.header{
-            width: 100vw;
-            height: auto;
-            z-index:999;
-            background-color: black;
-        }
-        .checked{
-            background-color: white;
-            color: black;
-        }
-        .container{
-            height:auto;
-        }
-        .share {
-            background-color: red;
-            width:100%;
-            height: 300px;
-            color:#ccc;
-            padding:20px;
-            >ul{
-                display: flex;
-                >li {
-                    width:30%;
+            height: 900px;
+            background: #ffa800;
+            position: relative;
+            z-index: 1;
+            .title{
+                width: 100%;
+                height: 80px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                font-size: 34px;
+                color: #ffffff;
+                font-weight: 700;
+            }
+            .more{
+                width: 15%;
+                height: 80px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: 3;
+                color: #ffffff;
+            }
+            .AI{
+                width: auto;
+                height: 80px;
+                position: absolute;
+                top: 80px;
+                left: 20px;
+                z-index: 3;
+                color: #ffffff; 
+                font-size: 26px;
+            }
+            .Analysis{
+                width: auto;
+                height: 80px;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                z-index: 3;
+                color: #ffffff; 
+                font-size: 26px;
+            }
+            .circle{
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 160px;
+                right: 0px;
+                z-index: 3;
+                img:nth-child(1){
+                    width: 80%;
+                    height: auto;
+                    animation: myMove1 4s linear infinite normal;
+                    -webkit-animation: myMove1 4s linear infinite normal;
+                }
+                img:nth-child(2){
+                    width: 120px;
+                    height: auto;
+                    position: absolute;
+                    z-index: 2;
+                    top: 232px;
+                }
+                @keyframes myMove1 {
+                    from {transform: rotate(360deg);}
+                    to {transform: rotate(0deg);}
+                }
+                
+                @-webkit-keyframes myMove1 {
+                    from {transform: rotate(360deg);}
+                    to {transform: rotate(0deg);}
                 }
             }
-        }
-}
+            .btn{
+                width: 100%;
+                height: auto;
+                position: absolute;
+                bottom: 20px;
+                right: 0px;
+                z-index: 3;
+                display: flex;
+                display: -webkit-flex;
+                justify-content: space-around;
+                div:nth-child(1){
+                    width: 40%;
+                    height: 90px;
+                    background-color: #e99f04;
+                    border-radius: 45px;
+                    color: #ffffff;
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+                div:nth-child(2){
+                    width: 40%;
+                    height: 90px;
+                    background-color: #bc8331;
+                    border-radius: 45px;
+                    color: #ffffff;
+                    font-size: 30px;
+                    font-weight: 700;
+                }
+            }
+        }    
+        .menus{
+            width: 100%;
+            height: auto;
+            .per_menu{
+                width: 100%;
+                height: 90px;
+                .icon{
+                    width: 15%;
+                    height: 100%;
+                }
+                .title{
+                    width: 75%;
+                    height: 100%;
+                    font-size: 30px;
+                    color: #333333;
+                }
+                .more{
+                    width: 10%;
+                    height: 100%;
+                    color: #ccc;
+                }
+            }
+        }                                                                                                                                                            
+    }
 </style>

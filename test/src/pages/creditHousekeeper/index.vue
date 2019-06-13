@@ -6,7 +6,7 @@
             <span></span>
         </header>
        <div class="container">
-           <h3>随便刷智能还款</h3>
+           <h3>蜂行卡包智能还款</h3>
            <p class="mode">智能,极速2种模式</p>
            <div class="light">
                <ul>
@@ -122,7 +122,8 @@ export default {
 <style lang="less">
    #credit-housekeeper{
        >header {
-           background-color: #29305C;
+           background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            background-blend-mode: normal,normal;
            width:100%;
            height: 86px;
            line-height: 86px;

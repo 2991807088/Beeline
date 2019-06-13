@@ -60,7 +60,7 @@ export default {
     data() {
         return {
             componentload: true,
-            url: 'http://sbs.91dianji.com.cn/',
+            url: 'http://fx.91dianji.com.cn/',
             name:"",
             idcardnumber:"",
             picshowList: [],
@@ -81,7 +81,7 @@ export default {
             this.componentload = true;
             var form = new FormData()
             form.append('file',file.file)
-            let url = 'http://sbs.91dianji.com.cn/api/upload/uploadImg'
+            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg'
             let config = {
                 headers: { "Content-Type": "multipart/form-data" }
             };
@@ -102,7 +102,7 @@ export default {
             this.componentload = true;
             var form = new FormData();
             form.append('file',file.file);
-            let url = 'http://sbs.91dianji.com.cn/api/upload/uploadImg';
+            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg';
             let config = {
                 headers: { "Content-Type": "multipart/form-data" }
             };
@@ -151,7 +151,7 @@ export default {
             })
         },
         handleReturnHome() {
-            this.$router.push({path:'/home/verified'})
+            this.$router.go(-1);
         },
         
         // 获取实名认证信息
@@ -196,7 +196,8 @@ export default {
 <style lang="less">
    #verified-name {
        >header {
-           background-color: #29305C;
+           background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -223,12 +224,13 @@ export default {
            padding-top:94px;
            padding-bottom: 50px;
            >.real {
-               background-color: #29305C;
+               background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                background-blend-mode: normal,normal;
                color:#fff;
                .name{
                    width: 100%;
                    height: 120px;
-                   border-bottom: solid 1px #29305C;
+                   border-bottom: solid 1px #ccc;
                    color:#fff;
                    .name-icon{
                        width: 10%;
@@ -250,7 +252,7 @@ export default {
                           border: none; 
                        }
                        input::placeholder{
-                          color: #ccc; 
+                          color: #fff; 
                        }
                    }
                }

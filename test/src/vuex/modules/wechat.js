@@ -6,10 +6,11 @@ const state = {
     recommendedcode: '',
     mobile: '',
     vip: '',
-    level: '免费粉丝',
+    level: '0',
     iscertification: '0',
     amount: '0',
     city: '',
+    ispartner: '',
    
 }
 const mutations = {
@@ -45,6 +46,9 @@ const mutations = {
     },
     city(state,city){
         state.city = city;
+    },
+    ispartner(state,ispartner){
+        state.ispartner = ispartner;
     }
 }
 export default {state,mutations}

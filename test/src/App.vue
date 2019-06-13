@@ -25,7 +25,7 @@ export default {
   methods:{
      // 微信授权
     handleOauth(){
-        location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2e5f84e665fa0d51&redirect_uri=http%3a%2f%2fsbs.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+        location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13f3fb879b1f54b7&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
     },
     // 获取url参数
     GetUrlParam(name) {
@@ -36,11 +36,11 @@ export default {
     },
     // 获取access_token
     handleAccessToken(){
-        let url = 'http://sbs.91dianji.com.cn/wxApi/sns/oauth2/access_token?appid=wx2e5f84e665fa0d51&secret=6008bd9f5444802040576bb2ec6a8f52&code='+this.code+'&grant_type=authorization_code';
+        let url = 'http://fx.91dianji.com.cn/wxApi/sns/oauth2/access_token?appid=wx13f3fb879b1f54b7&secret=7b2322bd45d2908fc2d2a56a2d4927dd&code='+this.code+'&grant_type=authorization_code';
         axiosGet(url).then(res =>{
             storage.set('access_token',res.data.access_token); 
             // 继续请求昵称头像等信息
-            let url = 'http://sbs.91dianji.com.cn/wxApi/sns/userinfo?access_token='+ storage.get('access_token') +'&openid='+ res.data.openid +'&lang=zh_CN';
+            let url = 'http://fx.91dianji.com.cn/wxApi/sns/userinfo?access_token='+ storage.get('access_token') +'&openid='+ res.data.openid +'&lang=zh_CN';
             axiosGet(url).then(res =>{
                 this.nickname = res.data.nickname;
                 this.photo = res.data.headimgurl;
@@ -83,7 +83,9 @@ export default {
                                 this.$store.commit('vip',res.data.data.vip);
                                 this.$store.commit('recommendedcode',res.data.data.recommendedcode);
                                 this.$store.commit('city',res.data.data.city);
+                                this.$store.commit('ispartner',res.data.data.ispartner);
                                 this.$toast('登陆成功');
+                                console.log('登陆成功',res);
                                 let url = '/customer/getCustomer';
                                 let params = {
                                     openid:this.$store.state.wechat.openid,
@@ -128,6 +130,7 @@ export default {
                           this.$store.commit('recommendedcode',res.data.data.recommendedcode);
                           this.$store.commit('amount',res.data.data.amount);
                           this.$store.commit('city',res.data.data.city);
+                          this.$store.commit('ispartner',res.data.data.ispartner);
                           this.$router.push('/home');
                           this.$toast('登陆成功');
                           console.log('登陆成功',res);
@@ -148,65 +151,78 @@ export default {
     },
   },
   created(){
-    console.log('推荐码',this);
-    // 首先判断是否存储了openid
-    if(storage.get('openid') != '' && storage.get('openid') !== null){
-      // 已经注册过，可直接登录，无需再次授权
-      let params = {
-        openid: storage.get('openid')
-      }
-      let url = '/customer/loginByWechat';
-      axiosPost(url,params).then(res =>{
-          if(res.data.success){
-            storage.set('cid',res.data.data.id);
-            storage.set('openid',res.data.data.openid);
-            this.$store.commit('iscertification',res.data.data.iscertification);
-            this.$store.commit('level',res.data.data.level);
-            this.$store.commit('promotioncode',res.data.data.promotioncode);
-            this.$store.commit('mobile',res.data.data.mobile);
-            this.$store.commit('vip',res.data.data.vip);
-            this.$store.commit('recommendedcode',res.data.data.recommendedcode);
-            this.$store.commit('amount',res.data.data.amount);
-            this.$store.commit('headimg',res.data.data.photo);
-            this.$store.commit('nickname',res.data.data.nickname);
-            this.$store.commit('openid',res.data.data.openid);
-            this.$store.commit('city',res.data.data.city);
-            this.$router.push('/home');
-            console.log('登陆成功',res);
-            this.$toast('登陆成功');
-          }else{
-            this.$toast('登陆失败');
-          }
-      }).catch(res =>{
-          this.$toast('登陆失败');
-      })
-    }else{
-      // 拿不到openid，需要授权登录
-      if(this.$router.currentRoute.query.promotioncode != '' && typeof(this.$router.currentRoute.query.promotioncode) != 'undefined'){
-        storage.set('recommendedcode',this.$router.currentRoute.query.promotioncode);
-      }
-      // 判断是否是微信浏览器
-      var ua = navigator.userAgent.toLowerCase();
-      if(ua.match(/MicroMessenger/i)=="micromessenger") {
+    // var ua = navigator.userAgent.toLowerCase();
+    // if(ua.match(/MicroMessenger/i)=="micromessenger") {
         // 微信浏览器
-        if(this.GetUrlParam('code') === null){
-        // 未授权
-          this.handleOauth();
+
+
+
+
+        // 首先判断是否存储了openid
+        if(storage.get('openid') != '' && storage.get('openid') !== null){
+          // 已经注册过，可直接登录，无需再次授权
+          let params = {
+            openid: storage.get('openid')
+          }
+          let url = '/customer/loginByWechat';
+          axiosPost(url,params).then(res =>{
+              if(res.data.success){
+                storage.set('cid',res.data.data.id);
+                storage.set('openid',res.data.data.openid);
+                this.$store.commit('iscertification',res.data.data.iscertification);
+                this.$store.commit('level',res.data.data.level);
+                this.$store.commit('promotioncode',res.data.data.promotioncode);
+                this.$store.commit('mobile',res.data.data.mobile);
+                this.$store.commit('vip',res.data.data.vip);
+                this.$store.commit('recommendedcode',res.data.data.recommendedcode);
+                this.$store.commit('amount',res.data.data.amount);
+                this.$store.commit('headimg',res.data.data.photo);
+                this.$store.commit('nickname',res.data.data.nickname);
+                this.$store.commit('openid',res.data.data.openid);
+                this.$store.commit('city',res.data.data.city);
+                this.$store.commit('ispartner',res.data.data.ispartner);
+                this.$router.push('/home');
+                console.log('登陆成功',res);
+                this.$toast('登陆成功');
+              }else{
+                this.$toast('登陆失败');
+              }
+          }).catch(res =>{
+              this.$toast('登陆失败');
+          })
         }else{
-        // 已授权
-          this.code = this.GetUrlParam('code');
-          this.handleAccessToken();
+          // 拿不到openid，需要授权登录
+          if(this.$router.currentRoute.query.promotioncode != '' && typeof(this.$router.currentRoute.query.promotioncode) != 'undefined'){
+            storage.set('recommendedcode',this.$router.currentRoute.query.promotioncode);
+          }
+          // 判断是否是微信浏览器
+          var ua = navigator.userAgent.toLowerCase();
+          if(ua.match(/MicroMessenger/i)=="micromessenger") {
+            // 微信浏览器
+            if(this.GetUrlParam('code') === null){
+            // 未授权
+              this.handleOauth();
+            }else{
+            // 已授权
+              this.code = this.GetUrlParam('code');
+              this.handleAccessToken();
+            }
+          }else{
+            // 非微信浏览器
+          }  
         }
-      }else{
-        // 非微信浏览器
-      }  
-    }
+
+    // }else{
+    //   // 非微信浏览器
+    //   window.location.href = 'http://fx.91dianji.com.cn/openWechat.html';
+    // }  
+    
   },
   mounted(){
     // js-sdk的access_token 
-    let url = 'http://sbs.91dianji.com.cn/wxApi/cgi-bin/token?grant_type=client_credential&appid=wx2e5f84e665fa0d51&secret=6008bd9f5444802040576bb2ec6a8f52';
+    let url = 'http://fx.91dianji.com.cn/wxApi/cgi-bin/token?grant_type=client_credential&appid=wx13f3fb879b1f54b7&secret=7b2322bd45d2908fc2d2a56a2d4927dd';
     axiosGet(url).then(res =>{
-      let url = 'http://sbs.91dianji.com.cn/wxApi/cgi-bin/ticket/getticket?access_token='+ res.data.access_token +'&type=jsapi';
+      let url = 'http://fx.91dianji.com.cn/wxApi/cgi-bin/ticket/getticket?access_token='+ res.data.access_token +'&type=jsapi';
       axiosGet(url).then(res =>{
         storage.set('ticket',res.data.ticket);
         // 请求签名信息
@@ -226,7 +242,7 @@ export default {
           let that = this;
           wx.config({
               debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-              appId: 'wx2e5f84e665fa0d51', // 必填，公众号的唯一标识
+              appId: 'wx13f3fb879b1f54b7', // 必填，公众号的唯一标识
               timestamp: timestamp, // 必填，生成签名的时间戳
               nonceStr: radom, // 必填，生成签名的随机串
               signature: res.data.data.signature,// 必填，签名
@@ -242,10 +258,10 @@ export default {
           });
           wx.ready(function(){
               wx.onMenuShareAppMessage({ 
-                  title: '钱夹宝综合金融服务推广平台，点滴成就未来', // 分享标题
+                  title: '综合金融服务推广平台，点滴成就未来', // 分享标题
                   desc: '让每个人都能找到人生的意义', // 分享描述
-                  link: 'http://sbs.91dianji.com.cn/#/home?promotioncode=' + that.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                  imgUrl: 'http://sbs.91dianji.com.cn/logo.png', // 分享图标
+                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + that.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                  imgUrl: 'http://fx.91dianji.com.cn/logo.png', // 分享图标
                   success: function (res) {
                   }
               })

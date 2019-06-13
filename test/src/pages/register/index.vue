@@ -41,21 +41,21 @@
                    <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="card" size="22px"/>是否有信用卡</div>
                        <div class="detail end-center">
-                           <van-switch v-model="iscreditcard" />
+                           <van-switch v-model="iscreditcard" active-color="#ffa800" inactive-color="#f44"/>
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
                    </div>
                    <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="shopping-cart" size="22px"/>是否有车</div>
                        <div class="detail end-center">
-                          <van-switch v-model="iscar" />
+                          <van-switch v-model="iscar" active-color="#ffa800" inactive-color="#f44" />
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
                    </div>
                     <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="chat" size="22px"/>是否允许下级联系</div>
                        <div class="detail end-center">
-                          <van-switch v-model="isconnect" />
+                          <van-switch v-model="isconnect" active-color="#ffa800" inactive-color="#f44" />
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
                    </div>
@@ -78,13 +78,12 @@
                    <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="stop-circle" size="22px"/>声音开关</div>
                        <div class="detail end-center">
-                           <van-switch v-model="voice" active-color="#1989fa" inactive-color="#f44" />
+                           <van-switch v-model="voice" active-color="#ffa800" inactive-color="#f44" />
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
                    </div>
                </div>
             </div>
-            <!-- <van-loading type="spinner" color="#4B66AF" size="40px"/> -->
             <van-button class="btn" @click="updateSet" type="default">更新信息</van-button>
         </div>
         <loading :componentload='componentload'></loading>
@@ -98,6 +97,9 @@ import {axiosPost} from '@/lib/http'
 import axios from 'axios'
 import storage from '@/lib/storage'
 export default {
+    components: {
+        loading
+    },
     data() {
         return {
             componentload: true,
@@ -222,12 +224,7 @@ export default {
                 ispermit:isconnect
             };
             axiosPost(url,params).then(res =>{
-                
-                if(res.data.success){
-                    this.$toast('更新成功');
-                }else{
-                    this.$toast(res.data.message);
-                }
+                this.$toast('更新成功');
             }).catch(res =>{
             })
         }
@@ -251,18 +248,19 @@ export default {
        background-color: #E2E3E5;    
        padding-bottom: 80px;
        >header {
-           background-color: #29305C;
-           width:100%;
-           height: 86px;
-           line-height: 86px;
-           padding-top:10px;
-           font-size:28px;
-           color:#fff;
-           display: flex;
-           z-index:999;
-           position: fixed;
-           justify-content: space-between;
-           >span {
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            background-blend-mode: normal,normal;
+            width:100%;
+            height: 86px;
+            line-height: 86px;
+            padding-top:10px;
+            font-size:28px;
+            color:#fff;
+            display: flex;
+            z-index:999;
+            position: fixed;
+            justify-content: space-between;
+            >span {
                &:nth-of-type(1) {
                    margin-left: 10px;
                }

@@ -6,7 +6,7 @@
             <span></span>
         </header>
         <div class="container">
-            <div class="logo center"><van-icon name="http://sbs.91dianji.com.cn/logo.png" size="250px"/></div>
+            <div class="logo center"><img src="http://fx.91dianji.com.cn/logo.png" alt=""></div>
             <div class="per-detail row">
                 <div class="per-icon center"><van-icon clase="center" name="phone" size="18px" color="rgb(75, 102, 175)"/></div>
                 <div class="detail start-center">15953385222</div>
@@ -42,12 +42,14 @@ export default {
 
 <style lang="less">
    #customerService {
-       >header {
-           background-color: #29305C;
+       width: 100vw;
+       height: 100vh;
+       header {
+           background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;background-color: #29305C;
            width:100%;
            height: 86px;
            line-height: 86px;
-           padding-top:10px;
            color:#fff;
            display: flex;
            z-index:999;
@@ -69,6 +71,10 @@ export default {
                width: 100%;
                height: auto;
                margin-top: 50px;
+               img{
+                   width: 100%;
+                   height: auto;
+               }
             }
             .per-detail{
                 width: 95%;

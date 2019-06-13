@@ -1,7 +1,7 @@
 <template>
     <div id="footer-com">
          <footer class="foot">
-            <van-tabbar v-model="nowactive" active-color="#4B66AF" >
+            <van-tabbar v-model="nowactive" active-color="#fdba38" >
                     <van-tabbar-item  to="/home" >
                         <span>首页</span>
                         <img
@@ -28,21 +28,21 @@
                         >
                         </van-tabbar-item>
                      <van-tabbar-item  to="/share">
-                        <span>分享</span>
+                        <span>卡包</span>
                         <img
                         slot="icon"
                         slot-scope="props"
                         :src="props.active ? icon.shareActive : icon.shareNomal"
                         >
                     </van-tabbar-item>
-                     <!-- <van-tabbar-item  to="/financialCircle">
-                        <span>金融圈</span>
+                    <van-tabbar-item  to="/financialCircle">
+                        <span>AI雷达</span>
                         <img
                         slot="icon"
                         slot-scope="props"
                         :src="props.active ? icon.circleActive : icon.circleNomal"
                         > 
-                    </van-tabbar-item> -->
+                    </van-tabbar-item>
             </van-tabbar>
 
 
@@ -57,16 +57,16 @@ export default {
         return{
             nowactive: this.active ,
              icon: {
-                normal: 'http://pay.91dianji.com.cn/footer_01.png',
-                active: 'http://pay.91dianji.com.cn/footer_01-1.png',
-                vipActive:'http://pay.91dianji.com.cn/footer_02-1.png',
-                vipNomal:'http://pay.91dianji.com.cn/footer_02.png',
-                personActive:'http://pay.91dianji.com.cn/footer_03-1.png',
-                personNomal:'http://pay.91dianji.com.cn/footer_03.png',
-                 shareActive:'http://pay.91dianji.com.cn/footer_04-1.png',
-                shareNomal:'http://pay.91dianji.com.cn/footer_04.png',
-                circleActive:'http://pay.91dianji.com.cn/footer_05-1.png',
-                circleNomal:'http://pay.91dianji.com.cn/footer_05.png',
+                normal: 'http://fx.91dianji.com.cn/fengxing_home.png',
+                active: 'http://fx.91dianji.com.cn/fengxing_home_active.png',
+                vipActive:'http://fx.91dianji.com.cn/fengxing_vips_active.png',
+                vipNomal:'http://fx.91dianji.com.cn/fengxing_vips.png',
+                personActive:'http://fx.91dianji.com.cn/fengxing_personal_active.png',
+                personNomal:'http://fx.91dianji.com.cn/fengxing_personal.png',
+                 shareActive:'http://fx.91dianji.com.cn/fengxing_cardCenter_active.png',
+                shareNomal:'http://fx.91dianji.com.cn/fengxing_cardCenter.png',
+                circleActive:'http://fx.91dianji.com.cn/fengxing_radar_active.png',
+                circleNomal:'http://fx.91dianji.com.cn/fengxing_radar.png',
             }
         }
     },

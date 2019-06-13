@@ -1,10 +1,12 @@
 <template>
-    <div id="loading-components" class="center" v-if="componentload">
-        <div class="column">
-            <div class="load center"><van-loading color="white" size="50px" /></div>
-            <div class="moneybay center">随便刷</div>
-        </div>
-    </div>    
+    <transition name="van-fade">
+        <div id="loading-components" class="center" v-if="componentload">
+            <div class="column">
+                <div class="load center"><van-loading color="white" size="50px" /></div>
+                <div class="moneybay center">蜂行卡包</div>
+            </div>
+        </div>    
+    </transition>
 </template>
 <script>
 export default {

@@ -157,7 +157,8 @@ export default {
             padding-bottom: 30px;
             margin-left: auto;
             margin-right: auto;
-            background-color: #29305C;
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            background-blend-mode: normal,normal;
             color: white;
             margin-top: 50px;
             font-size: 28px;

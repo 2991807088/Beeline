@@ -10,7 +10,7 @@
             　　<iframe v-if="type" :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe>
             　　<iframe v-else :src="url" frameborder="0" class="iframe" height="100vh" scrolling='auto' style="width: 1px; min-width: 100vw; *width: 100vw;"></iframe>
             </div> -->
-             <!-- <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe> -->
+             <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
                 <!-- <div style="webkit-overflow-scrolling: touch;overflow-y: scroll;width:100%;">
                     <iframe class="iframe" id="ifram" :src="url" frameborder="0"></iframe>
                 </div> -->
@@ -32,7 +32,7 @@ export default {
     },
     methods:{
         goBack() {
-            plus.webview.close( "yinlian")
+            // plus.webview.close( "yinlian")
             this.$router.go(-1);
         },
        
@@ -88,7 +88,8 @@ export default {
 <style lang="less">
    #my-order {
        >header {
-            background-color: #29305C;
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
            width:100%;
            height: 86px;
            line-height: 86px;

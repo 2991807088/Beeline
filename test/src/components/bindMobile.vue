@@ -141,7 +141,7 @@ export default {
         right: 0;
         bottom: 0;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 2;
+        z-index: 5;
         // display: none;
         .bind{
             width: 80vw;
@@ -165,7 +165,7 @@ export default {
                 margin-top: 10px;
                 margin-left: auto;
                 margin-right: auto;
-                border-bottom: solid 1px #29305c;
+                border-bottom: solid 1px #ffa800;
                 >input{
                     width: 100%;
                     height: 75px;
@@ -184,7 +184,7 @@ export default {
                     height: 80px;
                     text-align: center;
                     line-height: 80px;
-                    background: #29305c;
+                    background: #ffa800;
                     color:#f2f2f2;
                     font-size: 26px;
                 }
@@ -195,7 +195,7 @@ export default {
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 40px;
-                background: #29305c;
+                background: #ffa800;
                 color: #f2f2f2;
             }
             .submits:hover{

@@ -10,19 +10,19 @@ export const axiosPost = (url, params = {}) =>{;
     });
     return new Promise((resolve,reject) =>{
         _axios.post(_url,qs.stringify(params)).then(res =>{
-         if(res.data.success){
-             if(res.data.code == -1){
-                 reject(res);
-                //  window.location.href = '#/logIn';
-             }else{
-                 resolve(res);
-             }
+        if(res.data.success){
+            if(res.data.code == -1){
+                reject(res);
+                window.location.href = '#/logIn';
+            }else{
+                resolve(res);
+            }
           }else{
            reject(res);
           }
         }).catch(res =>{
              reject(res);
-             // ElementUI.Message.error(res.data.message);
+            //  ElementUI.Message.error(res.data.message);
         })
     })
 }

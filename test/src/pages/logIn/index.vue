@@ -9,17 +9,17 @@
                 <p>
                     <span><van-icon name="phone" size="26px"/></span>
                     <input type="number" v-model="phone" placeholder="请输入手机号码">
-                    <span @click="handleClear('phone')" class="center"><van-icon name="http://sbs.91dianji.com.cn/close@2x.png" color="#888888" size="24px"/></span>
+                    <span @click="handleClear('phone')" class="center"><van-icon name="http://sbs.91dianji.com.cn/close@2x.png" color="#ffa800" size="24px"/></span>
                 </p>
                 <p>
                     <span><van-icon name="lock" size="26px"/></span>
                     <input type="password" v-model="password" placeholder="请输入密码">
-                    <span @click="handleClear('password')" class="center"><van-icon color="#888888" name="http://sbs.91dianji.com.cn/close@2x.png" size="24px"/></span>
+                    <span @click="handleClear('password')" class="center"><van-icon color="#ffa800" name="http://sbs.91dianji.com.cn/close@2x.png" size="24px"/></span>
                 </p>
            </div>
            <div class="password">
                <p>
-                    <van-checkbox class="checkbox" v-model="checked" shape="square" checked-color="#29305c">记住密码</van-checkbox>
+                    <van-checkbox class="checkbox" v-model="checked" shape="square" checked-color="#ffa800">记住密码</van-checkbox>
                     <span>&nbsp;</span>
                </p>
                <p @click="forgetPassword">忘记密码？</p>
@@ -95,7 +95,9 @@ export default {
                     that.$store.commit('openid',res.data.data.openid);
                     that.$store.commit('nickname',res.data.data.nickname);
                     that.$store.commit('headimg',res.data.data.photo);
-                    // console.log('登陆成功',res);
+                    that.$store.commit('ispartner',res.data.data.ispartner);
+                    console.log('登陆成功',res);
+                    storage.set('openid',res.data.data.openid);
                     that.$toast('登陆成功');
                     if(that.checked){
                         storage.set('rempass',true);
@@ -125,7 +127,7 @@ export default {
         // 登录
             logIn(){
                 // console.log(location.href)
-                window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx2e5f84e665fa0d51&redirect_uri=http%3a%2f%2fsbs.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
+                window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13f3fb879b1f54b7&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
           
         },
         // 清空输入框
@@ -166,7 +168,7 @@ export default {
                     bottom: 40px;
                     left: 0;
                     font-size: 36px;
-                    color: #29305c;
+                    color: #ffa800;
                     font-weight: 700;
                     letter-spacing: 5px;
                }
@@ -227,7 +229,7 @@ export default {
                 >.log {
                     width:100%;
                     height: 100px;
-                    background-color: #29305C;
+                    background-color: #ffa800;
                     border-radius: 100px;
                     >p {
                         color:#fff;

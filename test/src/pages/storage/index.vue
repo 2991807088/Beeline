@@ -7,7 +7,7 @@
         </header>
         <div class="container">
             <div class="message">
-                <div class="wallet">随便刷咨询</div>
+                <div class="wallet">蜂行卡包咨询</div>
                 <div class="horn">
                     <van-notice-bar
                         text="商户收款秒到通道需要实名认证，本人银行卡。"

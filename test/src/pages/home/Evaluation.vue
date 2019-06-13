@@ -1,49 +1,40 @@
 <template>
     <div id="page-component-form">
          <header class="header-top row">
-            <div class="left-icon start-center" @click="handleReturnHome"><van-icon color="white" size="20px" name="arrow-left"/></div>
-            <div class="top-title center">申请贷款</div>
+            <div class="left-icon start-center" @click="handleReturnHome"><van-icon color="#333333" size="20px" name="arrow-left"/></div>
+            <div class="top-title center">卡测评</div>
             <div class="right-icon center"></div>
         </header>
-        <div class="swipe">
-          <van-swipe :autoplay="3000" indicator-color="white">
-            <van-swipe-item v-for="(item,index) in images" :key="index"><img class="imgs" :src="item" alt=""></van-swipe-item>
-          </van-swipe>
+        
+        <div class="top_title">
+            <div class="title center">选择或添加测评卡信息</div>
+            <div class="detail">“卡·测评”是为信用卡“把脉”并打造健康的个人征信系统。征信系统就是我们常说的信用记录，是全国联网的，不管你在哪个银行产生的信用记录在以后的使用当中都可以提现，且很重要。</div>
         </div>
-        <div class="title center">选择或添加申请人信息</div>
-        <div class="detail">请确保选择或添加的申请人信息与贷款申请表所填信息保持真实一致，以免影响信用贷款进度；本平台对此信息保密，仅作提交金融机构工作人员审核，审核通知将以短信形式发送至该号码</div>
+
         <div class="per-input top row">
-            <div class="icon end-center"><van-icon name="manager" size="1.5em" /></div>
-            <div class="label start-center">姓名</div>
-            <div class="user-input"><input type="text" v-model='form.name' placeholder="请填写申请人姓名"/></div>
+            <div class="icon end-center"><van-icon name="http://fx.91dianji.com.cn/User@2x.png" size="1.5em" /></div>
+            <div class="label center">姓名</div>
+            <div class="user-input"><input type="text" v-model='form.name' placeholder="申请人姓名"/></div>
         </div>
 
         <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="card" size="1.5em" /></div>
-            <div class="label start-center">证件</div>
-            <div class="user-input"><input type="text" v-model="form.idcardnumber" placeholder="请填写申请人身份证号码"/></div>
+            <div class="icon end-center"><van-icon name="http://fx.91dianji.com.cn/Wallet@2x.png" size="1.5em" /></div>
+            <div class="label center">证件</div>
+            <div class="user-input"><input type="text" v-model="form.idcardnumber" placeholder="申请人身份证号码"/></div>
         </div>
 
         <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="graphic" size="1.5em" /></div>
-            <div class="label start-center">电话</div>
-            <div class="user-input"><input type="number" v-model="form.mobile" placeholder="请填写申请人手机号码"/></div>
+            <div class="icon end-center"><van-icon name="http://fx.91dianji.com.cn/oldphone@2x.png" size="1.5em" /></div>
+            <div class="label center">电话</div>
+            <div class="user-input"><input type="number" v-model="form.mobile" placeholder="申请人手机号码"/></div>
         </div>
 
-        <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="coupon" size="1.5em" /></div>
-            <div class="label start-center">验证码</div>
-            <div class="user-code"><input type="text" v-model="form.code" placeholder="请输入验证码"/></div>
-            <div class="safe-code center" @click="changeCode">{{realCode}}</div>
-        </div>
-
-        <div class="btns row">
-            <van-button type="default" class="cancel">取消</van-button>
-            <van-button type="primary" class="sure" @click="handleSubmit">确认</van-button>
+        <div class="btns">
+            <button class="cancel">取消</button>
+            <button class="sure" @click="handleSubmit">确认</button>
         </div>
         <div class="clause">
-            <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#29305C">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
-            <div class="remarks">{{remarks}}</div>
+            <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#f3b500">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
         </div>
         <van-popup class="popup" v-model="show" position="right">
            <div class="pop-clause"> 
@@ -94,55 +85,33 @@
                     　　7.1如果您对本协议或本服务有意见或建议，可与蜂行卡包客户服务部门联系，我们会给予您必要的帮助。（正文完）<br/>
                     　<br/><br/>
                     
-                     <div style="width:100%" class="end-center">青岛宏盛和投资管理有限公司</div>
+                     <div style="width:100%" class="end-center">传帮带（上海）网络科技有限公司</div>
 
                 </div>
             </div>
         </van-popup>
-        <loading :componentload="componentload"></loading>
     </div>
 </template>
 <script>
 import {axiosPost} from '@/lib/http'
-import loading from '@/components/loading'
 export default {
-     components:{
-      loading
-    },
     data(){
         return{
-             componentload:false,
-            fixed: true,
-            images:[
-                'http://sbs.91dianji.com.cn/banner01.jpg',
-                'http://sbs.91dianji.com.cn/banner02.jpg',
-                'http://sbs.91dianji.com.cn/banner03.jpg',
-                'http://sbs.91dianji.com.cn/banner04.jpg',
-                'http://sbs.91dianji.com.cn/banner05.jpg'
-            ],
             form:{
                 name: '',
                 idcardnumber: '',
                 mobile: '',
-                code: ''
             },
             checked: false,
             show: false,
-            remarks: '注:在蜂行卡包申请贷款一律不收取任何费用，如有向您索要手续费的请拨打400-1059-769向平台举报',
-            codeLength: 4,
-            realCode: ''
         }
     },
     methods:{
         // 返回首页
         handleReturnHome(){
             this.$router.push({
-                path:'/loan/detail'
+                path:'/home'
             })
-        },
-        // 更多
-        handleMore(){
-            this.$toast('尽请期待');
         },
         // 蜂行卡包服务协议
         handleShow(){
@@ -151,21 +120,6 @@ export default {
         // 关闭协议弹窗
         handleClose(){
             this.show = false;
-        },
-        // 验证码
-        safeCode(){
-            var codeLength = this.codeLength;
-            var ran = new Array(0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z')
-            for(var i = 0; i < codeLength; i++ ){
-                var index = Math.floor(Math.random()*36);
-                this.realCode += ran[index];
-            }
-            
-        },
-        // 切换验证码
-        changeCode(){
-            this.realCode = '';
-            this.safeCode();
         },
         // 服务条款
         handleAgree(val){
@@ -179,76 +133,26 @@ export default {
            }else if(this.form.mobile == ''){
                this.$toast('请填写申请人手机号')
            }
-           else if((this.form.code).replace(/\s*/g,"") == '' || (this.form.code).replace(/\s*/g,"") != (this.realCode).replace(/\s*/g,"")){
-               this.$toast('请检查验证码');
-           }
            else if(this.checked == false){
                this.$toast('请阅读并同意服务协议');
            }
            else{
-                //  let url="https://wallet.xiaoying.com/fe/wallet-landing/blueRegPage/index.html?landId=1017&source=100024443"
-                // setTimeout(()=>{
-                //             this.$router.push({
-                //             path:"/home/online",
-                //             query:{
-                //                 info:url,
-                //                 title:"贷款中心"
-                //               }
-                //           })
-                //         },1000)
-               let data={
+                let data={
                    realName:this.form.name,
                    mobile:this.form.mobile,
                    certcode:this.form.idcardnumber
-               }
-               axiosPost("/creditCard/getLoanUrl",data)
-               .then(res=>{
-                   if(!res.data.success){
-                       this.$toast({
-                           message:res.data.message
-                       })
-                       return
-                   } else {
-                    //    window.location.href=res.data.data;
-                        let url=res.data.data;
-                        this.componentload=true
-                        setTimeout(()=>{
-                            this.$router.push({
-                            path:"/home/online",
-                            query:{
-                                info:url,
-                                title:"贷款中心"
-                              }
-                          })
-                           this.componentload=false
-                        },1000)
-                   }
-                   
-               })
-               .catch(err=>{
-                   
-               })
-           }
-        },
-         // 获取实名认证信息
-        handleGetAOuth(){
-            let url = '/customer/getIdentification';
-            let params = {};
-            axiosPost(url,params).then(res =>{
-                // console.log('获取实名认证状态成功',res);
-                if(res.data.data.status != '0'){
-                    this.form.name = res.data.data.name;
-                    this.form.idcardnumber = res.data.data.idcardnumber;
-                    this.form.mobile = this.$store.state.wechat.mobile;
                 }
-            }).catch(res =>{
-                // console.log('获取实名认证状态失败',res);
-            })
+                axiosPost("/creditCard/getProductUrl",data)
+                .then(res=>{
+                    console.log('成功',res);
+                    window.location.href = res.data.data;
+                })
+                .catch(res=>{
+                    console.log('失败',res);
+                    this.$toast('信息验证失败');
+                })
+           }
         }
-    },
-    created(){
-        this.safeCode();
-        this.handleGetAOuth();
     }
 }
 </script>
@@ -257,57 +161,56 @@ export default {
         width: 100vw;
         height: auto;
         padding-top: 86px;
-        .header-top {
-            background-color: #29305C;
-        }
-        .swipe{
-            width: 100vw;
-            height: auto;
-            .imgs{
-                width: 100vw;
-                height: 400px;
+        .header-top{
+            background: #fff;
+            .top-title{
+                color: #333;
             }
         }
-        .title{
-            width: 100vw;
-            height: 100px;
-            font-size: 32px;
-            font-weight: 600;
-            margin-top: 30px;
-        }
-        .detail{
-            width: 90vw;
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 20px;
-            line-height: 40px;
-            color: #29305C;
-            font-size: 26px;
-            background: #F5F5F4;
-            -moz-box-shadow:0px 0px 15px #999 inset;               /* For Firefox3.6+ */
-            -webkit-box-shadow:0px 0px 15px #999 inset;            /* For Chrome5+, Safari5+ */
-            box-shadow:0px 0px 15px #999 inset;   
+        .top_title{
+            width: 100%;
+            height: 405px;
+            background-image: linear-gradient(156deg,#f7cf6c 0%, #fbbc36 0%, #ffa800 100%), linear-gradient(#0000ff, #0000ff);
+            .title{
+                width: 100%;
+                height: 100px;
+                color: #000000;
+                font-size: 34px;
+                font-weight: 700;
+            }
+            .detail{
+                width: 90%;
+                height: 210px;
+                margin: auto;
+                padding: 3%;
+                background-color: #f6f6f6;
+                border-radius: 8px;
+                line-height: 55px;
+                text-align: justify;
+                font-size: 28px;
+            }
         }
         .top{
-            margin-top: 30px;
+            margin-top: 100px;
         }
         .per-input {
-            width: auto;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
             height: 80px;
             .icon{
-                width:8vw;
+                width:8%;
                 height: 100%;
             }
             .label{
-                width: 12vw;
+                width: 12%;
                 height: 100%;
                 font-weight: 600;
                 font-size: 26px;
                 margin-left: 2vw;
             }
             .user-input{
-                width: 73vw;
+                width: 73%;
                 height: 100%;
                 >input::-webkit-input-placeholder{
                     font-size:24px;
@@ -317,7 +220,7 @@ export default {
                     width: 100%;
                     height: 99%;
                     border: none;
-                    text-align: left;
+                    text-align: right;
                     font-size: 26px;
                     background: transparent;
                     padding-left: 10px;
@@ -354,23 +257,26 @@ export default {
         .btns{
             width: 85vw;
             height: 100px;
-            margin-top: 20px;
+            margin-top: 80px;
             margin-left: auto;
             margin-right: auto;
+            display: flex;
+            display: -webkit-flex;
+            justify-content: space-around;
+            -webkit-justify-content: space-around;
             .cancel{
-                width: 70%;
+                width: 180px;
                 height: 100%;
-                background: #CACACA;
-                color: white;
-                font-size: 30px;
-                border-radius: 10px;
-                border: none;
+                border-radius: 8px;
+                border: solid 3px #535353;
+                color: #000;
+                background: #fff;
             }
             .sure{
-                width: 70%;
+                width: 180px;
                 height: 100%;
                 margin-left: 10%;
-                background: #29305C;
+                background-color: #f3b500;
                 color: white;
                 font-size: 30px;
                 border-radius: 10px;
@@ -383,21 +289,11 @@ export default {
             margin-top: 50px;
             padding-top: 40px;
             padding-bottom: 50px;
-            background: #F7F6FB;
             .van-checkbox__icon .van-icon{
-                      border:1px solid #000;
-                  }
-            
-            span{
-                color: #29305C;
+                border:1px solid #000;
             }
-            .remarks{
-                width: 90vw;
-                height: auto;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 45px;
-                line-height: 40px;
+            span{
+                color: #4B66AF;
             }
         }
         .popup{
@@ -413,7 +309,7 @@ export default {
                 .pop-title{
                     font-size: 35px;
                     font-weight: 700;
-                    color: #29305C;
+                    color: #f3b500;
                 }
                 .pop-content{
                     padding: 5vw;

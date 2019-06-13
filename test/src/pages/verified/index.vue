@@ -10,7 +10,7 @@
                 <p>认证介绍</p>
                  <h3>尊敬的用户您好：</h3>
                  <p>根据中华人民共和国，国家相关法律规定会员提现需要通过实名认证，为确保您账户安全及
-                     正常使用，如您还未实名，请尽快完成实名，否则您在随便刷中无法完成办卡和提现等功能，感谢您的理解及支持！
+                     正常使用，如您还未实名，请尽快完成实名，否则您在蜂行卡包中无法完成办卡和提现等功能，感谢您的理解及支持！
                  </p>
                  <p>认证通过后，将能正常办卡和提现等功能。</p>
             </div>
@@ -36,7 +36,7 @@ export default {
     },
     methods:{
         goBack() {
-            this.$router.push('/home')
+            this.$router.go(-1);
         }
     }
 }
@@ -45,7 +45,8 @@ export default {
 <style lang="less">
    #verified {
        >header {
-            background-color: #29305C;
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -98,7 +99,8 @@ export default {
            }
            >.at-once {
                color:white;
-                background-color: #29305C;
+                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
                padding:30px 200px;
                border-radius: 10px;
                text-align: center;

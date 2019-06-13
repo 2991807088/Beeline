@@ -1,160 +1,191 @@
 <template>
-    <div id="vip">
-        <header>升级代理</header>
-        <div class="containt">
-            <ul>
-                <li>
-                    <img src="http://sbs.91dianji.com.cn/zuanshi.png" alt="">
-                     <div class="diamonds">
-                         <div class="card">随便刷钻石会员</div>
-                         <div class="instructions">
-                             <span @click="isShowDiamonds">权益说明</span>
-                             <van-popup v-model="ShowDiamonds">
-                                <div class="cover">
-                                    <p>钻石会员权益说明</p>
-                                    1. 钻石会员可继续升级至城市合伙人等级，享受合伙人躺赚收益<br/>
-                                    2. 每推广一个收益环节都享受最高的利润奖励分配<br/>
-                                    3. 招商收益<br/>
-                                    4. 信用卡办卡收益<br/>
-                                    5. 费率说明：垫还为万72+1元/笔，商户收款为万47+1元/笔<br/>
-                                </div>
-                            </van-popup>
-                             <span @click="isShowRule">退换规则</span>
-                              <van-popup v-model="showRule">
-                                <div class="rule">
-                                    <p>平台保证金退还说明</p>
-                                    <p>随便刷是一家集信用卡、贷款、保险等金融业务的综合性便民服务平台。通过一个APP全程搞定您身边多样化的金融需求，打造了资源整合大平台，真正实现便民服务！
- 
-现平台相当于免费VIP会员制度，缴纳相应会员升级费后即可获取更多后台业务使用权限，自用省钱，推广业务赚取高额佣金
- 
-用户通过随便刷APP升级会员等级后，会员费不可退还，不同会员等级推广分润权限不同，越高等级会员费率越低，分润越多。</p>
-                                </div>
-                            </van-popup>
-                         </div>
-                     </div>
-                     <div class="qualifications">
-                         <span>授权还款额度</span>
-                         <span>授权钻石会员资格</span>
-                         <span>智能还款分润万38-60</span>
-                    </div>  
-                     <div class="price">
-                        <span class="new-price">￥928.00</span>
-                        <span class="buy" @click="handleVip('928')">立即购买</span>
-                     </div>
-                </li>
-                <li>
-                    <img src="http://sbs.91dianji.com.cn/baijn.png" alt="">
-                     <div class="diamonds">
-                         <div class="card">随便刷白金会员</div>
-                         <div class="instructions">
-                             <span @click="isShowGold">权益说明</span>
-                             <van-popup v-model="ShowGold">
-                                <div class="cover">
-                                    <p>随便刷白金会员</p>
-                                    1. 白金会员可继续升级至钻石会员<br/>
-                                    2. 每推广一个收益环节都享受最高的利润奖励分配<br/>
-                                    3. 招商收益<br/>
-                                    4. 信用卡办卡收益<br/>
-                                    5. 费率说明：垫还为万81+2元/笔，商户收款为万54+2元/笔<br/>
-                                </div>
-                            </van-popup>
-                             <span @click="isShowRule">退换规则</span>
-                              <van-popup v-model="showRule">
-                                <div class="rule">
-                                    <p>退换说明</p>
-                                    1.随便刷是一家集信用卡、贷款、保险等金融业务的综合性便民服务平台。通过一个APP全程搞定您身边多样化的金融需求，打造了资源整合大平台，真正实现便民服务<br/>2.现平台相当于免费VIP会员制度，缴纳相应会员升级费后即可获取更多后台业务使用权限，自用省钱，推广业务赚取高额佣金<br/>3.用户通过随便刷APP升级会员等级后，会员费不可退还，不同会员等级推广分润权限不同，越高等级会员费率越低，分润越多<br/>
-                                </div>
-                            </van-popup>
-                         </div>
-                     </div>
-                     <div class="qualifications">
-                         <span>授权还款额度</span>
-                         <span>授权白金会员资格</span>
-                         <span>智能还款分润万16-45</span>
-                    </div>  
-                     <div class="price">
-                        <span class="new-price">￥328.00</span>
-                        <span class="buy" @click="handleVip('328')">立即购买</span>
-                     </div>
-                </li>
-            </ul>
-        </div>
-        <footerMenu :active="active" @getChange="changeActive"></footerMenu>
-        <div class="popup center" v-if="pup1">
-            <div class="pop-detail">
-                <div class="reminder center-end">温馨提示</div>
-                <div class="level center">您现在即将购买<span class="center">【{{level}}】</span></div>
-                <div class="desc">
-                    <ul>
-                        <li>升级成功后您将享受相应收益权限</li>
-                        <li v-if="level == '随便刷钻石会员'">若你成为钻石会员，垫还每万元可省下78元，空卡代还每万元可省下57元，最关键的一点在于不仅省钱还可以让你的信用卡资金利用率达到90%以上。</li>
-                        <li v-if="level == '随便刷白金会员'">白金会员无城市合伙人、城市运营商躺赢赚钱资格</li>
-                        <li v-if="level == '随便刷白金会员'">开通钻石会员可享受更高级别收益权限，数据显示，白金会员整体收益低于钻石会员80%，您确定要升级吗？</li>
-                        <li v-if="level == '随便刷钻石会员'"><span class="van-rate">推荐指数：</span><van-rate class="van-rate" readonly  v-model="value" /></li>
-                        <li v-if="level == '随便刷白金会员'"><span class="van-rate">推荐指数：</span><van-rate class="van-rate" readonly  v-model="value1" /></li>
-                    </ul>
-                    <!-- <div class="tips center">(保证金将按业绩退还)</div> -->
+    <div id="page_vip">
+        <div class="header">
+            <div class="vip_icon center">
+                <img v-if="level == '0' && ispartner == '0'" src="http://fx.91dianji.com.cn/fengxing_mianfeifensi_top.png" alt="">
+                <img v-if="level == '1' && ispartner == '0'" src="http://fx.91dianji.com.cn/fengxing_huangjinhuiyuan_top.png" alt="">
+                <img v-if="level == '2' && ispartner == '0'" src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_top.png" alt="">
+                <img v-if="ispartner == '1'" src="http://fx.91dianji.com.cn/fengxing_hehuoren_top.png" alt="">
                 </div>
-                <div class="button row">
-                    <van-button class="cancel" type="default" @click="handleCancelOrder">取消</van-button>
-                    <van-button class="submit" type="default" @click="handleBuy">确认</van-button>
+            <div class="vip_title center">
+                <span v-if="level == '0' && ispartner == '0'">免费粉丝</span>
+                <span v-if="level == '1' && ispartner == '0'">黄金会员</span>
+                <span v-if="level == '2' && ispartner == '0'">钻石会员</span>
+                <span v-if="ispartner == '1'">城市合伙人</span>
+            </div>
+        </div>
+        <div class="level">
+            <img v-if="level == '0' && ispartner == '0'" src="http://fx.91dianji.com.cn/mianfeifensi_jindu.png" alt="">
+            <img v-if="level == '1' && ispartner == '0'" src="http://fx.91dianji.com.cn/huangjinhuiyuan_jindu.png" alt="">
+            <img v-if="level == '2' && ispartner == '0'" src="http://fx.91dianji.com.cn/zuanshihuiyuan_jindu.png" alt="">
+            <img v-if="ispartner == '1'" src="http://fx.91dianji.com.cn/hehuorenjindu_jindu.png" alt="">
+            
+        </div>
+        <div class="goods_list">
+            <div class="per_goods fensi">
+                <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_mianfeifensi_mini.png" alt=""></div>
+                <div class="title">免费粉丝</div>
+                <div class="price">¥0.00</div>
+                <div class="nowlevel" v-if="level == '0' && ispartner == '0'">当前等级</div>
+                <div class="detail center" @click="handleSeeDetail('0')">查看明细</div>
+                <div class="desc">
+                    <div>推广佣金比例</div>
+                    <div>直接-50%</div>
+                    <div>间推-10%</div>
+                    <div>升级会员可提现</div>
+                </div>
+            </div>
+            <div class="per_goods huangjin">
+                <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_huangjinhuiyuan_mini.png" alt=""></div>
+                <div class="title">黄金会员</div>
+                <div class="price">¥398.00</div>
+                <div class="nowlevel" v-if="level == '1' && ispartner == '0'">当前等级</div>
+                <div class="upgrade center" v-if="level == '0'" @click="handleOneClickUp('398')">一键升级</div>
+                <div class="upgrade_dine center" v-if="level == '2'" @click="handleOneClickUp('none')">一键升级</div>
+                <div class="detail center" @click="handleSeeDetail('1')">查看明细</div>
+                <div class="desc">
+                    <div>推广佣金比例</div>
+                    <div>直接-50%</div>
+                    <div>间推-10%</div>
+                    <div>满100元可提现</div>
+                </div>
+            </div>
+            <div class="per_goods zuanshi">
+                <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_mini.png" alt=""></div>
+                <div class="title">钻石会员</div>
+                <div class="price">¥998.00</div>
+                <div class="nowlevel" v-if="level == '2' && ispartner == '0'">当前等级</div>
+                <div class="upgrade center" v-if="level != '2'" @click="handleOneClickUp('998')">一键升级</div>
+                <!-- <div class="upgrade_dine center" v-if="ispartner == '1'" @click="handleOneClickUp('none')">一键升级</div> -->
+                <div class="detail center" @click="handleSeeDetail('2')">查看明细</div>
+                <div class="desc">
+                    <div>推广佣金比例</div>
+                    <div>直接-50%</div>
+                    <div>间推-10%</div>
+                    <div>满100元可提现</div>
+                </div>
+            </div>
+            <div class="per_goods hehuoren">
+                <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_hehuoren_mini.png" alt=""></div>
+                <div class="title">城市合伙人</div>
+                <div class="price">¥19800.00</div>
+                <div class="nowlevel" v-if="ispartner == '1'">当前等级</div>
+                <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs">联系我们</div>
+                <div class="detail center" @click="handleSeeDetail('3')">查看明细</div>
+                <div class="desc">
+                    <div>推广佣金比例</div>
+                    <div>直接-60%</div>
+                    <div>间推-20%</div>
+                    <div>V3-10%</div>
+                </div>
+            </div>
+            <div class="per_goods yunyingshang">
+                <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt=""></div>
+                <div class="title">城市运营商</div>
+                <div class="price">¥28000.00——¥188000.00</div>
+                <div class="upgrade center" v-if="level != ''" @click="handleContactUs">联系我们</div>
+                <div class="detail center" @click="handleSeeDetail('4')">查看明细</div>
+                <div class="desc">
+                    <div>品牌独立</div>
+                    <div>市场定价权</div>
+                    <div>利润100%</div>
+                    <div>招商加盟</div>
                 </div>
             </div>
         </div>
 
-        <div class="buy-detail" v-if="pup2">
-            <div class="recom row">
-                <div class="avator end-center"><img :src="recomheadimg" alt=""></div>
-                <div class="recom-detail">
-                    <div class="recom-title start-center">上级推荐人</div>
-                    <div class="recom-name start-center">{{recomname}}</div>
-                    <div class="recom-code start-center">推荐码:{{recomcode}}</div>
+        <!-- 联系我们 -->
+        <transition name="van-fade">
+            <div class="contactus center" v-if="contactus" @click="handleCloseContactUs">
+                <div class="fade">
+                    <div class="title start-center">联系我们</div>
+                    <div class="per_detail row">
+                       <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_fuwushijian.png"/></div>
+                        <div class="start-center">服务时间： 周一至周日（09：00-22：00）</div>
+                        <div></div>
+                    </div>
+                    <div class="per_detail row">
+                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
+                        <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘经理 </div>
+                        <!-- <div>刘经理</div> -->
+                        <div class="center">拨打</div>
+                    </div>
+                    <div class="per_detail row">
+                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
+                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18755291160 </div>
+                        <div  class="center">拨打</div>
+                    </div>
+                    <div class="per_detail row">
+                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
+                        <div class="start-center">客服电话：400-6169-609  </div>
+                        <div  class="center">拨打</div>
+                    </div>
+                    <div class="per_detail row">
+                       <div class="start-center"> <van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
+                        <div class="start-center">客服微信：18755287073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
+                        <div  class="center">复制</div>
+                    </div>
+
                 </div>
-                <div class="recom-info center">
-                    <div class="mini-info center">
-                        Hi!,{{recomname}}邀请您成为创业合伙人，随便刷大舞台等你来创造奇迹
+            </div>
+        </transition>
+        
+        <transition name="van-slide-down">
+            <div class="buy-detail" v-if="pup2">
+                <div class="recom row">
+                    <div class="avator end-center"><img :src="recomheadimg" alt=""></div>
+                    <div class="recom-detail">
+                        <div class="recom-title start-center">上级推荐人</div>
+                        <div class="recom-name start-center">{{recomname}}</div>
+                        <div class="recom-code start-center">推荐码:{{recomcode}}</div>
+                    </div>
+                    <div class="recom-info center">
+                        <div class="mini-info center">
+                            Hi!,{{recomname}}邀请您成为创业合伙人，蜂行卡包大舞台等你来创造奇迹
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="price center">¥{{price}}</div>
-            <div class="per-title row">
-                <div class="goods-title start-center">商品名称</div>
-                <div class="goods-detail start-center">{{level}}</div>
-            </div>
-            <div class="per-title row">
-                <div class="goods-title start-center">付款类型</div>
-                <div class="goods-detail start-center">在线支付</div>
-            </div>
-            <div class="per-title row">
-                <div class="goods-title start-center">付款方式</div>
-                <div class="goods-detail row">
-                    <!-- <div class="paytype center" :class="{'wechatpay': paytype == 'wechat'}" @click="handlePayType('wechat')">
-                        <svg class="icon payicon" aria-hidden="true">
-                            <use xlink:href="#icon-wechatpay"></use>
-                        </svg>
-                        微信支付
-                    </div> -->
-                    <div class="paytypes center" :class="{'alipay': paytype == 'alipay'}" @click="handlePayType('alipay')">
-                        <svg class="icon payicon" aria-hidden="true">
-                            <use xlink:href="#icon-alipay"></use>
-                        </svg>
-                        支付宝支付
+                <div class="price center">¥{{price}}</div>
+                <div class="per-title row">
+                    <div class="goods-title start-center">商品名称</div>
+                    <div class="goods-detail start-center">{{goodsname}}</div>
+                </div>
+                <div class="per-title row">
+                    <div class="goods-title start-center">付款类型</div>
+                    <div class="goods-detail start-center">在线支付</div>
+                </div>
+                <div class="per-title row">
+                    <div class="goods-title start-center">付款方式</div>
+                    <div class="goods-detail row">
+                        <div class="paytype center" :class="{'wechatpay': paytype == 'wechat'}" @click="handlePayType('wechat')">
+                            <svg class="icon payicon" aria-hidden="true">
+                                <use xlink:href="#icon-wechatpay"></use>
+                            </svg>
+                            微信支付
+                        </div>
+                        <div class="paytypes center" :class="{'alipay': paytype == 'alipay'}" @click="handlePayType('alipay')">
+                            <svg class="icon payicon" aria-hidden="true">
+                                <use xlink:href="#icon-alipay"></use>
+                            </svg>
+                            支付宝支付
+                        </div>
                     </div>
                 </div>
+                <div class="per-title row">
+                    <div class="goods-title start-center">推荐码</div>
+                    <div class="goods-detail start-center">{{recomcode}}</div>
+                </div>
+                <div class="per-title row">
+                    <div class="goods-title start-center">上级推荐人</div>
+                    <div class="goods-detail start-center">{{recomname}}</div>
+                </div>
+                <div class="buybtn row">
+                    <van-button type="info" class="cancel" @click="handleBuyCancel">取消支付</van-button>
+                    <van-button type="info" class="submit" @click="handleBuyNow">立即支付</van-button>
+                </div>
             </div>
-            <div class="per-title row">
-                <div class="goods-title start-center">推荐码</div>
-                <div class="goods-detail start-center">{{recomcode}}</div>
-            </div>
-            <div class="per-title row">
-                <div class="goods-title start-center">上级推荐人</div>
-                <div class="goods-detail start-center">{{recomname}}</div>
-            </div>
-            <div class="buybtn row">
-                <van-button type="info" class="cancel" @click="handleBuyCancel">取消支付</van-button>
-                <van-button type="info" class="submit" @click="handleBuyNow">立即支付</van-button>
-            </div>
-        </div>
+        </transition>
+        <footerMenu :active="active" @getChange="changeActive"></footerMenu>
     </div>
 </template>
 
@@ -175,15 +206,18 @@ export default {
             pup1: false,
             pup2: false,
             price: '',
-            level: '',
+            level: '0',
             value: 5,
             value1:2, 
-            paytype: 'alipay',
+            paytype: 'wechat',
             orderid: '',
             recomname: '',
             recomcode: '',
             recomheadimg: '',
             nickname: '',
+            ispartner: '0',
+            contactus: false,
+            goodsname: '',
         }
     },
     methods:{
@@ -213,7 +247,7 @@ export default {
         // 会员充值
         handleVip(obj){
             this.price = obj;
-            obj == '928' ? this.level = '随便刷钻石会员' : this.level = '随便刷白金会员';
+            obj == '998' ? this.level = '蜂行卡包钻石会员' : this.level = '蜂行卡包黄金会员';
             this.pup1 = true;
             
         },
@@ -226,15 +260,15 @@ export default {
             this.pup1 = false;
             this.pup2 = true;
             let name = '';
-            if(this.price == '928'){
-                name = '随便刷钻石会员';
+            if(this.price == '998'){
+                name = '蜂行卡包钻石会员';
             }else{
-                name = '随便刷白金会员'
+                name = '蜂行卡包黄金会员'
             }
             let url = '/order/insertOrder';
             let params = {
                 amount: this.price,
-                name: this.level
+                name: name
             };
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
@@ -272,11 +306,11 @@ export default {
                 // 支付宝支付
                 var ua = navigator.userAgent.toLowerCase();
                 if(ua.match(/MicroMessenger/i)=="micromessenger") {
-                    window.location.href="http://sbs.91dianji.com.cn/pay.htm?orderid="+ this.orderid + '&openid='+ this.$store.state.wechat.openid
+                    window.location.href="http://fx.91dianji.com.cn/pay.htm?orderid="+ this.orderid + '&openid='+ this.$store.state.wechat.openid
                          
                 } else {
                     // 非微信浏览器
-                    window.location.href="http://sbs.91dianji.com.cn/pay.htm?orderid="+ this.orderid
+                    window.location.href="http://fx.91dianji.com.cn/pay.htm?orderid="+ this.orderid
                 } 
             }else{
                 var  params = {
@@ -286,6 +320,7 @@ export default {
                 };
                 var url = '/order/wxPayH5';
                 axiosPost(url,params).then(res =>{
+                    console.log('成功',res);
                         var radom = Math.random().toString(36).substr(2);
                         var tmp = Date.parse( new Date() ).toString();
                         tmp = tmp.substr(0,10);
@@ -299,246 +334,319 @@ export default {
                             }
                         });
                     }).catch(res =>{
+                        console.log('失败',res);
                     })
             }
+        },
+        // 查看明细
+        handleSeeDetail(obj){
+            this.$router.push({
+                path: '/middle',
+                query: {
+                    level: obj
+                }
+            })
+        },
+        // 查询个人信息
+         handlePersonalDetail(){
+            let data={
+                openid: storage.get('openid'),
+            }
+            axiosPost("/customer/getCustomer",data)
+            .then(res =>{
+                console.log('个人信息查询成功',res);
+                this.level = res.data.data.level;
+                this.ispartner = res.data.data.ispartner;
+            })
+            .catch(res =>{
+                this.$toast('查询失败');
+            })
+        },
+        // 一键升级
+        handleOneClickUp(obj){
+            console.log('一键升级',obj);
+            this.price = obj;
+            this.pup2 = true;
+            obj == '998' ? this.goodsname = '钻石会员' : this.goodsname = '黄金会员';
+            let url = '/order/insertOrder';
+            let params = {
+                amount: this.price,
+                name: this.goodsname
+            };
+            axiosPost(url,params).then(res =>{
+                console.log('下单成功',res);
+                this.orderid = res.data.data.orderid;  
+            }).catch(res =>{
+                console.log('下单失败',res);
+            })
+            
+        },
+        // 联系我们
+        handleContactUs(){
+            this.contactus = true;
+        },
+        // 关闭联系我们
+        handleCloseContactUs(){
+            this.contactus = false;
+        },
+        // 查询上级
+        handleCustomerUP(){
+            let params = {
+                recommendedcode: storage.get('code')
+            };
+            axiosPost('/customer/getCustomerUP',params).then(res =>{
+                console.log('上级查询成功',res);
+                this.recomname = res.data.data.nickname;
+                this.recomcode = res.data.data.promotioncode;
+                this.recomheadimg = res.data.data.photo;
+            }).catch(res =>{
+                console.log('上级查询失败',res);
+            })
         }
     },
     created(){
-        this.nickname = this.$store.state.wechat.nickname;
+        this.handleCustomerUP();
+        this.handlePersonalDetail();
+        console.log('信息',this.$store.state.wechat);
     },
     mounted(){
-        
     }
 }
 </script>
 
 <style lang="less" scoped>
- #vip {
-     >header {
-         width:100%;
-         background-color: #29305C;
-         text-align: center;
-         position: fixed;
-         z-index:999;
-         height:86px;
-        font-size:28px;
-        line-height: 86px;
-         color: #fff;
-     }
-     >.containt {
-         padding-top:96px;
-         padding-bottom: 46px;
-         >ul {
-             padding:20px 30px;
-             margin-bottom: 100px;
-             >li {
-                 >img {
-                     display: block;
-                     width:100%;
-                     background-color: #fff;
-                 }
-                 >.diamonds {
-                     margin-top:20px;
-                     display: flex;
-                     justify-content: space-between;
-                     >.card {
-                         font-weight: bolder;
-                         font-size: 30px;
-                         color:#000;
-                         margin-top:10px;
-                     }
-                     >.instructions {
-                         display: flex;
-                         >span {
-                             width:50%;
-                             border:2px solid #29305C;
-                             color:#29305C;
-                             padding:7px 10px 4px 10px;
-                             border-radius:8px;
-                             margin-left:20px;
-                         }
-                         .cover {
-                             width:500px;
-                            padding-top:30px;
-                            height: 700px;
-                            border-radius: 10px;
-                            padding:30px;
-                            line-height: 45px;
-                            text-align: justify;
-                            font-size: 28px;
-                            background-color: #fff;
-                            >p{
-                                &:nth-of-type(1){
-                                    color:#000;
-                                    text-align: center;
-                                    font-size: bold;
-                                    margin-bottom: 20px;
-                                    font-size: 30px;
-                                }
-                            }
-                         }
-                         .rule {
-                            width:500px;
-                            padding-top:30px;
-                            height: 700px;
-                            border-radius: 10px;
-                            padding:30px;
-                            font-size: 28px;
-                            text-align: justify;
-                            background-color: #fff;
-                            line-height: 40px;
-                            >p{
-                                &:nth-of-type(1){
-                                    color:#000;
-                                    text-align: center;
-                                    font-size: bold;
-                                    margin-bottom: 20px;
-                                    font-size: 30px;
-                                }
-                                &:nth-of-type(2){
-                                    color:#000;
-                                    line-height: 38px;
-                                }
-                            }
-                         }
-                     }
-                 }
-                 >.qualifications {
-                     margin-top:20px;
-                     display: flex;
-                     justify-content: space-between;
-                     >span {
-                          color: #29305C;
-                          background-color: #E8ECF7;
-                          padding:10px 4px;
-                          font-size: 22px;
-                          border-radius:13px;
-                     }
-                 }
-                 >.price {
-                     display: flex;
-                     margin-top:30px;
-                     justify-content: space-between;
-                     margin-bottom: 15px;
-                     >.new-price {
-                         color:#E84529;
-                         font-weight: bolder;
-                         font-size: 36px;
-                     }
-                     >.old-price {
-                         text-decoration: line-through;
-                         margin-top:10px;
-                         color:#666;
-                         font-weight: bolder;
-                         margin-left:-40%;
-                     }
-                     >.buy {
-                         color:white;
-                         background-color: #E84529;
-                         border-radius: 10px;
-                         padding:10px 20px;
-                         font-size: 22px;
-                     }
-                     >.buy-he {
-                         color:white;
-                         background-color: #DAB17D;
-                         border-radius: 10px;
-                         padding:10px 20px;
-                         font-size: 14px;
-                     }
-                 }
-             }
-         }
-     }
-     .popup{
-         width: 100%;
-         height: 100%;
-         position: fixed;
-         z-index: 2;
-         top: 0;
-         left: 0;
-         background: rgba(0, 0, 0, 0.4);
-         .pop-detail{
-             width: 80%;
-             height: 62%;
-             background: white;
-             .reminder{
-                 width: 100%;
-                 height: 100px;
-                 font-size: 38px;
-                 font-weight: bold;
-             }
-             .level{
-                 width: 80%;
-                 height: 80px;
-                 margin-left: auto;
-                 margin-right: auto;
-                 margin-top: 20px;
-                 font-size: 28px;
-                 font-weight: bold;
-                 >span{
-                     width: auto;
-                     height: 80px;
-                     color: #DAB17D;
-                 }
-             }
-             .desc{
-                 width: 90%;
-                 height: auto;
-                 margin-left: auto;
-                 margin-right: auto;
-                 >ul{
-                     list-style: none;
-                     .van-rate{
-                         float: left;
-                     }
-                     >li{
-                         font-size: 28px;
-                         width: 90%;
-                         height: auto;
-                         margin-top: 20px;
-                         margin-left: auto;
-                         margin-right: auto;
-                        list-style: none; 
-                        line-height: 40px;
-                     }
-                 }
-                 .tips{
-                     width: 80%;
-                     height: auto;
-                     margin-left: auto;
-                     margin-right: auto;
-                     clear: both;
-                     margin-top: 80px;
-                     font-size: 24px;
-                 }
-             }
-             .button{
-                 width: 80%;
-                 height: 80px;
-                 margin-left: auto;
-                 margin-right: auto;
-                 margin-top: 50px;
-                 .cancel{
-                     width: 40%;
-                     height: 100%;
-                     background: #ccc;
-                     color: #666;
-                     font-size: 28px;
-                 }
-                 .submit{
-                     width: 40%;
-                     height: 100%;
-                     margin-left: 20%;
-                    //  background: linear-gradient(90deg,#29305C,#6883C1);
-                    background-color: #29305C;
-                     color: #fff;
-                     font-size: 28px;
-                 }
-             }
-         }
-     }
-     .buy-detail{
+#page_vip{
+    width: 100vw;
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    .header{
+        width: 100%;
+	    height: 460px;
+        background-image: linear-gradient(180deg, #f7cf6c 0%, #fdba38 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal, normal;
+        .vip_icon{
+            width: 100%;
+            height: 73%;
+            padding-top: 2%;
+            img{
+                width: 170px;
+                height: auto;
+            }
+        }
+        .vip_title{
+            width: 100%;
+            height: 25%;
+            >span{
+                display: inline-block;
+                width: 260px;
+                height: 80px;
+                background: url('http://fx.91dianji.com.cn/fengxing_vipbg.png') center center no-repeat;
+                background-size: contain;
+                text-align: center;
+                line-height: 80px;
+                font-size: 26px;
+                font-weight: normal;
+                font-stretch: normal;
+                letter-spacing: 1.2px;
+                color: #ffffff;
+            }
+        }
+    }
+    .level{
+        width: 100%;
+	    height: 120px;
+        background-image: linear-gradient(180deg, #f7cf6c 0%, #fdba38 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal, normal;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .goods_list{
+        width: 100%;
+        .fensi{
+            background-image: linear-gradient(100deg, #fe7d64 0%, #ff3f2b 100%), linear-gradient(#4f60c8, #4f60c8);
+        }
+        .huangjin{
+            background-image: linear-gradient(100deg, #bb8e6b 0%, #9b6130 100%), linear-gradient(#4f60c8, #4f60c8);
+        }
+        .zuanshi{
+            background-image: linear-gradient(100deg, #ebc25c 0%, #d89423 100%), linear-gradient(#4f60c8, #4f60c8);
+        }
+        .hehuoren{
+            background-image: linear-gradient(100deg, #fea563 0%, #ff872f 50%, #ff6d00 100%), linear-gradient(#4f60c8, #4f60c8);
+        }
+        .yunyingshang{
+            background-image: linear-gradient(100deg, #fcc53d 0%, #ffa800 100%), linear-gradient(#4f60c8, #4f60c8);
+        }
+        .per_goods{
+            width: 95%;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            background-blend-mode: normal, normal;
+            box-shadow: -7.3px 3.3px 16px 0px rgba(0, 0, 0, 0.22);
+            border-radius: 20px;
+            border: solid 3px #ffffff;
+            margin-top: 20px;
+            position: relative;
+            .icon{
+                width: 100px;
+                height: 200px;
+                position: absolute;
+                top: 20px;
+                left: 30px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .title{
+                position: absolute;
+                right: 30px;
+                top: 50px;
+                color: #ffffff;
+                font-size: 32px;
+            }
+            .price{
+                position: absolute;
+                right: 30px;
+                top: 110px;
+                color: #ffffff;
+                font-size: 32px;
+            }
+            // 一键升级可点击
+            .upgrade{
+                width: 160px;
+                height: 54px;
+                padding: 7px;
+                position: absolute;
+                right: 220px;
+                top: 160px;
+                text-align: center;
+                line-height: 100px;
+                color: #333333;
+                font-size: 28px;
+                background: url('http://fx.91dianji.com.cn/fengxing_up.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+            // 一键升级禁用
+            .upgrade_dine{
+                width: 160px;
+                height: 54px;
+                padding: 7px;
+                position: absolute;
+                right: 220px;
+                top: 160px;
+                text-align: center;
+                line-height: 100px;
+                color: #333333;
+                font-size: 28px;
+                background: url('http://fx.91dianji.com.cn/fengxing_jinyong.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .nowlevel{
+                width: 160px;
+                height: 90px;
+                text-align: center;
+                line-height: 100px;
+                padding: 7px;
+                position: absolute;
+                right: 220px;
+                top: 138px;
+                color: #000;
+                font-size: 28px;
+                background: url('http://fx.91dianji.com.cn/fengxing_nowlevel.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+            // 合伙人以及运营商的当前等级
+            .nowlevel_special{
+                width: 160px;
+                height: 90px;
+                text-align: center;
+                line-height: 100px;
+                padding: 7px;
+                position: absolute;
+                left: 150px;
+                top: 138px;
+                color: #000;
+                font-size: 28px;
+                background: url('http://fx.91dianji.com.cn/fengxing_nowlevel.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .detail{
+                width: 160px;
+                height: 54px;
+                padding: 10px;
+                position: absolute;
+                right: 30px;
+                top: 155px;
+                color: #000;
+                font-size: 28px;
+                background: url('http://fx.91dianji.com.cn/fengxing_mingxi_icon@2x.png') center center no-repeat;
+                background-size: 100% 100%;
+            }
+            .desc{
+                width: 100%;
+                height: 100px;
+                background: rgba(0, 0, 0, 0.18);
+                position: absolute;
+                left: 0px;
+                bottom: 0px;
+                display: flex;
+                display: -webkit-flex;
+                justify-content: space-around;
+                -webkit-justify-content: space-around;
+                >div{
+                    height: 100%;
+                    color: #ffffff;
+                    font-size: 26px;
+                    line-height: 100px;
+                }
+            }
+        }
+    }
+    .contactus{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        background: rgba(0, 0, 0, 0.3);
+        .fade{
+            width: 87%;
+            height: 551px;
+            background-image: linear-gradient(#434460, #434460), linear-gradient(#ffffff, #ffffff);
+            background-blend-mode: normal, normal;
+            border-radius: 10px;
+            border: solid 1px #ffffff;
+            .title{
+                width: 80%;
+                height: 80px;
+                border-bottom: solid 1px #fff;
+                margin: 40px auto auto auto;
+                color: #fff;
+                font-size: 34px;
+                font-weight: 700;
+            }
+            .per_detail{
+                width: 90%;
+                height: 80px;
+                margin: auto;
+                color: #fff;
+                div:nth-child(1){
+                    width: 10%;
+                    height: 100%;
+                }
+                div:nth-child(2){
+                    width: 80%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .buy-detail{
          width: 100%;
          height: 100%;
          position: fixed;
@@ -677,5 +785,6 @@ export default {
             }
         }
      }
- }
+}
+ 
 </style>

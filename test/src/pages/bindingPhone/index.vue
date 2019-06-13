@@ -206,9 +206,11 @@ export default {
                     font-size: 28px;
                     .codebtn{
                         padding: 15px;
-                        background: #29305C;
+                        background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                        background-blend-mode: normal,normal;
                         color: white;
                         border-radius: 40px;
+                        border: none;
                     }
                 }
             }

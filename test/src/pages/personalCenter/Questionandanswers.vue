@@ -81,7 +81,7 @@ export default {
     },
     methods:{
         handleReturnHome() {
-            this.$router.push({path:'/personalCenter'})
+            this.$router.go(-1);
         },
     }
 }
@@ -93,7 +93,8 @@ export default {
         padding-top: 90px;
         padding-bottom: 50px;
         .header-top {
-            background-color: #29305c; 
+            background-image: linear-gradient(156deg, #f7cf6c 0%, #fbbc36 0%, #ffa800 100%), linear-gradient(#0000ff, #0000ff);
+	        background-blend-mode: normal, normal;
         }
         .big-title{
             width: 96%;

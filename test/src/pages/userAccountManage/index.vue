@@ -25,7 +25,7 @@
          </router-link>
         <router-link tag="div" to="/personalCenter/incomedetail/addcard" class="per-menu  row">
             <div class="icon start-center"><i class="iconfont icon-yinhangqia"></i></div>
-            <div class="menu-name start-center">银行卡</div>
+            <div class="menu-name start-center">我的储蓄卡</div>
             <div class="insert-icon center"><i class="iconfont icon-more"></i></div>
         </router-link>
         <router-link tag="div" class="per-menu row" :to="{path: '/personalCenter/income',query:{amountSum: amountSum}}">
@@ -45,7 +45,7 @@
         </router-link>
         <!-- <div class="agree row">
             <div class="checkbox"><van-checkbox v-model="checked" shape="square" checked-color="rgb(133, 107, 48)"></van-checkbox></div>
-            <div class="check-title">我已认真阅读<span>《随便刷平台推广规范》</span>,认同平台的经营模式,并且自愿接受协议中的条款</div>
+            <div class="check-title">我已认真阅读<span>《蜂行卡包平台推广规范》</span>,认同平台的经营模式,并且自愿接受协议中的条款</div>
         </div> -->
     </div>
 </template>
@@ -87,11 +87,12 @@ export default {
         background: #F7F7F9;
         padding-top: 86px;
         .header-top{
-          background: #29305C;
+            background:#f7cf6c;
+            background-blend-mode: normal,normal;
         }
         .header-bottom{
-        //   background: linear-gradient(#29305C,#6883C1);
-        background-color: #29305C;
+        background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
             .personalCenter{
                 width: 100vw;
                 height:200px;
