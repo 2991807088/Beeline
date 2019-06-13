@@ -20,16 +20,16 @@
                 <div class="title start-center van-hairline--bottom">海报分享</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
-            <div class="per_menu row">
+            <router-link tag="div" :to="{path: '/picture',query: {title: 'tuiguang'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_tuiguang.png"/></div>
                 <div class="title start-center van-hairline--bottom">信用卡图推广</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
-            </div>       
-            <div class="per_menu row">
+            </router-link>       
+            <router-link tag="div" :to="{path: '/picture',query: {title: 'sucai'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_sucai.png"/></div>
                 <div class="title start-center van-hairline--bottom">推广素材图</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
-            </div>
+            </router-link>
         </div>
         <footerMenu :active="active" @getChange="changeActive"></footerMenu>
     </div>
@@ -66,7 +66,7 @@ export default {
         overflow-x: hidden;
         .header{
             width: 100%;
-            height: 900px;
+            height: 980px;
             background: #ffa800;
             position: relative;
             z-index: 1;
@@ -118,17 +118,17 @@ export default {
                 right: 0px;
                 z-index: 3;
                 img:nth-child(1){
-                    width: 80%;
+                    width: 90%;
                     height: auto;
                     animation: myMove1 4s linear infinite normal;
                     -webkit-animation: myMove1 4s linear infinite normal;
                 }
                 img:nth-child(2){
-                    width: 120px;
+                    width: 140px;
                     height: auto;
                     position: absolute;
                     z-index: 2;
-                    top: 232px;
+                    top: 260px;
                 }
                 @keyframes myMove1 {
                     from {transform: rotate(360deg);}

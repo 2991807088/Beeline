@@ -387,7 +387,7 @@ export default {
 <style lang="less">
    #collect {
        >header {
-           background-color: #29305C;
+           background: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -473,7 +473,8 @@ export default {
                    font-size: 28px;
                }
                .van-button--default{
-                   background-color: #29305C;
+                   background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
                }
            }
            .van-actionsheet__item {

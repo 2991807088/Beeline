@@ -126,7 +126,7 @@ export default {
 <style lang="less">
    #business-card {
        >header {
-           background: #000;
+           background: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;

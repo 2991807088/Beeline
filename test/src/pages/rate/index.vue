@@ -55,7 +55,7 @@ export default {
           line-height: 86px;
           font-size:28px;
           padding-top:10px;
-          background-color:#29305C;
+          background: #ffa800;
           color:#fff;
           z-index:999;
           display: flex;

@@ -133,6 +133,8 @@ import radar from '@/pages/financialCircle/radar'
 import Evaluation from '@/pages/home/Evaluation'
 import help from '@/pages/help/index'
 import myrate from '@/pages/personalCenter/rate'
+// 信用卡推广图
+import pictures from '@/pages/financialCircle/picture'
 
 export default new Router({
   mode:"hash",
@@ -237,5 +239,6 @@ export default new Router({
     {path: '/Evaluation',component: Evaluation},
     {path: '/help',component: help},
     {path: '/myrate',component: myrate},
+    {path: '/picture',component: pictures},
   ]
 })

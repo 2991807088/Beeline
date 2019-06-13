@@ -110,19 +110,19 @@
                     <span>18755291160</span>
                     <span>刘经理</span>
                 </div>
-                <div class="btn center">拨打</div>
+                <div class="btn center"><span><a href="tel:18755291160">拨打</a></span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin_active.png"/></div>
                 <div class="contact_title">微信号码:</div>
-                <div class="contact_detail">18755291160</div>
-                <div class="btn center">复制</div>
+                <div class="contact_detail start-center" id="mobile">18755291160</div>
+                <div class="btn center"><span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18755287073')">复制</span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zuoji_active.png"/></div>
                 <div class="contact_title">客服电话:</div>
                 <div class="contact_detail start-center">400-6169-609</div>
-                <div class="btn center">拨打</div>
+                <div class="btn center"><span><a href="tel:400-6169-609">拨打</a></span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin_active.png"/></div>
@@ -131,7 +131,7 @@
                     <span>18755287073</span>
                     <span>刘经理</span>
                 </div>
-                <div class="btn center">拨打</div>
+                <div class="btn center"><span><a href="tel:18755287073">拨打</a></span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_youxiang_active.png"/></div>
@@ -149,6 +149,7 @@
 </template>
 <script>
 import loading from'@/components/loading'
+import ClipboardJS from "clipboard";
 export default {
     components: {
         loading
@@ -171,6 +172,24 @@ export default {
                     info: obj
                 }
             })
+        },
+        handleCopy(data){
+            var that = this;
+            var clipboard = new ClipboardJS('.test');
+            //成功回调
+            clipboard.on('success', function(e) {
+                that.$toast('复制成功');
+                console.info('Action:', e.action);
+                console.info('Text:', e.text);
+                console.info('Trigger:', e.trigger);  
+                e.clearSelection();
+            });
+            //失败回调
+            clipboard.on('error', function(e) {
+                console.error('Action:', e.action);
+                console.error('Trigger:', e.trigger);
+                that.$toast('复制失败');
+            });
         }
     },
     created(){
@@ -280,7 +299,7 @@ export default {
             }
             .contact_us{
                 width: 100%;
-                height: 50px;
+                height: 60px;
                 font-size: 26px;
                 .icon{
                     width: 5%;
@@ -315,6 +334,18 @@ export default {
                     width: 25%;
                     height: 100%;
                     line-height: 50px;
+                    color: #fff;
+                    span{
+                        width: 80px;
+	                    height: 36px;
+                        background: #005e15;
+                        border-radius: 4px;
+                        text-align: center;
+                        line-height: 36px;
+                        a{
+                            color: #fff;
+                        }
+                    }
                 }
 
 

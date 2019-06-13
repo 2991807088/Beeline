@@ -169,7 +169,7 @@ export default {
     position: relative;
     .header{
         width: 100%;
-        height: 40%;
+        height: 43%;
         background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
         background-blend-mode: normal,normal;
         position: relative;
@@ -193,7 +193,7 @@ export default {
         }
         .middle{
             width: 100%;
-            height: 48%;
+            height: 50%;
             padding-top: 2%;
             .avator{
                 width: 300px;
@@ -240,14 +240,14 @@ export default {
         }
         .bottom{
             width: 85%;
-            height: calc(40% - 20px);
+            height: calc(38% - 20px);
             border-top: solid 1px #ffffff;
             margin-left: auto;
             margin-right: auto;
             margin-top: 20px;
             .detail{
                 width: calc(100% / 3);
-                height: 80%;
+                height: 60%;
                 .title{
                     width: 100%;
                     height: 40%;
@@ -270,7 +270,7 @@ export default {
         border-radius: 10px;
         position: absolute;
         left: 5%;
-        top: 37%;
+        top: 40%;
         display: flex;
         display: -webkit-flex;
         justify-content: space-around;
@@ -302,7 +302,7 @@ export default {
     }
     .menus{
         width: 100%;
-        height: calc((60vh - 150px));
+        height: calc((57vh - 150px));
         margin-top: 80px;
         .kong{
             width: 100%;

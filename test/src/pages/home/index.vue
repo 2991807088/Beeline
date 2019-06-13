@@ -20,7 +20,7 @@
                 <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt="">
             </div>
             <router-link tag="div" class="pannel-detail center" to="/personalCenter/contactus">
-                <van-notice-bar text="现成为928会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
+                <van-notice-bar text="现成为998会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
             </router-link>
         </div>
         <div class="menus van-hairline--top">
@@ -89,7 +89,7 @@
                 
             </div>
         </div>
-        <div class="guarantee center">账户安全由中国人寿财产保险承保</div>
+        <div class="guarantee center"><van-icon name="http://fx.91dianji.com.cn/fengxing_dun.png"/>&nbsp;账户安全由中国人寿财产保险承保</div>
         <div class="container">
             
            
@@ -222,37 +222,37 @@ export default {
             this.showAaside=false
         },
          // 自动登录
-        automatic(){
-            let data={
-                 mobile:storage.get('username'),
-                 password:storage.get('password')
-            }
-             axiosPost("/customer/login",data) 
-             .then(res=>{
-                if(!res.data.success){
-                     this.$router.push("/logIn");
-                    //  this.$toast('登录失败');
-                }else {
-                    // console.log(res,"自动登录成功")
-                    this.$store.commit('iscertification',res.data.data.iscertification);
-                    this.$store.commit('level',res.data.data.level);
-                    this.$store.commit('promotioncode',res.data.data.promotioncode);
-                    this.$store.commit('mobile',res.data.data.mobile);
-                    this.$store.commit('vip',res.data.data.vip);
-                    this.$store.commit('recommendedcode',res.data.data.recommendedcode);
-                    this.$store.commit('amount',res.data.data.amount);
-                    this.$store.commit('openid',res.data.data.openid);
-                    this.$store.commit('nickname',res.data.data.nickname);
-                    this.$store.commit('headimg',res.data.data.photo);
-                    this.headimg=res.data.data.photo
-                    this.nickname=res.data.data.nickname
-                    this.$store.commit('city',res.data.data.city);
-                }
-             })
-             .catch(err=>{
+        // automatic(){
+        //     let data={
+        //          mobile:storage.get('username'),
+        //          password:storage.get('password')
+        //     }
+        //      axiosPost("/customer/login",data) 
+        //      .then(res=>{
+        //         if(!res.data.success){
+        //              this.$router.push("/logIn");
+        //             //  this.$toast('登录失败');
+        //         }else {
+        //             // console.log(res,"自动登录成功")
+        //             this.$store.commit('iscertification',res.data.data.iscertification);
+        //             this.$store.commit('level',res.data.data.level);
+        //             this.$store.commit('promotioncode',res.data.data.promotioncode);
+        //             this.$store.commit('mobile',res.data.data.mobile);
+        //             this.$store.commit('vip',res.data.data.vip);
+        //             this.$store.commit('recommendedcode',res.data.data.recommendedcode);
+        //             this.$store.commit('amount',res.data.data.amount);
+        //             this.$store.commit('openid',res.data.data.openid);
+        //             this.$store.commit('nickname',res.data.data.nickname);
+        //             this.$store.commit('headimg',res.data.data.photo);
+        //             this.headimg=res.data.data.photo
+        //             this.nickname=res.data.data.nickname
+        //             this.$store.commit('city',res.data.data.city);
+        //         }
+        //      })
+        //      .catch(err=>{
 
-             })
-        },
+        //      })
+        // },
         signOut(){
             this.$dialog.confirm({
                     title: '提示',

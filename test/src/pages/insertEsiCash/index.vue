@@ -159,7 +159,7 @@ export default {
 <style lang="less">
    #insert-esicash {
        >header {
-            background: #4B66AF;
+            background: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;

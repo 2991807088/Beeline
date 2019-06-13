@@ -8,8 +8,8 @@
                 </div>
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
-        <div class="btn row">
-            <div @click="handlechangeRandom" class="change center">换一换</div>
+        <div class="btn ">
+            <!-- <div @click="handlechangeRandom" class="change center">换一换</div> -->
             <div @click="handlePrivacySettings" class="rightnow center">隐私设置</div>
             <div @click="savePoster" class="rightnow center">立即合成</div>
         </div>
@@ -18,11 +18,11 @@
                 <!-- <van-button  class="shareBtn" @click="Sharewxf=true" type="default">分享</van-button> -->
                     <ul>
                         <li id="wxF"  @click="wxfri">
-                            <p><van-icon name="http://sbs.91dianji.com.cn/wx.png" size="40px"/></p>
+                            <p><van-icon name="http://fx.91dianji.com.cn/wx.png" size="40px"/></p>
                             <p>分享给好友</p>
                         </li>
                         <li @click="wxcir">
-                            <p><van-icon color="white"  size="40px"  name="http://sbs.91dianji.com.cn/pyq.png"/></p>
+                            <p><van-icon color="white"  size="40px"  name="http://fx.91dianji.com.cn/pyq.png"/></p>
                             <p>分享到朋友圈</p>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@ export default {
             showUpload:true,
             imgUrl: '',
             imgShow: false,
-            url: 'http://sbs.91dianji.com.cn',
+            url: 'http://fx.91dianji.com.cn',
             qrcode: '',
             random: '01',
              shares:null,
@@ -111,9 +111,9 @@ export default {
               let that=this
           that.sharewx.send(
                 { content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
-                thumbs:["http://sbs.91dianji.com.cn/sbs.jpg"],
+                thumbs:["http://fx.91dianji.com.cn/sbs.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
-                 href: "http://sbs.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
+                 href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
                 , function(){
                 // alert("分享成功！");
             }, function(e){
@@ -125,9 +125,9 @@ export default {
              that.sharewx.send(
                  { 
                      content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
-                     thumbs:["http://sbs.91dianji.com.cn/sbs.jpg"],
+                     thumbs:["http://fx.91dianji.com.cn/sbs.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],
-                     href: "http://sbs.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode,
+                     href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode,
                      extra: { scene: "WXSceneSession" } 
                  }, function () {
             // alert("分享成功！");
@@ -175,7 +175,7 @@ export default {
 
             var bigPoster = new Image();
             
-            bigPoster.src = 'http://sbs.91dianji.com.cn/pop'+ this.random +'.jpg';
+            bigPoster.src = 'http://fx.91dianji.com.cn/pop'+ this.random +'.jpg';
             bigPoster.onload = function(){
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
@@ -184,7 +184,7 @@ export default {
             };
             
             var qrcode = new Image();
-            qrcode.src = 'http://sbs.91dianji.com.cn/' + this.qrcode;
+            qrcode.src = 'http://fx.91dianji.com.cn/' + this.qrcode;
             qrcode.onload = function(){
                 ctx.drawImage(qrcode,10,610,50,50);
             };
@@ -204,7 +204,7 @@ export default {
 
             var bigPoster = new Image();
             
-            bigPoster.src = 'http://sbs.91dianji.com.cn/pop'+ this.random +'.jpg';
+            bigPoster.src = 'http://fx.91dianji.com.cn/pop'+ this.random +'.jpg';
             bigPoster.onload = function(){
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
@@ -213,7 +213,7 @@ export default {
             };
             
             var qrcode = new Image();
-            qrcode.src = 'http://sbs.91dianji.com.cn/' + this.qrcode;
+            qrcode.src = 'http://fx.91dianji.com.cn/' + this.qrcode;
             qrcode.onload = function(){
                 ctx.drawImage(qrcode,300,610,50,50);
             };
@@ -318,7 +318,7 @@ export default {
        height: calc(100vh - 100px);
        background: #F2F2F2;
        .header-top {
-            background-color: #29305c; 
+            background:#ffa800 #ffa800;
         }
        .poster-canvas{
            width: 100%;
@@ -335,18 +335,24 @@ export default {
            margin-right: auto;
            font-size: 28px;
            margin-top: -50px;
+           display: flex;
+            display: -webkit-flex;
+            justify-content: space-between;
+            -webkit-justify-content: space-between;
            .change{
-               width: 30%;
+               width: 40%;
                height: 100%;
-               background: #29305C;
+               background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
                color: #ffffff;
                border-radius: 20px;
            }
            .rightnow{
-               width: 30%;
+               width: 40%;
                height: 100%;
                margin-left: 5%;
-                background: #29305C;
+                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+        background-blend-mode: normal,normal;
                 color: #ffffff;
                 border-radius: 20px;
             }

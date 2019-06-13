@@ -248,8 +248,7 @@ export default {
        background-color: #E2E3E5;    
        padding-bottom: 80px;
        >header {
-            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
-            background-blend-mode: normal,normal;
+            background: #ffa800;
             width:100%;
             height: 86px;
             line-height: 86px;

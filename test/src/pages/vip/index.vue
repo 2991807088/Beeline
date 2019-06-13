@@ -83,7 +83,7 @@
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt=""></div>
                 <div class="title">城市运营商</div>
                 <div class="price">¥28000.00——¥188000.00</div>
-                <div class="upgrade center" v-if="level != ''" @click="handleContactUs">联系我们</div>
+                <div class="upgrade center" @click="handleContactUs">联系我们</div>
                 <div class="detail center" @click="handleSeeDetail('4')">查看明细</div>
                 <div class="desc">
                     <div>品牌独立</div>
@@ -100,30 +100,38 @@
                 <div class="fade">
                     <div class="title start-center">联系我们</div>
                     <div class="per_detail row">
-                       <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_fuwushijian.png"/></div>
+                       <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_fuwushijian.png"/></div>
                         <div class="start-center">服务时间： 周一至周日（09：00-22：00）</div>
                         <div></div>
                     </div>
                     <div class="per_detail row">
-                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
+                        <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                         <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘经理 </div>
                         <!-- <div>刘经理</div> -->
-                        <div class="center">拨打</div>
+                        <div class="btn center">
+                            <span><a href="tel:18755291160">拨打</a></span>
+                        </div>
                     </div>
                     <div class="per_detail row">
-                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
+                        <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                         <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18755291160 </div>
-                        <div  class="center">拨打</div>
+                        <div  class="btn center">
+                            <span><a href="tel:18755291160">拨打</a></span>
+                        </div>
                     </div>
                     <div class="per_detail row">
-                        <div class="start-center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
+                        <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
                         <div class="start-center">客服电话：400-6169-609  </div>
-                        <div  class="center">拨打</div>
+                        <div  class="btn center">
+                            <span><a href="tel:400-6169-609">拨打</a></span>
+                        </div>
                     </div>
                     <div class="per_detail row">
-                       <div class="start-center"> <van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center">客服微信：18755287073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
-                        <div  class="center">复制</div>
+                       <div class="start-center"> <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
+                        <div class="start-center" id="mobile">客服微信：18755287073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
+                        <div  class="btn center">
+                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18755287073')">复制</span>
+                        </div>
                     </div>
 
                 </div>
@@ -192,7 +200,8 @@
 <script>
 import storage from '@/lib/storage'
 import footerMenu from '@/components/footer'
-import { axiosPost } from '../../lib/http';
+import { axiosPost } from '../../lib/http'
+import ClipboardJS from "clipboard";
 export default {
     components: {
         footerMenu
@@ -221,6 +230,24 @@ export default {
         }
     },
     methods:{
+        handleCopy(data){
+            var that = this;
+            var clipboard = new ClipboardJS('.test');
+            //成功回调
+            clipboard.on('success', function(e) {
+                that.$toast('复制成功');
+                console.info('Action:', e.action);
+                console.info('Text:', e.text);
+                console.info('Trigger:', e.trigger);  
+                e.clearSelection();
+            });
+            //失败回调
+            clipboard.on('error', function(e) {
+                console.error('Action:', e.action);
+                console.error('Trigger:', e.trigger);
+                that.$toast('复制失败');
+            });
+        },
          // 返回首页
         handleReturnHome(){
             this.$router.push({
@@ -635,6 +662,7 @@ export default {
                 height: 80px;
                 margin: auto;
                 color: #fff;
+                font-size: 26px;
                 div:nth-child(1){
                     width: 10%;
                     height: 100%;
@@ -642,6 +670,19 @@ export default {
                 div:nth-child(2){
                     width: 80%;
                     height: 100%;
+                }
+                .btn{
+                    span{
+                        width: 80px;
+                        height: 36px;
+                        background-color: #005e15;
+                        border-radius: 4px;
+                        text-align: center;
+                        line-height: 36px;
+                        a{
+                            color: #fff;
+                        }
+                    }
                 }
             }
         }
