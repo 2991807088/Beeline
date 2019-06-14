@@ -131,7 +131,7 @@
                     <span>18755287073</span>
                     <span>刘经理</span>
                 </div>
-                <div class="btn center"><span><a href="tel:18755287073">拨打</a></span></div>
+                <div class="btn center"><span   @click="handleCopy('18755287073')">复制</span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_youxiang_active.png"/></div>
@@ -179,9 +179,9 @@ export default {
             //成功回调
             clipboard.on('success', function(e) {
                 that.$toast('复制成功');
-                console.info('Action:', e.action);
-                console.info('Text:', e.text);
-                console.info('Trigger:', e.trigger);  
+                // console.info('Action:', e.action);
+                // console.info('Text:', e.text);
+                // console.info('Trigger:', e.trigger);  
                 e.clearSelection();
             });
             //失败回调

@@ -3,7 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>商户申请</span>
-            <router-link to="/home/news" tag="span">操作说明</router-link>
+            <router-link to="/home/news" tag="span">操作视频</router-link>
         </header>
         <div class="container">
            <div class="phone">

@@ -751,6 +751,7 @@ export default {
                       .van-button--info {
                           background-color: #fff;
                         //   border-color: #fcc53d;
+                        border-color: #ffa800;
                           color:#ffa800;
                       }
                       .cover {
@@ -903,6 +904,7 @@ export default {
                margin-top:150px;
                padding:0 20px;
                display: flex;
+               margin-bottom: 50px;
                justify-content: space-between;
                >button {
                    &:nth-of-type(1){

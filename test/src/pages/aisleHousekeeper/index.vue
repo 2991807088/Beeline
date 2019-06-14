@@ -454,8 +454,10 @@ export default {
                       width:100%;
                       border-radius: 10px;
                       .van-button--info {
-                          background-color: #ffa800;
-                          border-collapse: #ffa800;
+                          background-color: #fff;
+                        //   border-collapse: #ffa800;
+                        color:#ffa800;
+                        
                       }
                       .pop {
                           position: absolute;
@@ -483,7 +485,7 @@ export default {
                        box-sizing: border-box;
                        margin-bottom: 15px;
                     //    background-image:url("http://sbs.91dianji.com.cn/big2.png");
-                    background-color: pink;
+                    background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         height: 350px;
                         background-repeat: no-repeat;
                        background-size:100%;

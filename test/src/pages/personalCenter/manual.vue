@@ -11,69 +11,72 @@
             
             <div class="small-title">
                 （1）侧边栏：点击可完善个人资料，展示个人信息</br>
-                （2）特色功能区：此版块包括平台特色功能，用户可在此版块进行征信查询、收益明细、升级等通道</br>
-                （3）金融通道：平台与银行合作的功能区，用户可在此申请办理信用卡、精养代还、空卡代还等功能</br>
-                （4）精品功能：平台的精品功能区，可在此办理保险、在线贷款等业务</br>
-                （5）底部栏：可快速进入相应的功能页面</br>
+                （2）主要功能区：此版块包括平台最重要功能，用户可在此版块进行在线收款、智能还款</br>
+                （3）精品功能区：平台与银行合作的功能区，用户可在此享受申请办理信用卡、在线贷款、征信查询等功能</br>
+                （4）底部栏：可快速进入相应的功能页面</br>
             </div>
 
-            <div class="big-title">升级</div>
+            <div class="big-title">VIP</div>
             <div class="small-title">
-                会员升级区：用户可在此页面根据自身需求选择需要升级的会员身份
+               会员升级区：用户可在此页面根据自身需求选择需要升级的会员身份
             </div>
 
             <div class="big-title">个人中心</div>
             <div class="small-title">
                 （1）个人信息区：显示个人资料。并在此修改个人资料</br>
-                （2）重要功能区：用户可在此进行账户管理、生成推广海报、查看上级推荐人、积分抽奖、查看业绩排行榜、邀请好友的功能</br>
-                （3） 实用工具区：用户可在此功能区查看流程说明、退款说明及使用手册</br>
+                （2）重要功能区：用户可在此进行账户管理、查看收益、余额以及分润</br>
+                （3）实用工具区：用户可在此功能区进行实名认证、绑定银行卡，查看我的账户和费率，在帮助中心中可以找到解决您一切问题的办法。</br>
             </div>
 
-            <div class="big-title">金融圈</div>
+            <div class="big-title">卡包</div>
             <div class="small-title">
-                金融圈：用户在此功能区查看附近的行业精英，人脉转换为财脉。</br>
+               在卡包中可查看自己的信用卡，以及信用卡的还款欠款金额。</br>
             </div>
 
-            <div class="big-title">分享</div>
+            <div class="big-title">AI雷达</div>
             <div class="small-title">
-            （1）推广信息展示：此版块显示您的推广锁粉等粉丝信息</br>
-            （2）推广信息展示：此版块为营销工具促进会员推广效率，降低营销成本</br>
+            （1）此版块显示您的推广锁粉等粉丝信息</br>
+            （2）此版块为营销工具促进会员推广效率，降低营销成本</br>
             </div>
 
             <div class="big-title">首页</div>
             <div class="small-title">
-                <div class="per-bold-content"><span class="bold-title">收益明细：</span>在平台首页特色功能区点击（收支明细）进入详情页面，可在此页面查看你的收益信息</br></div>
-                <div class="per-bold-content"><span class="bold-title">我的消息：</span>在平台首页特色功能区点击（消息）进入详情页面，可查看系统公告及佣金信息等推送消息</br></div>
-                <div class="per-bold-content"><span class="bold-title">征信查询：</span>在平台首页特色功能区点击（征信查询）进入详情页面，可在此页面查询大数据+运营商信用报告</br></div>
+                <div class="per-bold-content"><span class="bold-title">在线收款：</span>在平台首页主要功能区点击（在线收款）进入详情页面，可在此页面查看费率、交易记录等</br></div>
+                <div class="per-bold-content"><span class="bold-title">智能还款：</span>在平台首页主要功能区点击（智能还款）进入详情页面，可在此页面设定您的还款计划</br></div>
+                <div class="per-bold-content"><span class="bold-title">征信查询：</span>在平台首页精品功能区点击（征信查询）进入详情页面，可在此页面查询大数据+运营商信用报告</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡办理：</span>在平台首页金融功能区点击（信用卡办理）进入详情页面，可在此页面申请办理信用卡</br></div>
-                <div class="per-bold-content"><span class="bold-title">商户收款：</span>在平台首页金融通道功能区点击（商户收款）进入详情页面，可在此页面查看费率、交易记录等</br></div>
-                <div class="per-bold-content"><span class="bold-title">我要贷款：</span>在平台首页金融通道功能区点击（我要贷款）进入详情页面，可在此页面贷款</br></div>
-                <div class="per-bold-content"><span class="bold-title">信用卡管家：</span>在平台首页金融通道功能区点击（信用卡管家）进入详情页面，可在此页面设定您的还款计划</br></div>
-
-                <div class="per-bold-content"><span class="bold-title">授权分润：</span>在平台首页精品功能区点击（授权分润）进入详情页面，可在此页面给实习会员设置分润</br></div>
+                <div class="per-bold-content"><span class="bold-title">在线收款：</span>在平台首页金融通道功能区点击（在线收款）进入详情页面，可在此页面查看费率、交易记录等</br></div>
+                <div class="per-bold-content"><span class="bold-title">我要贷款：</span>在平台首页金融通道功能区点击（我要贷款）进入详情页面，可在此页面贷款获取佣金</br></div>
                 <div class="per-bold-content"><span class="bold-title">汽车保险：</span>在平台首页精品功能区点击（汽车保险）进入详情页面，可在此页面办理汽车保险</br></div>
-                <div class="per-bold-content"><span class="bold-title">发圈素材：</span>在平台首页精品功能区点击（发圈素材）进入详情页面，可在此页面获取素材发朋友圈获得奖金</br></div>
-                <div class="per-bold-content"><span class="bold-title">排行榜：</span>在平台首页精品功能区点击（排行榜）进入详情页面，可在此页面进行业务排名查看</br></div>
                 <div class="per-bold-content"><span class="bold-title">意外险：</span>在平台首页精品功能区点击（意外险）进入详情页面，可在此页面在线办理意外险</br></div>
                 <div class="per-bold-content"><span class="bold-title">提额秘籍：</span>在平台首页精品功能区点击（提额秘籍）进入详情页面，可在此页面查看信用卡提额攻略</br></div>
-                <div class="per-bold-content"><span class="bold-title">共享奖金池：</span>在平台首页精品功能区点击（共享奖金池）进入详情页面，可在此页面参与奖金池奖励分配</br></div>
+                <div class="per-bold-content"><span class="bold-title">积分兑换</span>在平台首页精品功能区点击（积分兑换）进入详情页面，可在此页面进行积分兑换</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">违章查询：</span>在平台首页精品功能区点击（排行榜）进入详情页面，可在此页面进行业务排名查看</br></div> -->
+                <div class="per-bold-content"><span class="bold-title">意外险：</span>在平台首页精品功能区点击（意外险）进入详情页面，可在此页面在线办理意外险</br></div>
+                <div class="per-bold-content"><span class="bold-title">提额秘籍：</span>在平台首页精品功能区点击（提额秘籍）进入详情页面，可在此页面查看信用卡提额攻略</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">共享奖金池：</span>在平台首页精品功能区点击（共享奖金池）进入详情页面，可在此页面参与奖金池奖励分配</br></div> -->
                 <div class="per-bold-content"><span class="bold-title">积分兑换：</span>在平台首页精品功能区点击（积分兑换）进入详情页面，可在此页面进行积分兑换</br></div>
-                <div class="per-bold-content"><span class="bold-title">商城：</span>在平台首页精品功能区点击（商城）进入详情页面，可在此页面进行商品上传</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">商城：</span>在平台首页精品功能区点击（商城）进入详情页面，可在此页面进行商品上传</br></div> -->
                 <div class="per-bold-content"><span class="bold-title">违章查询：</span>在平台首页精品功能区点击（违章查询）进入详情页面，可在此页面查询车辆违章信息</br></div>
+                <div class="per-bold-content"><span class="bold-title">卡测评：</span>在平台首页精品功能区点击（卡测评）进入详情页面，可在此页面测评自己的银行卡</br></div>
+                <div class="per-bold-content"><span class="bold-title">新手教程：</span>在平台精品功能区点击（新手教程）进入详情页面，可在此页面查看流程操作</br></div>
+                <div class="per-bold-content"><span class="bold-title">签到打卡：</span>在平台精品功能区点击（签到打卡）进入详情页面，可在此页面每天签到打卡</br></div>
+                <div class="per-bold-content"><span class="bold-title">金融圈：</span>在平台精品功能点击（金融圈）进入详情页面，可在此页面学习金融大咖营销方案，您可添加同行精英合作共赢</br></div>
+
             </div>
 
-            <div class="big-title">个人中心</div>
+            <div class="big-title">我的</div>
             <div class="small-title">
-                <div class="per-bold-content"><span class="bold-title">个人中心：</span>点击平台底部栏（个人中心）图标进入个人中心版块，此版块包含团队管理及收益、推广等功能</br></div>
-                <div class="per-bold-content"><span class="bold-title">个人设置：</span>在个人信息区点击（头像）进入个人资料设置页面，在此页面修改资料及信息等</br></div>
-                <div class="per-bold-content"><span class="bold-title">积分：</span>在个人中心点击（积分）进入详情页，查看个人积分情况</br></div>
-                <div class="per-bold-content"><span class="bold-title">可结算：</span>在个人中心点击（可结算）进入详情页，查看个人可结算余额</br></div>
-                <div class="per-bold-content"><span class="bold-title">总收益：</span>在个人中心点击（总收益）进入详情页，查看个人总收益</br></div>
+                <div class="per-bold-content"><span class="bold-title">个人中心：</span>点击平台底部栏（我的）图标进入个人中心版块，此版块包含团队管理及收益、推广等功能</br></div>
+                <div class="per-bold-content"><span class="bold-title">收益查看：</span>在重要功能区可查看账户收益、余额、分佣</br></div>
+                <div class="per-bold-content"><span class="bold-title">实名认证：</span>在实用功能区点击（实名认证）进入个实名认证页面，在此页面实名认证信息等</br></div>
+                <div class="per-bold-content"><span class="bold-title">银行卡：</span>在实用功能区点击（银行卡），进入详情页面，可在此页面查看绑定的银行卡信息</br></div>
+                <div class="per-bold-content"><span class="bold-title">我的账户：</span>在实用功能区点击（我的账户），进入详情页面，可在此页面进行现金提现，查看我的储蓄卡、收益明细、提现记录</br></div>
                 <div class="per-bold-content"><span class="bold-title">账户管理：</span>在特约服务区点击（账户管理）进入个人账户管理页面，在此页面查看账单、提现等</br></div>
-                <div class="per-bold-content"><span class="bold-title">上级推荐人：</span>在个人中心特约服务区点击（上级推荐人）进入详情页面，查看并与您的上级推荐人进行沟通</br></div>
-                <div class="per-bold-content"><span class="bold-title">微名片：</span>在个人中心特约服务区点击（微名片）进入详情页面，进行名片分享</br></div>
-                <div class="per-bold-content"><span class="bold-title">营销课堂：</span>在个人中心特约服务区点击（营销课堂）进入详情页面，在此页面你可学习充电，更早走向金融大咖</br></div>
-                <div class="per-bold-content"><span class="bold-title">商务合作：</span>在个人中心特约服务区点击（商务合作）进入详情页面，如果你想对我们的渠道资源或是您有好的资源渠道，请留下您的联系方式，我们会尽快与您联系</br></div>
+                <div class="per-bold-content"><span class="bold-title">我的费率：</span>在实用功能区点击（我的费率），进入详情页面，可在此页面查看我的费率</br></div>
+                <div class="per-bold-content"><span class="bold-title">设置：</span>在实用功能区点击（设置），进入详情页面，可在此页面进行基本信息设置</br></div>
+                <div class="per-bold-content"><span class="bold-title">帮助中心：</span>在实用功能区点击（帮助中心），进入详情页面，可在此了解APP各大功能</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">商务合作：</span>在个人中心特约服务区点击（商务合作）进入详情页面，如果你想对我们的渠道资源或是您有好的资源渠道，请留下您的联系方式，我们会尽快与您联系</br></div>
                 <div class="per-bold-content"><span class="bold-title">共享佣金池：</span>在个人中心特约服务区点击（共享佣金池）进入详情页面，查看奖金池奖金额度，分配</br></div>
                 <div class="per-bold-content"><span class="bold-title">VIP视频：</span>在个人中心实时工具区点击（VIP视频），可观看VIP专属视频福利</br></div>
                 <div class="per-bold-content"><span class="bold-title">流程说明：</span>在个人中心实时工具区点击（流程说明）进入详情页面，在此页面您可查看平台业务操作流程</br></div>
@@ -81,16 +84,16 @@
                 <div class="per-bold-content"><span class="bold-title">百问百答：</span>在个人中心实时工具区点击（百问百答）进入详情页面，在此页面可为您答疑解惑</br></div>
                 <div class="per-bold-content"><span class="bold-title">退换说明：</span>在个人中心实时工具区点击（退换说明）查看平台保证金退还机制，保障自身权益</br></div>
                 <div class="per-bold-content"><span class="bold-title">名片夹：</span>在个人中心实时工具区点击（名片夹）进入详情页面，在此页面查看收藏的名片</br></div>
-                <div class="per-bold-content"><span class="bold-title">金融圈：</span>在平台底部栏点击（金融圈）进入进入广告页面，在此页面您可添加同行精英合作共赢</br></div>
+                <div class="per-bold-content"><span class="bold-title">金融圈：</span>在平台底部栏点击（金融圈）进入进入广告页面，在此页面您可添加同行精英合作共赢</br></div> -->
             </div>
 
-            <div class="big-title">分享</div>
+            <div class="big-title">AI雷达</div>
             <div class="small-title">
-                <div class="per-bold-content"><span class="bold-title">分享：</span>点平台底部栏（分享）图标进入分享模块，用户可在此版块邀请好友，生成海报等</br></div>
-                <div class="per-bold-content"><span class="bold-title">新闻资讯：</span>在分享页面中点击（新闻资讯）详情页面，可在文章中植入广告用以锁粉</br></div>
-                <div class="per-bold-content"><span class="bold-title">推广海报圈：</span>在分享页面点击（推广海报图）进入详情页面，用户可在此生成专属推广海报</br></div>
-                <div class="per-bold-content"><span class="bold-title">邀请好友：</span>在分享页面点击（邀请好友）进入详情页面，用户可在此邀请好友</br></div>
-                <div class="per-bold-content"><span class="bold-title">蜂行卡包视频：</span>在分享页面点击（蜂行卡包视频）进入详情页面，用户可在此分享蜂行卡包视频</br></div>
+                <div class="per-bold-content"><span class="bold-title">海报分享：</span>点平台底部（AI雷达）栏图标进入分享模块，用户可在此版块邀请好友，生成海报等</br></div>
+                <div class="per-bold-content"><span class="bold-title">推广素材图：</span>点击（推广素材图）进入详情页面，在此可下载各种视频和图片进行推广</br></div>
+                <div class="per-bold-content"><span class="bold-title">信用卡推广图：</span>点击（信用卡推广图）进入详情页面，生成信用卡推广图，一件锁粉</br></div>
+                <div class="per-bold-content"><span class="bold-title">数据分析：</span>点击（数据分析）查看雷达数据报告分析</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">蜂行卡包视频：</span>在分享页面点击（蜂行卡包视频）进入详情页面，用户可在此分享蜂行卡包视频</br></div>
                 <div class="per-bold-content"><span class="bold-title">名片推广：</span>在分享页面点击（名片推广）进入详情页面，分享名片，快速增粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">生成短链接：</span>在分享页面点击（生成短链接）进入详情页面，用户可在此快速生成短链接分享链接锁粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">链接转化二维码：</span>在分享页面点击（链接转化二维码）进入详情页面，用户可再次快速生成二维码分享锁粉</br></div>
@@ -99,7 +102,7 @@
                 <div class="per-bold-content"><span class="bold-title">分享链接：</span>在分享页面点击（分享链接）进入详情页面，在此生成分享蜂行卡包链接</br></div>
                 <div class="per-bold-content"><span class="bold-title">推广素材图：</span>在分享页面点击（推广素材图）进入详情页面，在此可下载各种视频和图片进行推广</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡推广图：</span>在分享页面点击（信用卡推广图）进入详情页面，生成信用卡推广图，一件锁粉</br></div>
-                <div class="per-bold-content"><div class="per-bold-content"><span class="bold-title">物资下载：</span>在分享页面点击（物资下载）进入详情页面，用户可在此下载宣传物料制作易拉宝、海报等</br></div></div>
+                <div class="per-bold-content"><div class="per-bold-content"><span class="bold-title">物资下载：</span>在分享页面点击（物资下载）进入详情页面，用户可在此下载宣传物料制作易拉宝、海报等</br></div></div> -->
             </div>
         </div>
         <!-- 购买问题-->
@@ -113,9 +116,9 @@
             
             <div class="small-title">
                 1.会员升级</br>
-                目前的个人会员等级分为免费粉丝、黄金会员、钻石会员、用户可在个人中心里选择你想要升级你的会员等级，更高级别等级或者寻求合作请直接电话联系我们。欢迎您的来电。</br></br>
+                目前的个人会员等级分为免费粉丝、黄金会员、钻石会员、用户可在个人中心里选择你想要升级你的会员等级，更高级别等级或者寻求合作请直接电话联系我们。欢迎您的来电。</br>
                 2.APP中会员可通过哪些方式购买</br>
-                可通过微信支付，支付宝支付等方式进行会员升级</br></br>
+                可通过微信支付，支付宝支付等方式进行会员升级</br>
                 3.升级会员等级后，可否退换？</br>
                 APP中升级会员等级后，不可进行退换，辛苦各位在升级之前清楚会员权益及说明，以便后续顺利使用。如果有遇到特殊异常问题请不要紧张，我们会第一时间为您提供帮助。
             </div>
@@ -140,10 +143,10 @@
                 8.确认申请后即可进入官方申请信用卡。</br>
             </div>
 
-            <div class="big-title">商户收款操作流程：</div>
+            <div class="big-title">在线收款操作流程：</div>
             <div class="small-title">
-                1.进入APP首页，点击商户收款。</br>
-                2.进入商户收款页面后，点击商户收款图标，设置金额不能低于500元，绑定到账储蓄卡和信用卡</br>
+                1.进入APP首页，点击在线收款。</br>
+                2.进入在线收款页面后，点击在线收款图标，设置金额不能低于500元，绑定到账储蓄卡和信用卡</br>
                 3.当没有绑定信用卡时需先绑定信用卡，绑定后选择支付即可。</br>
                 4.如果绑定一张或多张信用卡直接选择支付即可</br>
             </div>
@@ -156,9 +159,9 @@
                 4.确认信息无误后，等待贷款平台审核。</br>
             </div>
 
-            <div class="big-title">信用卡管家操作流程</div>
+            <div class="big-title">智能还款操作流程</div>
             <div class="small-title">
-                1.进入APP首页，点击信用卡管家</br>
+                1.进入APP首页，点击智能还款</br>
                 2.绑定信用卡</br>
                 3.选择还款模式</br>
                 4.创建还款计划</br>
@@ -175,7 +178,7 @@
             <div class="big-title">欢迎每位家人的推广</div>
             
             <div class="small-title">
-                可在首页底部栏中点分享按钮，跳转至分享页面，生成专属特色海报进行APP推广。
+                可在首页底部栏中点AI雷达按钮，跳转至AI雷达页面，生成专属特色海报进行APP推广。
                 里会提供专业的营销课堂，有详细的文章内容供大家参考。
             </div>
         </div>

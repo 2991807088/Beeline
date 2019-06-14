@@ -116,7 +116,7 @@
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                         <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18755291160 </div>
                         <div  class="btn center">
-                            <span><a href="tel:18755291160">拨打</a></span>
+                            <span @click="handleCopy('18755291160')">复制</span>
                         </div>
                     </div>
                     <div class="per_detail row">

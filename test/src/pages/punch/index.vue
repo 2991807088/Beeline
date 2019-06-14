@@ -455,7 +455,7 @@ export default {
                           border-radius: 10px;
                           box-sizing: border-box;
                         margin-bottom: 15px;
-                        background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                         background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         background-repeat: no-repeat;
                         height: 350px;
                         background-size:100%;
@@ -498,6 +498,9 @@ export default {
                                   }
                                   .sign-out {
                                        margin-top:20px;
+                                       .van-button--default {
+                                           background-color: #fff;
+                                       }
                                         .van-dialog,
                                         .van-dialog__message,
                                         .van-button {
@@ -510,7 +513,7 @@ export default {
                                             height: 80px;
                                         }
                                          .van-button--default{
-                                            background-color: #ffa800;
+                                            background-color: #fff;
                                         }
 
                                   }

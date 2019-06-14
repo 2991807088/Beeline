@@ -11,6 +11,7 @@
                    <li >
                        <div class="top">
                           <div class="bankName">
+                              <p class="circle"></p>
                               <p >{{item.bankNick}}</p>
                                <p >{{item.payerName}}</p>
                               <p>*<span>{{item.cardNo.substr(item.cardNo.length-4)}}</span></p> 
@@ -43,10 +44,6 @@
                                 <li>
                                    <p>{{item.duedate}}<span>日</span></p>
                                    <p>还款日</p>
-                               </li>
-                                <li>
-                                   <!-- <p>3天</p>
-                                   <p>还款宽限期</p> -->
                                </li>
                               
                            </ul>
@@ -317,21 +314,33 @@ export default {
                       padding:10px;
                       box-sizing: border-box;
                       margin-bottom: 15px;
-                      background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                     background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                       background-repeat: no-repeat;
-                      height: 350px;
+                      height: 300px;
                       background-size:100%;
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;
                        >.top {
                            padding-top:13px;
-                           padding-bottom: 150px;
+                           padding-bottom: 120px;
                             height:20px !important;
                            .bankName {
-                          display: flex;
-                          justify-content: space-around;
-                          margin-bottom: 15px;
+                               >.circle {
+                                   width:30px;
+                                   height: 30px;
+                                   background-color: #fff;
+                                   border-radius: 50%;
+                               }
+                               >p {
+                                   &:nth-of-type(2){
+                                       margin-left:-40px;
+                                   }
+                               }
+                               margin-top:20px;
+                            display: flex;
+                            justify-content: space-around;
+                            margin-bottom: 15px;
                          }
                        }
                       .bottom {
@@ -339,9 +348,10 @@ export default {
                             margin-bottom:35px;
                           >ul{
                               display: flex;
-                              justify-content: space-around;
+                              justify-content: space-between;
+                              margin-top:20px;
                               >li {
-                                  width:25%;
+                                  width:33%;
                                   text-align: center;
                                   .van-icon--image {
                                       font-size: 40px;
@@ -349,10 +359,10 @@ export default {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-top:20px;
-                                          margin-bottom:10px;
+                                          margin-bottom:20px;
                                       }
                                       &:nth-of-type(2){
-                                          margin-bottom: 20px;
+                                          margin-bottom: 5px;
                                       }
                                   }
 
