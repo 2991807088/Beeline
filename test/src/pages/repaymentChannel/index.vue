@@ -11,6 +11,7 @@
                    <li>
                        <div class="top">
                           <div class="bankName">
+                              <p class="circle"></p>
                               <p >{{item.bankNick}}</p>
                                <p >{{item.payerName}}</p>
                               <p>*<span>{{item.cardNo.substr(item.cardNo.length-4)}}</span></p>
@@ -87,7 +88,7 @@
                    要确保在执行消费还款计划期间，卡内有足够的金额（期间尽量避免使用：<span class="bold">微信扫码、支付宝、京东</span>等地方消费使用，并注意卡内临时额、
                    产生分期费用等），否则可能会导致余额不足或扫码消费笔数限制，还款计划执行失败。</p>
                    <div>注：请如实填写账单日、还款日，如填写不实导致未全额还款的，责任由客户自行承担。
-                        <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#4b66af">本人已阅读同意</van-checkbox></div>
+                        <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#ffa800">本人已阅读同意</van-checkbox></div>
                    </div>
                </div>
            </div>
@@ -107,7 +108,7 @@ export default {
     },
     methods:{
         goBack() {
-            this.$router.push("/home/creditHousekeeper/aisleHousekeeper");
+            this.$router.go(-1)
         },
         handleAgree(val){
         },
@@ -173,22 +174,40 @@ export default {
                       border-radius: 10px;
                       box-sizing: border-box;
                       margin-bottom: 15px;
-                      background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                    // background-color: #C2AF77;
+                    // linear-gradient(
+                    //             #4f60c8, 
+                    //             #4f60c8);
+                    background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                       background-repeat: no-repeat;
-                      height: 350px;
+                      height: 300px;
                       background-size:100%;
                       padding:10px;
                        >.top {
                            padding-top:13px;
                            height:20px !important;
                            .bankName {
-                          display: flex;
-                          justify-content: space-around;
-                          margin-bottom: 15px;
+                               > p {
+                                   &:nth-of-type(2){
+                                    //    margin-right:40px;
+                                    margin-left:-50px;
+                                   }
+                               }
+                               .circle {
+                                   width:30px;
+                                   height: 30px;
+                                   background-color: #fff;
+                                   border-radius: 50%;
+                               }
+                                margin-top:20px;
+                                display: flex;
+                                justify-content: space-around;
+                                margin-bottom: 15px;
                          }
                        }
                       .bottom {
-                         margin-bottom:35px;
+                        //  margin-bottom:35px;
+                        margin-top:120px;
                           >ul{
                               display: flex;
                               justify-content: space-around;
@@ -202,10 +221,11 @@ export default {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-top:20px;
-                                          margin-bottom: 20px;
+                                          margin-bottom: 10px;
                                       }
                                       &:nth-of-type(2){
-                                          margin-bottom: 20px;
+                                        //   margin-bottom: 20px;
+                                        margin-top:30px;
                                       }
                                   }
 

@@ -34,9 +34,10 @@
                               <p>
                                   {{item.payerName.replace(1,"*")}}
                               </p>
-                              <p>
+                              <!-- <p>
                                  <van-button @click="unbinding(item)" round type="default">解绑</van-button>  
-                              </p>
+                              </p> -->
+                               <p @click="unbinding(item)">解绑</p>
                           </div>
                           <div class="now">
                               <div>
@@ -452,6 +453,10 @@ export default {
                       position: relative;
                       width:100%;
                       border-radius: 10px;
+                      .van-button--info {
+                          background-color: #ffa800;
+                          border-collapse: #ffa800;
+                      }
                       .pop {
                           position: absolute;
                           top:20%;
@@ -468,18 +473,17 @@ export default {
                               align-items: center;
                               >p {
                                   font-size: 32px;
-                                  color:#ffa800;
+                                //   color:#ffa800;
                                   font-weight: bold;
                               }
                           }
                       }
-                    //   border:2px solid #ccc;
-                    //   background-color:#4AA3E2;
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;
                        margin-bottom: 15px;
-                       background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                    //    background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                    background-color: pink;
                         height: 350px;
                         background-repeat: no-repeat;
                        background-size:100%;

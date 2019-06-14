@@ -16,7 +16,7 @@
                         内容 {{ index }}
                     </van-tab>
                 </van-tabs> -->
-                <van-tabs  @click="onClick"  v-model="active"  title-active-color="#4B66AF" color="#4B66AF" >
+                <van-tabs  @click="onClick"  v-model="active"  title-active-color="#ffa800" color="#ffa800" >
                     <van-tab title="全部">
                          <div class="waiting">
                             <ul>

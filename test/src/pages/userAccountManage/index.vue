@@ -20,12 +20,12 @@
         
          <router-link :to="{path:'/personalCenter/incomedetail/cash',query:{amount: amount}}" tag="div" class="per-menu row">
             <div class="icon start-center"><i class="iconfont icon-xianjin"></i></div>
-            <div class="menu-name start-center">现金提现</div>
+            <div class="menu-name start-center">佣金提现储蓄卡</div>
             <div class="insert-icon center"><i class="iconfont icon-more"></i></div>
          </router-link>
         <router-link tag="div" to="/personalCenter/incomedetail/addcard" class="per-menu  row">
             <div class="icon start-center"><i class="iconfont icon-yinhangqia"></i></div>
-            <div class="menu-name start-center">我的储蓄卡</div>
+            <div class="menu-name start-center">提现储蓄卡</div>
             <div class="insert-icon center"><i class="iconfont icon-more"></i></div>
         </router-link>
         <router-link tag="div" class="per-menu row" :to="{path: '/personalCenter/income',query:{amountSum: amountSum}}">

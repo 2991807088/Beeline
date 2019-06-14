@@ -252,7 +252,7 @@ export default {
                     //      query:{info:this.item}
                     //  })
                  } else {
-                    storage.set('amount',this.amount);
+                    // storage.set('amount',this.amount);
                     let planList=res.data.data
                     // console.log(this.area)
                      this.$router.push({

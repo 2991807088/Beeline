@@ -36,36 +36,37 @@
         <!-- 还款成功 -->
         <div v-show="showcompleted" class="waiting">
           <ul>
-              <li  @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in datas" :key="index">
+              <li  @click="goPlanDetail(info.id,info.bankNick,info.cardNo,info.payerName)" v-for="(info,index) in datas" :key="index">
                   <div class="top">
-                      <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
-                      <p>{{item.payerName}}</p>
-                      <p>本期账单：￥<span>{{item.realamount}}</span></p>
+                      <p><span>*</span>{{info.cardNo.substr(info.cardNo.length-4)}}</p>
+                      <p>{{info.payerName}}</p>
+                      <p>本期账单：￥<span>{{info.realamount}}</span></p>
                   </div>
                   <div class="middle">
                       <div class="m-left">
-                          <p>{{item.bankNick}}</p>
+                          <p>{{info.bankNick}}</p>
                           <!-- <p>等待执行：2019/5/17:14:33:37</p> -->
                       </div>
                       <div class="m-right">
-                          <p>执行状态</p>
-                          <p>还款成功</p>
+                           <p>执行状态</p>
+                           <!-- <p v-if="info.state=='1'">还款成功</p> -->
+                           <p v-if="info.state=='0'">待执行</p>
+                           <p v-if="info.state=='1'">已成功</p>
+                           <p v-if="info.state=='2'">已取消</p>
+                           <p v-if="info.state=='3'">进行中</p>
+                           <p v-if="info.state=='4'">失败</p>
                           <!-- <van-button @click.self="stopPlan(item.id)" type="default" round>停止计划</van-button> -->
-                          
                       </div>
                   </div>
                   <div class="bottom">
                       <ul>
                           <li>
-                              <p>{{item.poundage}}</p>
+                              <p>{{info.poundage}}</p>
                               <p>手续费</p>
                           </li>
                             <li>
-                              <p>{{item.repaycount}}</p>
+                              <p>{{info.repaycount}}</p>
                               <p>还款笔数</p>
-                          </li>
-                          <li>
-                              <p></p>
                           </li>
                       </ul>
                   </div>
@@ -165,6 +166,7 @@
 import {axiosPost} from '../../lib/http.js'
 import footerMenu from '@/components/footer'
 import { bankCardAttribution } from '../../lib/bankName'
+import storage from '@/lib/storage'
 export default {
      components:{
       footerMenu
@@ -185,8 +187,7 @@ export default {
               showList:true,
               datas:[],
               showcompleted:false
-             
-        }
+         }
     },
     methods:{
         changeActive(obj){
@@ -219,35 +220,36 @@ export default {
             }
               axiosPost("/creditCard/getMainPlan",data)
               .then(res=>{
-                //   console.log(res,"res")
+                //   console.log(s)
                 if(res.data.success){
                     if(res.data.data.data.length==0){
                         this.$toast("暂无数据")
+                         this.showcompleted=false
                     } else {
                         let arr= res.data.data.data
                          let arrXun=[]
                       arr.forEach((item,i) => {
-                        //  console.log(item.state)
                          item.bankNick=bankCardAttribution(item.cardNo).bankName
-
-                            if(s==""){
-                                 arrXun.push(item.state!=="1")
-                            } else {
-                                arrXun.push(item)
-                            }
+                          arrXun.push(item)
+                            if(s=="" && item.state== "1"){
+                                 arrXun.remove(i)
+                            } 
                      });
                      this.datas=arrXun
-
                     }
+                } else {
+                     this.$toast({
+                          message:res.data.message
+                      })
                 }
               })
               .catch(err=>{
-                  if(!err.data.success){
-                      this.$toast({
-                          message:res.data.message
-                      })
-                  }
-                  console.log(err)
+                //   if(!err.data.success){
+                //       this.$toast({
+                //           message:res.data.message
+                //       })
+                //   }
+                //   console.log(err)
               })
 
         },
@@ -337,33 +339,30 @@ export default {
             }
              axiosPost("/creditCard/getEsicashExist",data)
              .then(res=>{
-                //  if(res.data.success==false){
-                //      console.log(res)
-                //      this.$router.push({
-                //          path:"/home/insertEsiCash",
-                //          query:{info:i}
-                //      })
-                   
-                //  } else {
-                    //   let planList=res.data.data
-                       storage.set('channel',"1")
+                 if(res.data.success){
+                      storage.set('channel',"1")
                        this.$router.push({
                          path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                          query:{
-                            //  list:planList,
-                            //  area:this.area,
                              info:i
-                         }
+                          }
                      })
-                //  }
+                     console.log("1023")
+                 } else {
+                      this.$router.push({
+                        path:"/home/insertEsiCash",
+                        query:{info:i}
+                     })
+                 }
+                //  console.log(res,"res   success")
+                      
              })
              .catch(err=>{
-                 if(!err.data.success){
-                      this.$router.push({
-                    path:"/home/insertEsiCash",
-                    query:{info:i}
-                   })
-                 }
+                 console.dir(err)
+                 
+                //  if(!err.data.success){
+                //      
+                //  }
              })
         },
          repayment(i){
@@ -496,6 +495,7 @@ export default {
           }
       }
        .waiting {
+           margin-top:150px;
                    >ul{
                        padding:15px;
                        >li {
@@ -505,15 +505,15 @@ export default {
                           border-radius: 10px;
                           box-sizing: border-box;
                         margin-bottom: 15px;
-                        background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                        // background-image:url("http://sbs.91dianji.com.cn/big2.png");
+                        background-color: #ffa800;
                         background-repeat: no-repeat;
                         height: 350px;
                         background-size:100%;
                         padding:10px;
 
                           >.top {
-                            //   background-color: rgba(0, 0, 0, .5);
-                             padding-top:13px;
+                            //  padding-top:13px;
                              height:20px !important;
                               padding:20px 5px 20px 10px;
                               display: flex;
@@ -528,12 +528,6 @@ export default {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-bottom: 15px;
-                                      }
-                                      &:nth-of-type(2){
-                                          background-color: rgba(0, 0, 0, .2);
-                                          padding:15px;
-                                          border-radius:20px;
-                                          margin-top:15px;
                                       }
                                   }
                               }
@@ -753,10 +747,11 @@ export default {
                       position: relative;
                       width:100%;
                       border-radius: 10px;
-                      background-color: pink;
+                      background-color: #fcc53d;
                       .van-button--info {
-                          background-color: #fcc53d;
-                          border-color: #fcc53d;
+                          background-color: #fff;
+                        //   border-color: #fcc53d;
+                          color:#ffa800;
                       }
                       .cover {
                           position: fixed;

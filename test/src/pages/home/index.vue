@@ -187,7 +187,7 @@ export default {
         getUpdate(){ // 获取历史版本号
                axiosPost("/customer/getVersion")
                .then(res=>{
-                   console.log(res)
+                //    console.log(res)
                    if(res.data.success){
                       let version=res.data.data
                       this.versionAndroid=parseFloat(version[0].version)
@@ -203,8 +203,8 @@ export default {
               // 获取设备的版本号
               if(window.plus){  
                    that.updateVerson=parseFloat(plus.runtime.version);
-                   console.log(that.versionAndroid)
-                    console.log(that.versionIos)
+                //    console.log(that.versionAndroid)
+                    // console.log(that.versionIos)
                    if(that.versionAndroid>that.updateVerson || that.versionIos>that.updateVerson){
                        that.showUpdate=true
                    }
