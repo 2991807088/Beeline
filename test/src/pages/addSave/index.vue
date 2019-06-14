@@ -51,7 +51,7 @@ export default {
 <style lang="less">
    #add-save {
        >header {
-           background: #29305C;
+           background: #ffa800;
            width:100%;
            height: 46px;
            line-height: 46px;

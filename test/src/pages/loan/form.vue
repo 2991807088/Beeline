@@ -13,25 +13,25 @@
         <div class="title center">选择或添加申请人信息</div>
         <div class="detail">请确保选择或添加的申请人信息与贷款申请表所填信息保持真实一致，以免影响信用贷款进度；本平台对此信息保密，仅作提交金融机构工作人员审核，审核通知将以短信形式发送至该号码</div>
         <div class="per-input top row">
-            <div class="icon end-center"><van-icon name="manager" size="1.5em" /></div>
+            <div class="icon end-center"><van-icon name="manager" color="#ffa800" size="1.5em" /></div>
             <div class="label start-center">姓名</div>
             <div class="user-input"><input type="text" v-model='form.name' placeholder="请填写申请人姓名"/></div>
         </div>
 
         <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="card" size="1.5em" /></div>
+            <div class="icon end-center"><van-icon name="card" color="#ffa800" size="1.5em" /></div>
             <div class="label start-center">证件</div>
             <div class="user-input"><input type="text" v-model="form.idcardnumber" placeholder="请填写申请人身份证号码"/></div>
         </div>
 
         <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="graphic" size="1.5em" /></div>
+            <div class="icon end-center"><van-icon name="graphic" color="#ffa800" size="1.5em" /></div>
             <div class="label start-center">电话</div>
             <div class="user-input"><input type="number" v-model="form.mobile" placeholder="请填写申请人手机号码"/></div>
         </div>
 
         <div class="per-input  row">
-            <div class="icon end-center"><van-icon name="coupon" size="1.5em" /></div>
+            <div class="icon end-center"><van-icon name="coupon" color="#ffa800" size="1.5em" /></div>
             <div class="label start-center">验证码</div>
             <div class="user-code"><input type="text" v-model="form.code" placeholder="请输入验证码"/></div>
             <div class="safe-code center" @click="changeCode">{{realCode}}</div>
@@ -258,7 +258,11 @@ export default {
         height: auto;
         padding-top: 86px;
         .header-top {
-            background-color: #29305C;
+            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            background-blend-mode: normal,normal;
+            .top-title{
+                color: #fff;
+            }
         }
         .swipe{
             width: 100vw;
@@ -346,7 +350,8 @@ export default {
                 margin-left: 2vw;
                 font-size: 30px;
                 letter-spacing: 5px;
-                background:rgba(75,102,175,0.5);
+                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                background-blend-mode: normal,normal;
                 color: #f2f2f2;
                 font-weight: 700;
             }
@@ -370,7 +375,8 @@ export default {
                 width: 70%;
                 height: 100%;
                 margin-left: 10%;
-                background: #29305C;
+                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                background-blend-mode: normal,normal;
                 color: white;
                 font-size: 30px;
                 border-radius: 10px;

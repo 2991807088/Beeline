@@ -65,7 +65,7 @@ export default {
 <style lang="less">
    #invite-friends {
        >header {
-           background: #29305C;
+           background: #ffa800;
            width:100%;
            height: 86px;
            line-height:86px;

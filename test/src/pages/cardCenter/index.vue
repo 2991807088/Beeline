@@ -13,18 +13,18 @@
             </p>
         </header>
         <div class="container">
-            <div class="housekeeper">
-                <!-- <router-link to='/home/cardCenter/consultation' tag="div" class="consultation" >
+            <!-- <div class="housekeeper">
+                <router-link to='/home/cardCenter/consultation' tag="div" class="consultation" >
                      <img src="../../../static/images/flower.jpg.jpg" alt=""> 
-                </router-link> -->
-                <div class="consultation">钱夹<br>
+                </router-link>
+                <div class="consultation">蜂行<br>
                     资讯</div>
                 <div class="ring">
                     <van-notice-bar
                         text="恭喜黄金会员陈**于09：40:25完成智能还款计划  订单尾号 8888，推荐人获得7.5元总收益。"
                     />
                 </div>
-            </div>
+            </div> -->
             <div class="center">
                 <ul>
                     <li v-for="(item, index) in cardList" :key="index" >
@@ -50,7 +50,7 @@
                     
                 </ul>
             </div>
-             <div class="bottom">
+             <!-- <div class="bottom">
                  <ul>
                      <li @click="handleExpect">
                          <h3>
@@ -81,7 +81,7 @@
                          <span><van-icon name="http://sbs.91dianji.com.cn/310.png" /></span>
                       </li>
                  </ul>
-             </div>
+             </div> -->
         </div>
         <loading :componentload="componentload"></loading>
     </div>
@@ -111,20 +111,19 @@ export default {
             let that= this
             axiosPost("/creditCard/getBankList")
             .then(function(res){
-                if(!res.data.success){
-                    that.$toast({
-                        message:res.data.message
-                    })
-                }else{
-                    let data = res.data.data.data
-                    that.cardList.push(...data.notSingleCardList)
-                    that.cardList.push(...data.singleCardList)
-                    setTimeout(() =>{
-                        that.componentload = false;
-                    },500)
-                }
+                console.log('列表请求成功',res);
+                let data = res.data.data.data
+                that.cardList.push(...data.notSingleCardList)
+                that.cardList.push(...data.singleCardList)
+                setTimeout(() =>{
+                    that.componentload = false;
+                },500)
             })
-            .catch(function(err){
+            .catch(function(res){
+                console.log('列表请求失败',res);
+                setTimeout(() =>{
+                    that.componentload = false;
+                },500)
             })
         },
         getCard(item){
@@ -150,7 +149,7 @@ export default {
             height: 86px;
             line-height: 86px;
             width:100%;
-            background-color: #29305C;
+            background: #ffa800;
             display: flex;
             justify-content: space-between;
             color:#fff;
@@ -245,7 +244,8 @@ export default {
                             >P {
                                 text-align: center;
                                 >.handle {
-                                background-color: #29305C;
+                                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                                background-blend-mode: normal,normal;
                                 padding:10px 30px;
                                 border-radius: 10px;
                                 color:#eee;

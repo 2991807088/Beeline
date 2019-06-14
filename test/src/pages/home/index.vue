@@ -20,7 +20,7 @@
                 <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt="">
             </div>
             <router-link tag="div" class="pannel-detail center" to="/personalCenter/contactus">
-                <van-notice-bar text="现成为928会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
+                <van-notice-bar text="现成为998会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
             </router-link>
         </div>
         <div class="menus van-hairline--top">
@@ -89,7 +89,7 @@
                 
             </div>
         </div>
-        <div class="guarantee center">账户安全由中国人寿财产保险承保</div>
+        <div class="guarantee center"><van-icon name="http://fx.91dianji.com.cn/fengxing_dun.png"/>&nbsp;账户安全由中国人寿财产保险承保</div>
         <div class="container">
             
            

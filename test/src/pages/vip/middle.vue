@@ -16,11 +16,11 @@
             <img class="vip_icon" v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_mini.png" alt="">
             <img class="vip_icon" v-if="level == '3'" src="http://fx.91dianji.com.cn/fengxing_hehuoren_mini.png" alt="">
             <img class="vip_icon" v-if="level == '4'" src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt="">
-            <div class="slogan start-center" v-if="level == '0'">您当前是免费粉丝</div>
-            <div class="slogan start-center" v-if="level == '1'">您当前是黄金会员</div>
-            <div class="slogan start-center" v-if="level == '2'">您当前是钻石会员</div>
-            <div class="slogan start-center" v-if="level == '3'">您当前是城市合伙人</div>
-            <div class="slogan start-center" v-if="level == '4'">您当前是城市运营商</div>
+            <div class="slogan start-center" v-if="level == '0'">免费粉丝相关权益</div>
+            <div class="slogan start-center" v-if="level == '1'">黄金会员相关权益</div>
+            <div class="slogan start-center" v-if="level == '2'">钻石会员相关权益</div>
+            <div class="slogan start-center" v-if="level == '3'">城市合伙人相关权益</div>
+            <div class="slogan start-center" v-if="level == '4'">城市运营商相关权益</div>
         </div>
         <div v-if="level == '0'">
             <div class="big_title center">当前费率</div>

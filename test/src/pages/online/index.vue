@@ -5,10 +5,7 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-         <!-- <div class="box" style="width:100vw;height:100vh;">　
-            　　<iframe v-if="type" :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe>
-            　　<iframe v-else :src="url" frameborder="0" class="iframe" height="100vh" scrolling='auto' style="width: 1px; min-width: 100vw; *width: 100vw;"></iframe>
-         </div> -->
+        <iframe :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe>
     </div>
 
 </template>
@@ -25,7 +22,7 @@ export default {
     },
     methods:{
         goBack() {
-            plus.webview.close( "yinlian")
+            // plus.webview.close( "yinlian")
             this.$router.push("/home")
         },
        
@@ -79,7 +76,7 @@ export default {
 <style lang="less">
    #online{
        header {
-            background-color: #29305C;
+            background: #ffa800;
        }
         .box {
                overflow-x: hidden;

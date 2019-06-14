@@ -117,7 +117,7 @@ export default {
 <style lang="less">
    #promotion-material {
        >header {
-           background: #29305C;
+           background: #ffa800;
            width:100%;
            height: 86px;
            padding-top:10px;

@@ -3,7 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>信用卡管家</span>
-            <span></span>
+            <span>操作视频</span>
         </header>
        <div class="container">
            <h3>蜂行卡包智能还款</h3>
@@ -122,8 +122,7 @@ export default {
 <style lang="less">
    #credit-housekeeper{
        >header {
-           background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
-            background-blend-mode: normal,normal;
+           background: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;

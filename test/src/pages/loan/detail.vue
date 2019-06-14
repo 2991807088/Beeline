@@ -23,7 +23,7 @@
             </div>
         </div>
         <div class="common-title start-center">
-            <van-icon name="bookmark" color="#29305C" size="1.5em"/>
+            <van-icon name="bookmark" color="#ffa800" size="1.5em"/>
             <span>申请条件</span>
         </div>
         <div class="condition">
@@ -35,7 +35,7 @@
         </div>
         <div class="kong"></div>
         <div class="common-title start-center">
-            <van-icon name="send-gift" color="#29305C" size="1.5em"/>
+            <van-icon name="send-gift" color="#ffa800" size="1.5em"/>
             <span>所需材料</span>
         </div>
         <div class="condition">
@@ -45,7 +45,7 @@
         </div>
         <div class="kong"></div>
         <div class="common-title start-center">
-            <van-icon name="todo-list" color="#29305C" size="1.5em"/>
+            <van-icon name="todo-list" color="#ffa800" size="1.5em"/>
             <span>费率说明</span>
         </div>
         <div class="condition">
@@ -67,7 +67,7 @@
         </div>
         <div class="kong"></div>
         <div class="common-title start-center">
-            <van-icon name="coupon" color="#29305C" size="1.5em"/>
+            <van-icon name="coupon" color="#ffa800" size="1.5em"/>
             <span>申请攻略</span>
         </div>
         <div class="strategy">
@@ -77,11 +77,11 @@
         <div class="kong"></div>
         <div class="Immediate-apply row">
             <div class="icon-title">
-                <div class="im-icon center"><van-icon name="invition" size="2.5em" color="#29305C" /></div>
+                <div class="im-icon center"><van-icon name="invition" size="2.5em" color="#ffa800" /></div>
                 <div class="im-title center">我要推广</div>
             </div>
             <div class="icon-title">
-                <div class="im-icon center"><van-icon name="volume" size="2.5em" color="#29305C" /></div>
+                <div class="im-icon center"><van-icon name="volume" size="2.5em" color="#ffa800" /></div>
                 <div class="im-title center">申请指南</div>
             </div>
             <router-link tag="div" to="/loan/form">
@@ -117,10 +117,10 @@ export default {
         height: 95vh;
         overflow: scroll;
         .header-top {
-            background-color: #29305C;
+            background-color: #ffa800;
         }
         .loan .van-nav-bar {
-            background-color: #29305C !important;
+            background-color: #ffa800 !important;
         }
         .gray {
             color:#666;
@@ -240,7 +240,7 @@ export default {
         }
         .strategy{
             .way{
-                color: #29305C;
+                color: #ffa800;
                 width: 100vw;
                 height: 80px;
                 font-size: 25px;
@@ -271,7 +271,8 @@ export default {
                 padding-top:30px;
                 padding-bottom: 30px;
                 margin-left: 2vw;
-                background: #29305C;
+                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                background-blend-mode: normal,normal;
                 color: white;
                 font-size: 35px;
                 margin-top: 30px;

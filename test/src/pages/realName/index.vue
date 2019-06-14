@@ -20,7 +20,7 @@ export default {
 <style lang="less" >
     #real-name {
         >header {
-            background-color:#29305C;
+            background: #ffa800;
             height: 86px;
             line-height:86px;
             font-size:28px;

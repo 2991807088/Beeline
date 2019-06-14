@@ -162,7 +162,7 @@ export default {
            width:100%;
            padding-top:10px;
            font-size:28px;
-            background-color: #29305C;
+            background: #ffa800;
            display: flex;
            justify-content: space-between;
            color:#fff;
