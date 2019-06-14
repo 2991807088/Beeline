@@ -449,18 +449,33 @@ export default {
                    >ul{
                        padding:15px;
                        >li {
-                        //   border:2px solid #ccc;
-                        //   background-color:#4AA3E2;
-                          color:#fff;
-                          border-radius: 10px;
-                          box-sizing: border-box;
+                        color:#fff;
+                        border-radius: 10px;
+                        box-sizing: border-box;
                         margin-bottom: 15px;
-                         background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                        &:nth-of-type(1){
+                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                        }
+                         &:nth-of-type(2){
+                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                        }
+                         &:nth-of-type(3){
+                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                        }
+                         &:nth-of-type(4){
+                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                        }
+                         &:nth-of-type(5){
+                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                        }
+                         &:nth-of-type(6){
+                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                        }
+                        // background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         background-repeat: no-repeat;
                         height: 350px;
                         background-size:100%;
                         padding:10px;
-
                           >.top {
                             //   background-color: rgba(0, 0, 0, .5);
                              padding-top:13px;

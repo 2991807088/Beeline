@@ -424,7 +424,7 @@ export default {
                           })
                           return
                       } else {
-                          that.getCardList()
+                          that.getCard()
                       }
                      
                   })
@@ -506,7 +506,25 @@ export default {
                           box-sizing: border-box;
                         margin-bottom: 15px;
                         // background-image:url("http://sbs.91dianji.com.cn/big2.png");
-                        background-color: #ffa800;
+                        // background-color: #d9ff00;
+                          &:nth-of-type(1){
+                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                        }
+                         &:nth-of-type(2){
+                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                        }
+                         &:nth-of-type(3){
+                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                        }
+                         &:nth-of-type(4){
+                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                        }
+                         &:nth-of-type(5){
+                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                        }
+                         &:nth-of-type(6){
+                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                        }
                         background-repeat: no-repeat;
                         height: 350px;
                         background-size:100%;
@@ -747,10 +765,29 @@ export default {
                       position: relative;
                       width:100%;
                       border-radius: 10px;
-                      background-color: #fcc53d;
+                    //   background-color: #fcc53d;
+                      &:nth-of-type(1){
+                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                        }
+                         &:nth-of-type(2){
+                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                        }
+                         &:nth-of-type(3){
+                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                        }
+                         &:nth-of-type(4){
+                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                        }
+                         &:nth-of-type(5){
+                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                        }
+                         &:nth-of-type(6){
+                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                        }
                       .van-button--info {
                           background-color: #fff;
                         //   border-color: #fcc53d;
+                        
                         border-color: #ffa800;
                           color:#ffa800;
                       }

@@ -2,22 +2,36 @@
     <div id="add-card">
         <header class="header-top row">
             <div class="left-icon start-center" @click="handleReturnHome"><van-icon color="white" size="20px" name="arrow-left"/></div>
-            <div class="top-title center">银行卡管理</div>
+            <div class="top-title center">下载</div>
             <div class="right-icon center"></div>
         </header>
-        <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
+        <div class="container">
+            <div class="down">
+                <ul>
+                    <li @click="download">
+                        <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/Android.png"/></p>
+                        <p>安卓下载</p>
+                    </li>
+                     <li @click="download">
+                        <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/ios.png"/></p>
+                        <p>苹果下载</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
             <div class="pay-icon end-center"> <svg class="icon" aria-hidden="true"><use xlink:href="#icon-pay-unionpay"></use></svg></div>
             <div class="add-icon center"><van-icon name="plus" size="20px"/></div>
             <div class="add-title start-center">添加银行卡</div>
             <div class="more-icon center"><van-icon name="arrow"/></div>
-        </router-link>
-        <div class="card-list">
+        </router-link> -->
+        <!-- <div class="card-list">
             <div class="per-card" v-for="(item,index) in bankcardlist" :key="index">
                 <div class="name">{{item.name}}</div>
                 <div class="bankname">{{item.bankname}}</div>
                 <div class="bankcardno">{{item.bankcardno}}</div>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -37,35 +51,38 @@ export default {
         handleReturnHome(){
             this.$router.go(-1);
         },
+        download(){
+            this.$toast("敬请期待")
+        },
         // 绑定银行卡
-        handleAddCard(){
+        // handleAddCard(){
 
-        },
+        // },
         // 获取已绑定银行卡列表
-        handleBankCardList(){
-            // let url = '/customer/getBankCardByOpenid';
-            let url = '/customer/getBankCardByOpenid';
-            let params = {};
-            axiosPost(url,params).then(res =>{
-                // console.log('获取已绑定银行卡列表成功',res);
-                if(res.data.success){
-                    if(res.data.data.length == '0'){
-                        this.$toast('您还未绑定银行卡');
-                    }else{
-                        this.bankcardlist = res.data.data;
-                    }
-                }
-            }).catch(res =>{
-                // console.log('获取已绑定银行卡列表失败',res)
-            })
-        },
+        // handleBankCardList(){
+        //     // let url = '/customer/getBankCardByOpenid';
+        //     let url = '/customer/getBankCardByOpenid';
+        //     let params = {};
+        //     axiosPost(url,params).then(res =>{
+        //         // console.log('获取已绑定银行卡列表成功',res);
+        //         if(res.data.success){
+        //             if(res.data.data.length == '0'){
+        //                 this.$toast('您还未绑定银行卡');
+        //             }else{
+        //                 this.bankcardlist = res.data.data;
+        //             }
+        //         }
+        //     }).catch(res =>{
+        //         // console.log('获取已绑定银行卡列表失败',res)
+        //     })
+        // },
     },
     created () {
-        this.nickname = this.$store.state.wechat.nickname;
-        this.headimg  = this.$store.state.wechat.headimg;
-        this.recommendedcode  = this.$store.state.wechat.recommendedcode; 
-        this.level  = this.$store.state.wechat.level;
-        this.handleBankCardList();
+        // this.nickname = this.$store.state.wechat.nickname;
+        // this.headimg  = this.$store.state.wechat.headimg;
+        // this.recommendedcode  = this.$store.state.wechat.recommendedcode; 
+        // this.level  = this.$store.state.wechat.level;
+        // this.handleBankCardList();
     }
 }
 </script>
@@ -75,6 +92,19 @@ export default {
         height: calc(100vh - 90px);
         background: #EEEFF1;
         padding-top: 90px;
+        .container {
+            .down {
+                >ul{
+                    padding:20px;
+                    >li {
+                        text-align: center;
+                        &:nth-of-type(1){
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+            }
+        }
         .personal{
             width: 100vw;
             height: 120px;

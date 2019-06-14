@@ -47,8 +47,8 @@
             </router-link>
             
             <router-link tag="div" to="/personalCenter/incomedetail/addcard" class="per_menu">
-                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_yinhangka.png" size="24px"/></div>
-                <div class="title start-center">银行卡</div>
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/down.png" size="24px"/></div>
+                <div class="title start-center">客户端下载</div>
                 <div class="state end-center"></div>
                 <div class="more end-center"><van-icon name="arrow"/></div>
             </router-link>

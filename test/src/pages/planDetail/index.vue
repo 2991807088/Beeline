@@ -53,8 +53,8 @@
                               <ul>
                                   <li v-for="(info,i) in item" :key="i">
                                       <div class="left">
-                                          <p><span>消费账单&nbsp;</span><span class="gray">{{info.date}}</span></p>
-                                          <p><span class="gray">订单号：</span><span>{{info.parentNo}}</span></p>
+                                          <p><span class="black">消费账单：&nbsp;</span><span class="gray">{{info.date}}</span></p>
+                                          <p><span class="gray">订单号：</span><span class="black">{{info.parentNo}}</span></p>
                                           <p class="gray">智还&nbsp;落地通道&nbsp;持卡者：{{nick}}</p>
                                       </div>
                                       <div class="right">
@@ -140,7 +140,7 @@ export default {
              let data={
                  id:this.id
              }
-             axiosPost("creditCard/getMainPlanAndPlans",data)
+             axiosPost("/creditCard/getMainPlanAndPlans",data)
              .then(res=>{
                  console.log(res,"主计划和子计划")
                  if(!res.data.success){
@@ -226,6 +226,7 @@ export default {
              >.card {
                   padding-top:30px;
                   >.top {
+                      color: #000;
                       font-weight: bold;
                       padding:10px 0px 10px 10px;
                       margin:0 !important;
@@ -317,6 +318,7 @@ export default {
                               justify-content: space-between;
                               background-color: #ffa800;
                               padding:15px 10px;
+                              color: #fff;
                               border-radius: 8px 8px 0px 0px;
                           }
                           .list {
@@ -334,6 +336,9 @@ export default {
                                       }
                                       p {
                                           padding-bottom: 15px;
+                                      }
+                                      .black {
+                                          color:#000;
                                       }
                                       .gray {
                                           color:#aaa;

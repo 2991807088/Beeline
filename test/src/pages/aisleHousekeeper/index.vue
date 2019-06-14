@@ -53,7 +53,7 @@
                                   </div>
                               </div>
                               <p>
-                                  <van-button @click="repayment(item)" round type="info">立即还款</van-button>
+                                  <van-button @click="repayment(index)" round type="info">立即还款</van-button>
                               </p>
                           </div>
                        </div>
@@ -84,7 +84,8 @@
                                </li>
                            </ul>
                        </div>
-                       <div  v-show="num==index"  class="pop">
+
+                       <!-- <div v-show="showpass"  class="pop">
                            <div class="small" @click="smallPass(item)">
                                <van-icon name="http://sbs.91dianji.com.cn/putong.png" size="40px"/>
                                <p>小额通道</p>
@@ -95,7 +96,27 @@
                                 <p>大额通道</p>
                                 <p> <van-icon name="arrow" size="30px"/></p>
                            </div>
+                       </div> -->
+
+                         <div v-show="showpass" @click.capture="showcover" :class="num==index?'cover':''">
+                           <div  v-show="num==index"  class="pop">
+                                <div class="small" @click.stop="smallPass(item)">
+                                    <van-icon name="http://sbs.91dianji.com.cn/xiaoe.png" size="40px"/>
+                                    <p>小额通道</p>
+                                    <p> <van-icon name="arrow" size="30px"/></p>
+                                </div>
+                                <!-- <div class="large" @click.stop="largePass(item)">
+                                        <van-icon name="http://sbs.91dianji.com.cn/dae.png" size="40px"/>
+                                        <p>大额通道</p>
+                                        <p> <van-icon name="arrow" size="30px"/></p>
+                                </div> -->
+                             </div>
                        </div>
+
+
+
+
+
                    </li>
                </ul>
            </div>
@@ -135,8 +156,8 @@ export default {
             // cardname:"",
             bankname:"",
             amount:"",
-            // showPass:false,
-            // num:null
+            showpass:false,
+            num:null
         }
     },
     mounted () {
@@ -145,6 +166,11 @@ export default {
     methods:{
         goBack() {
             this.$router.push('/home/creditHousekeeper')
+        },
+          // 点击遮盖层，通道隐藏
+        showcover(){
+            this.showdis=!this.showdis
+            this.showpass=false
         },
         // 解绑信用卡
         unbinding(item){
@@ -179,37 +205,47 @@ export default {
 
         },
         // 查询小额通道是否签约
-        // smallPass(i){
-        //     let data={
-        //        bindId:i.bindId 
-        //     }
-        //      axiosPost("/creditCard/getEsicashExist",data)
-        //      .then(res=>{
-        //          console.log(res)
-        //          if(!res.data.success){
-        //              this.$router.push({
-        //                  path:"/home/insertEsiCash",
-        //                  query:{info:i}
+        smallPass(i){
+            let data={
+               bindId:i.bindId 
+            }
+             axiosPost("/creditCard/getEsicashExist",data)
+             .then(res=>{
+                 console.log(res)
+                //  if(!res.data.success){
+                //      this.$router.push({
+                //          path:"/home/insertEsiCash",
+                //          query:{info:i}
                    
-        //              })
-        //          } else {
-        //               let planList=res.data.data
-        //              this.$router.push({
-        //                  path:"/home/creditHousekeeper/aisleHousekeeper/planList",
-        //                  query:{
-        //                      list:planList,
-        //                      area:this.area,
-        //                      item:i
-        //                  }
-        //              })
-        //          }
+                //      })
+                //  } 
+                 if(res.data.success) {
+                      let planList=res.data.data
+                     this.$router.push({
+                         path:"/home/creditHousekeeper/aisleHousekeeper/planList",
+                         query:{
+                             list:planList,
+                             area:this.area,
+                             item:i
+                         }
+                     })
+                 } else {
+                       this.$router.push({
+                            path:"/home/insertEsiCash",
+                            query:{info:i}
+                       })
+                 }
                  
-        //      })
-        //      .catch(err=>{
-        //          console.log(err)
+             })
+             .catch(err=>{
+                //  console.log(err)
+                 this.$router.push({
+                        path:"/home/insertEsiCash",
+                        query:{info:i}
+                    })
                  
-        //      })
-        // },
+             })
+        },
          // 查询大额通道是否签约
         largePass(i){
              let data={
@@ -231,39 +267,41 @@ export default {
         },
 
         repayment(i){
-            // this.num=index
-            // this.showPass=true
+            this.num=i
+            this.showpass=true
             // 查询小额通道签约
 
-                 let data={
-               bindId:i.bindId 
-            }
-             axiosPost("/creditCard/getEsicashExist",data)
-             .then(res=>{
-                 console.log(res)
-                 if(!res.data.success){
-                     this.$router.push({
-                         path:"/home/insertEsiCash",
-                         query:{info:i}
-                     })
-                 } else {
-                      let planList=res.data.data
-                     this.$router.push({
-                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-                         query:{
-                            //  list:planList,
-                            //  area:this.area,
-                            //  item:i
-                            info:i
-                         }
-                     })
-                 }
+            //      let data={
+            //    bindId:i.bindId 
+            // }
+            //  axiosPost("/creditCard/getEsicashExist",data)
+            //  .then(res=>{
+            //      console.log(res)
+            //      if(res.data.success) {
+            //           let planList=res.data.data
+            //          this.$router.push({
+            //              path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
+            //              query:{
+            //                 //  list:planList,
+            //                 //  area:this.area,
+            //                 //  item:i
+            //                 info:i
+            //              }
+            //          })
+            //      } else {
+
+            //           this.$router.push({
+            //              path:"/home/insertEsiCash",
+            //              query:{info:i}
+            //          })
+
+            //      }
                  
-             })
-             .catch(err=>{
-                //  console.log(err)
+            //  })
+            //  .catch(err=>{
+            //     //  console.log(err)
                  
-             })
+            //  })
             // this.$router.push({
             //     path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
             //     query:{
@@ -459,27 +497,68 @@ export default {
                         color:#ffa800;
                         
                       }
-                      .pop {
+
+                       .cover {
+                          position: fixed;
+                          top:0px;
+                          bottom: 0px;
+                          left:0px;
+                          right:0px;
+                          background-color: rgba(0, 0, 0, .5);
+                          z-index: 99;
+                          .pop {
                           position: absolute;
-                          top:20%;
-                          left:10%;
-                          width: 500px;
+                          top:40%;
+                          left:6%;
+                          width: 600px;
                           padding:10px;
                           background-color: #fff;
                           border:1px solid #ccc;
+                            z-index: 999;
                           >.small ,
                            .large {
                               display: flex;
                               justify-content: space-between;
                               padding-bottom: 20px;
                               align-items: center;
+                              z-index: 999;
+                              background-color: #fff;
                               >p {
                                   font-size: 32px;
-                                //   color:#ffa800;
+                                  color:#ffa800;
                                   font-weight: bold;
                               }
                           }
+                          .small {
+                              border-bottom: 1px solid #ccc;
+                          }
+                           .large {
+                               margin-top:5px;
+                           }
                       }
+                      }
+
+                    //   .pop {
+                    //       position: absolute;
+                    //       top:20%;
+                    //       left:10%;
+                    //       width: 500px;
+                    //       padding:10px;
+                    //       background-color: #fff;
+                    //       border:1px solid #ccc;
+                    //       >.small ,
+                    //        .large {
+                    //           display: flex;
+                    //           justify-content: space-between;
+                    //           padding-bottom: 20px;
+                    //           align-items: center;
+                    //           >p {
+                    //               font-size: 32px;
+                    //             //   color:#ffa800;
+                    //               font-weight: bold;
+                    //           }
+                    //       }
+                    //   }
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;
