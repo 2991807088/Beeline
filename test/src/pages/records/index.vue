@@ -107,7 +107,7 @@ export default {
                        padding:15px;
                        margin-bottom: 15px;
                        h3{
-                            color:#29305C;
+                            color:#ffa800;
                             text-align: center;
                             font-weight: bold;
                             padding-bottom: 15px;

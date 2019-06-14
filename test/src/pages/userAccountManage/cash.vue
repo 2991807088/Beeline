@@ -263,7 +263,7 @@ export default {
         height: auto;
         padding-top: 86px;
         .header-top {
-            background-color: #29305C;
+            background-color: #ffa800;
         }
         .cash-top{
             width: 100vw;
@@ -390,7 +390,7 @@ export default {
                         font-weight: 700;
                         text-align: center;
                         line-height: 80px;
-                        color: #29305C;
+                        color: #ffa800;
                     }
                 }
             }
@@ -542,7 +542,7 @@ export default {
                 right: 20px;
                 font-size: 30px;
                 font-weight: 700;
-                color: #29305C;
+                color: #ffa800;
             }
             .avator{
                 width: 100%;

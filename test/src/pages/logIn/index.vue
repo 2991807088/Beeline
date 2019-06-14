@@ -184,7 +184,7 @@ export default {
                    padding:13px 20px;
                    border-radius: 100px;
                    >span {
-                      color: #29305C;
+                      color: #ffa800;
                    }
                    span:nth-child(3){
                     line-height: 28px;

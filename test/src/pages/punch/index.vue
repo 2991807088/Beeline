@@ -442,7 +442,7 @@ export default {
            padding-bottom: 50px;
             .van-dialog .van-button {
                 /* border: 0; */
-                border: 1px solid #29305C;
+                border: 1px solid #ffa800;
             }
            >.ranking {
                .waiting {
@@ -510,7 +510,7 @@ export default {
                                             height: 80px;
                                         }
                                          .van-button--default{
-                                            background-color: #29305C;
+                                            background-color: #ffa800;
                                         }
 
                                   }

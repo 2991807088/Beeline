@@ -39,7 +39,7 @@ export default {
         padding-top: 90px;
         padding-bottom: 50px;
         .header-top {
-            background-color: #29305c; 
+            background-color: #ffa800; 
         }
         .big-title{
             width: 95%;

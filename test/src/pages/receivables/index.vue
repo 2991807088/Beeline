@@ -171,7 +171,7 @@ export default {
        >.container {
            background-color:#ECF0F3; 
            >.portrait {
-               background-color:#29305C;
+               background-color:#ffa800;
                color:#eee;
                display: flex;
                padding-left:40px;
@@ -239,7 +239,7 @@ export default {
                            }
                        }
                        &:nth-of-type(3){
-                           background-color:#29305C;
+                           background-color:#ffa800;
                            color:#fff;
                            text-align: center;
                            padding-top:30px;

@@ -232,7 +232,7 @@ export default {
                        margin:10px;
                        >p {
                            text-align: center;
-                           color:#29305C;
+                           color:#ffa800;
                            font-weight: bold;
                            font-size: 36px;
                            padding-bottom: 20px;

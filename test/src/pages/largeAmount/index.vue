@@ -194,7 +194,7 @@ export default {
                 width: 30vw;
                 height: 100%;
                 >div{
-                    background: #29305C;
+                    background: #ffa800;
                     color: white;
                     padding: 15px;
                     border-radius: 10px;

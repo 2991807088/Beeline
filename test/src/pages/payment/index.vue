@@ -395,7 +395,7 @@ export default {
                              width:30%;
                               border:1px solid #ccc;
                               padding:10px 0px;
-                               background-color: #29305C;
+                               background-color: #ffa800;
                               color:#fff;
                           }
                       }
@@ -428,14 +428,14 @@ export default {
                                     margin-right: 15px;
                                    }
                                   &.round {
-                                       background-color: #29305C;
+                                       background-color: #ffa800;
                                   }
                               }
                               >.info {
                                   flex:1;
                                 //   border:2px solid #ccc;
                                 //   background-image: -webkit-linear-gradient(0deg, #57A4DD, #B8DDFF);
-                                background-color: #29305C;
+                                background-color: #ffa800;
                                   border-radius: 10px;
                                   padding:10px 20px 20px 15px;
                                   color:#fff;
@@ -513,7 +513,7 @@ export default {
                margin-top:100px;
                padding:0 20px;
                .van-button--info {
-                   background-color: #29305C;
+                   background-color: #ffa800;
                }
                >button {
                    height: 90px;
@@ -527,7 +527,7 @@ export default {
                display: flex;
                justify-content: space-between;
                 .van-button--info {
-                   background-color: #29305C;
+                   background-color: #ffa800;
                }
                >button {
                    padding:5px 20px;

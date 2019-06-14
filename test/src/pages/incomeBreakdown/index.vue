@@ -105,7 +105,7 @@ export default {
                    border-bottom: 1px solid #ccc;
                }
                >.income {
-                    background-color:#29305C;
+                    background-color:#ffa800;
                    position: relative;
                    margin:20px;
                    border-radius: 10px;
@@ -134,7 +134,7 @@ export default {
                        top:10%;
                        border-radius: 10px;
                        background-color: #fff;
-                       color:#29305C;
+                       color:#ffa800;
                    }
                }
                >.number {

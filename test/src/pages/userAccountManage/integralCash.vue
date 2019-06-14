@@ -66,7 +66,7 @@ export default {
         padding-top: 86px;
         overflow: scroll;
         .loan .van-nav-bar {
-           background: #29305C !important;
+           background: #ffa800 !important;
        }
         .cash-top{
             width: 100vw;
@@ -105,7 +105,7 @@ export default {
                         >div{
                             width: 60%;
                             height: 80%;
-                            background: #29305C;
+                            background: #ffa800;
                             color: white;
                             border-radius: 15px;
                         }
@@ -193,7 +193,7 @@ export default {
                 margin-left: auto;
                 margin-right: auto;
                 margin-top: 50px;
-                background: #29305C;
+                background: #ffa800;
                 color: white;
                 border-radius: 15px;
                 letter-spacing: 10px;

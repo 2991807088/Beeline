@@ -128,7 +128,7 @@ export default {
                     border-radius:40px;
                     
                     &:nth-of-type(1){
-                        background-color: #29305C;
+                        background-color: #ffa800;
                     }
                     &:nth-of-type(2){
                         background-color: #E78D17;

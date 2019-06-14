@@ -333,7 +333,7 @@ export default {
         height: auto;
         padding-top: 86px;
         .header-top {
-            background-color: #29305C;
+            background-color: #ffa800;
         }
         .income-tab{
            
@@ -408,7 +408,7 @@ export default {
                     .Invitation-number{
                         width: 100%;
                         height: 50%;
-                        color: #29305C;
+                        color: #ffa800;
                         font-weight: bold;
                         font-size: 30px;
                     }
@@ -423,14 +423,14 @@ export default {
                 height: 100px;
                 margin-left: auto;
                 margin-right: auto;
-                border: solid 1px #29305C;
+                border: solid 1px #ffa800;
                 position: relative;
                 .per-switch{
                     width: 50%;
                     height: 100%;
                 }
                 .checked{
-                    background: #29305C;
+                    background: #ffa800;
                     color: white;
                 }
             }
@@ -483,7 +483,7 @@ export default {
                         border-right: solid 1px #ccc;
                     }
                     .actives{
-                        border-bottom: solid 5px #29305C;
+                        border-bottom: solid 5px #ffa800;
                     }
                 }
             }
@@ -526,7 +526,7 @@ export default {
                         .list-reward{
                             font-size: 32px;
                             span{
-                                color: #29305C;
+                                color: #ffa800;
                             }
                         }
                         .list-havedone{

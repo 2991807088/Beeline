@@ -313,7 +313,7 @@ export default {
                 height:100px;
                 border: none;
                 color:#fff;
-                background-color: #29305C;
+                background-color: #ffa800;
                 border-radius: 15px;
                 width:92%;
                 height: 100px;

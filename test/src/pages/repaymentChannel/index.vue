@@ -280,7 +280,7 @@ export default {
           .button {
                   padding:0 30px;
                   .van-button--info {
-                      background-color: #29305C;
+                      background-color: #ffa800;
                   }
               }
        }

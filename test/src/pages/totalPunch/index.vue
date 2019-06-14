@@ -253,7 +253,7 @@ export default {
            padding-top:96px;
            padding-bottom: 50px;
            >.task{
-               background-color: #29305C;
+               background-color: #ffa800;
                color:#FFF1F6;
                padding:20px 30px;
                >.punch {
@@ -345,7 +345,7 @@ export default {
                
            }
            >.rule{
-               background-color: #29305C;
+               background-color: #ffa800;
                color:#fff;
                >ul{
                    display: flex;

@@ -155,7 +155,7 @@ export default {
        height: (100vh - 86px);
        padding-top: 86px;
        .header-top {
-           background-color: #29305C;
+           background-color: #ffa800;
        }
         .phone-numer {
             .per-input{
@@ -220,7 +220,7 @@ export default {
             padding-left:30px;
             padding-right: 30px;
             .van-button--default {
-                  background-color: #29305C;
+                  background-color: #ffa800;
             }
             >button {
                 height: 90px;

@@ -251,7 +251,7 @@ export default {
                        }
                        >div {
                            >.van-button--info {
-                                background-color: #29305C;
+                                background-color: #ffa800;
                                 height: 60px;
                                 line-height: 60px;
                                 margin-right: 10px;
@@ -260,14 +260,14 @@ export default {
                            }
                        }
                        .second{
-                            background-color: #29305C;
+                            background-color: #ffa800;
                              padding:4px 8px;
                              color:#fff;
                              border-radius:10px;
                              display: inline-block;
                        }
                        .van-button--info{
-                           background-color: #29305C;
+                           background-color: #ffa800;
                            font-size: 30px;
                        }
                        &:last-child {
@@ -306,7 +306,7 @@ export default {
                padding-left: 30px;
                padding-right:30px;
                .van-button--info{
-                   background-color: #29305C;
+                   background-color: #ffa800;
                }
                >button {
                    height: 90px;

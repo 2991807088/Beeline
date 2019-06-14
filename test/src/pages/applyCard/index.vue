@@ -225,7 +225,7 @@ export default {
                        font-size: 30px;
                    }
                    .van-button--info{
-                       background-color: #29305C;
+                       background-color: #ffa800;
                    }
 
              }

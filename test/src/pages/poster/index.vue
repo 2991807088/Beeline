@@ -474,7 +474,7 @@ export default {
         }
          .van-dialog .van-button {
                 /* border: 0; */
-                border: 1px solid #29305C;
+                border: 1px solid #ffa800;
             }
    }
 </style>

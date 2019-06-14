@@ -42,7 +42,7 @@
             <van-button type="primary" class="sure" @click="handleSubmit">确认</van-button>
         </div>
         <div class="clause">
-            <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#29305C">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
+            <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#ffa800">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
             <div class="remarks">{{remarks}}</div>
         </div>
         <van-popup class="popup" v-model="show" position="right">
@@ -286,7 +286,7 @@ export default {
             margin-right: auto;
             padding: 20px;
             line-height: 40px;
-            color: #29305C;
+            color: #ffa800;
             font-size: 26px;
             background: #F5F5F4;
             -moz-box-shadow:0px 0px 15px #999 inset;               /* For Firefox3.6+ */
@@ -395,7 +395,7 @@ export default {
                   }
             
             span{
-                color: #29305C;
+                color: #ffa800;
             }
             .remarks{
                 width: 90vw;
@@ -419,7 +419,7 @@ export default {
                 .pop-title{
                     font-size: 35px;
                     font-weight: 700;
-                    color: #29305C;
+                    color: #ffa800;
                 }
                 .pop-content{
                     padding: 5vw;

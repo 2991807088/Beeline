@@ -342,7 +342,7 @@ export default {
                margin-top:150px;
                padding:0 20px;
                .van-button--info {
-                   background-color: #29305C;
+                   background-color: #ffa800;
                }
                >button {
                    height: 90px;

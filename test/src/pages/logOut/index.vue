@@ -273,7 +273,7 @@ export default {
                                 width: auto;
                                 height: 80px;
                                 margin: 10px 0px;
-                                background: #29305C;
+                                background: #ffa800;
                                 color: #ffffff;
                                 font-size: 26px;
                             }
@@ -284,7 +284,7 @@ export default {
            >.at-once {
                width:90%;
                height: 100px;
-               background-color: #29305C;
+               background-color: #ffa800;
                color:white;
                margin-top:100px;
                margin-left:5%;

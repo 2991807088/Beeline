@@ -67,7 +67,7 @@ export default {
           >.partner {
               width:100%;
               height: 300px;
-              background-color: #29305C;
+              background-color: #ffa800;
               position: relative;
               >.detail {
                   width:94%;

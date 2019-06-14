@@ -177,7 +177,7 @@ export default {
                 // background-color: #fff;
                 border-bottom: 3px solid #ccc;
                 >.consultation {
-                    color:#29305C;
+                    color:#ffa800;
                     width:100px;
                     font-size: 36px;
                    text-align: center;
@@ -197,7 +197,7 @@ export default {
                     padding-left:10px;
                     border-left: 2px solid #ccc;
                     .van-notice-bar__wrap{
-                        color:#29305C;
+                        color:#ffa800;
                     }
 
                 }

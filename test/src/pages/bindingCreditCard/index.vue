@@ -160,7 +160,7 @@ export default {
                         font-size: 30px;
                         >button {
                             height:80px;
-                            background-color: #29305C;
+                            background-color: #ffa800;
                         }
                     }
                >ul{
@@ -207,7 +207,7 @@ export default {
            }
         }
         .loan .van-nav-bar {
-          background-color: #29305C !important;
+          background-color: #ffa800 !important;
           height: 96px;
           line-height: 96px;
          }
@@ -304,7 +304,7 @@ export default {
                 width: 30vw;
                 height: 100%;
                 >div{
-                    background: #29305C;
+                    background: #ffa800;
                     color: white;
                     padding: 15px;
                     border-radius: 10px;
@@ -317,7 +317,7 @@ export default {
             padding-bottom: 30px;
             margin-left: auto;
             margin-right: auto;
-            background-color: #29305C;
+            background-color: #ffa800;
             color: white;
             margin-top: 50px;
             border-radius: 20px;

@@ -557,7 +557,7 @@ export default {
                         margin-top:20px;
                         text-align: center;
                         font-size: 34px;
-                        color:#29305C;
+                        color:#ffa800;
                         padding:20px 0px;
                         font-weight: bolder;
                     }
@@ -577,7 +577,7 @@ export default {
                             line-height: 80px;
                             text-align: center;
                             &.upd {
-                                background-color: #29305C;
+                                background-color: #ffa800;
                                 color:#fff;
                             }
                         }

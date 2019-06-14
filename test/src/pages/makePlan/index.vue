@@ -388,13 +388,13 @@ export default {
             // margin:15px;
              >p {
                  margin:20px;
-                 color:#29305C;
+                 color:#ffa800;
              }
              >.content {
                   margin:15px;
                  >.eara {
                      .van-picker-column__item--selected{
-                         color:#29305C;
+                         color:#ffa800;
                          font-weight: bold;
                      }
                      margin-bottom: 15px;
@@ -448,7 +448,7 @@ export default {
               margin-top:50px;
               padding:0 30px;
               .van-button--info {
-                  background-color: #29305C;
+                  background-color: #ffa800;
               }
           }
        }

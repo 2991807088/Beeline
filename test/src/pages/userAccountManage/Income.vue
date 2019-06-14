@@ -107,7 +107,7 @@ export default {
         height: auto;
         padding-top: 90px;
         .header-top {
-            background-color: #29305C;
+            background-color: #ffa800;
         }
         .top{
             width: 90vw;
@@ -223,7 +223,7 @@ export default {
             }
             .icon-jine1{
                 font-size: 50px;
-                color: #29305C;
+                color: #ffa800;
             }
         }
     }

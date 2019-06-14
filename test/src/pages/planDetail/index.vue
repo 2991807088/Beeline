@@ -221,7 +221,7 @@ export default {
            padding-bottom: 50px;
             .van-dialog .van-button {
                 /* border: 0; */
-                border: 1px solid #29305C;
+                border: 1px solid #ffa800;
             }
              >.card {
                   padding-top:30px;
@@ -231,13 +231,13 @@ export default {
                       margin:0 !important;
                       >span {
                           &:nth-of-type(2){
-                              color:#29305C;
+                              color:#ffa800;
                           }
                       }
                   }
                   >.waiting {
                       display:flex;
-                      background-color: rgb(41, 48, 92);
+                      background-color: rgb(255, 168, 0);
                       box-sizing: border-box;
                       margin:5px 15px 20px 15px;
                       padding:15px 10px;
@@ -315,7 +315,7 @@ export default {
                           >.top {
                               display: flex;
                               justify-content: space-between;
-                              background-color: #29305C;
+                              background-color: #ffa800;
                               padding:15px 10px;
                               border-radius: 8px 8px 0px 0px;
                           }
@@ -348,7 +348,7 @@ export default {
                                           color:red;
                                       }
                                       .default {
-                                          color:#29305C;
+                                          color:#ffa800;
                                       }
                                   }
                               }

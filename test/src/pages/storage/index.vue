@@ -206,7 +206,7 @@ export default {
                                text-align: right;
                            }
                            span {
-                               background-color: #29305C;
+                               background-color: #ffa800;
                                color:#ddd; 
                                margin-left: 20px;
                                padding:15px 20px;
@@ -242,7 +242,7 @@ export default {
               padding-bottom: 30px;
               text-align: center;
               color:#fff;
-              background-color: #29305C;
+              background-color: #ffa800;
               width:90%;
               margin:0 auto;
               border-radius: 15px;

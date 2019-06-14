@@ -768,7 +768,7 @@ export default {
                 height: 100%;
                 font-size: 28px;
                 .alipay{
-                    border: solid 1.2px #29305C;
+                    border: solid 1.2px #ffa800;
                 }
                 .wechatpay{
                     border: solid 1.2px #09BB07;
@@ -816,7 +816,7 @@ export default {
             .submit{
                 width: 40%;
                 height: 100%;
-                background: #29305C;
+                background: #ffa800;
                 color:#ffffff;
                 font-size: 36px;
                 font-weight: bold;

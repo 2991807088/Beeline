@@ -560,7 +560,7 @@ export default {
                                             height: 80px;
                                         }
                                          .van-button--default{
-                                            background-color: #29305C;
+                                            background-color: #ffa800;
                                         }
 
                                   }
@@ -785,7 +785,7 @@ export default {
                               background-color: #fff;
                               >p {
                                   font-size: 32px;
-                                  color:#29305C;
+                                  color:#ffa800;
                                   font-weight: bold;
                               }
                           }
@@ -820,7 +820,7 @@ export default {
                                 height: 80px;
                               }
                             .van-dialog .van-button {
-                                 border: 1px solid #29305C;
+                                 border: 1px solid #ffa800;
                                 }
                             .van-dialog,
                             .van-dialog__message,
@@ -828,7 +828,7 @@ export default {
                                 font-size: 30px;
                             }
                              .van-button--default{
-                                    background-color: #29305C;
+                                    background-color: #ffa800;
                                 }
                              .van-button .van-button--default .van-button--large .van-dialog__confirm .van-hairline--left{
                                 height:70px;
@@ -917,7 +917,7 @@ export default {
                .van-button--default {
                    height:60px;
                    font-size: 30px;
-                   background-color: #29305C;
+                   background-color: #ffa800;
                }
            }
 

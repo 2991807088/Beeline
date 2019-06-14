@@ -149,7 +149,7 @@ export default {
                 height: 200px;
                 margin-left: auto;
                 margin-right: auto;
-                background: #29305C;
+                background: #ffa800;
                 margin-top: 25px;
                 border-radius: 20px;
                 position: relative;
