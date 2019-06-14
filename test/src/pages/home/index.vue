@@ -234,6 +234,7 @@ export default {
                     //  this.$toast('登录失败');
                 }else {
                     // console.log(res,"自动登录成功")
+                     storage.set('cid',res.data.data.id);
                     this.$store.commit('iscertification',res.data.data.iscertification);
                     this.$store.commit('level',res.data.data.level);
                     this.$store.commit('promotioncode',res.data.data.promotioncode);

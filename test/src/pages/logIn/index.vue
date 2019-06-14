@@ -97,7 +97,7 @@ export default {
                     that.$store.commit('headimg',res.data.data.photo);
                     that.$store.commit('ispartner',res.data.data.ispartner);
                     console.log('登陆成功',res);
-                    storage.set('openid',res.data.data.openid);
+                    storage.set('openid',res.data.data.openid)
                     that.$toast('登陆成功');
                     if(that.checked){
                         storage.set('rempass',true);

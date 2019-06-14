@@ -130,7 +130,7 @@ export default {
                           message:res.data.message
                       })
                   } else {
-                      this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
+                     this.$router.go(-1);
                   }               
               })
               .catch(err=>{

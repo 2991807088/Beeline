@@ -288,7 +288,7 @@ export default {
     },
     methods:{
         goBack(){
-            this.$router.push('/home/creditHousekeeper/aisleHousekeeper')
+            this.$router.go(-1)
         },
         goPlanDetail(id,bankName,name,nick){
             this.$router.push({
