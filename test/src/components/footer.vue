@@ -9,16 +9,15 @@
                         slot-scope="props"
                         :src="props.active ? icon.active : icon.normal"
                         >
-                       
                     </van-tabbar-item>
-                    <van-tabbar-item to="/vip" >
-                        <span>VIP</span>
+                    <van-tabbar-item  to="/share">
+                        <span>卡包</span>
                         <img
                         slot="icon"
                         slot-scope="props"
-                        :src="props.active ? icon.vipActive : icon.vipNomal"
+                        :src="props.active ? icon.shareActive : icon.shareNomal"
                         >
-                        </van-tabbar-item>
+                    </van-tabbar-item>
                     <van-tabbar-item to="/personalCenter" >
                          <span>我的</span>
                         <img
@@ -27,14 +26,14 @@
                         :src="props.active ? icon.personActive : icon.personNomal"
                         >
                         </van-tabbar-item>
-                     <van-tabbar-item  to="/share">
-                        <span>卡包</span>
+                    <van-tabbar-item to="/vip" >
+                        <span>VIP</span>
                         <img
                         slot="icon"
                         slot-scope="props"
-                        :src="props.active ? icon.shareActive : icon.shareNomal"
+                        :src="props.active ? icon.vipActive : icon.vipNomal"
                         >
-                    </van-tabbar-item>
+                        </van-tabbar-item>
                     <van-tabbar-item  to="/financialCircle">
                         <span>AI雷达</span>
                         <img
