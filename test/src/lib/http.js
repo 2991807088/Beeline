@@ -22,7 +22,7 @@ export const axiosPost = (url, params = {}) =>{;
                 // this.$toast(res.data.massage);
             }
         }).catch(err =>{
-            reject(err);
+            // reject(err);
             // this.$toast(res.data.massage);
         })
     })
