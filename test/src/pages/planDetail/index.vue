@@ -129,7 +129,7 @@ export default {
                   }
               })
               .catch(err=>{
-                  console.log(err)
+                //   console.log(err)
               })
                 })
                 .catch(()=>{
@@ -178,7 +178,7 @@ export default {
                  }
              })
              .catch(err=>{
-                 console.log(err,"子计划")
+                //  console.log(err,"子计划")
              })
         }
     },

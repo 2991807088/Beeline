@@ -134,10 +134,10 @@ export default {
                
             })
             .catch(function(err){
-                 that.$toast({
-                    message:err.message
-                })
-                return
+                //  that.$toast({
+                //     message:err.message
+                // })
+                // return
             })
             
             

@@ -351,11 +351,11 @@ export default {
         this.handleSearchAuths()
         // H5不需要自动登录
         //  this.automatic() //自动登录
-         this.getUpdate() //获取版本
+        //  this.getUpdate() //获取版本
     }  ,
     mounted () {
         // 更新
-        this.update();
+        // this.update();
     }
 }
 </script>

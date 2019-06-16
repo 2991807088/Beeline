@@ -359,15 +359,10 @@ export default {
                       
              })
              .catch(res=>{
-                 console.dir(res)
-                
                   this.$router.push({
                         path:"/home/insertEsiCash",
                         query:{info:i}
                      })
-                //  if(!err.data.success){
-                //      
-                //  }
              })
         },
          repayment(i){
@@ -454,7 +449,7 @@ export default {
                 this.promotioncode  = res.data.data.promotioncode; 
                 
             }).catch(res =>{
-                console.log('查询个人设置失败',res);
+                // console.log('查询个人设置失败',res);
             })
         },
     },

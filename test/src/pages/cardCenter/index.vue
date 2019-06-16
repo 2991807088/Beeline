@@ -111,7 +111,6 @@ export default {
             let that= this
             axiosPost("/creditCard/getBankList")
             .then(function(res){
-                console.log('列表请求成功',res);
                 let data = res.data.data.data
                 that.cardList.push(...data.notSingleCardList)
                 that.cardList.push(...data.singleCardList)
@@ -120,7 +119,6 @@ export default {
                 },500)
             })
             .catch(function(res){
-                console.log('列表请求失败',res);
                 setTimeout(() =>{
                     that.componentload = false;
                 },500)

@@ -10,22 +10,19 @@ export const axiosPost = (url, params = {}) =>{;
     });
     return new Promise((resolve,reject) =>{
         _axios.post(_url,qs.stringify(params)).then(res =>{
-            if(res.data.success){
+            // if(res.data.success){
                 if(res.data.code == -1){
                     reject(res);
                     window.location.href = '#/logIn';
                 }else{
                     resolve(res);
                 }
-            }else{
+            // }else{
                 reject(res);
-                console.log('测试',res);
                 // this.$toast(res.data.message);
-            }
+            // }
         }).catch(res =>{
-            
-            reject(res);
-            console.log('测试',res);
+            // reject(res);
             // this.$toast(res.data.message);
         })
     })

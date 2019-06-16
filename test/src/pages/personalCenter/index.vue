@@ -141,7 +141,7 @@ export default {
                 this.repayrate = res.data.data.repayrate;
                 res.data.data.iscertification == '0' ? this.iscertification = '未认证' : ( res.data.data.iscertification == '1' ? this.iscertification = '审核中' : (res.data.data.iscertification == '2' ? this.iscertification = '认证成功' : this.iscertification = '认证失败，请重试')); 
             }).catch(res =>{
-                console.log('查询个人设置失败',res);
+                // console.log('查询个人设置失败',res);
             })
         },
         // 我的费率

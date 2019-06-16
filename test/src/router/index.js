@@ -92,6 +92,7 @@ import promotionMaterialComponent from '@/pages/promotionMaterial'
 import corporateVideoComponent from '@/pages/corporateVideo'
 import adsNewsComponent from '@/pages/adsNews'
 import incomeBreakdownComponent from '@/pages/incomeBreakdown'
+import andLinkComponent from '@/pages/andLink'
 // 支付宝支付中间页
 import middleAlipay from "@/pages/vip/middle"
 import applyCardComponent from '@/pages/applyCard'
@@ -154,6 +155,7 @@ export default new Router({
     {path:"/home/punch/planDetail",component:planDetailComponent},
     {path:"/home/news",component:newsComponent},
     {path:"/home/addCard",component:addCardComponent},
+    {path:"/home/andLink",component:andLinkComponent}, // 安卓跳转第三方
     {path:"/home/cardCenter/applyCard",component:applyCardComponent,},
     {path:"/home/creditHousekeeper/aisleHousekeeper/bindingCreditCard",component:bindingCreditCardComponent,},
     {path:"/home/creditHousekeeper/aisleHousekeeper/repayment",component:repaymentComponent},

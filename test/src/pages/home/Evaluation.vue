@@ -144,11 +144,16 @@ export default {
                 }
                 axiosPost("/creditCard/getProductUrl",data)
                 .then(res=>{
-                    console.log('成功',res);
-                    window.location.href = res.data.data;
+                    // console.log('成功',res);
+                    if(res.data.success) {
+                       window.location.href = res.data.data;
+                    } else {
+                         this.$toast('信息验证失败');
+                    }
+                  
                 })
                 .catch(res=>{
-                    console.log('失败',res);
+                    // console.log('失败',res);
                     this.$toast('信息验证失败');
                 })
            }

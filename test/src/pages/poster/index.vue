@@ -284,10 +284,15 @@ export default {
             })
             .then(() => {
                 // console.log('开启');   
-                this.handlePosterWithoutDetail();
+               
+                if(res.data.success){
+                     this.handlePosterWithoutDetail();
+                } else {
+                     this.handlePoster();
+                }
             }).catch(() => {
                 // console.log('关闭');
-                this.handlePoster();
+               
             });
         },
         shareApp(){

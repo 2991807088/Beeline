@@ -361,7 +361,7 @@ export default {
                             }
                         });
                     }).catch(res =>{
-                        console.log('失败',res);
+                        // console.log('失败',res);
                     })
             }
         },
@@ -404,7 +404,7 @@ export default {
                 console.log('下单成功',res);
                 this.orderid = res.data.data.orderid;  
             }).catch(res =>{
-                console.log('下单失败',res);
+                // console.log('下单失败',res);
             })
             
         },
@@ -427,7 +427,7 @@ export default {
                 this.recomcode = res.data.data.promotioncode;
                 this.recomheadimg = res.data.data.photo;
             }).catch(res =>{
-                console.log('上级查询失败',res);
+                // console.log('上级查询失败',res);
             })
         }
     },
