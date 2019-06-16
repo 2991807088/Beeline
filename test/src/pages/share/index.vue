@@ -174,7 +174,7 @@ export default {
     data(){
         return{
             showFlag:false,
-            active: 3,
+            active: 1,
             nickname: '',
             headimg: '',
             promotioncode: '',

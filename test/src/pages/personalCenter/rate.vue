@@ -12,29 +12,29 @@
             </div>
             <div class="rows row" v-if="level == '0'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.55%+3元/笔</div>
+                <div class="end-center">0.55%</div>
             </div>
             <div class="rows row" v-if="level == '0'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
-                <div class="end-center">0.60%+3元/笔</div>
+                <div class="end-center">0.60%</div>
             </div>
 
             <div class="rows row" v-if="level == '1'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.50%+2元/笔</div>
+                <div class="end-center">0.50%</div>
             </div>
             <div class="rows row" v-if="level == '1'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
-                <div class="end-center">0.55%+2元/笔</div>
+                <div class="end-center">0.55%</div>
             </div>
 
             <div class="rows row" v-if="level == '2'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.45%+1元/笔</div>
+                <div class="end-center">0.45%</div>
             </div>
             <div class="rows row" v-if="level == '2'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
-                <div class="end-center">0.50%+1元/笔</div>
+                <div class="end-center">0.50%</div>
             </div>
         </div>
     </div>
@@ -68,8 +68,7 @@ export default {
     .top{
         width: 100%;
         height: 80px;
-        background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
-        background-blend-mode: normal,normal;
+        background:#ffa800;
         color: #fff;
         div:nth-child(1){
             width: 10%;

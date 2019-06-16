@@ -208,7 +208,7 @@ export default {
     },
     data(){
         return{
-            active: 1,
+            active: 3,
             ShowDiamonds:false,
             ShowGold: false,
             showRule:false,
