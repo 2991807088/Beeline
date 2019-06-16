@@ -19,11 +19,14 @@ export const axiosPost = (url, params = {}) =>{;
                 }
             }else{
                 reject(res);
-                // this.$toast(res.data.massage);
+                console.log('测试',res);
+                // this.$toast(res.data.message);
             }
-        }).catch(err =>{
-            // reject(err);
-            // this.$toast(res.data.massage);
+        }).catch(res =>{
+            
+            reject(res);
+            console.log('测试',res);
+            // this.$toast(res.data.message);
         })
     })
 }

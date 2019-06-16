@@ -56,18 +56,30 @@
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_qiandao.png" size="28px"/></div>
                 <div class="title center">签到打卡</div>
             </router-link>
-            <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'http://baoxian.pingan.com',title: '意外险'}}">
+            <!-- <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'http://baoxian.pingan.com',title: '意外险'}}">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_yiwaixian.png" size="28px"/></div>
                 <div class="title center">意外险</div>
-            </router-link>
-            <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'https://m2.weizhang8.cn/',title: '违章查询'}}">
+            </router-link> -->
+             <div  class="per_menu van-hairline--surround" @click="changeLink('http://baoxian.pingan.com','意外险')" >
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_yiwaixian.png" size="28px"/></div>
+                <div class="title center">意外险</div>
+            </div>
+            <!-- <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'https://m2.weizhang8.cn/',title: '违章查询'}}">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_weizhang.png" size="28px"/></div>
                 <div class="title center">违章查询</div>
-            </router-link>
-            <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'http://www.epicc.com.cn/',title: '汽车保险'}}">
+            </router-link> -->
+            <div  class="per_menu van-hairline--surround"  @click="changeLink('https://m2.weizhang8.cn/','违章查询')" >
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_weizhang.png" size="28px"/></div>
+                <div class="title center">违章查询</div>
+            </div>
+            <!-- <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/loan/form/myOrder',query: {info: 'http://www.epicc.com.cn/',title: '汽车保险'}}">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_qichebaoxian.png" size="28px"/></div>
                 <div class="title center">汽车保险</div>
-            </router-link>
+            </router-link> -->
+             <div  class="per_menu van-hairline--surround" @click="changeLink('http://www.epicc.com.cn/','汽车保险')" >
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_qichebaoxian.png" size="28px"/></div>
+                <div class="title center">汽车保险</div>
+            </div>
             <div class="per_menu van-hairline--surround" @click="handleExpect">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_jifen.png" size="28px"/></div>
                 <div class="title center">积分兑换</div>
@@ -168,6 +180,28 @@ export default {
    methods:{
         isShow() {
             this.showAaside=true
+        },
+        changeLink(url,title){
+             if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                //  console.log("and")
+                 this.$router.push({
+                     path:"/home/andLink",
+                     query:{
+                         info:url,
+                         title:title
+                     }
+                 })
+             } else {
+                //  console.log("ios")
+                 location.href=url
+                //  this.$router.push({
+                //      path:"/loan/form/myOrder",
+                //      query:{
+                //          info:url,
+                //          title:title
+                //      }
+                //  })
+             }
         },
         handleExpect(){
             this.$toast('敬请期待')

@@ -32,6 +32,7 @@
                                              <div   class="sign-out">
                                                 <van-button v-show="item.state=='0' || item.state=='3'" @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button>
                                             </div> 
+                                            <p v-show="item.state='4'">{{item.remark}}</p>
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
@@ -237,7 +238,7 @@
                                     <div class="middle">
                                         <div class="m-left">
                                             <p>{{item.bankNick}}</p>
-                                            <!-- <p>失败</p> -->
+                                            <p>{{item.remark}}</p>
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
@@ -495,10 +496,7 @@ export default {
                                           margin-bottom: 15px;
                                       }
                                       &:nth-of-type(2){
-                                          background-color: rgba(0, 0, 0, .2);
-                                          padding:15px;
-                                          border-radius:20px;
-                                          margin-top:15px;
+                                          padding-top:15px;
                                       }
                                   }
                               }

@@ -238,7 +238,7 @@ export default {
                  
              })
              .catch(err=>{
-                //  console.log(err)
+                 console.log(err)
                  this.$router.push({
                         path:"/home/insertEsiCash",
                         query:{info:i}

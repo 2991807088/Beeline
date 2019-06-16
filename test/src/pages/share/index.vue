@@ -46,6 +46,7 @@
                       <div class="m-left">
                           <p>{{info.bankNick}}</p>
                           <!-- <p>等待执行：2019/5/17:14:33:37</p> -->
+                          <p v-show="info.state='4'">{{info.remark}}</p>
                       </div>
                       <div class="m-right">
                            <p>执行状态</p>
@@ -357,9 +358,13 @@ export default {
                 //  console.log(res,"res   success")
                       
              })
-             .catch(err=>{
-                 console.dir(err)
-                 
+             .catch(res=>{
+                 console.dir(res)
+                
+                  this.$router.push({
+                        path:"/home/insertEsiCash",
+                        query:{info:i}
+                     })
                 //  if(!err.data.success){
                 //      
                 //  }
@@ -546,6 +551,9 @@ export default {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-bottom: 15px;
+                                      }
+                                       &:nth-of-type(2){
+                                        padding-top:15px;
                                       }
                                   }
                               }
