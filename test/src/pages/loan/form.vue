@@ -213,14 +213,35 @@ export default {
                         let url=res.data.data;
                         this.componentload=true
                         setTimeout(()=>{
+                        //     this.$router.push({
+                        //     path:"/home/online",
+                        //     query:{
+                        //         info:url,
+                        //         title:"贷款中心"
+                        //       }
+                        //   })
+                        //    this.componentload=false
+
+                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                            // console.log("and")
                             this.$router.push({
                             path:"/home/online",
                             query:{
                                 info:url,
                                 title:"贷款中心"
-                              }
-                          })
-                           this.componentload=false
+                               }
+                             })
+                            } else {
+                                 this.componentload=false
+                                location.href=url
+                                //  this.$router.push({
+                                //      path:"/loan/form/myOrder",
+                                //      query:{
+                                //          info:url,
+                                //          title:title
+                                //      }
+                                //  })
+                            }
                         },1000)
                    }
                    
