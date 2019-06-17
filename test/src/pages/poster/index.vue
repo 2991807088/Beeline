@@ -4,7 +4,7 @@
             <div class="left-icon start-center" @click="goBack"><van-icon color="white" size="20px" name="arrow-left"/></div>
             <div class="top-title center">海报</div>
             <div @click="showCover" class="right-icon center">
-                     <van-icon color="white" size="20px" name="weapp-nav"/>
+                     <!-- <van-icon color="white" size="20px" name="weapp-nav"/> -->
                 </div>
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
@@ -283,16 +283,14 @@ export default {
                 cancelButtonText: '关闭',
             })
             .then(() => {
-                // console.log('开启');   
+                console.log('开启');   
                
-                if(res.data.success){
-                     this.handlePosterWithoutDetail();
-                } else {
-                     this.handlePoster();
-                }
+             this.handlePosterWithoutDetail();
+               
             }).catch(() => {
                 // console.log('关闭');
-               
+                 this.handlePoster();
+                  console.log("catchs")
             });
         },
         shareApp(){

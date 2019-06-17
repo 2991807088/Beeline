@@ -7,7 +7,8 @@
             <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
             <router-link tag="div" to="/radar" class="circle center">
                 <img src="http://fx.91dianji.com.cn/AI@2x.png" alt="">
-                <img src="http://fx.91dianji.com.cn/fengxing_AI_center@2x.png" alt="">
+                <img src="http://fx.91dianji.com.cn/leida@2x.png" alt="">
+                <p>蜂行雷达</p>
             </router-link>
             <div class="btn">
                 <div class="center" @click="handleExpect">AI报表</div>
@@ -117,6 +118,12 @@ export default {
                 top: 160px;
                 right: 0px;
                 z-index: 3;
+                >p {
+                    position: absolute;
+                    top:63%;
+                    right:43%;
+                    color:#fff;
+                }
                 img:nth-child(1){
                     width: 90%;
                     height: auto;
@@ -124,11 +131,11 @@ export default {
                     -webkit-animation: myMove1 4s linear infinite normal;
                 }
                 img:nth-child(2){
-                    width: 140px;
+                    width: 144px;
                     height: auto;
                     position: absolute;
                     z-index: 2;
-                    top: 260px;
+                    top: 264.5px;
                 }
                 @keyframes myMove1 {
                     from {transform: rotate(360deg);}
