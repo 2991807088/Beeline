@@ -3,9 +3,9 @@ import qs from 'qs'
 import {hostUrl} from '@/lib/config'
 // 封装POST请求
 export const axiosPost = (url, params = {}) =>{;
-    // const _url = hostUrl + url
+    const _url = hostUrl + url
     const _axios = axios.create({
-        baseURL: 'http://fx.91dianji.com.cn/api',
+        // baseURL: 'http://fx.91dianji.com.cn/api',
         withCredentials: true,
         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
     });
