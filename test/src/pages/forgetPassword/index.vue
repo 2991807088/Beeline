@@ -183,12 +183,18 @@ export default {
                     that.authcode=""
                     that.newPassword=""
                     that.suerPassword=""
+                }else{
+                    that.$toast({
+                        message:err.data.message
+                    })
                 }
                 
              })
              .catch(function(err){
                 //  console.log(err,"error");
-                 
+                 that.$toast({
+                    message:err.data.message
+                })
              })
         }
     },
