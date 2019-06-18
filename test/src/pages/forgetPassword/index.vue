@@ -193,7 +193,7 @@ export default {
         }
     },
     created(){
-        this.handleJundeMobile();
+        // this.handleJundeMobile();
     }
 }
 </script>
