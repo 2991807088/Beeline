@@ -64,18 +64,29 @@ export default {
                     }  else {
                         // window.location.href=res.data.data
                         let url=res.data.data
-                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                                this.$router.push({
-                                    path:"/home/cardCenter/progressQuery",
-                                    query:{
-                                        info:url,
-                                        title:"信用卡办理"
-                                    }
-                              })
-                    } else {
-                        //  console.log("ios")
-                        location.href=url
-                      }    
+
+                         this.$router.push({
+                            path:"/home/cardCenter/progressQuery",
+                            query:{
+                                info:url,
+                                title:"信用卡办理"
+                            }
+                        })
+
+
+
+                    //      if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    //             this.$router.push({
+                    //                 path:"/home/cardCenter/progressQuery",
+                    //                 query:{
+                    //                     info:url,
+                    //                     title:"信用卡办理"
+                    //                 }
+                    //           })
+                    // } else {
+                    //     //  console.log("ios")
+                    //     location.href=url
+                    //   }    
                     }
                 })
                 .catch(err=>{

@@ -5,7 +5,7 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <iframe :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe>
+        <!-- <iframe :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe> -->
     </div>
 
 </template>
@@ -22,7 +22,7 @@ export default {
     },
     methods:{
         goBack() {
-            // plus.webview.close( "yinlian")
+            plus.webview.close( "yinlian")
             this.$router.push("/home")
         },
        

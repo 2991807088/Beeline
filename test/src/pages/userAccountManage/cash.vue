@@ -88,10 +88,6 @@ export default {
             amount: '222',
             cardLength: '',
             bankcardlist: [
-                // {
-                //     abridge: '中国民生银行5323',
-                //     id: '2'
-                // }
             ],
             abridge: '中国民生银行5323',
             bank_select: false,
@@ -118,16 +114,16 @@ export default {
             this.bank_select = false;
         },
         // 选择银行
-        onChange(picker, value, index) {
-             if(value.length == '0'){
-                 this.bank_select = false;
-                this.$toast('请先绑定银行卡');
-             }else{
-                 this.bank_select = false;
-                this.bankname = value;
-                this.cardId = ((this.bankcardlist).filter(item =>item.abridge == value))[0].id
-             }
-        },
+        // onChange(picker, value, index) {
+        //      if(value.length == '0'){
+        //          this.bank_select = false;
+        //         this.$toast('请先绑定银行卡');
+        //      }else{
+        //          this.bank_select = false;
+        //         this.bankname = value;
+        //         this.cardId = ((this.bankcardlist).filter(item =>item.abridge == value))[0].id
+        //      }
+        // },
         // 应付只绑定一张银行卡的情况
         handleConfirm(value, index){
             if(value.length == '0'){

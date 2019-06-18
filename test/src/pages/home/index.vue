@@ -182,26 +182,26 @@ export default {
             this.showAaside=true
         },
         changeLink(url,title){
-             if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                //  console.log("and")
-                 this.$router.push({
-                     path:"/home/andLink",
+              this.$router.push({
+                     path:"/loan/form/myOrder",
                      query:{
                          info:url,
                          title:title
                      }
                  })
-             } else {
-                //  console.log("ios")
-                 location.href=url
-                //  this.$router.push({
-                //      path:"/loan/form/myOrder",
-                //      query:{
-                //          info:url,
-                //          title:title
-                //      }
-                //  })
-             }
+            //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
+            //     //  console.log("and")
+            //      this.$router.push({
+            //          path:"/home/andLink",
+            //          query:{
+            //              info:url,
+            //              title:title
+            //          }
+            //      })
+            //  } else {
+            //     //  console.log("ios")
+            //      location.href=url
+            //  }
         },
         handleExpect(){
             this.$toast('敬请期待')
@@ -237,8 +237,6 @@ export default {
               // 获取设备的版本号
               if(window.plus){  
                    that.updateVerson=parseFloat(plus.runtime.version);
-                //    console.log(that.versionAndroid)
-                    // console.log(that.versionIos)
                    if(that.versionAndroid>that.updateVerson || that.versionIos>that.updateVerson){
                        that.showUpdate=true
                    }
@@ -350,12 +348,12 @@ export default {
         this.city=this.$store.state.wechat.city;
         this.handleSearchAuths()
         // H5不需要自动登录
-        //  this.automatic() //自动登录
-        //  this.getUpdate() //获取版本
+         this.automatic() //自动登录
+         this.getUpdate() //获取版本
     }  ,
     mounted () {
         // 更新
-        // this.update();
+        this.update();
     }
 }
 </script>

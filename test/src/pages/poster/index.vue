@@ -4,7 +4,7 @@
             <div class="left-icon start-center" @click="goBack"><van-icon color="white" size="20px" name="arrow-left"/></div>
             <div class="top-title center">海报</div>
             <div @click="showCover" class="right-icon center">
-                     <!-- <van-icon color="white" size="20px" name="weapp-nav"/> -->
+                     <van-icon color="white" size="20px" name="weapp-nav"/>
                 </div>
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>

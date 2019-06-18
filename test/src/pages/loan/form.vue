@@ -9,7 +9,7 @@
           <!-- <van-swipe :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="(item,index) in images" :key="index"><img class="imgs" :src="item" alt=""></van-swipe-item>
           </van-swipe> -->
-          <img class="pic" src="http://sbs.91dianji.com.cn/banner01.jpg" alt="">
+          <img class="pic" src="http://fx.91dianji.com.cn/fxform.jpg" alt="">
         </div>
         <div class="title center">选择或添加申请人信息</div>
         <div class="detail">请确保选择或添加的申请人信息与贷款申请表所填信息保持真实一致，以免影响信用贷款进度；本平台对此信息保密，仅作提交金融机构工作人员审核，审核通知将以短信形式发送至该号码</div>
@@ -214,35 +214,28 @@ export default {
                         let url=res.data.data;
                         this.componentload=true
                         setTimeout(()=>{
-                        //     this.$router.push({
-                        //     path:"/home/online",
-                        //     query:{
-                        //         info:url,
-                        //         title:"贷款中心"
-                        //       }
-                        //   })
-                        //    this.componentload=false
-
-                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
                             this.$router.push({
                             path:"/home/online",
                             query:{
                                 info:url,
                                 title:"贷款中心"
-                               }
-                             })
-                            } else {
-                                 this.componentload=false
-                                location.href=url
-                                //  this.$router.push({
-                                //      path:"/loan/form/myOrder",
-                                //      query:{
-                                //          info:url,
-                                //          title:title
-                                //      }
-                                //  })
-                            }
+                              }
+                          })
+                           this.componentload=false
+
+                        //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                        //     // console.log("and")
+                        //     this.$router.push({
+                        //     path:"/home/online",
+                        //     query:{
+                        //         info:url,
+                        //         title:"贷款中心"
+                        //        }
+                        //      })
+                        //     } else {
+                        //          this.componentload=false
+                        //          location.href=url
+                        //     }
                         },1000)
                    }
                    
@@ -280,10 +273,11 @@ export default {
         height: auto;
         padding-top: 86px;
         .header-top {
-            background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            // background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+            background-color: #ffa800 !important;
             background-blend-mode: normal,normal;
             .top-title{
-                color: #fff;
+                color: #fff !important;
             }
         }
         .swipe{
@@ -329,7 +323,7 @@ export default {
                 height: 100%;
             }
             .label{
-                width: 14vw;
+                width: 16vw !important;
                 height: 100%;
                 font-weight: 600;
                 font-size: 26px;
@@ -375,7 +369,8 @@ export default {
                 margin-left: 2vw;
                 font-size: 30px;
                 letter-spacing: 5px;
-                background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                // background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
+                background-color: #f7cf6c !important;
                 background-blend-mode: normal,normal;
                 color: #f2f2f2;
                 font-weight: 700;

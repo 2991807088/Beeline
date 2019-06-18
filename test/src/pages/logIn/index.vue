@@ -30,10 +30,10 @@
                     <p>登录</p>
                 </div>
            </div>
-            <div class="wx-login">
+            <!-- <div class="wx-login">
                 <div class="logIn center">———————&nbsp;其他登录方式&nbsp;———————</div>
                 <div class="wx-logo center" @click="logIn"><van-icon size="32px" name="http://sbs.91dianji.com.cn/wx.png"/></div>
-            </div>
+            </div> -->
         </div>
     </div>
 

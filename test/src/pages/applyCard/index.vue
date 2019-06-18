@@ -109,25 +109,26 @@ export default {
                     that.componentload=true
                      let url=res.data.data.data
                     setTimeout(()=>{
-                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
-                            that.$router.push({
-                            path:"/loan/form/myOrder",
-                            query:{
-                                info:url,
-                                title:"办卡中心"
-                              }
-                           })
-                            } else {
-                                location.href=url
-                                //  this.$router.push({
-                                //      path:"/loan/form/myOrder",
-                                //      query:{
-                                //          info:url,
-                                //          title:title
-                                //      }
-                                //  })
-                            }
+
+                         this.$router.push({
+                                     path:"/loan/form/myOrder",
+                                     query:{
+                                         info:url,
+                                         title:"办卡中心"
+                                     }
+                                 })
+                        //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                        //     // console.log("and")
+                        //     that.$router.push({
+                        //     path:"/loan/form/myOrder",
+                        //     query:{
+                        //         info:url,
+                        //         title:"办卡中心"
+                        //       }
+                        //    })
+                        //     } else {
+                        //         location.href=url
+                        //     }
                      },1000)
                     //  location.href=res.data.data.data
                 }

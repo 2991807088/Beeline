@@ -243,34 +243,27 @@ export default {
                         setTimeout(() =>{
                             this.componentload = false;
                         },2000)
-                        // this.$router.push({
-                        //     path:"/loan/form/myOrder",
-                        //     query:{
-                        //         info:url,
-                        //         title:"支付"
-                        //       }
-                        // })
-
-                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
-                            this.$router.push({
+                        this.$router.push({
                             path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"支付"
                               }
-                             })
-                            } else {
-                                 this.componentload=false
-                                location.href=url
-                                //  this.$router.push({
-                                //      path:"/loan/form/myOrder",
-                                //      query:{
-                                //          info:url,
-                                //          title:title
-                                //      }
-                                //  })
-                            }
+                        })
+
+                    //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    //         // console.log("and")
+                    //         this.$router.push({
+                    //         path:"/loan/form/myOrder",
+                    //         query:{
+                    //             info:url,
+                    //             title:"支付"
+                    //           }
+                    //          })
+                    //         } else {
+                    //              this.componentload=false
+                    //             location.href=url
+                    //         }
                      }
                })
             .catch(err=>{

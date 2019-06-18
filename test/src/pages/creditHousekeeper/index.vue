@@ -122,18 +122,25 @@ export default {
                 } else if(res.data.code==="0"){
                     // window.location.href=res.data.data.url   
                     let url=res.data.data.url
-                    if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                    this.$router.push({
+                      this.$router.push({
                             path:"/home/online",
                             query:{
                                 info:url,
                                 title:"还款"
                               }
                          })
-                    } else {
-                        //  console.log("ios")
-                        location.href=url
-                    }    
+                    // if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    // this.$router.push({
+                    //         path:"/home/online",
+                    //         query:{
+                    //             info:url,
+                    //             title:"还款"
+                    //           }
+                    //      })
+                    // } else {
+                    //     //  console.log("ios")
+                    //     location.href=url
+                    // }    
                 }
             })
             .catch(err=>{
