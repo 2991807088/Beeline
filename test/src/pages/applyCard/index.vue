@@ -106,7 +106,7 @@ export default {
                     })
                     return
                 } else {
-                    that.componentload=true
+                    // that.componentload=true
                      let url=res.data.data.data
                     setTimeout(()=>{
 

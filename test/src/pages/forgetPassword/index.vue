@@ -183,6 +183,10 @@ export default {
                     that.authcode=""
                     that.newPassword=""
                     that.suerPassword=""
+                } else {
+                    that.$toast({
+                        message:res.data.message
+                    })
                 }
                 
              })
@@ -193,7 +197,7 @@ export default {
         }
     },
     created(){
-        this.handleJundeMobile();
+        // this.handleJundeMobile();
     }
 }
 </script>
