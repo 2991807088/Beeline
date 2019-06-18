@@ -192,7 +192,9 @@ export default {
              })
              .catch(function(err){
                 //  console.log(err,"error");
-                 
+                 that.$toast({
+                    message:err.data.message
+                })
              })
         }
     },
