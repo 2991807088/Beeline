@@ -67,8 +67,9 @@ export default {
             imgShow: false,
             url: 'http://fx.91dianji.com.cn',
             qrcode: '',
-            random: '01',
-             shares:null,
+            // random: '01',
+            random: null,
+            shares:null,
             sharewx:null,
             Sharewxf:false
         }
@@ -154,11 +155,11 @@ export default {
         // 随机数
         handlechangeRandom(){
             this.componentload = true;
-            var ran = Math.ceil((Math.random())*26);
+            var ran = Math.ceil((Math.random())*3);
             var random = '';
             if(ran < 10){
                 random = '0' + ran;
-                // console.log('随机数',random);
+                console.log('随机数',random);
                 this.random = random;
             }else{
                 this.random = ran;
@@ -203,7 +204,7 @@ export default {
             ctx.fillRect(0,0,375,667);
 
             var bigPoster = new Image();
-            
+            // console.log(this.random,"random")
             bigPoster.src = 'http://fx.91dianji.com.cn/pop'+ this.random +'.jpg';
             bigPoster.onload = function(){
                 ctx.drawImage(bigPoster,0,0,375,600);
@@ -305,10 +306,11 @@ export default {
 
     },
     created () {
-       
+      
     },
     mounted(){
         this.handleJundgeQrCode();
+         this.handlechangeRandom();
     }
 }
 </script>

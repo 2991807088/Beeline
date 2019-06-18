@@ -31,7 +31,6 @@ export default {
         }
     },
     created() {
-        console.log(this.$route.query.title);
         if(this.$route.query.title == 'tuiguang'){
             this.title = '信用卡推广';
             this.level = '1';
