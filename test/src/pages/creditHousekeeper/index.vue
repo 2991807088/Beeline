@@ -91,6 +91,28 @@ export default {
         keep(){
             this.showSelect=true
         },
+         changeLink(url,title){
+             if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                //  console.log("and")
+                 this.$router.push({
+                     path:"/home/andLink",
+                     query:{
+                         info:url,
+                         title:title
+                     }
+                 })
+             } else {
+                //  console.log("ios")
+                 location.href=url
+                //  this.$router.push({
+                //      path:"/loan/form/myOrder",
+                //      query:{
+                //          info:url,
+                //          title:title
+                //      }
+                //  })
+             }
+        },
         searchInfo(){
             axiosPost("/creditCard/getMerchantSettled")
             .then(res=>{
@@ -100,13 +122,18 @@ export default {
                 } else if(res.data.code==="0"){
                     // window.location.href=res.data.data.url   
                     let url=res.data.data.url
-                        this.$router.push({
+                    if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    this.$router.push({
                             path:"/home/online",
                             query:{
                                 info:url,
                                 title:"还款"
                               }
-                        })
+                         })
+                    } else {
+                        //  console.log("ios")
+                        location.href=url
+                    }    
                 }
             })
             .catch(err=>{

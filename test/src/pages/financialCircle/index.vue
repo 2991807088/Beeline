@@ -2,7 +2,9 @@
     <div id="radar">
         <div class="header">
             <div class="title center">AI雷达</div>
-            <div class="more center" @click="handleExpect"><van-icon name="weapp-nav" size="28px"/></div>
+            <div class="more center" @click="handleExpect">
+                <!-- <van-icon name="weapp-nav" size="28px"/> -->
+                </div>
             <div class="AI start-center"><van-icon size="20px" name="aim"/>&nbsp;AI雷达</div>
             <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
             <router-link tag="div" to="/radar" class="circle center">

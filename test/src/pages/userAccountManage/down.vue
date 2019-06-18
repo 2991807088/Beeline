@@ -6,7 +6,7 @@
             <div class="right-icon center"></div>
         </header>
         <div class="container">
-            <!-- <div class="down">
+            <div class="down">
                 <ul>
                     <li @click="download">
                         <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/Android.png"/></p>
@@ -17,23 +17,21 @@
                         <p>苹果下载</p>
                     </li>
                 </ul>
-            </div> -->
-
-             <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
+            </div>
+        </div>
+        <!-- <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
             <div class="pay-icon end-center"> <svg class="icon" aria-hidden="true"><use xlink:href="#icon-pay-unionpay"></use></svg></div>
             <div class="add-icon center"><van-icon name="plus" size="20px"/></div>
             <div class="add-title start-center">添加银行卡</div>
             <div class="more-icon center"><van-icon name="arrow"/></div>
-        </router-link>
-        <div class="card-list">
+        </router-link> -->
+        <!-- <div class="card-list">
             <div class="per-card" v-for="(item,index) in bankcardlist" :key="index">
                 <div class="name">{{item.name}}</div>
                 <div class="bankname">{{item.bankname}}</div>
                 <div class="bankcardno">{{item.bankcardno}}</div>
             </div>
-        </div>
-        </div>
-       
+        </div> -->
     </div>
 </template>
 <script>

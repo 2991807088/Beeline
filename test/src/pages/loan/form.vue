@@ -6,9 +6,10 @@
             <div class="right-icon center"></div>
         </header>
         <div class="swipe">
-          <van-swipe :autoplay="3000" indicator-color="white">
+          <!-- <van-swipe :autoplay="3000" indicator-color="white">
             <van-swipe-item v-for="(item,index) in images" :key="index"><img class="imgs" :src="item" alt=""></van-swipe-item>
-          </van-swipe>
+          </van-swipe> -->
+          <img class="pic" src="http://sbs.91dianji.com.cn/banner01.jpg" alt="">
         </div>
         <div class="title center">选择或添加申请人信息</div>
         <div class="detail">请确保选择或添加的申请人信息与贷款申请表所填信息保持真实一致，以免影响信用贷款进度；本平台对此信息保密，仅作提交金融机构工作人员审核，审核通知将以短信形式发送至该号码</div>
@@ -113,13 +114,13 @@ export default {
         return{
              componentload:false,
             fixed: true,
-            images:[
-                'http://sbs.91dianji.com.cn/banner01.jpg',
-                'http://sbs.91dianji.com.cn/banner02.jpg',
-                'http://sbs.91dianji.com.cn/banner03.jpg',
-                'http://sbs.91dianji.com.cn/banner04.jpg',
-                'http://sbs.91dianji.com.cn/banner05.jpg'
-            ],
+            // images:[
+            //     'http://sbs.91dianji.com.cn/banner01.jpg',
+            //     'http://sbs.91dianji.com.cn/banner02.jpg',
+            //     'http://sbs.91dianji.com.cn/banner03.jpg',
+            //     'http://sbs.91dianji.com.cn/banner04.jpg',
+            //     'http://sbs.91dianji.com.cn/banner05.jpg'
+            // ],
             form:{
                 name: '',
                 idcardnumber: '',
@@ -292,6 +293,9 @@ export default {
                 width: 100vw;
                 height: 400px;
             }
+            .pic {
+                width:100%;
+            }
         }
         .title{
             width: 100vw;
@@ -325,7 +329,7 @@ export default {
                 height: 100%;
             }
             .label{
-                width: 12vw;
+                width: 14vw;
                 height: 100%;
                 font-weight: 600;
                 font-size: 26px;

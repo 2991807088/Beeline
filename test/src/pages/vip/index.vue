@@ -107,7 +107,6 @@
                     <div class="per_detail row">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                         <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘经理 </div>
-                        <!-- <div>刘经理</div> -->
                         <div class="btn center">
                             <span><a href="tel:18755291160">拨打</a></span>
                         </div>
@@ -235,16 +234,11 @@ export default {
             var clipboard = new ClipboardJS('.test');
             //成功回调
             clipboard.on('success', function(e) {
-                that.$toast('复制成功');
-                console.info('Action:', e.action);
-                console.info('Text:', e.text);
-                console.info('Trigger:', e.trigger);  
+                that.$toast('复制成功'); 
                 e.clearSelection();
             });
             //失败回调
             clipboard.on('error', function(e) {
-                console.error('Action:', e.action);
-                console.error('Trigger:', e.trigger);
                 that.$toast('复制失败');
             });
         },

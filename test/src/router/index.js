@@ -55,6 +55,7 @@ import changeCardComponent from '@/pages/changeCard'
 import recordsComponent from '@/pages/records'
 import largeAmountComponent from '@/pages/largeAmount'  // 大额鉴权
 import largeCardComponent from '@/pages/largeCard'
+import downComponent from '@/pages/userAccountManage/down.vue' //下载
 
 
 
@@ -218,6 +219,8 @@ export default new Router({
     {path: '/loan/detail',component: loandetail},
     {path: '/loan/form',component: form},
     {path: '/ponserCenter/userAccountManage',component: userAccountManage},
+    {path: '/ponserCenter/userAccountManage/down',component: downComponent}, //下载
+
     {path: '/personalCenter/income',component: income},
     {path: '/personalCenter/incomedetail',component: incomedetail},
     {path: '/personalCenter/incomedetail/personalIncomeDetail',component: personalIncomeDetail},
