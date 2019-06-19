@@ -110,7 +110,7 @@ export default {
                      let url=res.data.data.data
                     setTimeout(()=>{
 
-                         this.$router.push({
+                         that.$router.push({
                                      path:"/loan/form/myOrder",
                                      query:{
                                          info:url,

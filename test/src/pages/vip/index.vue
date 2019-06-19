@@ -386,21 +386,24 @@ export default {
         // 一键升级
         handleOneClickUp(obj){
             console.log('一键升级',obj);
-            this.price = obj;
-            this.pup2 = true;
-            obj == '998' ? this.goodsname = '钻石会员' : this.goodsname = '黄金会员';
-            let url = '/order/insertOrder';
-            let params = {
-                amount: this.price,
-                name: this.goodsname
-            };
-            axiosPost(url,params).then(res =>{
-                console.log('下单成功',res);
-                this.orderid = res.data.data.orderid;  
-            }).catch(res =>{
-                // console.log('下单失败',res);
-            })
-            
+            if(obj == 'none'){
+                this.$toast('您已升级过该等级会员');
+            }else{
+                this.price = obj;
+                this.pup2 = true;
+                obj == '998' ? this.goodsname = '钻石会员' : this.goodsname = '黄金会员';
+                let url = '/order/insertOrder';
+                let params = {
+                    amount: this.price,
+                    name: this.goodsname
+                };
+                axiosPost(url,params).then(res =>{
+                    console.log('下单成功',res);
+                    this.orderid = res.data.data.orderid;  
+                }).catch(res =>{
+                    // console.log('下单失败',res);
+                })
+            }
         },
         // 联系我们
         handleContactUs(){
@@ -421,7 +424,7 @@ export default {
                 this.recomcode = res.data.data.promotioncode;
                 this.recomheadimg = res.data.data.photo;
             }).catch(res =>{
-                // console.log('上级查询失败',res);
+                console.log('上级查询失败',res);
             })
         }
     },
