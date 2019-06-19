@@ -39,8 +39,8 @@
             <div class="imgs" v-if="!showUpload">
                 <div class="savePoster center"><img :src="imgUrl" ></div>
                 <div class="success center">
-                    <!-- 海报生成成功，长按保存或分享 -->
-                     海报生成成功
+                    海报生成成功，长按保存或分享
+                     <!-- 海报生成成功 -->
                 </div>
                 
             </div>
@@ -113,7 +113,7 @@ export default {
               let that=this
           that.sharewx.send(
                 { content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
-                thumbs:["http://fx.91dianji.com.cn/sbs.jpg"],
+                thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
                  href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
                 , function(){
@@ -127,7 +127,7 @@ export default {
              that.sharewx.send(
                  { 
                      content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
-                     thumbs:["http://fx.91dianji.com.cn/sbs.jpg"],
+                     thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],
                      href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode,
                      extra: { scene: "WXSceneSession" } 

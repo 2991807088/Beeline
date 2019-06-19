@@ -91,56 +91,34 @@ export default {
         keep(){
             this.showSelect=true
         },
-         changeLink(url,title){
-             if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                //  console.log("and")
-                 this.$router.push({
-                     path:"/home/andLink",
-                     query:{
-                         info:url,
-                         title:title
-                     }
-                 })
-             } else {
-                //  console.log("ios")
-                 location.href=url
-                //  this.$router.push({
-                //      path:"/loan/form/myOrder",
-                //      query:{
-                //          info:url,
-                //          title:title
-                //      }
-                //  })
-             }
-        },
+        
         searchInfo(){
             axiosPost("/creditCard/getMerchantSettled")
             .then(res=>{
                 // console.log('链接请求成功',res);
                 if(res.data.code==="1"){
                     this.$router.push("/home/addCard")
-                } else if(res.data.code==="0"){
-                    // window.location.href=res.data.data.url   
-                    let url=res.data.data.url
-                      this.$router.push({
-                            path:"/home/online",
-                            query:{
-                                info:url,
-                                title:"还款"
-                              }
-                         })
-                    // if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                    // this.$router.push({
+                } else if(res.data.code==="0"){  
+                    // let url=res.data.data.url
+                    //   this.$router.push({
                     //         path:"/home/online",
                     //         query:{
                     //             info:url,
                     //             title:"还款"
                     //           }
                     //      })
-                    // } else {
-                    //     //  console.log("ios")
-                    //     location.href=url
-                    // }    
+                    if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    this.$router.push({
+                            path:"/home/online",
+                            query:{
+                                info:url,
+                                title:"还款"
+                              }
+                         })
+                    } else {
+                        //  console.log("ios")
+                        location.href=url
+                    }    
                 }
             })
             .catch(err=>{

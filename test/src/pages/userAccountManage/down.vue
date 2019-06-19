@@ -52,7 +52,7 @@ export default {
             this.$router.go(-1);
         },
         download(){
-            this.$toast("敬请期待")
+             window.location.href='http://s73.nyvpy.kuaiff.cn/zoQWz3'
         },
         downloadAnd(){
             window.location.href='https://www.pgyer.com/9Abz'
