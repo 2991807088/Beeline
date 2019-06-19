@@ -226,7 +226,7 @@ export default {
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
                             // console.log("and")
                             this.$router.push({
-                            path:"/home/online",
+                            path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"贷款中心"

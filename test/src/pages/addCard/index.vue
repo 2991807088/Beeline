@@ -75,7 +75,7 @@ export default {
 
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
                                 this.$router.push({
-                                    path:"/home/cardCenter/progressQuery",
+                                    path:"/home/andLink",
                                     query:{
                                         info:url,
                                         title:"信用卡办理"
@@ -141,6 +141,7 @@ export default {
            padding-top:96px;
            padding-bottom: 50px;
            font-size: 34px;
+           overflow-x: hidden;
            >.info {
                 .user-input{
             width: 100%;

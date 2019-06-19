@@ -99,7 +99,7 @@ export default {
                 if(res.data.code==="1"){
                     this.$router.push("/home/addCard")
                 } else if(res.data.code==="0"){  
-                    // let url=res.data.data.url
+                    let url=res.data.data.url
                     //   this.$router.push({
                     //         path:"/home/online",
                     //         query:{
@@ -109,7 +109,7 @@ export default {
                     //      })
                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
                     this.$router.push({
-                            path:"/home/online",
+                            path:"/home/andLink",
                             query:{
                                 info:url,
                                 title:"还款"
