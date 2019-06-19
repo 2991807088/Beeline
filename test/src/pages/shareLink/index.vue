@@ -39,7 +39,7 @@ export default {
         }
     },
     created () {
-        this.link='http://sbs.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode
+        this.link='http://fx.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode
     }
 }
 </script>

@@ -87,12 +87,12 @@
 
                        <!-- <div v-show="showpass"  class="pop">
                            <div class="small" @click="smallPass(item)">
-                               <van-icon name="http://sbs.91dianji.com.cn/putong.png" size="40px"/>
+                               <van-icon name="http://fx.91dianji.com.cn/putong.png" size="40px"/>
                                <p>小额通道</p>
                                 <p> <van-icon name="arrow" size="30px"/></p>
                            </div>
                            <div class="large" @click="largePass(item)">
-                                 <van-icon name="http://sbs.91dianji.com.cn/putong.png" size="40px"/>
+                                 <van-icon name="http://fx.91dianji.com.cn/putong.png" size="40px"/>
                                 <p>大额通道</p>
                                 <p> <van-icon name="arrow" size="30px"/></p>
                            </div>
@@ -101,12 +101,12 @@
                          <div v-show="showpass" @click.capture="showcover" :class="num==index?'cover':''">
                            <div  v-show="num==index"  class="pop">
                                 <div class="small" @click.stop="smallPass(item)">
-                                    <van-icon name="http://sbs.91dianji.com.cn/xiaoe.png" size="40px"/>
+                                    <van-icon name="http://fx.91dianji.com.cn/xiaoe.png" size="40px"/>
                                     <p>小额通道</p>
                                     <p> <van-icon name="arrow" size="30px"/></p>
                                 </div>
                                 <!-- <div class="large" @click.stop="largePass(item)">
-                                        <van-icon name="http://sbs.91dianji.com.cn/dae.png" size="40px"/>
+                                        <van-icon name="http://fx.91dianji.com.cn/dae.png" size="40px"/>
                                         <p>大额通道</p>
                                         <p> <van-icon name="arrow" size="30px"/></p>
                                 </div> -->
@@ -563,7 +563,6 @@ export default {
                       padding:10px;
                        box-sizing: border-box;
                        margin-bottom: 15px;
-                    //    background-image:url("http://sbs.91dianji.com.cn/big2.png");
                     background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         height: 350px;
                         background-repeat: no-repeat;

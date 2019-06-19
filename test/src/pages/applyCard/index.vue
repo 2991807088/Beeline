@@ -106,11 +106,11 @@ export default {
                     })
                     return
                 } else {
-                    // that.componentload=true
+                   
                      let url=res.data.data.data
+                      that.componentload=true
                     setTimeout(()=>{
-
-                         this.$router.push({
+                         that.$router.push({
                                      path:"/loan/form/myOrder",
                                      query:{
                                          info:url,
@@ -132,7 +132,6 @@ export default {
                      },1000)
                     //  location.href=res.data.data.data
                 }
-               
             })
             .catch(function(err){
                 //  that.$toast({

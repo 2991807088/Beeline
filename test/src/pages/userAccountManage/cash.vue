@@ -92,7 +92,7 @@ export default {
             abridge: '中国民生银行5323',
             bank_select: false,
             bankname: '请选择您要提现的银行卡',
-            avator: 'http://sbs.91dianji.com.cn/logo.png',
+            avator: 'http://fx.91dianji.com.cn/logo.png',
             nickname: 'JACK',
             time: '',
             success: false,

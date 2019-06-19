@@ -2,9 +2,9 @@
     <div id="page-poster">
         <header class="header-top row">
             <div class="left-icon start-center" @click="goBack"><van-icon color="white" size="20px" name="arrow-left"/></div>
-            <div class="top-title center">海报</div>
+            <div class="top-title center">{{tip}}</div>
             <div @click="showCover" class="right-icon center">
-                     <van-icon color="white" size="20px" name="weapp-nav"/>
+                     <!-- <van-icon color="white" size="20px" name="weapp-nav"/> -->
                 </div>
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
@@ -67,11 +67,12 @@ export default {
             imgShow: false,
             url: 'http://fx.91dianji.com.cn',
             qrcode: '',
-            // random: '01',
-            random: null,
+            random: '01',
+            // random: null,
             shares:null,
             sharewx:null,
-            Sharewxf:false
+            Sharewxf:false,
+            tip:""
         }
     },
     methods:{
@@ -143,15 +144,6 @@ export default {
         showCover(){
            this.Sharewxf=!this.Sharewxf
         },
-        // save(){
-        //     plus.gallery.save( '/wx.png', (result) => {
-        //         console.log(result.file)
-        //         this.$toast("保存成功")
-        //         } ,(e) => {
-        //         console.log(JSON.stringify(e))
-        //          this.$toast("保存失败")
-        //         });
-        // },
         // 随机数
         handlechangeRandom(){
             this.componentload = true;
@@ -159,11 +151,9 @@ export default {
             var random = '';
             if(ran < 10){
                 random = '0' + ran;
-                console.log('随机数',random);
                 this.random = random;
             }else{
                 this.random = ran;
-                // console.log('随机数',ran);
             }
             this.handlePoster();
         },
@@ -181,9 +171,8 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2500);
+                },2000);
             };
-            
             var qrcode = new Image();
             qrcode.src = 'http://fx.91dianji.com.cn/' + this.qrcode;
             qrcode.onload = function(){
@@ -210,7 +199,7 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2500);
+                },2000);
             };
             
             var qrcode = new Image();
@@ -284,14 +273,14 @@ export default {
                 cancelButtonText: '关闭',
             })
             .then(() => {
-                console.log('开启');   
+                // console.log('开启');   
                
              this.handlePosterWithoutDetail();
                
             }).catch(() => {
                 // console.log('关闭');
                  this.handlePoster();
-                  console.log("catchs")
+                //   console.log("catchs")
             });
         },
         shareApp(){
@@ -306,11 +295,12 @@ export default {
 
     },
     created () {
-      
+        this.random=this.$route.query.num
+        this.tip=this.$route.query.title
     },
     mounted(){
         this.handleJundgeQrCode();
-         this.handlechangeRandom();
+        //  this.handlechangeRandom();
     }
 }
 </script>

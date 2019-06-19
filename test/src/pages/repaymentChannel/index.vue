@@ -57,7 +57,7 @@
                <ul>
                    <li @click="makePlan('1')">
                        <div class="image">
-                            <van-icon name="http://sbs.91dianji.com.cn/luodi.png" size="40px" />
+                            <van-icon name="http://fx.91dianji.com.cn/luodi.png" size="40px" />
                        </div>
                        <div class="middle">
                            <h3><span class="bold">本地真实落地商户</span>&nbsp;&nbsp;<span class="orange">还款通道&nbsp;</span>(预留5%起)</h3>
@@ -69,7 +69,7 @@
                    </li>
                    <li @click="makePlan('2')">
                        <div class="image">
-                            <van-icon name="http://sbs.91dianji.com.cn/shau3huan1.png" size="40px" />
+                            <van-icon name="http://fx.91dianji.com.cn/shau3huan1.png" size="40px" />
                        </div>
                        <div class="middle">
                            <h3><span class="bold">刷3还1</span>&nbsp;(预留5%起)</h3>

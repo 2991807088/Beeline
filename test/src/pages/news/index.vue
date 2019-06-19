@@ -6,7 +6,7 @@
             <span></span>
         </header>
         <div class="container">
-           <img src="http://sbs.91dianji.com.cn/collect.jpg" alt="">
+           <img src="http://fx.91dianji.com.cn/collect.jpg" alt="">
         </div>
     </div>
 

@@ -74,7 +74,7 @@ export default {
     },
     created(){
         this.$store.state.wechat.nickname == "" ? this.nickname = '姓名' : this.nickname = this.$store.state.wechat.nickname;
-        this.$store.state.wechat.headimg == '' ? this.headimg = 'http://sbs.91dianji.com.cn/avators.png' : this.headimg  = this.$store.state.wechat.headimg;
+        this.$store.state.wechat.headimg == '' ? this.headimg = 'http://fx.91dianji.com.cn/avators.png' : this.headimg  = this.$store.state.wechat.headimg;
         this.$store.state.wechat.recommendedcode == "" ? this.recomcode = '11111111' : this.recomcode  = this.$store.state.wechat.recommendedcode; 
         this.$store.state.wechat.level == "0" ? this.level = '免费粉丝' : (this.$store.state.wechat.level == "1" ? this.level = '黄金会员' : this.level = '钻石会员');
         this.amount = this.$route.query.amount;

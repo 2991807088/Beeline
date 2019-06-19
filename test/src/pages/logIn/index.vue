@@ -2,19 +2,19 @@
     <div id="progress-query">
         <div class="container">
            <div class="logo">
-               <img src="http://sbs.91dianji.com.cn/logo@2x.png" alt="">
+               <img src="http://fx.91dianji.com.cn/logo@2x.png" alt="">
                <span>登录</span>
            </div>
            <div class="info">
                 <p>
                     <span><van-icon name="phone" size="26px"/></span>
                     <input type="number" v-model="phone" placeholder="请输入手机号码">
-                    <span @click="handleClear('phone')" class="center"><van-icon name="http://sbs.91dianji.com.cn/close@2x.png" color="#ffa800" size="24px"/></span>
+                    <span @click="handleClear('phone')" class="center"><van-icon name="http://fx.91dianji.com.cn/close@2x.png" color="#ffa800" size="24px"/></span>
                 </p>
                 <p>
                     <span><van-icon name="lock" size="26px"/></span>
                     <input type="password" v-model="password" placeholder="请输入密码">
-                    <span @click="handleClear('password')" class="center"><van-icon color="#ffa800" name="http://sbs.91dianji.com.cn/close@2x.png" size="24px"/></span>
+                    <span @click="handleClear('password')" class="center"><van-icon color="#ffa800" name="http://fx.91dianji.com.cn/close@2x.png" size="24px"/></span>
                 </p>
            </div>
            <div class="password">
@@ -32,7 +32,7 @@
            </div>
             <!-- <div class="wx-login">
                 <div class="logIn center">———————&nbsp;其他登录方式&nbsp;———————</div>
-                <div class="wx-logo center" @click="logIn"><van-icon size="32px" name="http://sbs.91dianji.com.cn/wx.png"/></div>
+                <div class="wx-logo center" @click="logIn"><van-icon size="32px" name="http://fx.91dianji.com.cn/wx.png"/></div>
             </div> -->
         </div>
     </div>
