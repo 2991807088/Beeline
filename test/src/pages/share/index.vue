@@ -348,7 +348,6 @@ export default {
                              info:i
                           }
                      })
-                     console.log("1023")
                  } else {
                       this.$router.push({
                         path:"/home/insertEsiCash",

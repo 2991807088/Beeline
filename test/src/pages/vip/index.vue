@@ -341,7 +341,6 @@ export default {
                 };
                 var url = '/order/wxPayH5';
                 axiosPost(url,params).then(res =>{
-                    console.log('成功',res);
                         var radom = Math.random().toString(36).substr(2);
                         var tmp = Date.parse( new Date() ).toString();
                         tmp = tmp.substr(0,10);
@@ -375,7 +374,6 @@ export default {
             }
             axiosPost("/customer/getCustomer",data)
             .then(res =>{
-                console.log('个人信息查询成功',res);
                 this.level = res.data.data.level;
                 this.ispartner = res.data.data.ispartner;
             })
@@ -385,7 +383,6 @@ export default {
         },
         // 一键升级
         handleOneClickUp(obj){
-            console.log('一键升级',obj);
             this.price = obj;
             this.pup2 = true;
             obj == '998' ? this.goodsname = '钻石会员' : this.goodsname = '黄金会员';
@@ -395,7 +392,6 @@ export default {
                 name: this.goodsname
             };
             axiosPost(url,params).then(res =>{
-                console.log('下单成功',res);
                 this.orderid = res.data.data.orderid;  
             }).catch(res =>{
                 // console.log('下单失败',res);
@@ -416,7 +412,6 @@ export default {
                 recommendedcode: storage.get('code')
             };
             axiosPost('/customer/getCustomerUP',params).then(res =>{
-                console.log('上级查询成功',res);
                 this.recomname = res.data.data.nickname;
                 this.recomcode = res.data.data.promotioncode;
                 this.recomheadimg = res.data.data.photo;
@@ -428,7 +423,6 @@ export default {
     created(){
         this.handleCustomerUP();
         this.handlePersonalDetail();
-        console.log('信息',this.$store.state.wechat);
     },
     mounted(){
     }

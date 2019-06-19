@@ -70,7 +70,7 @@ export default {
             this.$toast("敬请期待")
         },
         changeActive(obj){
-            console.log('obj', obj);
+            // console.log('obj', obj);
         }
     }
 }

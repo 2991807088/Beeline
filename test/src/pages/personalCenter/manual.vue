@@ -305,7 +305,6 @@ export default {
         },
     },
     created(){
-        console.log('测试赛',this.$route.query.info);
         this.info = this.$route.query.info;
     }
 }

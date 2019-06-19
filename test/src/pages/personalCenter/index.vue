@@ -129,7 +129,6 @@ export default {
                 openid:this.$store.state.wechat.openid,
             };
             axiosPost(url,params).then(res =>{
-                console.log('查询个人设置成功',res);
                 this.nickname = res.data.data.nickname;
                 this.headimg  = res.data.data.photo;
                 this.promotioncode  = res.data.data.promotioncode; 

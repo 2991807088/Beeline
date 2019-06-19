@@ -54,7 +54,6 @@ export default {
        }
     },
     created(){
-        console.log('参数',this.$route);
         this.level = this.$route.query.level;
         this.payrate = this.$route.query.payrate;
         this.repayrate = this.$route.query.repayrate;

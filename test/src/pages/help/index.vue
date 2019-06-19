@@ -165,7 +165,6 @@ export default {
         },
         // 帮助中心
         handleHelpDetail(obj){
-            console.log('obj',obj);
             this.$router.push({
                 path: '/personalCenter/manual',
                 query:{

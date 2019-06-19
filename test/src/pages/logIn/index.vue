@@ -96,7 +96,6 @@ export default {
                     that.$store.commit('nickname',res.data.data.nickname);
                     that.$store.commit('headimg',res.data.data.photo);
                     that.$store.commit('ispartner',res.data.data.ispartner);
-                    console.log('登陆成功',res);
                     storage.set('openid',res.data.data.openid)
                     that.$toast('登陆成功');
                     if(that.checked){
@@ -132,9 +131,7 @@ export default {
         },
         // 清空输入框
         handleClear(obj){
-            console.log('obj',obj);
             obj == 'phone' ? this.phone = '' : this.password = '';
-            console.log(this.phone);
         }
     },
 
