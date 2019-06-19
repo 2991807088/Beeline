@@ -5,9 +5,7 @@
             <div class="top-title center">信用卡管家</div>
             <div class="right-icon center"></div>
         </header>
-        <!-- <iframe class="iframe" src="http://sbs.91dianji.com.cn/container.html" frameborder="0"> -->
             <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
-        <!-- </iframe> -->
     </div>
 
 </template>

@@ -182,26 +182,26 @@ export default {
             this.showAaside=true
         },
         changeLink(url,title){
-              this.$router.push({
-                     path:"/loan/form/myOrder",
-                     query:{
-                         info:url,
-                         title:title
-                     }
-                 })
-            //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
-            //     //  console.log("and")
-            //      this.$router.push({
-            //          path:"/home/andLink",
+            //   this.$router.push({
+            //          path:"/loan/form/myOrder",
             //          query:{
             //              info:url,
             //              title:title
             //          }
             //      })
-            //  } else {
-            //     //  console.log("ios")
-            //      location.href=url
-            //  }
+             if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                //  console.log("and")
+                 this.$router.push({
+                     path:"/home/andLink",
+                     query:{
+                         info:url,
+                         title:title
+                     }
+                 })
+             } else {
+                //  console.log("ios")
+                 location.href=url
+             }
         },
         handleExpect(){
             this.$toast('敬请期待')
@@ -212,9 +212,9 @@ export default {
                 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
                 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
                  if(isAndroid) {
-                  window.location.href=" https://www.pgyer.com/vFbf"
+                  window.location.href="  https://www.pgyer.com/9Abz"
                } else if(isiOS) {
-                  window.location.href="http://znd.hvv.dnf-w3.cn/KXxv61"
+                  window.location.href="http://s73.nyvpy.kuaiff.cn/zoQWz3"
               } 
 
         },
@@ -348,12 +348,12 @@ export default {
         this.city=this.$store.state.wechat.city;
         this.handleSearchAuths()
         // H5不需要自动登录
-         this.automatic() //自动登录
-         this.getUpdate() //获取版本
+        //  this.automatic() //自动登录
+        //  this.getUpdate() //获取版本
     }  ,
     mounted () {
         // 更新
-        this.update();
+        // this.update();
     }
 }
 </script>

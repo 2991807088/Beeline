@@ -8,7 +8,7 @@
         <div class="container">
             <div class="down">
                 <ul>
-                    <li @click="download">
+                    <li @click="downloadAnd">
                         <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/Android.png"/></p>
                         <p>安卓下载</p>
                     </li>
@@ -52,8 +52,11 @@ export default {
             this.$router.go(-1);
         },
         download(){
-            this.$toast("敬请期待")
+             window.location.href='http://s73.nyvpy.kuaiff.cn/zoQWz3'
         },
+        downloadAnd(){
+            window.location.href='https://www.pgyer.com/9Abz'
+        }
         // 绑定银行卡
         // handleAddCard(){
 

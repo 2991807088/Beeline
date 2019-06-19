@@ -218,6 +218,7 @@ export default {
                             border-bottom: 1px dashed #DADADA;
                             >img {
                                 width:100%;
+                                margin:0 !important;
                             }
                             >p {
                                 &:nth-of-type(1) {

@@ -103,7 +103,7 @@ export default {
     data() {
         return {
             componentload: true,
-            url: 'http://sbs.91dianji.com.cn/',
+            url: 'http://fx.91dianji.com.cn/',
             checkedCard:"",
             checkedCar:"",
             checkedVoice:"",
@@ -115,14 +115,14 @@ export default {
                 { name:"企业主"},
                ],
             identity:"",
-            photo: 'http://sbs.91dianji.com.cn/logo.png',
+            photo: 'http://fx.91dianji.com.cn/logo.png',
             nickname: '',
             mobile: '',
             city: '',
             iscreditcard: false,
             iscar: false,
             wechat: '',
-            wechatqr: 'http://sbs.91dianji.com.cn/logo.png',
+            wechatqr: 'http://fx.91dianji.com.cn/logo.png',
             voice: '0',
             isconnect:true
         }

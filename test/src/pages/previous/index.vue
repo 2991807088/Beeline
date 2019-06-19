@@ -7,11 +7,11 @@
         </header>
         <div class="container">
              <div class="image">
-                  <img src="http://sbs.91dianji.com.cn/Superior.jpg" alt="">
+                  <img src="http://fx.91dianji.com.cn/Superior.jpg" alt="">
                   <div class="info">
                       <div>
                             <div class="picture">
-                                <img src="http://sbs.91dianji.com.cn/icon_62.png" alt="">
+                                <img src="http://fx.91dianji.com.cn/icon_62.png" alt="">
                             </div>
                             <div>
                                 <p class="recommend gray">推荐人</p>

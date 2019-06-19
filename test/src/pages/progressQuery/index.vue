@@ -5,7 +5,12 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <!-- <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe> -->
+        <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
+         <!-- <div class="container">
+            <div class="box" >　
+            　  <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
+            </div>
+        </div> -->
     </div>
 
 </template>
@@ -22,29 +27,12 @@ export default {
     },
     methods:{
         goBack() {
-            plus.webview.close( "yinlian")
+            // plus.webview.close( "yinlian")
             this.$router.push("/home")
         },
        
         webview(){
             if(window.plus){  
-                //  var yinlian = plus.webview.open(this.url,"yinlian",{
-                //          top: "40px",  
-                //         bottom: '0px',
-                //         left:'0px',
-                //         scrollIndicator:'none'
-                //     });
-                // let self= plus.webview.currentWebview(); 
-                // var yinlian= plus.webview.create(this.url, "yinlian", {  
-                // top: "40px",  
-                // // width:"100%",
-                // bottom: "0px",
-                //  right:"0px",
-                // left:"0px",
-                // scrollIndicator:"vertical"
-                // });  
-                // yinlian.show()
-                //  self.append(yinlian)
              var yinlian= plus.webview.create(this.url, "yinlian");  
                yinlian.setStyle({
                    width:"100%",
@@ -78,7 +66,7 @@ export default {
     created(){
         this.url=this.$route.query.info
          this.title=this.$route.query.title
-         this.webview();
+        //  this.webview();
         //   var u = navigator.userAgent;
         // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         // if(isAndroid){
@@ -96,24 +84,24 @@ export default {
             background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
         background-blend-mode: normal,normal;
        }
-        .box {
-               overflow-x: hidden;
-           }
-       .iframe{
-               width: 100%;
-               height:100vh !important;
-               overflow-x:hidden;
-           }
+        .iframe{
+            // width:1px;
+            // min-width: 100%;
+            // *width:100%;
+            width:100%;
+            height: 100% !important;
+            }
+      
+        //    .box {
+        //         overflow: auto;
+        //         -webkit-overflow-scrolling:touch;
+        //         width:100%;
+        //         height: 100%;
+        //         
+        //    }
+         
+      
 
-    //    width: 100vw;
-    //    height: calc(100vh - 86px);
-    //    padding-top: 86px;
-        // .iframe{
-        //     width: 100vw;
-        //     height: calc(100vh - 86px);
-        // }
-        // .out {
-            
-        // }
+    
    }
 </style>

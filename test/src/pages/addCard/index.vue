@@ -63,31 +63,28 @@ export default {
                         return
                     }  else {
                         // window.location.href=res.data.data
-                        let url=res.data.data
+                        // let url=res.data.data
 
-                         this.$router.push({
-                            path:"/home/cardCenter/progressQuery",
-                            query:{
-                                info:url,
-                                title:"信用卡办理"
+                        //  this.$router.push({
+                        //     path:"/home/cardCenter/progressQuery",
+                        //     query:{
+                        //         info:url,
+                        //         title:"信用卡办理"
+                        //     }
+                        // })
+
+                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                                this.$router.push({
+                                    path:"/home/andLink",
+                                    query:{
+                                        info:url,
+                                        title:"信用卡办理"
+                                    }
+                              })
+                            } else {
+                                location.href=url
+                            }    
                             }
-                        })
-
-
-
-                    //      if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                    //             this.$router.push({
-                    //                 path:"/home/cardCenter/progressQuery",
-                    //                 query:{
-                    //                     info:url,
-                    //                     title:"信用卡办理"
-                    //                 }
-                    //           })
-                    // } else {
-                    //     //  console.log("ios")
-                    //     location.href=url
-                    //   }    
-                    }
                 })
                 .catch(err=>{
                     // console.log(err,"error");
@@ -144,6 +141,7 @@ export default {
            padding-top:96px;
            padding-bottom: 50px;
            font-size: 34px;
+           overflow-x: hidden;
            >.info {
                 .user-input{
             width: 100%;

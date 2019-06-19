@@ -6,7 +6,7 @@
             <div class="right-icon center"></div>
         </header>
         <div class="container">
-           <img src="http://sbs.91dianji.com.cn/xinyongka.jpg" alt="">
+           <img src="http://fx.91dianji.com.cn/xinyongka.jpg" alt="">
         </div>
     </div>
 

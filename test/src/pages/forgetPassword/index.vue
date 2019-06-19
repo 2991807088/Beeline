@@ -183,9 +183,9 @@ export default {
                     that.authcode=""
                     that.newPassword=""
                     that.suerPassword=""
-                }else{
+                } else {
                     that.$toast({
-                        message:err.data.message
+                        message:res.data.message
                     })
                 }
                 

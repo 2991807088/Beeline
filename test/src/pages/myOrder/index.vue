@@ -9,6 +9,7 @@
             <!-- <div class="box" style="width:100vw;height:100vh;">　
             　　<iframe v-if="type" :src="url" scrolling="auto" class="iframe" frameborder="0" width="100vw" height="100vh"></iframe>
             </div> -->
+             <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
         </div>
     </div>
 
@@ -27,7 +28,7 @@ export default {
     },
     methods:{
         goBack() {
-            plus.webview.close( "yinlian")
+            // plus.webview.close( "yinlian")
             this.$router.go(-1);
         },
        
@@ -68,7 +69,7 @@ export default {
         // console.log(this);
         this.url=this.$route.query.info;
         this.title=this.$route.query.title;
-        this.webview();
+        // this.webview();
         // var u = navigator.userAgent;
         // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         // if(isAndroid){
@@ -103,16 +104,22 @@ export default {
                }
            }
        }
-       >.container {
-           padding-top:96px;
-           .box {
-               overflow-x: hidden;
-           }
-           .iframe{
+       .iframe{
                width: 100%;
                height:100vh !important;
-               overflow-x:hidden;
+            //    overflow-x:hidden;
            }
-       }
+    //    >.container {
+    //        padding-top:96px;
+    //        .box {
+    //            overflow-x: hidden;
+    //        }
+    //        .iframe{
+    //            width: 100%;
+    //            height:100vh !important;
+    //            overflow-x:hidden;
+    //        }
+    //    }
+
    }
 </style>
