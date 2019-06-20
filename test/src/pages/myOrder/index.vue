@@ -17,6 +17,7 @@
 </template>
 
 
+
 <script>
 export default {
     data() {
@@ -104,11 +105,16 @@ export default {
                }
            }
        }
-       .iframe{
+       .container {
+           width:100%;
+           .iframe{
                width: 100%;
                height:100vh !important;
             //    overflow-x:hidden;
            }
+
+       }
+       
 
    }
 </style>
