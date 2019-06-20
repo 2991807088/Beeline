@@ -100,24 +100,5 @@ export default {
             width:100%;
             height: 100% !important;
                  }
-    //    >.container {
-    //        padding-top:96px;
-    //         height: 100%;
-    //         width:100%;
-    //          overflow-y: scroll;
-    //        .box {
-    //             overflow: auto;
-    //             -webkit-overflow-scrolling:touch;
-    //             width:100%;
-    //             height: 100%;
-    //              .iframe{
-    //                 width:1px;
-    //                 min-width: 100%;
-    //                 *width:100%;
-    //                 height: 100% !important;
-    //              }
-    //        }
-         
-    //    }
    }
 </style>

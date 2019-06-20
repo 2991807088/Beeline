@@ -109,17 +109,6 @@ export default {
                height:100vh !important;
             //    overflow-x:hidden;
            }
-    //    >.container {
-    //        padding-top:96px;
-    //        .box {
-    //            overflow-x: hidden;
-    //        }
-    //        .iframe{
-    //            width: 100%;
-    //            height:100vh !important;
-    //            overflow-x:hidden;
-    //        }
-    //    }
 
    }
 </style>

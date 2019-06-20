@@ -75,7 +75,7 @@ export default {
 
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
                                 this.$router.push({
-                                    path:"/home/andLink",
+                                    path:"/loan/form/myOrder",
                                     query:{
                                         info:url,
                                         title:"信用卡办理"

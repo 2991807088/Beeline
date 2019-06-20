@@ -263,7 +263,6 @@ export default {
                                  this.componentload=false
                                 location.href=url
                             }
-
                         },1000)
                         
                      }

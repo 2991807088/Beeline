@@ -101,7 +101,7 @@ export default {
                 } else if(res.data.code==="0"){  
                     let url=res.data.data.url
                     //   this.$router.push({
-                    //         path:"/home/online",
+                    //         path:"/loan/form/myOrder",
                     //         query:{
                     //             info:url,
                     //             title:"还款"
@@ -109,7 +109,7 @@ export default {
                     //      })
                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
                     this.$router.push({
-                            path:"/home/andLink",
+                            path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"还款"
