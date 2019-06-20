@@ -204,9 +204,6 @@ export default {
                                font-weight: bold;
                            }
                        }
-                       &:last-child {
-                        //    border:none;
-                       }
                        >span {
                            &:nth-of-type(2){
                                padding:0 10px;
@@ -221,11 +218,12 @@ export default {
                            flex: 1;
                            font-size: 30px;
                            text-align: right;
+                           height: 100%;
 
                        }
                        input::-webkit-input-placeholder {
                            font-size: 28px;
-                           padding-top: 8px;
+                           padding-top: 10px;
                            height: 30px;
                            line-height: 30px;
                        }

@@ -211,7 +211,6 @@ export default {
             }
              axiosPost("/creditCard/getEsicashExist",data)
              .then(res=>{
-                 console.log(res)
                 //  if(!res.data.success){
                 //      this.$router.push({
                 //          path:"/home/insertEsiCash",
@@ -220,13 +219,12 @@ export default {
                 //      })
                 //  } 
                  if(res.data.success) {
-                      let planList=res.data.data
                      this.$router.push({
-                         path:"/home/creditHousekeeper/aisleHousekeeper/planList",
+                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                          query:{
-                             list:planList,
-                             area:this.area,
-                             item:i
+                            //  list:planList,
+                            //  area:this.area,
+                             info:i
                          }
                      })
                  } else {
@@ -238,7 +236,6 @@ export default {
                  
              })
              .catch(err=>{
-                 console.log(err)
                  this.$router.push({
                         path:"/home/insertEsiCash",
                         query:{info:i}
