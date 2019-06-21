@@ -48,8 +48,10 @@
         </div>
         <van-popup class="popup" v-model="show" position="right">
            <div class="pop-clause"> 
-               <div class="pop-close end-center"><van-icon name="cross" size="1.5em" @click="handleClose"/></div>
-               <div class="pop-title center">蜂行卡包服务协议</div>
+                <div class="select">
+                     <div class="pop-close end-center"><van-icon name="cross" size="1.5em" @click="handleClose"/></div>
+                     <div class="pop-title center">蜂行卡包服务协议</div>
+                </div>
                 <div class="pop-content">
                 <h1> 一、【协议的范围】</h1>
                     　　1.1本协议是用户与蜂行卡包之间关于其使用蜂行卡包的服务所订立的协议。“蜂行卡包”是指蜂行卡包和/或其相关服务可能存在的运营关联单位。“用户”是指蜂行卡包的服务的使用人，在本协议中更多地称为“您”。<br/>
@@ -129,7 +131,7 @@ export default {
             },
             checked: false,
             show: false,
-            remarks: '注:在蜂行卡包申请贷款一律不收取任何费用，如有向您索要手续费的请拨打400-1059-769向平台举报',
+            remarks: '注:在蜂行卡包申请贷款一律不收取任何费用，如有向您索要手续费的请拨打400-6169-609向平台举报',
             codeLength: 4,
             realCode: ''
         }
@@ -405,7 +407,7 @@ export default {
         }
         .clause{
             width: 100vw;
-            height: 100px;
+            height: 150px;
             margin-top: 50px;
             padding-top: 40px;
             padding-bottom: 50px;
@@ -422,7 +424,8 @@ export default {
                 height: auto;
                 margin-left: auto;
                 margin-right: auto;
-                margin-top: 45px;
+                margin-top: 10px;
+                padding-top:20px;
                 line-height: 40px;
             }
         }
@@ -432,9 +435,23 @@ export default {
                 height: 100vh;
                 padding-top: 86px;
                 background: white;
+                // .select {
+                //     display: flex;
+                //     justify-content: space-around;
+                //     padding-bottom: 10px;
+                // }
                 .pop-close{
                     width: 98vw;
                     height: 50px;
+                    z-index: 999;
+                }
+                .van-checkbox__icon {
+                    // height:30px !important;
+                    margin-bottom: 3px;
+                }
+                .van-checkbox__icon, .van-checkbox__label{
+                      margin-bottom: 3px !important;
+                       z-index: 999;
                 }
                 .pop-title{
                     font-size: 35px;

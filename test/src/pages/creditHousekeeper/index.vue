@@ -116,7 +116,6 @@ export default {
                               }
                          })
                     } else {
-                        //  console.log("ios")
                         location.href=url
                     }    
                 }

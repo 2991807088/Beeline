@@ -454,23 +454,23 @@ export default {
                         border-radius: 10px;
                         box-sizing: border-box;
                         margin-bottom: 15px;
-                        &:nth-of-type(1){
-                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                         &:nth-of-type(6n+1){
+                        background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         }
-                         &:nth-of-type(2){
-                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                            &:nth-of-type(6n+2){
+                                background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
                         }
-                         &:nth-of-type(3){
-                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                            &:nth-of-type(6n+3){
+                                background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
                         }
-                         &:nth-of-type(4){
-                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                            &:nth-of-type(6n+4){
+                                background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
                         }
-                         &:nth-of-type(5){
-                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                            &:nth-of-type(6n+5){
+                                background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
                         }
-                         &:nth-of-type(6){
-                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                            &:nth-of-type(6n+6){
+                                background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
                         }
                         // background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         background-repeat: no-repeat;

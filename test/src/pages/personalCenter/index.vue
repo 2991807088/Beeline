@@ -8,9 +8,10 @@
             </div>
             <div class="middle">
                 <div class="avator center" v-if="level != '0'">
-                    <img v-if="level == '1'" src="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png" alt="">
-                    <img v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png" alt="">
-                    <img :src="headimg" alt="">
+                    <!-- <img v-if="level == '1'" src="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png" alt="">
+                    <img v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png" alt=""> -->
+                     <img :src="vipimg" alt="">
+                    <!-- <img :src="headimg" alt=""> -->
                 </div>
                 <div class="avator center" v-else>
                     <img class="headimg" :src="headimg" alt="">
@@ -113,6 +114,7 @@ export default {
             level: '',
             payrate: '',
             repayrate: '',
+            vipimg:""
         }
     },
     methods:{
@@ -136,6 +138,12 @@ export default {
                 this.amountSum = res.data.data.amountSum;
                 this.commission = res.data.data.commission;
                 this.level = res.data.data.level;
+                if(this.level=='1'){
+                    this.vipimg="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png"
+                }
+                if(this.level=='2'){
+                     this.vipimg="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png"
+                }
                 this.payrate = res.data.data.payrate;
                 this.repayrate = res.data.data.repayrate;
                 res.data.data.iscertification == '0' ? this.iscertification = '未认证' : ( res.data.data.iscertification == '1' ? this.iscertification = '审核中' : (res.data.data.iscertification == '2' ? this.iscertification = '认证成功' : this.iscertification = '认证失败，请重试')); 

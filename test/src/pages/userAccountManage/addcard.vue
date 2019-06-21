@@ -6,32 +6,26 @@
             <div class="right-icon center"></div>
         </header>
         <div class="container">
-            <!-- <div class="down">
+             <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
+                     <div class="pay-icon end-center"> <svg class="icon" aria-hidden="true"><use xlink:href="#icon-pay-unionpay"></use></svg></div>
+                     <div class="add-icon center"><van-icon name="plus" size="20px"/></div>
+                     <div class="add-title start-center">添加银行卡</div>
+                     <div class="more-icon center"><van-icon name="arrow"/></div>
+           </router-link>
+            <div class="card-list">
+                <!-- <div class="per-card" v-for="(item,index) in bankcardlist" :key="index">
+                    <div class="name">{{item.name}}</div>
+                    <div class="bankname">{{item.bankname}}</div>
+                    <div class="bankcardno">{{item.bankcardno}}</div>
+                </div> -->
                 <ul>
-                    <li @click="download">
-                        <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/Android.png"/></p>
-                        <p>安卓下载</p>
-                    </li>
-                     <li @click="download">
-                        <p><van-icon color="white" size="150px" name="http://fx.91dianji.com.cn/ios.png"/></p>
-                        <p>苹果下载</p>
+                    <li  class="per-card" v-for="(item,index) in bankcardlist" :key="index">
+                        <div class="name">{{item.name}}</div>
+                        <div class="bankname">{{item.bankname}}</div>
+                        <div class="bankcardno">{{item.bankcardno}}</div>
                     </li>
                 </ul>
-            </div> -->
-
-             <router-link tag="div" to="/personalCenter/addcard/UnionPay" class="UnionPay row">
-            <div class="pay-icon end-center"> <svg class="icon" aria-hidden="true"><use xlink:href="#icon-pay-unionpay"></use></svg></div>
-            <div class="add-icon center"><van-icon name="plus" size="20px"/></div>
-            <div class="add-title start-center">添加银行卡</div>
-            <div class="more-icon center"><van-icon name="arrow"/></div>
-        </router-link>
-        <div class="card-list">
-            <div class="per-card" v-for="(item,index) in bankcardlist" :key="index">
-                <div class="name">{{item.name}}</div>
-                <div class="bankname">{{item.bankname}}</div>
-                <div class="bankcardno">{{item.bankcardno}}</div>
             </div>
-        </div>
         </div>
        
     </div>
@@ -61,30 +55,30 @@ export default {
 
         // },
         // 获取已绑定银行卡列表
-        // handleBankCardList(){
-        //     // let url = '/customer/getBankCardByOpenid';
-        //     let url = '/customer/getBankCardByOpenid';
-        //     let params = {};
-        //     axiosPost(url,params).then(res =>{
-        //         // console.log('获取已绑定银行卡列表成功',res);
-        //         if(res.data.success){
-        //             if(res.data.data.length == '0'){
-        //                 this.$toast('您还未绑定银行卡');
-        //             }else{
-        //                 this.bankcardlist = res.data.data;
-        //             }
-        //         }
-        //     }).catch(res =>{
-        //         // console.log('获取已绑定银行卡列表失败',res)
-        //     })
-        // },
+        handleBankCardList(){
+            // let url = '/customer/getBankCardByOpenid';
+            let url = '/customer/getBankCardByOpenid';
+            let params = {};
+            axiosPost(url,params).then(res =>{
+                // console.log('获取已绑定银行卡列表成功',res);
+                if(res.data.success){
+                    if(res.data.data.length == '0'){
+                        this.$toast('您还未绑定银行卡');
+                    }else{
+                        this.bankcardlist = res.data.data;
+                    }
+                }
+            }).catch(res =>{
+                // console.log('获取已绑定银行卡列表失败',res)
+            })
+        },
     },
     created () {
         // this.nickname = this.$store.state.wechat.nickname;
         // this.headimg  = this.$store.state.wechat.headimg;
         // this.recommendedcode  = this.$store.state.wechat.recommendedcode; 
         // this.level  = this.$store.state.wechat.level;
-        // this.handleBankCardList();
+        this.handleBankCardList();
     }
 }
 </script>
@@ -94,19 +88,6 @@ export default {
         height: calc(100vh - 90px);
         background: #EEEFF1;
         padding-top: 90px;
-        .container {
-            .down {
-                >ul{
-                    padding:20px;
-                    >li {
-                        text-align: center;
-                        &:nth-of-type(1){
-                            margin-bottom: 50px;
-                        }
-                    }
-                }
-            }
-        }
         .personal{
             width: 100vw;
             height: 120px;
@@ -181,10 +162,28 @@ export default {
                 height: 200px;
                 margin-left: auto;
                 margin-right: auto;
-                background: #ffa800;
+                // background: #ffa800;
                 margin-top: 25px;
                 border-radius: 20px;
                 position: relative;
+                 &:nth-of-type(6n+1){
+                        background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                }
+                    &:nth-of-type(6n+2){
+                        background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                }
+                    &:nth-of-type(6n+3){
+                        background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                }
+                    &:nth-of-type(6n+4){
+                        background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                }
+                    &:nth-of-type(6n+5){
+                        background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                }
+                    &:nth-of-type(6n+6){
+                        background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                }
                 .name{
                     position: absolute;
                     top: 40px;

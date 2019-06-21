@@ -142,11 +142,11 @@
                                     <p>小额通道</p>
                                     <p> <van-icon name="arrow" size="30px"/></p>
                                 </div>
-                                <!-- <div class="large" @click.stop="largePass(item)">
+                                <div class="large" @click.stop="largePass(item)">
                                         <van-icon name="http://fx.91dianji.com.cn/dae.png" size="40px"/>
                                         <p>大额通道</p>
                                         <p> <van-icon name="arrow" size="30px"/></p>
-                                </div> -->
+                                </div>
                              </div>
                        </div>
                        
@@ -284,12 +284,6 @@ export default {
             }
              axiosPost("/vtdcreditCard/getEnterNet",data)
              .then(res=>{
-                //  if(!res.data.success  ){
-                //      this.$toast({
-                //          message:res.data.message
-                //      })
-                //  } 
-                //  else
                   if( !res.data.success  ){
                      this.$router.push({
                          path:"/home/largeAmount",
@@ -309,12 +303,9 @@ export default {
 
                  }else {
                       storage.set('channel',"2");
-                    //   let planList=res.data.data
                      this.$router.push({
                          path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                          query:{
-                            //  list:planList,
-                            //  area:this.area,
                              info:i
                          }
                      })
@@ -504,23 +495,23 @@ export default {
                           box-sizing: border-box;
                         margin-bottom: 15px;
                         // background-color: #d9ff00;
-                          &:nth-of-type(1){
-                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                          &:nth-of-type(6n+1){
+                        background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         }
-                         &:nth-of-type(2){
-                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                            &:nth-of-type(6n+2){
+                                background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
                         }
-                         &:nth-of-type(3){
-                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                            &:nth-of-type(6n+3){
+                                background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
                         }
-                         &:nth-of-type(4){
-                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                            &:nth-of-type(6n+4){
+                                background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
                         }
-                         &:nth-of-type(5){
-                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                            &:nth-of-type(6n+5){
+                                background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
                         }
-                         &:nth-of-type(6){
-                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                            &:nth-of-type(6n+6){
+                                background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
                         }
                         background-repeat: no-repeat;
                         height: 350px;
@@ -766,24 +757,24 @@ export default {
                       width:100%;
                       border-radius: 10px;
                     //   background-color: #fcc53d;
-                      &:nth-of-type(1){
-                              background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
-                        }
-                         &:nth-of-type(2){
-                              background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
-                        }
-                         &:nth-of-type(3){
-                              background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
-                        }
-                         &:nth-of-type(4){
-                              background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
-                        }
-                         &:nth-of-type(5){
-                              background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
-                        }
-                         &:nth-of-type(6){
-                              background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
-                        }
+                      &:nth-of-type(6n+1){
+                        background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                    }
+                        &:nth-of-type(6n+2){
+                            background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
+                    }
+                        &:nth-of-type(6n+3){
+                            background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
+                    }
+                        &:nth-of-type(6n+4){
+                            background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
+                    }
+                        &:nth-of-type(6n+5){
+                            background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
+                    }
+                        &:nth-of-type(6n+6){
+                            background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
+                    }
                       .van-button--info {
                           background-color: #fff;
                         //   border-color: #fcc53d;

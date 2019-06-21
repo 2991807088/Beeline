@@ -105,11 +105,11 @@
                                     <p>小额通道</p>
                                     <p> <van-icon name="arrow" size="30px"/></p>
                                 </div>
-                                <!-- <div class="large" @click.stop="largePass(item)">
+                                <div class="large" @click.stop="largePass(item)">
                                         <van-icon name="http://fx.91dianji.com.cn/dae.png" size="40px"/>
                                         <p>大额通道</p>
                                         <p> <van-icon name="arrow" size="30px"/></p>
-                                </div> -->
+                                </div>
                              </div>
                        </div>
 
@@ -248,18 +248,38 @@ export default {
              let data={
                bindId:i.bindId 
             }
-             axiosPost("/vtdcreditCard/getEnterNet",data)
+            axiosPost("/vtdcreditCard/getEnterNet",data)
              .then(res=>{
-                 console.log(res)
-                 if(!res.data.success){
+                  if( !res.data.success  ){
                      this.$router.push({
                          path:"/home/largeAmount",
-                         info:i
+                         query:{
+                             info:i
+                          }
                      })
-                 }
+                 } else  {
+                     if(res.data.data.user_no && res.data.data.state==="0"){
+                     this.$router.push({
+                         path:"/home/active",
+                         query:{
+                             user:res.data.data.user_no,
+                             info:i
+                         }
+                     })
+
+                 }else {
+                      storage.set('channel',"2");
+                     this.$router.push({
+                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
+                         query:{
+                             info:i
+                         }
+                     })
+                   }
+                 } 
              })
              .catch(err=>{
-                //  console.log(err)
+                 this.$toast("查询失败")
              })
         },
 

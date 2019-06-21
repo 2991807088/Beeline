@@ -153,6 +153,7 @@ export default {
                     position: absolute;
                     z-index: 2;
                     top: 264.5px;
+                    left:41%;
                 }
                 @keyframes myMove1 {
                     from {transform: rotate(360deg);}
