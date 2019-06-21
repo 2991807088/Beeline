@@ -234,7 +234,7 @@ export default {
                    color:#000;
                }
                .van-picker-column__item--selected {
-                   color:#4B66AF;
+                   color:#ffa800;
                    font-weight: bold;
                }
                .van-picker__toolbar{

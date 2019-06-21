@@ -45,34 +45,6 @@ export default {
             this.$router.go(-1);
         },
         getRecord(){
-            // let that = this
-            // let cid=storage.get("cid")
-            // let data={
-            //     cid:cid
-            // }
-            //  axiosPost("/customer/getWithdrawalById",data)
-            //  .then(function(res){
-            //      if(!res.data.success){
-            //          that.$toast({
-            //              message:res.data.message
-            //          })
-            //          return
-            //      }
-            //      if(res.data.data.length===0){
-            //          that.$toast({
-            //              message:"您还没有提现记录哦！"
-            //          })
-            //      } else {
-            //          that.showRecord=true
-            //           that.recordList=res.data.data
-            //      }
-            //  })
-            //  .catch(function(err){
-            //     that.$toast({
-            //         message:"请先登录"
-            //     })
-                 
-            //  })
             let data={
                 page:'10',
                 pageSize:'100'
@@ -135,12 +107,14 @@ export default {
           >.total {
               margin:20px 30px;
               >ul {
-                  border:2px solid #ffa800;
-                  border-radius: 10px;
+                 
                   padding:10px;
                   >li {
                     //   display: flex;
                     //   justify-content: space-between;
+                     border:2px solid #ffa800;
+                      border-radius: 10px;
+                      margin-bottom: 10px;
                     >p {
                         padding:10px;
                     }

@@ -222,8 +222,6 @@ export default {
                      this.$router.push({
                          path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                          query:{
-                            //  list:planList,
-                            //  area:this.area,
                              info:i
                          }
                      })

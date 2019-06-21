@@ -15,7 +15,6 @@
            </div>
         </div>
     </div>
-
 </template>
 
 
@@ -27,7 +26,6 @@ export default {
             code:"",
             user_no:"",
             info:"",
-            sets:"",
             ticket:""
         }
     },
@@ -77,14 +75,13 @@ export default {
             };
              axiosPost("/vtdcreditCard/insertEntryCard",data)
              .then(res=>{
-                console.log('success',res);
+                // console.log('success',res);
                 if(!res.data.success){
                     this.$toast({
                         message:res.data.message
                     })
                 } else {
-                    this.sets=res.data.data.smsVerify
-                    if(res.data.data.smsVerify==="1"){
+                    if(res.data.data.smsVerify==="2"){
                            this.$toast("激活成功")
                         setTimeout(()=>{
                             this.$router.push({
@@ -99,7 +96,7 @@ export default {
                     }
                 }
             }).catch(err=>{
-                console.log(err,"err")
+                // console.log(err,"err")
             })
         },
       },
@@ -114,7 +111,7 @@ export default {
 <style lang="less">
    #active {
        >header {
-           background: #29305C;
+           background: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;

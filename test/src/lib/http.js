@@ -5,7 +5,7 @@ import {hostUrl} from '@/lib/config'
 export const axiosPost = (url, params = {}) =>{;
     const _url = hostUrl + url
     const _axios = axios.create({
-        // baseURL: 'http://fx.91dianji.com.cn/api',
+        baseURL: 'http://fx.91dianji.com.cn/api',
         withCredentials: true,
         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
     });
