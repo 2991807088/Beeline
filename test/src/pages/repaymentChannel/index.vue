@@ -286,8 +286,9 @@ export default {
                       justify-content: space-between;
                       margin-top:10px;
                   }
-                  .van-checkbox__icon .van-icon{
+                   .van-checkbox__icon .van-icon{
                       border:1px solid #000;
+                      margin-bottom: 8px !important;
                   }
                   .red {
                       color:red;

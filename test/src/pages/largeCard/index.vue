@@ -56,11 +56,12 @@ export default {
             card_no:"",
             phone:"",
             validity:"",
-            cvv2:""
+            cvv2:"",
+            bindId:""
         }
     },
     created(){
-        
+        this.bindId=this.$route.query.info
     },
     methods:{
         handleReturnHome(){
@@ -102,16 +103,24 @@ export default {
                 validity:this.validity,
                 cvv2:this.cvv2,
                 bank_type:"6",
-                bindId:""
+                bindId:this.bindId
              }
-              axiosPost("/creditCard/bindCreditCard",data)
+              axiosPost("/vtdcreditCard/insertEnterNet",data)
               .then(res=>{
                   if(!res.data.success){
                       this.$toast({
                           message:res.data.message
                       })
                   } else {
-                      this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
+                      let user_no=res.data.data.user_no
+                      this.$router.push({
+                          path:"/home/active",
+                          query:{
+                              user:user_no,
+                              info:this.info
+                          }
+                      })
+                    //   this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
                   }               
               })
               .catch(err=>{

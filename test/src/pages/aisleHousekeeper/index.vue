@@ -257,8 +257,7 @@ export default {
                              info:i
                           }
                      })
-                 } else  {
-                     if(res.data.data.user_no && res.data.data.state==="0"){
+                 } else if (res.data.data.user_no && res.data.data.state==="0")  {
                      this.$router.push({
                          path:"/home/active",
                          query:{
@@ -275,7 +274,7 @@ export default {
                              info:i
                          }
                      })
-                   }
+                  
                  } 
              })
              .catch(err=>{

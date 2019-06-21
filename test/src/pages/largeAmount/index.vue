@@ -28,6 +28,7 @@
                 <van-button @click="submit" round size="large" type="default">提交</van-button>
             </div>
         </div>
+          <loading :componentload="componentload"></loading>
     </div>
 
 </template>
@@ -35,14 +36,19 @@
 
 <script>
 import {axiosPost} from '@/lib/http'
+import loading from '@/components/loading'
 export default {
+     components:{
+      loading
+    },
     data() {
         return {
            paymer_name:"",
            paymer_idcard:"",
            paymer_bank_no:"",
            paymer_phone:"",
-           info:""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+           info:""  ,
+            componentload:false,                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
         }
     },
     methods:{
@@ -77,22 +83,33 @@ export default {
                     paymer_phone:this.paymer_phone,
                     bindId:this.info.bindId
                    };
+                   this.componentload=true
                 axiosPost("/vtdcreditCard/insertAuthent",data)
                 .then(res=>{
-                    if(!res.data.success){
-                        this.$toast({
-                            message:res.data.message
-                        })
+                    setTimeout(()=>{
+                         if(!res.data.success && res.data.code=='100'){
+                          this.$router.push({
+                             path:"/home/largeCard",
+                             query:{
+                                 info:this.info.bindId
+                             }
+                         })
 
-                    }  else {
+                     } else if(!res.data.success){
+                               this.$toast({
+                            message:res.data.message
+                         })
+                     }   else  {
                          this.$router.push({
                              path:"/home/largeCard",
                              query:{
-
+                                 info:this.info.bindId
                              }
                          })
                        
                     }
+                    },1000)
+                   
                 })
                 .catch(err=>{
                     // console.log(err,"error");

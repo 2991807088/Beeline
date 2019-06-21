@@ -5,7 +5,7 @@ import {hostUrl} from '@/lib/config'
 export const axiosPost = (url, params = {}) =>{;
     const _url = hostUrl + url
     const _axios = axios.create({
-        baseURL: 'http://fx.91dianji.com.cn/api',
+        // baseURL: 'http://fx.91dianji.com.cn/api',
         withCredentials: true,
         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
     });
@@ -28,8 +28,7 @@ export const axiosPost = (url, params = {}) =>{;
     //     })
     // })
 
-    return _axios.post(url,qs.stringify(params)).then(res =>{
-        // console.log("test,测试")
+    return _axios.post(_url,qs.stringify(params)).then(res =>{
         if(res.data.code == -1){
             this.$toast('请重新登陆');
             setTimeout(()=>{

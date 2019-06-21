@@ -43,7 +43,7 @@
             <van-button type="primary" class="sure" @click="handleSubmit">确认</van-button>
         </div>
         <div class="clause">
-            <div class="center"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#ffa800">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
+            <div class="center agree"><van-checkbox v-model="checked" @change="handleAgree" shape="square" checked-color="#ffa800">阅读并同意<span @click="handleShow">《蜂行卡包服务协议》</span></van-checkbox></div>
             <div class="remarks">{{remarks}}</div>
         </div>
         <van-popup class="popup" v-model="show" position="right">
@@ -412,8 +412,13 @@ export default {
             padding-top: 40px;
             padding-bottom: 50px;
             background: #F7F6FB;
+            .agree {
+                height:100px !important;
+                // background-color: red !important;
+            }
             .van-checkbox__icon .van-icon{
                       border:1px solid #000;
+                      margin-bottom: 8px !important;
                   }
             
             span{
@@ -427,6 +432,7 @@ export default {
                 margin-top: 10px;
                 padding-top:20px;
                 line-height: 40px;
+                background-color: #F7F6FB;
             }
         }
         .popup{
@@ -435,15 +441,11 @@ export default {
                 height: 100vh;
                 padding-top: 86px;
                 background: white;
-                // .select {
-                //     display: flex;
-                //     justify-content: space-around;
-                //     padding-bottom: 10px;
-                // }
                 .pop-close{
                     width: 98vw;
                     height: 50px;
                     z-index: 999;
+                    margin-bottom: 10px;
                 }
                 .van-checkbox__icon {
                     // height:30px !important;

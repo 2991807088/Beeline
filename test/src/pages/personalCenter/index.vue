@@ -209,6 +209,12 @@ export default {
                 height: 160px;
                 position: relative;
                 z-index: 3;
+                img{
+                     width: auto;
+                    height: 160px;
+                    position: absolute;
+                    z-index: 4;
+                }
                 img:nth-child(1){
                     width: auto;
                     height: 160px;
