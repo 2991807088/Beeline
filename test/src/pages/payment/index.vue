@@ -242,27 +242,27 @@ export default {
                 let url=res.data.data.url.replace("http://localhost:8080","http://test.man-opaydev.ncfgroup.com/fusionPosp")
                         setTimeout(() =>{
                             this.componentload = false;
-                            // this.$router.push({
-                        //     path:"/loan/form/myOrder",
-                        //     query:{
-                        //         info:url,
-                        //         title:"支付"
-                        //       }
-                        // })
-
-                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
                             this.$router.push({
                             path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"支付"
                               }
-                             })
-                            } else {
-                                 this.componentload=false
-                                location.href=url
-                            }
+                        })
+
+                    //  if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    //         // console.log("and")
+                    //         this.$router.push({
+                    //         path:"/loan/form/myOrder",
+                    //         query:{
+                    //             info:url,
+                    //             title:"支付"
+                    //           }
+                    //          })
+                    //         } else {
+                    //              this.componentload=false
+                    //             location.href=url
+                    //         }
                         },1000)
                         
                      }

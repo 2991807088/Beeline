@@ -100,24 +100,25 @@ export default {
                     this.$router.push("/home/addCard")
                 } else if(res.data.code==="0"){  
                     let url=res.data.data.url
-                    //   this.$router.push({
-                    //         path:"/loan/form/myOrder",
-                    //         query:{
-                    //             info:url,
-                    //             title:"还款"
-                    //           }
-                    //      })
-                    if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                    this.$router.push({
+                      this.$router.push({
                             path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"还款"
                               }
                          })
-                    } else {
-                        location.href=url
-                    }    
+
+                    // if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                    // this.$router.push({
+                    //         path:"/loan/form/myOrder",
+                    //         query:{
+                    //             info:url,
+                    //             title:"还款"
+                    //           }
+                    //      })
+                    // } else {
+                    //     location.href=url
+                    // }    
                 }
             })
             .catch(err=>{

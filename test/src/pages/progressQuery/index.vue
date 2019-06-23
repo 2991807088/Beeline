@@ -5,7 +5,7 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
+        <!-- <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe> -->
          <!-- <div class="container">
             <div class="box" >　
             　  <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
@@ -27,7 +27,7 @@ export default {
     },
     methods:{
         goBack() {
-            // plus.webview.close( "yinlian")
+            plus.webview.close( "yinlian")
             this.$router.push("/home")
         },
        
@@ -66,7 +66,7 @@ export default {
     created(){
         this.url=this.$route.query.info
          this.title=this.$route.query.title
-        //  this.webview();
+         this.webview();
         //   var u = navigator.userAgent;
         // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
         // if(isAndroid){
