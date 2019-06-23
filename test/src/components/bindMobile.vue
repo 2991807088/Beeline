@@ -108,7 +108,6 @@ export default {
             }
              axiosPost("/customer/updatePassWord",data)
              .then(res =>{
-                //  console.log('绑定成功',res);
                  this.$toast({
                      message:res.data.message
                  })

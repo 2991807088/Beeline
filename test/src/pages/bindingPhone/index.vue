@@ -8,9 +8,14 @@
         <div class="phone-numer">
             <div class="per-input row">
                 <div class="input-title center">手机号</div>
-                <div class="user-input"><input type="number" v-model="mobile"  placeholder="请输入手机号"></div>
+                <div class="safecode"><input type="number" v-model="mobile"  placeholder="请输入手机号"></div>
+                <div class="getcode center">
+                    <span>
+                        <span class="codebtn" @click="handleChangeMobile">更改手机号</span>
+                    </span>
+                </div>
             </div>
-            <div class="per-input row">
+            <div v-show="changeMobile" class="per-input row">
                 <div class="input-title center">验证码</div>
                 <div class="safecode"><input type="number" v-model="authcode" placeholder="请输入验证码"></div>
                 <div class="getcode center">
@@ -46,12 +51,17 @@ export default {
             showCount:false,
             showCode:true,
             timerId:null,
+            changeMobile: false,
         }
     },
     created(){
-        
+        this.mobile = this.$store.state.wechat.mobile;
     },
     methods:{
+        // 更嗨手机号
+        handleChangeMobile(){
+            this.changeMobile = true;
+        },
         // 获取验证码
         getCode(){
             let that=this
@@ -206,11 +216,9 @@ export default {
                     font-size: 28px;
                     .codebtn{
                         padding: 15px;
-                        background-image: linear-gradient(180deg, #f7cf6c 0%, #ffa800 100%), linear-gradient(#2942ff, #2942ff);
-                        background-blend-mode: normal,normal;
+                        background: #ffa800;
                         color: white;
                         border-radius: 40px;
-                        border: none;
                     }
                 }
             }
@@ -220,7 +228,7 @@ export default {
             padding-left:30px;
             padding-right: 30px;
             .van-button--default {
-                  background-color: #ffa800;
+                  background-color:#ffa800; 
             }
             >button {
                 height: 90px;

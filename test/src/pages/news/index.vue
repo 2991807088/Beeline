@@ -2,11 +2,11 @@
     <div id="news">
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
-            <span>商铺申请流程</span>
+            <span>{{title}}</span>
             <span></span>
         </header>
         <div class="container">
-           <img src="http://fx.91dianji.com.cn/collect.jpg" alt="">
+           <img :src="url" alt="">
         </div>
     </div>
 
@@ -16,13 +16,18 @@
 export default {
     data() {
         return {
-
+            url:"",
+            title:""
         }
     },
     methods:{
         goBack() {
-            this.$router.push('/home/collect')
+            this.$router.go(-1)
         }
+    },
+    created () {
+        this.url=this.$route.query.url
+        this.title=this.$route.query.title
     }
 }
 </script>

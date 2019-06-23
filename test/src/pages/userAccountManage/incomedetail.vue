@@ -8,7 +8,7 @@
         <div class="tabs">
              
 
-            <van-tabs v-model="active" @click="handleChangeTabs">
+            <van-tabs v-model="active" @click="handleChangeTabs" title-active-color="#ffa800" color="#ffa800">
                 <van-tab title="所得佣金">
                    <div class="income-tab">
                         <div class="per-list" v-for="(item,index) in list" :key="index">
@@ -336,7 +336,7 @@ export default {
             background-color: #ffa800;
         }
         .income-tab{
-           
+           margin-top:40px;
             .top-tab{
                 width: 100%;
                 height: 100px;

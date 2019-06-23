@@ -48,10 +48,14 @@
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_zhengxin.png" size="28px"/></div>
                 <div class="title center">征信查询</div>
             </div>
-            <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/home/cardCenter/progressQuery',query: {info:'https://m.youku.com/video/id_XNDE5MjE3MjYzMg==.html?spm=a2h3j.8428770.3416059.1&source=&sharetype=secondtime&from=singlemessage',title: '新手教程'}}">
+            <!-- <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/home/cardCenter/progressQuery',query: {info:'https://m.youku.com/video/id_XNDE5MjE3MjYzMg==.html?spm=a2h3j.8428770.3416059.1&source=&sharetype=secondtime&from=singlemessage',title: '新手教程'}}">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_xinshou.png" size="28px"/></div>
                 <div class="title center">新手教程</div>
-            </router-link>
+            </router-link> -->
+             <div  class="per_menu van-hairline--surround"  @click="handleExpect" >
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_xinshou.png" size="28px"/></div>
+                <div class="title center">新手教程</div>
+            </div>
             <router-link tag="div" class="per_menu van-hairline--surround" to="/home/totalPunch">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_qiandao.png" size="28px"/></div>
                 <div class="title center">签到打卡</div>
@@ -303,6 +307,7 @@ export default {
                           return
                       } else {
                           that.$router.push("/logIn")
+                          localStorage.clear()
                       }
                      
                   })
