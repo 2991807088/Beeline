@@ -3,7 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>信用卡管家</span>
-            <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/rep.jpg',title:'用户收款流程'}}">操作流程</router-link>
+            <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/rep.jpg',title:'用户还款流程'}}">操作流程</router-link>
         </header>
        <div class="container">
            <h3>蜂行卡包智能还款</h3>

@@ -10,8 +10,8 @@
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
         <div class="btn ">
             <!-- <div @click="handlechangeRandom" class="change center">换一换</div> -->
-            <div @click="handlePrivacySettings" class="rightnow center">隐私设置</div>
-            <div @click="savePoster" class="rightnow center">立即合成</div>
+            <!-- <div @click="handlePrivacySettings" class="rightnow center">隐私设置</div>
+            <div @click="savePoster" class="rightnow center">立即合成</div> -->
         </div>
         <div class="share" v-show="Sharewxf">
              <div class="wx">
@@ -112,10 +112,12 @@ export default {
         sharewxCirMessage(){
               let that=this
           that.sharewx.send(
-                { content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
+              {
+                type:'web',   
+                content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
                 thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
-                 href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
+                 href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" }}
                 , function(){
                 // alert("分享成功！");
             }, function(e){
@@ -125,7 +127,8 @@ export default {
          shareWeixinMessage() {
              let that=this
              that.sharewx.send(
-                 { 
+                 {   
+                     type:'web',
                      content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
                      thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],

@@ -90,6 +90,7 @@ export default {
                                     info:this.info
                                  }
                              })
+                            //  console.log(this.info)
                          },1000)
                     } else {
                        this.ticket=res.data.data.ticket
@@ -102,8 +103,8 @@ export default {
       },
  created () {
         this.user_no=this.$route.query.user
-        this.activation();
         this.info=this.$route.query.info
+        this.activation();
     }
 }
 </script>

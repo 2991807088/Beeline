@@ -3,7 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>商户申请</span>
-             <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/col.jpg',title:'商铺申请流程'}}">操作流程</router-link>
+             <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/col.jpg',title:'商户申请流程'}}">操作流程</router-link>
         </header>
         <div class="container">
            <div class="phone">

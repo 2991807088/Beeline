@@ -4,6 +4,7 @@
         <div class="header">
             <van-icon class="menu" name="wap-nav" size="24px" @click="isShow"/>
             <div class="home center">首页</div>
+            <span class="iconfont icon-huangguan"></span>
             <div class="receivables row">
                 <div class="per_receivables" @click="handleIsAuth('/home/collect')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zaixainshouykuan.png" size="45px"/></div>
@@ -306,7 +307,8 @@ export default {
                           return
                       } else {
                           that.$router.push("/logIn")
-                          localStorage.clear()
+                        //   localStorage.clear()
+                        that.$router.push("/logIn")
                       }
                      
                   })
