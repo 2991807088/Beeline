@@ -293,7 +293,6 @@ export default {
             }
             axiosPost("/creditCard/memberReg",data)
             .then(function(res){
-                // console.log(res,"注册之后的第一次信息");
                 if(!res.data.success){
                     that.$toast({
                         message:res.data.message
@@ -302,7 +301,6 @@ export default {
                 } else {
                     axiosPost("/creditCard/getMemberReg")
                     .then(function(res){
-                        // console.log(res,"个人信息查询的结果")
                         if(res.data.success){
                             let info=res.data.data.chMerCode
                             that.componentload=true
@@ -315,7 +313,6 @@ export default {
                                 }
                              })
                             },500)
-                            
                        } else {
                            that.$toast({
                                message:res.data.message
@@ -337,16 +334,16 @@ export default {
             axiosPost("/creditCard/getMemberReg")
            .then(res=>{
             if(res.data.success){
+                 let info=res.data.data.chMerCode
              setTimeout(()=>{
                  this.componentload=false
-             },500)
-             let info=res.data.data.chMerCode
-             this.$router.push({
+                  this.$router.push({
                      path:"/home/collect/payment",
                     query:{
                         info,
                      }
                  })
+             },500)
             }else {
                  this.componentload=false
             }

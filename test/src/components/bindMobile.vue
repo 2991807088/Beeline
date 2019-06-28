@@ -61,7 +61,6 @@ export default {
                             }
                         },1000)
                     }
-                    
                 })
                 .catch(res =>{
                    this.$toast("请勿重复发送短信");

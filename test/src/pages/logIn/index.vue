@@ -60,6 +60,15 @@ export default {
         forgetPassword() {
             this.$router.push('/forgetPassword')
         },
+        canBack(){
+            if(widow.plus){
+                var canBack=plus.webview.currentWebview();
+            } else {
+                document.addEventListener('plusready', function(){
+                     var canBack=plus.webview.currentWebview();
+                }, false);
+            } 
+        },
         register(){
              this.$router.push('/logOut')
         },
@@ -124,7 +133,7 @@ export default {
             })
         },
         // 登录
-            logIn(){
+        logIn(){
                 // console.log(location.href)
                 window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13f3fb879b1f54b7&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
           
@@ -139,6 +148,7 @@ export default {
         this.phone = storage.get('username');
         this.password = storage.get('password');
         this.checked= storage.get('rempass');
+        this.canBack()
     },
 }
 </script>
