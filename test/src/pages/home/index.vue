@@ -216,9 +216,10 @@ export default {
                 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
                 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
                  if(isAndroid) {
-                  window.location.href="  https://www.pgyer.com/9Abz"
+                  window.location.href="  https://www.pgyer.com/9Abz "
                } else if(isiOS) {
-                  window.location.href="http://s73.nyvpy.kuaiff.cn/zoQWz3"
+                  window.location.href=" http://s73.nyvpy.kuaiff.cn/zoQWz3"
+                 
               } 
 
         },
