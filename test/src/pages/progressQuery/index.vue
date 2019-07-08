@@ -5,12 +5,10 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
-         <!-- <div class="container">
-            <div class="box" >　
-            　  <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
-            </div>
-        </div> -->
+      
+         <div class="container">
+              <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
+        </div>
     </div>
 
 </template>

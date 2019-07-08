@@ -283,45 +283,7 @@ export default {
         repayment(i){
             this.num=i
             this.showpass=true
-            // 查询小额通道签约
-
-            //      let data={
-            //    bindId:i.bindId 
-            // }
-            //  axiosPost("/creditCard/getEsicashExist",data)
-            //  .then(res=>{
-            //      console.log(res)
-            //      if(res.data.success) {
-            //           let planList=res.data.data
-            //          this.$router.push({
-            //              path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //              query:{
-            //                 //  list:planList,
-            //                 //  area:this.area,
-            //                 //  item:i
-            //                 info:i
-            //              }
-            //          })
-            //      } else {
-
-            //           this.$router.push({
-            //              path:"/home/insertEsiCash",
-            //              query:{info:i}
-            //          })
-
-            //      }
-                 
-            //  })
-            //  .catch(err=>{
-            //     //  console.log(err)
-                 
-            //  })
-            // this.$router.push({
-            //     path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //     query:{
-            //         info:item
-            //     }
-            // })
+           
         },
         // 查询绑卡列表
         getCardList(){

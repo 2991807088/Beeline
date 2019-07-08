@@ -238,7 +238,7 @@ export default {
                 type:this.type,
                 enddate:this.enddate,
                 startdate:this.startdate,
-                channel:"1"
+                channel:storage.get('channel') 
             }
              axiosPost("/creditCard/getPlan",data)
              .then(res=>{

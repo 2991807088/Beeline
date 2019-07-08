@@ -72,17 +72,30 @@ export default {
         activation(){
              let data = {
                 user_no: this.user_no
-            };
+            }
              axiosPost("/vtdcreditCard/insertEntryCard",data)
              .then(res=>{
                 // console.log('success',res);
-                if(!res.data.success){
-                    this.$toast({
-                        message:res.data.message
-                    })
-                } else {
+                if(res.data.success){
                     if(res.data.data.smsVerify==="2"){
                            this.$toast("激活成功")
+                            //   storage.set('channel',"2");
+                        setTimeout(()=>{
+                            this.$router.push({
+                                path:"/home/creditHousekeeper/aisleHousekeeper",
+                                // query:{
+                                //     info:this.info,
+                                //  }
+                             })
+                         },1000)
+                    } else if(res.data.data.smsVerify==="1") {
+                        // 短信激活
+                        this.ticket=res.data.data.ticket
+                    }
+                   
+                } else {
+                    if(res.data.code === "1001"){
+                        storage.set('channel',"2");
                         setTimeout(()=>{
                             this.$router.push({
                                 path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
@@ -90,10 +103,11 @@ export default {
                                     info:this.info
                                  }
                              })
-                            //  console.log(this.info)
                          },1000)
-                    } else {
-                       this.ticket=res.data.data.ticket
+                    }else{
+                        this.$toast({
+                            message:res.data.message
+                        })
                     }
                 }
             }).catch(err=>{
