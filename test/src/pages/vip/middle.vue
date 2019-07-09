@@ -310,7 +310,13 @@ export default {
     },
     methods:{
        handleReturn(){
-           this.$router.go(-1);
+           this.$router.push({
+               path:"/vip",
+               query:{
+                   num:this.level
+               }
+           })
+        // console.log(this.level)
        }
     },
     created(){

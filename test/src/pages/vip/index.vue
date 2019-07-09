@@ -22,7 +22,7 @@
             
         </div>
         <div class="goods_list">
-            <div class="per_goods fensi">
+            <div class="per_goods fensi" id="level0">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_mianfeifensi_mini.png" alt=""></div>
                 <div class="title">免费粉丝</div>
                 <div class="price">¥0.00</div>
@@ -35,7 +35,7 @@
                     <div>升级会员可提现</div>
                 </div>
             </div>
-            <div class="per_goods huangjin">
+            <div class="per_goods huangjin" id="level1">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_huangjinhuiyuan_mini.png" alt=""></div>
                 <div class="title">黄金会员</div>
                 <div class="price">¥398.00</div>
@@ -50,7 +50,7 @@
                     <div>满100元可提现</div>
                 </div>
             </div>
-            <div class="per_goods zuanshi">
+            <div class="per_goods zuanshi" id="level2">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_mini.png" alt=""></div>
                 <div class="title">钻石会员</div>
                 <div class="price">¥998.00</div>
@@ -65,7 +65,7 @@
                     <div>满100元可提现</div>
                 </div>
             </div>
-            <div class="per_goods hehuoren">
+            <div class="per_goods hehuoren" id="level3">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_hehuoren_mini.png" alt=""></div>
                 <div class="title">城市合伙人</div>
                 <div class="price">¥19800.00</div>
@@ -79,7 +79,7 @@
                     <div>V3-10%</div>
                 </div>
             </div>
-            <div class="per_goods yunyingshang">
+            <div class="per_goods yunyingshang" id="level4">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt=""></div>
                 <div class="title">城市运营商</div>
                 <div class="price">¥28000.00——¥188000.00</div>
@@ -383,7 +383,7 @@ export default {
         },
         // 一键升级
         handleOneClickUp(obj){
-            console.log('一键升级',obj);
+            // console.log('一键升级',obj);
             if(obj == 'none'){
                 this.$toast('您已升级过该等级会员');
             }else{
@@ -421,15 +421,45 @@ export default {
                 this.recomcode = res.data.data.promotioncode;
                 this.recomheadimg = res.data.data.photo;
             }).catch(res =>{
-                console.log('上级查询失败',res);
+                // console.log('上级查询失败',res);
             })
-        }
+        },
+        Tocontone(){
+             document.querySelector("#level0").scrollIntoView(true);
+        },
+         Toconttwo(){
+             document.querySelector("#level1").scrollIntoView(true);
+        },
+         Tocontthree(){
+             document.querySelector("#level2").scrollIntoView(true);
+        },
+         Tocontfour(){
+             document.querySelector("#level3").scrollIntoView(true);
+        },
+         Tocontfive(){
+             document.querySelector("#level4").scrollIntoView(true);
+        },
     },
     created(){
         this.handleCustomerUP();
         this.handlePersonalDetail();
     },
     mounted(){
+        //  console.log(this.$route.query.num,'num')
+        if(this.$route.query.num=="0"){
+            
+                this.Tocontone()
+        } else if(this.$route.query.num=="1"){
+                this.Toconttwo()
+        }else if(this.$route.query.num=="2"){
+                 this.Tocontthree()
+        }else if(this.$route.query.num=="3"){
+                 this.Tocontfour()
+        }else if(this.$route.query.num=="4"){
+            // console.log('num')
+              this.Tocontfive()
+        }
+        // console.log(this.$route.query.num,'num')
     }
 }
 </script>

@@ -61,7 +61,7 @@ export default {
             this.$router.push('/forgetPassword')
         },
         canBack(){
-            if(widow.plus){
+            if(window.plus){
                 var canBack=plus.webview.currentWebview();
             } else {
                 document.addEventListener('plusready', function(){

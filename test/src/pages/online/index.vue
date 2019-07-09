@@ -62,13 +62,6 @@ export default {
         this.url=this.$route.query.info
          this.title=this.$route.query.title
         //  this.webview();
-        //   var u = navigator.userAgent;
-        // var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-        // if(isAndroid){
-        // 　　this.type = true
-        // }else{
-        // 　　this.type = false
-        // }
     }
 }
 </script>

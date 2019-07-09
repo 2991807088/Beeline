@@ -17,10 +17,12 @@
             </div>
         </div>
         <div class="marqueen row">
-            <div class="pannel-title center">
-                <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt="">
+            <div class="pannel-title ">
+                <!-- <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt=""> -->
+               <p>蜂行</p>
+               <p>咨询</p>
             </div>
-            <router-link tag="div" class="pannel-detail center" to="/personalCenter/contactus">
+            <router-link tag="div" class="pannel-detail center" to="/home/aboutUs">
                 <van-notice-bar text="现成为998会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
             </router-link>
         </div>
@@ -436,6 +438,15 @@ export default {
             height: 70%;
             border-right: solid 4px #ffa800;
             margin-top: 15px;
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            color:#F79E00;
+            >p {
+                &:nth-of-type(1){
+                    padding-bottom: 10px;
+                }
+            }
             img{
                 width: 85px;
                 height: 85px;

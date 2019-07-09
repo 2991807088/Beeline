@@ -9,7 +9,7 @@
             <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
             <router-link tag="div" to="/radar" class="circle center">
                 <img src="http://fx.91dianji.com.cn/AI@2x.png" alt="">
-                <img src="http://fx.91dianji.com.cn/leida@2x.png" alt="">
+                <img src="http://fx.91dianji.com.cn/leida@2x.png" class="logo" alt="">
                 <p>蜂行雷达</p>
             </router-link>
             <div class="btn">
@@ -164,6 +164,27 @@ export default {
                     from {transform: rotate(360deg);}
                     to {transform: rotate(0deg);}
                 }
+                .logo{
+                        // width: 20vw;
+                        // height: auto;
+                        // position: absolute;
+                        // top: 35vw;
+                        // left: 35vw;
+                        z-index: 4;
+                        animation:  bling 1s linear infinite;
+                        -webkit-animation:  bling 1s linear infinite;
+                    }
+                    @keyframes bling {
+                        0%{
+                            transform: scale(0.8);
+                        }
+                        50%{
+                            transform: scale(1);
+                        }
+                        100%{
+                            transform: scale(0.8);
+                        }
+                    }
             }
             .btn{
                 width: 100%;

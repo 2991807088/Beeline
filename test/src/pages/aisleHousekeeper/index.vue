@@ -136,6 +136,7 @@
 import { axiosPost } from '../../lib/http'
 import { bankCardAttribution } from '../../lib/bankName'
 import loading from '@/components/loading'
+import Bank from '@/lib/bank'
 import storage from '@/lib/storage'
 export default {
      components:{
@@ -294,51 +295,26 @@ export default {
                      let arr= res.data.data
                      let arrXun=[]
                      arr.forEach((item,i) => {
-                        //  console.log(item)
-                         item.bankNick=bankCardAttribution(item.cardNo).bankName
-                        //  console.log(item)
+                         if(item.bankname=="" || item.bankname==null){
+                                this.$http.get('https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo='+item.cardNo+'&cardBinCheck=true')
+                                    .then(responce=>{
+                                    let bankcode=responce.data.bank
+                                     Bank.forEach(info => {
+                                        if(info.bankCode==bankcode){
+                                            item.bankName=info.bankName
+                                        }
+                                    });
+                                }) 
+                         }
                          arrXun.push(item)
                      });
                      this.cardList=arrXun
-                    //  this.cardNum=this.cardList.length
                  }
              })
              .catch(err=>{
 
              })
         },
-
-
-        // repay(item){
-        //     this.$router.push({
-        //         path:"/home/creditHousekeeper/aisleHousekeeper/repayment",
-        //         query:{
-        //             info:item
-        //         }
-        //     })
-        // },
-        // getBankList(){
-        //     let that=this
-        //     axiosPost("/creditCard/getBankCardbindList")
-        //     .then(function(res){
-        //         that.showCardList=true
-        //         if(!res.data.success){
-        //             that.$toast=({
-        //                 message:res.data.message
-        //             })
-        //         }
-        //         let list=JSON.parse(res.data.data.rt5_bindCardList)
-        //         if(!res.data.success){
-        //             that.$toast({
-        //                 message:res.data.message
-        //             })
-        //         }
-        //         that.bankList=list
-        //     })
-        //     .catch(function(err){
-        //         // console.log(err,"error")
-        //     })
-        // },
          handleGetAmount(){
             let url = '/customer/getCustomer';
             let params = {
