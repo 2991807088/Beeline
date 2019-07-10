@@ -212,7 +212,6 @@ export default {
                        })
                        return
                    } else {
-                    //    window.location.href=res.data.data;
                         let url=res.data.data;
                         this.componentload=true
                         setTimeout(()=>{
@@ -226,7 +225,6 @@ export default {
                            this.componentload=false
 
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
                             this.$router.push({
                             path:"/loan/form/myOrder",
                             query:{

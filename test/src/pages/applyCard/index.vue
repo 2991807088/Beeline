@@ -132,7 +132,6 @@ export default {
                                 location.href=url
                             }
                      },1000)
-                    //  location.href=res.data.data.data
                 }
             })
             .catch(function(err){

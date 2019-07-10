@@ -106,7 +106,7 @@
                     </div>
                     <div class="per_detail row">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
-                        <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘经理 </div>
+                        <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理 </div>
                         <div class="btn center">
                             <span><a href="tel:18755291160">拨打</a></span>
                         </div>

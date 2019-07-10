@@ -242,6 +242,7 @@ export default {
                 let url=res.data.data.url.replace("http://localhost:8080","http://test.man-opaydev.ncfgroup.com/fusionPosp")
                         setTimeout(() =>{
                             this.componentload = false;
+
                         //     this.$router.push({
                         //     path:"/loan/form/myOrder",
                         //     query:{
@@ -264,7 +265,6 @@ export default {
                                 location.href=url
                             }
                         },1000)
-                        
                      }
                })
             .catch(err=>{
