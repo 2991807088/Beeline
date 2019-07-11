@@ -249,7 +249,7 @@ export default {
                         //         info:url,
                         //         title:"支付"
                         //       }
-                        // })
+                        //    })
 
                      if (!navigator.userAgent.match(/iPad|iPhone/i)){
                             // console.log("and")

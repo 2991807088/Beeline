@@ -54,7 +54,7 @@
     </div>
 </template>
 <script>
-import area from '@/config/area.js'
+// import area from '@/config/area.js'
 import loading from '@/components/loading'
 import Bank from '@/lib/bank'
 import {axiosPost,axiosGet} from '@/lib/http'
@@ -65,10 +65,10 @@ export default {
     },
     data(){
         return{
-            area: '请选择支行地址',
+            // area: '请选择支行地址',
             show: false,
             title: '获取验证码',
-            areaList:{},
+            // areaList:{},
             name:"",
             phone:"",
             bankcardno:"",

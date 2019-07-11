@@ -29,14 +29,10 @@
                    <li v-for="(item, index) in cardList" :key="index">
                        <div class="top">
                           <div class="bankName">
-                              <p>{{item.bankNick}}</p>
+                              <span>{{item.bankNick}}</span>
                               <p>*<span>{{item.cardNo.substr(item.cardNo.length-4)}}</span></p>
-                              <p>
-                                  {{item.payerName.replace(1,"*")}}
-                              </p>
-                              <!-- <p>
-                                 <van-button @click="unbinding(item)" round type="default">解绑</van-button>  
-                              </p> -->
+                              <p> {{item.payerName}}</p>
+                             
                                <p @click="unbinding(item)">解绑</p>
                           </div>
                           <div class="now">
@@ -113,10 +109,6 @@
                              </div>
                        </div>
 
-
-
-
-
                    </li>
                </ul>
            </div>
@@ -154,7 +146,6 @@ export default {
             headimg:"",
             cardList:[],
             // cardNum:'',
-            // cardname:"",
             bankname:"",
             amount:"",
             showpass:false,
@@ -264,7 +255,6 @@ export default {
                              info:i
                          }
                      })
-
                  }else {
                       storage.set('channel',"2");
                      this.$router.push({
@@ -273,7 +263,6 @@ export default {
                              info:i
                          }
                      })
-                  
                  } 
              })
              .catch(err=>{
@@ -291,21 +280,10 @@ export default {
              axiosPost("/creditCard/getMyCreditCard")
              .then(res=>{
                  if(res.data.success){
-                    //  console.log(res)
                      let arr= res.data.data
                      let arrXun=[]
                      arr.forEach((item,i) => {
-                         if(item.bankname=="" || item.bankname==null){
-                                this.$http.get('https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo='+item.cardNo+'&cardBinCheck=true')
-                                    .then(responce=>{
-                                    let bankcode=responce.data.bank
-                                     Bank.forEach(info => {
-                                        if(info.bankCode==bankcode){
-                                            item.bankName=info.bankName
-                                        }
-                                    });
-                                }) 
-                         }
+                         item.bankNick=bankCardAttribution(item.cardNo).bankName
                          arrXun.push(item)
                      });
                      this.cardList=arrXun
@@ -321,7 +299,6 @@ export default {
                 openid:this.$store.state.wechat.openid,
             };
             axiosPost(url,params).then(res =>{
-                // console.log('查询个人设置成功',res)
                 if(res.data.success){
                     setTimeout(()=>{
                         this.componentload = false;
@@ -354,7 +331,11 @@ export default {
     created () {
        this.handleGetAmount()
        this.getCardList()
-    }
+    },
+    mounted () {
+    //    this.getCardList()
+        
+    } 
 }
 </script>
 
@@ -489,28 +470,6 @@ export default {
                            }
                       }
                       }
-
-                    //   .pop {
-                    //       position: absolute;
-                    //       top:20%;
-                    //       left:10%;
-                    //       width: 500px;
-                    //       padding:10px;
-                    //       background-color: #fff;
-                    //       border:1px solid #ccc;
-                    //       >.small ,
-                    //        .large {
-                    //           display: flex;
-                    //           justify-content: space-between;
-                    //           padding-bottom: 20px;
-                    //           align-items: center;
-                    //           >p {
-                    //               font-size: 32px;
-                    //             //   color:#ffa800;
-                    //               font-weight: bold;
-                    //           }
-                    //       }
-                    //   }
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;

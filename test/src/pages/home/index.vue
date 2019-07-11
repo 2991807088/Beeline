@@ -228,7 +228,7 @@ export default {
         getUpdate(){ // 获取历史版本号
                axiosPost("/customer/getVersion")
                .then(res=>{
-                //    console.log(res)
+                //    console.log(res)  
                    if(res.data.success){
                       let version=res.data.data
                       this.versionAndroid=parseFloat(version[0].version)
@@ -310,8 +310,6 @@ export default {
                           return
                       } else {
                           that.$router.push("/logIn")
-                        //   localStorage.clear()
-                        that.$router.push("/logIn")
                       }
                      
                   })

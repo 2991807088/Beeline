@@ -222,6 +222,7 @@ export default {
                         //         title:"贷款中心"
                         //       }
                         //   })
+
                            this.componentload=false
 
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
