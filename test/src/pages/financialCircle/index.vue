@@ -33,19 +33,19 @@
                 <div class="title start-center van-hairline--bottom">推广素材图</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link> -->
-            <router-link tag="div" :to="{path: '/share/poster',query: {title: '海报分享',num:'01'}}" class="per_menu row">
+            <router-link tag="div" :to="{path: '/share/poster',query: {title: '海报分享',num:'1'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
                 <div class="title start-center van-hairline--bottom">海报分享</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
-             <router-link tag="div" :to="{path: '/share/poster',query: {title: '信用卡图推广',num:'02'}}" class="per_menu row">
+             <router-link tag="div" :to="{path: '/share/poster',query: {title: '信用卡图推广',num:'2'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
                 <div class="title start-center van-hairline--bottom">信用卡图推广</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
-             <router-link tag="div" :to="{path: '/share/poster',query: {title: '推广素材图',num:'03'}}" class="per_menu row">
+             <router-link tag="div" :to="{path: '/share/poster',query: {title: '推广素材图',num:'3'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
-                <div class="title start-center van-hairline--bottom">信用卡图推广</div>
+                <div class="title start-center van-hairline--bottom">推广素材图</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
         </div>

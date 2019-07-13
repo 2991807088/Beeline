@@ -68,7 +68,7 @@ export default {
             url: 'http://fx.91dianji.com.cn',
             qrcode: '',
             random: '01',
-            // random: null,
+            num:"",
             shares:null,
             sharewx:null,
             Sharewxf:false,
@@ -150,7 +150,15 @@ export default {
         // 随机数
         handlechangeRandom(){
             this.componentload = true;
-            var ran = Math.ceil((Math.random())*3);
+            // var ran = Math.ceil((Math.random())*3);
+            let ran=0
+            if(this.num=='1'){
+              ran=  this.getRundom(9,16)
+            } else if(this.num=='2'){
+                ran=this.getRundom(1,8)
+            } else {
+                ran=this.getRundom(17,23)
+            }
             var random = '';
             if(ran < 10){
                 random = '0' + ran;
@@ -174,7 +182,7 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2000);
+                },2500);
             };
             var qrcode = new Image();
             qrcode.src = 'http://fx.91dianji.com.cn/' + this.qrcode;
@@ -202,7 +210,7 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2000);
+                },2500);
             };
             
             var qrcode = new Image();
@@ -224,6 +232,11 @@ export default {
             setTimeout(()=>{
                 this.componentload = false;
             },3000);
+        },
+        getRundom(min,max){
+
+            return  Math.floor(Math.random() * (max-min) +min)
+
         },
         savePoster(){
             this.imgShow = true;
@@ -252,7 +265,7 @@ export default {
                                 this.qrcode = res.data.data;
                                 setTimeout(() =>{
                                     this.componentload = false;
-                                },1000);
+                                },2500);
                                 this.handlePoster();
                             }else{
                                 this.$toast('二维码请求失败');
@@ -298,7 +311,7 @@ export default {
 
     },
     created () {
-        this.random=this.$route.query.num
+        this.num=this.$route.query.num
         this.tip=this.$route.query.title
     },
     mounted(){
