@@ -76,12 +76,6 @@ export default {
                 })
                  return
             }
-            if(this.authcode.trim().length===0){
-                 this.$toast({
-                    message:"请输入验证码"
-                })
-                 return
-            }
             if(this.newPassword.trim().length===0){
                  this.$toast({
                     message:"请输入新密码"
@@ -97,7 +91,13 @@ export default {
             }
             if(this.newPassword !== this.suerPassword){
                  this.$toast({
-                    message:"两次输入的密码不一致，请重新填写"
+                    message:"两次输入的密码不一致"
+                })
+                 return
+            }
+            if(this.authcode.trim().length===0){
+                 this.$toast({
+                    message:"请输入验证码"
                 })
                  return
             }
