@@ -3,11 +3,11 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>信用卡管家</span>
-            <span>操作视频</span>
+            <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/rep.jpg',title:'用户还款流程'}}">操作流程</router-link>
         </header>
        <div class="container">
            <h3>蜂行卡包智能还款</h3>
-           <p class="mode">智能,极速2种模式</p>
+           <p class="mode">普通，完美2种模式</p>
            <div class="light">
                <ul>
                    <!-- <li>
@@ -58,11 +58,11 @@
                       <div class="select" >
                           <p>请选择还款模式</p>
                       <ul>
-                          <li @click="searchInfo">
+                          <!-- <li @click="searchInfo">
                               <div><van-icon name="http://fx.91dianji.com.cn/putong.png" size="40px"/></div>
                               <p>普通代还</p>
                                <p> <van-icon name="arrow" size="30px"/></p>
-                          </li>
+                          </li> -->
                           <router-link tag="li" to="/home/creditHousekeeper/aisleHousekeeper">
                               <div><van-icon name="http://fx.91dianji.com.cn/wanmei.png" size="40px"/></div>
                               <p>完美账单</p>
@@ -101,22 +101,22 @@ export default {
                 } else if(res.data.code==="0"){  
                     let url=res.data.data.url
                     //   this.$router.push({
-                    //         path:"/home/online",
+                    //         path:"/loan/form/myOrder",
                     //         query:{
                     //             info:url,
                     //             title:"还款"
                     //           }
                     //      })
+
                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
                     this.$router.push({
-                            path:"/home/andLink",
+                            path:"/loan/form/myOrder",
                             query:{
                                 info:url,
                                 title:"还款"
                               }
                          })
                     } else {
-                        //  console.log("ios")
                         location.href=url
                     }    
                 }

@@ -74,7 +74,6 @@ export default {
                         axiosPost(url,params)
                         .then(res =>{
                             if(res.data.success){
-                              console.log('登录成功',res);
                                 storage.set('cid',res.data.data.id);
                                 this.$store.commit('iscertification',res.data.data.iscertification);
                                 this.$store.commit('level',res.data.data.level);
@@ -85,7 +84,6 @@ export default {
                                 this.$store.commit('city',res.data.data.city);
                                 this.$store.commit('ispartner',res.data.data.ispartner);
                                 this.$toast('登陆成功');
-                                console.log('登陆成功',res);
                                 let url = '/customer/getCustomer';
                                 let params = {
                                     openid:this.$store.state.wechat.openid,
@@ -133,7 +131,6 @@ export default {
                           this.$store.commit('ispartner',res.data.data.ispartner);
                           this.$router.push('/home');
                           this.$toast('登陆成功');
-                          console.log('登陆成功',res);
                         }else{
                           this.$toast('登陆失败');
                         }
@@ -182,7 +179,6 @@ export default {
                 this.$store.commit('city',res.data.data.city);
                 this.$store.commit('ispartner',res.data.data.ispartner);
                 this.$router.push('/home');
-                console.log('登陆成功',res);
                 this.$toast('登陆成功');
               }else{
                 this.$toast('登陆失败');

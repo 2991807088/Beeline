@@ -2,35 +2,38 @@ import axios from 'axios'
 import qs from 'qs'
 import {hostUrl} from '@/lib/config'
 // 封装POST请求
-export const axiosPost = (url, params = {}) =>{;
-    const _url = hostUrl + url
+export const axiosPost = (  url, params = {}) =>{;
     const _axios = axios.create({
+        // baseURL:hostUrl,
         baseURL: 'http://fx.91dianji.com.cn/api',
         withCredentials: true,
         headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'}
     });
+
+
     // return new Promise((resolve,reject) =>{
-    //     _axios.post(_url,qs.stringify(params)).then(res =>{
-    //         if(res.data.success){
+    //     _axios.post(url,qs.stringify(params)).then(res =>{
     //             if(res.data.code == -1){
     //                 reject(res);
     //                 window.location.href = '#/logIn';
     //             }else{
     //                 resolve(res);
     //             }
-    //         }else{
-    //             reject(res);
-    //             // this.$toast(res.data.message);
-    //         }
     //     }).catch(res =>{
     //         reject(res);
-    //         // this.$toast(res.data.message);
     //     })
     // })
 
+
     return _axios.post(url,qs.stringify(params)).then(res =>{
-        // console.log("test,测试")
-        if(res.data.code == -1){
+        if(url=='/customer/getCustomer') {
+            setTimeout(() => {
+                if(res.data.code==-1){
+                    window.location.href = '#/logIn';
+                }
+                
+            }, 0);
+        } else if(res.data.code == -1){
             this.$toast('请重新登陆');
             setTimeout(()=>{
                 window.location.href = '#/logIn';

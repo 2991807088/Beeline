@@ -101,7 +101,7 @@
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_fuwushijian_active.png"/></div>
                 <div class="contact_title">服务时间:</div>
-                <div class="contact_time start-center"><a href="tel:400-1059-769">周一至周日（09：00-22：00）</a></div>
+                <div class="contact_time start-center"><a href="tel:400-6169-609">周一至周日（09：00-22：00）</a></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_jiamengrexian_active.png"/></div>
@@ -129,7 +129,7 @@
                 <div class="contact_title">客服微信:</div>
                 <div class="jiameng_rexian">
                     <span>18755287073</span>
-                    <span>刘经理</span>
+                    <span>张经理</span>
                 </div>
                 <div class="btn center"><span   @click="handleCopy('18755287073')">复制</span></div>
             </div>
@@ -165,7 +165,6 @@ export default {
         },
         // 帮助中心
         handleHelpDetail(obj){
-            console.log('obj',obj);
             this.$router.push({
                 path: '/personalCenter/manual',
                 query:{

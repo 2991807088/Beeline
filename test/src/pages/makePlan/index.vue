@@ -173,7 +173,6 @@ export default {
               this.showEnd=false
          },
          confirmStart(value){
-             console.log(value)
               var date=value
               var year=date.getFullYear();//当前年份
               var month=date.getMonth();//当前月份
@@ -191,7 +190,7 @@ export default {
             //补位 当某个字段不是两位数时补0
             fnW(str){
                 var num;
-                str>10?num=str:num="0"+str;
+                str>9?num=str:num="0"+str;
                 return num;
             } ,
           onCancel(){
@@ -211,6 +210,9 @@ export default {
          },
          onConfirm(value){
             this.area=value.join("-")
+             if(this.area=='北京市-'){
+                this.area='北京市-北京市'
+            }
             this.showFlag=false
          },
          showPick(){
@@ -236,7 +238,7 @@ export default {
                 type:this.type,
                 enddate:this.enddate,
                 startdate:this.startdate,
-                channel:"1"
+                channel:storage.get('channel') 
             }
              axiosPost("/creditCard/getPlan",data)
              .then(res=>{

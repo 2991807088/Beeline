@@ -8,9 +8,10 @@
             </div>
             <div class="middle">
                 <div class="avator center" v-if="level != '0'">
-                    <img v-if="level == '1'" src="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png" alt="">
-                    <img v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png" alt="">
-                    <img :src="headimg" alt="">
+                    <!-- <img v-if="level == '1'" src="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png" alt="">
+                    <img v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png" alt=""> -->
+                     <img :src="vipimg" alt="">
+                    <!-- <img :src="headimg" alt=""> -->
                 </div>
                 <div class="avator center" v-else>
                     <img class="headimg" :src="headimg" alt="">
@@ -39,7 +40,7 @@
             <router-link tag="div" to="/vip" class="now center"><div class="center">立即升级</div></router-link>
         </div>
         <div class="menus">
-            <router-link tag="div" to="/home/verified" class="per_menu">
+            <router-link tag="div" to="/home/verified" class="per_menu  line ">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_renzheng.png" size="24px"/></div>
                 <div class="title start-center van-hairline--bottom">实名认证</div>
                 <div class="state end-center van-hairline--bottom">{{iscertification}}</div>
@@ -53,18 +54,50 @@
                 <div class="more end-center"><van-icon name="arrow"/></div>
             </router-link>
             <div class="kong"></div>
-            <router-link tag="div" :to="{path: '/ponserCenter/userAccountManage',query: {amount: amount,amountSum: amountSum}}" class="per_menu">
+            <!-- <router-link tag="div" :to="{path: '/ponserCenter/userAccountManage',query: {amount: amount,amountSum: amountSum}}" class="per_menu">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zhanghu.png" size="24px"/></div>
                 <div class="title start-center van-hairline--bottom">我的账户</div>
                 <div class="state end-center van-hairline--bottom"></div>
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
-            </router-link>
-            <div @click="handleMyRate" class="per_menu">
+            </router-link> -->
+            <div @click="handleMyRate" class="per_menu line">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_feilv.png" size="24px"/></div>
                 <div class="title start-center van-hairline--bottom">我的费率</div>
                 <div class="state end-center van-hairline--bottom"></div>
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
             </div>
+
+
+            <router-link tag="div" :to="{path:'/personalCenter/incomedetail/cash',query:{amount: amount}}" class="per_menu">
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/yue.png" size="24px"/></div>
+                <div class="title start-center">我的余额</div>
+                <div class="state end-center"></div>
+                <div class="more end-center"><van-icon name="arrow"/></div>
+            </router-link>
+             <div class="kong"></div>
+
+            <router-link tag="div" :to="{path: '/personalCenter/income',query:{amountSum: amountSum}}" class="per_menu line">
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/shouyi.png" size="24px"/></div>
+                <div class="title start-center">我的收益</div>
+                <div class="state end-center"></div>
+                <div class="more end-center"><van-icon name="arrow"/></div>
+            </router-link>
+
+            <router-link tag="div" to="/personalCenter/incomedetail/record" class="per_menu">
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/mx.png" size="24px"/></div>
+                <div class="title start-center">交易明细</div>
+                <div class="state end-center"></div>
+                <div class="more end-center"><van-icon name="arrow"/></div>
+            </router-link>
+             <div class="kong"></div>
+              <router-link tag="div" to="/personalCenter/incomedetail/addcard" class="per_menu line">
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/dzk.png" size="24px"/></div>
+                <div class="title start-center">添加到账卡</div>
+                <div class="state end-center"></div>
+                <div class="more end-center"><van-icon name="arrow"/></div>
+            </router-link>
+
+            
             <router-link tag="div" to="/register" class="per_menu">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_shezhi@2x.png" size="24px"/></div>
                 <div class="title start-center">设置</div>
@@ -74,9 +107,16 @@
 
             <div class="kong"></div>
 
-            <router-link tag="div" to="/help" class="per_menu">
+            <router-link tag="div" to="/help" class="per_menu line">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_help.png" size="24px"/></div>
                 <div class="title start-center van-hairline--bottom">帮助中心</div>
+                <div class="state end-center van-hairline--bottom"></div>
+                <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
+            </router-link>
+
+             <router-link tag="div" to="/home/accountManagement/modifyLoginPassword" class="per_menu ">
+                <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/xiugai.png" size="24px"/></div>
+                <div class="title start-center van-hairline--bottom">修改密码</div>
                 <div class="state end-center van-hairline--bottom"></div>
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
             </router-link>
@@ -113,6 +153,7 @@ export default {
             level: '',
             payrate: '',
             repayrate: '',
+            vipimg:""
         }
     },
     methods:{
@@ -129,7 +170,6 @@ export default {
                 openid:this.$store.state.wechat.openid,
             };
             axiosPost(url,params).then(res =>{
-                console.log('查询个人设置成功',res);
                 this.nickname = res.data.data.nickname;
                 this.headimg  = res.data.data.photo;
                 this.promotioncode  = res.data.data.promotioncode; 
@@ -137,6 +177,12 @@ export default {
                 this.amountSum = res.data.data.amountSum;
                 this.commission = res.data.data.commission;
                 this.level = res.data.data.level;
+                if(this.level=='1'){
+                    this.vipimg="http://fx.91dianji.com.cn/fengxing_huangjin_icon.png"
+                }
+                if(this.level=='2'){
+                     this.vipimg="http://fx.91dianji.com.cn/fengxing_zuanshi_icon.png"
+                }
                 this.payrate = res.data.data.payrate;
                 this.repayrate = res.data.data.repayrate;
                 res.data.data.iscertification == '0' ? this.iscertification = '未认证' : ( res.data.data.iscertification == '1' ? this.iscertification = '审核中' : (res.data.data.iscertification == '2' ? this.iscertification = '认证成功' : this.iscertification = '认证失败，请重试')); 
@@ -202,6 +248,12 @@ export default {
                 height: 160px;
                 position: relative;
                 z-index: 3;
+                img{
+                     width: auto;
+                    height: 160px;
+                    position: absolute;
+                    z-index: 4;
+                }
                 img:nth-child(1){
                     width: auto;
                     height: 160px;
@@ -305,10 +357,14 @@ export default {
         width: 100%;
         height: calc((57vh - 150px));
         margin-top: 80px;
+        overflow-y: scroll;
         .kong{
             width: 100%;
             height: 12px;
             background: #f5f5f5;
+        }
+        .line {
+            border-bottom: 1px solid #eee;
         }
         .per_menu{
             width: 95%;
@@ -316,6 +372,7 @@ export default {
             margin-left: auto;
             margin-right: auto;
             display: flex;
+            // border-bottom: 1px solid #ccc;
             justify-content: space-between;
             .icon{
                 width: 15%;

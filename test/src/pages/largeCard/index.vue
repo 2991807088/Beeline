@@ -56,11 +56,12 @@ export default {
             card_no:"",
             phone:"",
             validity:"",
-            cvv2:""
+            cvv2:"",
+            bindId:""
         }
     },
     created(){
-        
+        this.bindId=this.$route.query.info
     },
     methods:{
         handleReturnHome(){
@@ -69,7 +70,7 @@ export default {
            
         // 绑卡
         bindingCard(){
-             let partern=/0?(13|14|15|17|18|19)[0-9]{9}/
+             let partern=/0?(13|14|15|16|17|18|19)[0-9]{9}/
              if(!partern.test(this.phone)){
                  this.$toast({
                     message:"请输入11位手机号码"
@@ -102,16 +103,24 @@ export default {
                 validity:this.validity,
                 cvv2:this.cvv2,
                 bank_type:"6",
-                bindId:""
+                bindId:this.bindId
              }
-              axiosPost("/creditCard/bindCreditCard",data)
+              axiosPost("/vtdcreditCard/insertEnterNet",data)
               .then(res=>{
                   if(!res.data.success){
                       this.$toast({
                           message:res.data.message
                       })
                   } else {
-                      this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
+                      let user_no=res.data.data.user_no
+                      this.$router.push({
+                          path:"/home/active",
+                          query:{
+                              user:user_no,
+                              info:this.info
+                          }
+                      })
+                    //   this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
                   }               
               })
               .catch(err=>{

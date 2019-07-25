@@ -81,11 +81,11 @@ export default {
             })
         },
         goBack() {
-            this.$router.push('/home/accountManagement')
+            this.$router.go(-1)
         },
         getCode(){
             let that=this
-            let partten=/0?(13|14|15|17|18|19)[0-9]{9}/ 
+            let partten=/0?(13|14|15|16|17|18|19)[0-9]{9}/ 
             if(!partten.test(that.mobile)){
                  that.$toast({
                     message:"请填写11位手机号码"
@@ -128,7 +128,7 @@ export default {
         },
         modify(){
              let that=this
-            let partten=/0?(13|14|15|17|18|19)[0-9]{9}/  // 11位手机号的正则
+            let partten=/0?(13|14|15|16|17|18|19)[0-9]{9}/  // 11位手机号的正则
             //  let code=/[0-9A-Za-z] {6,18} /  //密码的正则
             if(!partten.test(that.mobile)){
                  that.$toast({
@@ -224,6 +224,7 @@ export default {
            background-color: #EEEFF1;
            overflow-x: hidden;
            font-size: 34px;
+          
            >p {
                padding:30px;
                font-size: 30px;
@@ -249,6 +250,7 @@ export default {
                        >div {
                            >.van-button--info {
                                 background-color: #ffa800;
+                                border:1px solid #ffa800;
                                 height: 60px;
                                 line-height: 60px;
                                 margin-right: 10px;
@@ -265,6 +267,7 @@ export default {
                        }
                        .van-button--info{
                            background-color: #ffa800;
+                           border:1px solid #ffa800;
                            font-size: 30px;
                        }
                        &:last-child {
@@ -304,6 +307,7 @@ export default {
                padding-right:30px;
                .van-button--info{
                    background-color: #ffa800;
+                  border:1px solid #ffa800;
                }
                >button {
                    height: 90px;

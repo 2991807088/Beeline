@@ -63,7 +63,7 @@ export default {
                         return
                     }  else {
                         // window.location.href=res.data.data
-                        // let url=res.data.data
+                        let url=res.data.data
 
                         //  this.$router.push({
                         //     path:"/home/cardCenter/progressQuery",
@@ -75,16 +75,16 @@ export default {
 
                          if (!navigator.userAgent.match(/iPad|iPhone/i)){
                                 this.$router.push({
-                                    path:"/home/andLink",
+                                    path:"/loan/form/myOrder",
                                     query:{
                                         info:url,
-                                        title:"信用卡办理"
+                                        title:"还款"
                                     }
                               })
                             } else {
                                 location.href=url
                             }    
-                            }
+                         }
                 })
                 .catch(err=>{
                     // console.log(err,"error");

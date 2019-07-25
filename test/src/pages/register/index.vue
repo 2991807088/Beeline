@@ -52,13 +52,13 @@
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
                    </div>
-                    <div class="per-userinfo row">
+                    <!-- <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="chat" size="22px"/>是否允许下级联系</div>
                        <div class="detail end-center">
                           <van-switch v-model="isconnect" active-color="#ffa800" inactive-color="#f44" />
                        </div>
                        <div class="icon-left end-center"><van-icon name="arrow" /></div>
-                   </div>
+                   </div> -->
                    <div class="per-userinfo row">
                        <div class="avator start-center"><van-icon name="invition" size="22px"/>微信号</div>
                        <div class="detail end-center">
@@ -124,7 +124,7 @@ export default {
             wechat: '',
             wechatqr: 'http://fx.91dianji.com.cn/logo.png',
             voice: '0',
-            isconnect:true
+            // isconnect:true
         }
     },
     methods:{
@@ -190,7 +190,7 @@ export default {
                     res.data.data.voice == '0' ? this.voice = false : this.voice = true;
                     this.wechat = res.data.data.wechat;
                     this.wechatqr = res.data.data.wechatqr;
-                    res.data.data.ispermit == '0' ? this.isconnect = true : this.isconnect = false;
+                    // res.data.data.ispermit == '0' ? this.isconnect = true : this.isconnect = false;
                 }
             })
             .catch(res =>{
@@ -203,9 +203,9 @@ export default {
             var iscreditcard = false;
             var voice = false;
             var iscar = false;
-            var isconnect=null
+            // var isconnect=null
 
-            this.isconnect==true? isconnect="1":"0"
+            // this.isconnect==true? isconnect="1":"0"
             this.iscar == true ? iscar = '1' : iscar = '0';
             this.voice == true ? voice = '1' : voice = '0';
             this.iscreditcard == true ? iscreditcard = '1' : iscreditcard = '0';
@@ -221,7 +221,7 @@ export default {
                 wechat: this.wechat,
                 wechatqr: this.wechatqr,
                 voice: voice,
-                ispermit:isconnect
+                ispermit:''
             };
             axiosPost(url,params).then(res =>{
                 this.$toast('更新成功');

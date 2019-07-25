@@ -16,6 +16,8 @@ import '@/assets/css/common.css'
 // import '@/assets/css/share.css'
 import axios from 'axios'
 Vue.prototype.$http = axios
+// back安卓物理键问题
+import back from './lib/back'
 // axios.defaults.withCredentials = true
 // axios.defaults.baseURL = 'http://pay.91dianji.com.cn/api';
 // 引入适配
@@ -56,6 +58,7 @@ import '@/assets/icon/iconfont.js'
 
 /* eslint-disable no-new */
 new Vue({
+  back,
   el: '#app',
   router,
   store,

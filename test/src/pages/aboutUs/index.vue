@@ -45,7 +45,7 @@
                 <div class="contact_title">客服微信:</div>
                 <div class="jiameng_rexian">
                     <span>18755287073</span>
-                    <span>刘经理</span>
+                    <span>张经理</span>
                 </div>
                 <div class="btn center">
                    <span><a href="tel:18755287073">拨打</a></span>

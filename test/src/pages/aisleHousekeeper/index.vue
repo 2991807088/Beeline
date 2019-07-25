@@ -29,14 +29,10 @@
                    <li v-for="(item, index) in cardList" :key="index">
                        <div class="top">
                           <div class="bankName">
-                              <p>{{item.bankNick}}</p>
+                              <span>{{item.bankNick}}</span>
                               <p>*<span>{{item.cardNo.substr(item.cardNo.length-4)}}</span></p>
-                              <p>
-                                  {{item.payerName.replace(1,"*")}}
-                              </p>
-                              <!-- <p>
-                                 <van-button @click="unbinding(item)" round type="default">解绑</van-button>  
-                              </p> -->
+                              <p> {{item.payerName}}</p>
+                             
                                <p @click="unbinding(item)">解绑</p>
                           </div>
                           <div class="now">
@@ -105,17 +101,13 @@
                                     <p>小额通道</p>
                                     <p> <van-icon name="arrow" size="30px"/></p>
                                 </div>
-                                <!-- <div class="large" @click.stop="largePass(item)">
+                                <div class="large" @click.stop="largePass(item)">
                                         <van-icon name="http://fx.91dianji.com.cn/dae.png" size="40px"/>
                                         <p>大额通道</p>
                                         <p> <van-icon name="arrow" size="30px"/></p>
-                                </div> -->
+                                </div>
                              </div>
                        </div>
-
-
-
-
 
                    </li>
                </ul>
@@ -136,6 +128,7 @@
 import { axiosPost } from '../../lib/http'
 import { bankCardAttribution } from '../../lib/bankName'
 import loading from '@/components/loading'
+import Bank from '@/lib/bank'
 import storage from '@/lib/storage'
 export default {
      components:{
@@ -153,7 +146,6 @@ export default {
             headimg:"",
             cardList:[],
             // cardNum:'',
-            // cardname:"",
             bankname:"",
             amount:"",
             showpass:false,
@@ -211,7 +203,6 @@ export default {
             }
              axiosPost("/creditCard/getEsicashExist",data)
              .then(res=>{
-                 console.log(res)
                 //  if(!res.data.success){
                 //      this.$router.push({
                 //          path:"/home/insertEsiCash",
@@ -220,13 +211,10 @@ export default {
                 //      })
                 //  } 
                  if(res.data.success) {
-                      let planList=res.data.data
                      this.$router.push({
-                         path:"/home/creditHousekeeper/aisleHousekeeper/planList",
+                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                          query:{
-                             list:planList,
-                             area:this.area,
-                             item:i
+                             info:i
                          }
                      })
                  } else {
@@ -238,7 +226,6 @@ export default {
                  
              })
              .catch(err=>{
-                 console.log(err)
                  this.$router.push({
                         path:"/home/insertEsiCash",
                         query:{info:i}
@@ -251,125 +238,67 @@ export default {
              let data={
                bindId:i.bindId 
             }
-             axiosPost("/vtdcreditCard/getEnterNet",data)
+            axiosPost("/vtdcreditCard/getEnterNet",data)
              .then(res=>{
-                 console.log(res)
-                 if(!res.data.success){
+                  if( !res.data.success  ){
                      this.$router.push({
                          path:"/home/largeAmount",
-                         info:i
+                         query:{
+                             info:i
+                          }
                      })
-                 }
+                 } else if (res.data.data.user_no && res.data.data.state==="0")  {
+                     this.$router.push({
+                         path:"/home/active",
+                         query:{
+                             user:res.data.data.user_no,
+                             info:i
+                         }
+                     })
+                 }else {
+                      storage.set('channel',"2");
+                     this.$router.push({
+                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
+                         query:{
+                             info:i
+                         }
+                     })
+                 } 
              })
              .catch(err=>{
-                //  console.log(err)
+                 this.$toast("查询失败")
              })
         },
 
         repayment(i){
             this.num=i
             this.showpass=true
-            // 查询小额通道签约
-
-            //      let data={
-            //    bindId:i.bindId 
-            // }
-            //  axiosPost("/creditCard/getEsicashExist",data)
-            //  .then(res=>{
-            //      console.log(res)
-            //      if(res.data.success) {
-            //           let planList=res.data.data
-            //          this.$router.push({
-            //              path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //              query:{
-            //                 //  list:planList,
-            //                 //  area:this.area,
-            //                 //  item:i
-            //                 info:i
-            //              }
-            //          })
-            //      } else {
-
-            //           this.$router.push({
-            //              path:"/home/insertEsiCash",
-            //              query:{info:i}
-            //          })
-
-            //      }
-                 
-            //  })
-            //  .catch(err=>{
-            //     //  console.log(err)
-                 
-            //  })
-            // this.$router.push({
-            //     path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //     query:{
-            //         info:item
-            //     }
-            // })
+           
         },
         // 查询绑卡列表
         getCardList(){
              axiosPost("/creditCard/getMyCreditCard")
              .then(res=>{
                  if(res.data.success){
-                    //  console.log(res)
                      let arr= res.data.data
                      let arrXun=[]
                      arr.forEach((item,i) => {
-                        //  console.log(item)
                          item.bankNick=bankCardAttribution(item.cardNo).bankName
-                        //  console.log(item)
                          arrXun.push(item)
                      });
                      this.cardList=arrXun
-                    //  this.cardNum=this.cardList.length
                  }
              })
              .catch(err=>{
 
              })
         },
-
-
-        // repay(item){
-        //     this.$router.push({
-        //         path:"/home/creditHousekeeper/aisleHousekeeper/repayment",
-        //         query:{
-        //             info:item
-        //         }
-        //     })
-        // },
-        // getBankList(){
-        //     let that=this
-        //     axiosPost("/creditCard/getBankCardbindList")
-        //     .then(function(res){
-        //         that.showCardList=true
-        //         if(!res.data.success){
-        //             that.$toast=({
-        //                 message:res.data.message
-        //             })
-        //         }
-        //         let list=JSON.parse(res.data.data.rt5_bindCardList)
-        //         if(!res.data.success){
-        //             that.$toast({
-        //                 message:res.data.message
-        //             })
-        //         }
-        //         that.bankList=list
-        //     })
-        //     .catch(function(err){
-        //         // console.log(err,"error")
-        //     })
-        // },
          handleGetAmount(){
             let url = '/customer/getCustomer';
             let params = {
                 openid:this.$store.state.wechat.openid,
             };
             axiosPost(url,params).then(res =>{
-                // console.log('查询个人设置成功',res)
                 if(res.data.success){
                     setTimeout(()=>{
                         this.componentload = false;
@@ -402,7 +331,11 @@ export default {
     created () {
        this.handleGetAmount()
        this.getCardList()
-    }
+    },
+    mounted () {
+    //    this.getCardList()
+        
+    } 
 }
 </script>
 
@@ -537,28 +470,6 @@ export default {
                            }
                       }
                       }
-
-                    //   .pop {
-                    //       position: absolute;
-                    //       top:20%;
-                    //       left:10%;
-                    //       width: 500px;
-                    //       padding:10px;
-                    //       background-color: #fff;
-                    //       border:1px solid #ccc;
-                    //       >.small ,
-                    //        .large {
-                    //           display: flex;
-                    //           justify-content: space-between;
-                    //           padding-bottom: 20px;
-                    //           align-items: center;
-                    //           >p {
-                    //               font-size: 32px;
-                    //             //   color:#ffa800;
-                    //               font-weight: bold;
-                    //           }
-                    //       }
-                    //   }
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;

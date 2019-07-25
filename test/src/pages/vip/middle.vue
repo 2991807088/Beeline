@@ -34,8 +34,12 @@
                     <div class="end-center">0.55%</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
                     <div class="end-center">0.60%</div>
+                </div>
+                <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
+                    <div class="end-center">0.75%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>
@@ -98,8 +102,12 @@
                     <div class="end-center">0.50%</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
                     <div class="end-center">0.55%</div>
+                </div>
+                 <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
+                    <div class="end-center">0.70%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>
@@ -162,8 +170,12 @@
                     <div class="end-center">0.45%</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
                     <div class="end-center">0.50%</div>
+                </div>
+                 <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
+                    <div class="end-center">0.65%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>
@@ -224,7 +236,11 @@
                     <div class="end-center">对应会员等级</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>还款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
+                    <div class="end-center">对应会员等级</div>
+                </div>
+                 <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
                     <div class="end-center">对应会员等级</div>
                 </div>
             </div>
@@ -294,7 +310,13 @@ export default {
     },
     methods:{
        handleReturn(){
-           this.$router.go(-1);
+           this.$router.push({
+               path:"/vip",
+               query:{
+                   num:this.level
+               }
+           })
+        // console.log(this.level)
        }
     },
     created(){

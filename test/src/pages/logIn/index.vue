@@ -60,6 +60,15 @@ export default {
         forgetPassword() {
             this.$router.push('/forgetPassword')
         },
+        canBack(){
+            if(window.plus){
+                var canBack=plus.webview.currentWebview();
+            } else {
+                document.addEventListener('plusready', function(){
+                     var canBack=plus.webview.currentWebview();
+                }, false);
+            } 
+        },
         register(){
              this.$router.push('/logOut')
         },
@@ -96,7 +105,6 @@ export default {
                     that.$store.commit('nickname',res.data.data.nickname);
                     that.$store.commit('headimg',res.data.data.photo);
                     that.$store.commit('ispartner',res.data.data.ispartner);
-                    console.log('登陆成功',res);
                     storage.set('openid',res.data.data.openid)
                     that.$toast('登陆成功');
                     if(that.checked){
@@ -125,16 +133,14 @@ export default {
             })
         },
         // 登录
-            logIn(){
+        logIn(){
                 // console.log(location.href)
                 window.location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13f3fb879b1f54b7&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect";
           
         },
         // 清空输入框
         handleClear(obj){
-            console.log('obj',obj);
             obj == 'phone' ? this.phone = '' : this.password = '';
-            console.log(this.phone);
         }
     },
 
@@ -142,6 +148,7 @@ export default {
         this.phone = storage.get('username');
         this.password = storage.get('password');
         this.checked= storage.get('rempass');
+        this.canBack()
     },
 }
 </script>
@@ -212,6 +219,10 @@ export default {
                justify-content: space-between;
                padding-bottom: 20px;
                margin-top: 20px;
+                .van-checkbox__icon .van-icon{
+                      border:1px solid #000;
+                      margin-bottom: 8px !important;
+                  }
                >p {
                     padding:15px 0px;
                     font-size:26px;

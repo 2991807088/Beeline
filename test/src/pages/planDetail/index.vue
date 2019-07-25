@@ -23,10 +23,10 @@
                   </div>
                   <div class="amount">
                       <ul>
-                          <li>总额度：￥<span>{{Number(cardInfo.countamount)+Number(cardInfo.poundage)+Number(cardInfo.realamount)}}</span></li>
+                          <!-- <li>总额度：￥<span>{{Number(cardInfo.countamount)+Number(cardInfo.poundage)+Number(cardInfo.realamount)}}</span></li> -->
                           <li>本期账单：￥<span>{{cardInfo.realamount}}</span></li>
                           <li>预留额度：<span>{{cardInfo.balance}}</span></li>
-                          <li>已还金额：<span>￥0</span></li>
+                          <!-- <li>已还金额：<span>￥0</span></li> -->
                       </ul>
                   </div>
                   <div class="num">
@@ -119,7 +119,6 @@ export default {
               }
               axiosPost("/creditCard/cancelMainPlan",data)
               .then(res=>{
-                  console.log(res)
                   if(!res.data.success){
                       this.$toast({
                           message:res.data.message
@@ -142,7 +141,6 @@ export default {
              }
              axiosPost("/creditCard/getMainPlanAndPlans",data)
              .then(res=>{
-                 console.log(res,"主计划和子计划")
                  if(!res.data.success){
                      this.$toast({
                          message:res.data.message

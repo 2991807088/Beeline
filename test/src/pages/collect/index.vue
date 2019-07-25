@@ -3,8 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
             <span>商户申请</span>
-            <!-- <router-link to="/home/news" tag="span">操作视频</router-link> -->
-            <span></span>
+             <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/col.jpg',title:'商户申请流程'}}">操作流程</router-link>
         </header>
         <div class="container">
            <div class="phone">
@@ -229,7 +228,7 @@ export default {
         register(){
             let that=this
             let type=""
-            let partten=/0?(13|14|15|17|18|19)[0-9]{9}/ 
+            let partten=/0?(13|14|15|16|17|18|19)[0-9]{9}/ 
             if(that.reservedMobile.trim().length===0 || that.mobile.trim().length===0){
                 that.$toast({
                     message:"手机号码不能为空"
@@ -294,7 +293,6 @@ export default {
             }
             axiosPost("/creditCard/memberReg",data)
             .then(function(res){
-                // console.log(res,"注册之后的第一次信息");
                 if(!res.data.success){
                     that.$toast({
                         message:res.data.message
@@ -303,7 +301,6 @@ export default {
                 } else {
                     axiosPost("/creditCard/getMemberReg")
                     .then(function(res){
-                        // console.log(res,"个人信息查询的结果")
                         if(res.data.success){
                             let info=res.data.data.chMerCode
                             that.componentload=true
@@ -316,7 +313,6 @@ export default {
                                 }
                              })
                             },500)
-                            
                        } else {
                            that.$toast({
                                message:res.data.message
@@ -338,16 +334,16 @@ export default {
             axiosPost("/creditCard/getMemberReg")
            .then(res=>{
             if(res.data.success){
+                 let info=res.data.data.chMerCode
              setTimeout(()=>{
                  this.componentload=false
-             },500)
-             let info=res.data.data.chMerCode
-             this.$router.push({
+                  this.$router.push({
                      path:"/home/collect/payment",
                     query:{
                         info,
                      }
                  })
+             },500)
             }else {
                  this.componentload=false
             }

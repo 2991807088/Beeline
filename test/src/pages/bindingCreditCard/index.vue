@@ -50,19 +50,25 @@
              </div>
            </div>
         </div>
+         <loading :componentload="componentload"></loading>
     </div>
 </template>
 <script>
-import area from '@/config/area.js'
+// import area from '@/config/area.js'
+import loading from '@/components/loading'
+import Bank from '@/lib/bank'
 import {axiosPost,axiosGet} from '@/lib/http'
 import storage from '@/lib/storage'
 export default {
+     components:{
+      loading
+    },
     data(){
         return{
-            area: '请选择支行地址',
+            // area: '请选择支行地址',
             show: false,
             title: '获取验证码',
-            areaList:{},
+            // areaList:{},
             name:"",
             phone:"",
             bankcardno:"",
@@ -73,7 +79,9 @@ export default {
             // autoCode:"",
             // orderId:"",
             billdate:"",
-            duedate:""
+            duedate:"",
+            componentload:false,
+            bankcode:"" 
         }
     },
     created(){
@@ -86,7 +94,7 @@ export default {
            
         // 绑卡
         bindingCard(){
-             let partern=/0?(13|14|15|17|18|19)[0-9]{9}/
+             let partern=/0?(13|14|15|16|17|18|19)[0-9]{9}/
              if(!partern.test(this.phone)){
                  this.$toast({
                     message:"请输入11位手机号码"
@@ -94,14 +102,6 @@ export default {
                 return
              }
              
-            //   let parttenId=/(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
-            //    if(!parttenId.test(this.idCard)){
-            //      this.$toast({
-            //         message:"请填写正确的身份证号"
-            //     })
-            //     return
-            //  }
-
 
             if(this.name.trim().length===0 || this.phone.trim().length===0 || this.bankcardno.trim().length===0 || this.idCard.trim().length===0 ||
                 this.year.trim().length!=2 || this.month.trim().length!=2 || this.safeCode.trim().length!=3 || this.billdate.trim().length ===0 || this.duedate.trim().length!=2
@@ -111,31 +111,47 @@ export default {
                 })
                 return
             }
-             let data={
-                 cardNo:this.bankcardno,
-                 phone:this.phone,
-                 idCardNo:this.idCard,
-                 idCardType:"身份证",
-                 payerName:this.name,
-                 year:this.year,
-                 month:this.month,
-                 cvv2:this.safeCode,
-                 billdate:this.billdate,
-                 duedate:this.duedate
-             }
-              axiosPost("/creditCard/bindCreditCard",data)
-              .then(res=>{
-                  if(!res.data.success){
-                      this.$toast({
-                          message:res.data.message
-                      })
-                  } else {
-                     this.$router.go(-1);
-                  }               
-              })
-              .catch(err=>{
-                  
-              })
+
+             this.componentload=true
+             this.$http.get('https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo='+this.bankcardno+'&cardBinCheck=true')
+                    .then(responce=>{
+                        let bank=responce.data.bank
+                         Bank.forEach(item => {
+                            if(item.bankCode==bank){
+                                this.bankcode=item.bankName
+                            }
+                        });
+                        setTimeout(()=>{
+                              let data={
+                                cardNo:this.bankcardno,
+                                phone:this.phone,
+                                idCardNo:this.idCard,
+                                idCardType:"身份证",
+                                payerName:this.name,
+                                year:this.year,
+                                month:this.month,
+                                cvv2:this.safeCode,
+                                billdate:this.billdate,
+                                duedate:this.duedate,
+                                bankname:this.bankcode
+                          }
+                        
+                        axiosPost("/creditCard/bindCreditCard",data)
+                            .then(res=>{
+                                    if(!res.data.success){
+                                    this.$toast({
+                                        message:res.data.message
+                                    })
+                                    this.componentload=false
+                                } else {
+                                    this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
+                                }  
+                            })
+                            .catch(err=>{
+                                
+                            })
+                        },100)
+                    })
 
         }
 

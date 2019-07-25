@@ -4,6 +4,7 @@
         <div class="header">
             <van-icon class="menu" name="wap-nav" size="24px" @click="isShow"/>
             <div class="home center">首页</div>
+            <span class="iconfont icon-huangguan"></span>
             <div class="receivables row">
                 <div class="per_receivables" @click="handleIsAuth('/home/collect')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zaixainshouykuan.png" size="45px"/></div>
@@ -16,10 +17,12 @@
             </div>
         </div>
         <div class="marqueen row">
-            <div class="pannel-title center">
-                <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt="">
+            <div class="pannel-title ">
+                <!-- <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt=""> -->
+               <p>蜂行</p>
+               <p>咨询</p>
             </div>
-            <router-link tag="div" class="pannel-detail center" to="/personalCenter/contactus">
+            <router-link tag="div" class="pannel-detail center" to="/home/aboutUs">
                 <van-notice-bar text="现成为998会员，即可享有19800元代理商的相关权限，名额有限，相关内容，请联系您的专属客户经理，确认活动详情"/>
             </router-link>
         </div>
@@ -48,10 +51,14 @@
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_zhengxin.png" size="28px"/></div>
                 <div class="title center">征信查询</div>
             </div>
-            <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/home/cardCenter/progressQuery',query: {info:'https://m.youku.com/video/id_XNDE5MjE3MjYzMg==.html?spm=a2h3j.8428770.3416059.1&source=&sharetype=secondtime&from=singlemessage',title: '新手教程'}}">
+            <!-- <router-link tag="div" class="per_menu van-hairline--surround" :to="{path: '/home/cardCenter/progressQuery',query: {info:'https://m.youku.com/video/id_XNDE5MjE3MjYzMg==.html?spm=a2h3j.8428770.3416059.1&source=&sharetype=secondtime&from=singlemessage',title: '新手教程'}}">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_xinshou.png" size="28px"/></div>
                 <div class="title center">新手教程</div>
-            </router-link>
+            </router-link> -->
+             <div  class="per_menu van-hairline--surround"  @click="handleExpect" >
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_xinshou.png" size="28px"/></div>
+                <div class="title center">新手教程</div>
+            </div>
             <router-link tag="div" class="per_menu van-hairline--surround" to="/home/totalPunch">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_qiandao.png" size="28px"/></div>
                 <div class="title center">签到打卡</div>
@@ -189,8 +196,8 @@ export default {
             //              title:title
             //          }
             //      })
+
              if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                //  console.log("and")
                  this.$router.push({
                      path:"/home/andLink",
                      query:{
@@ -199,7 +206,6 @@ export default {
                      }
                  })
              } else {
-                //  console.log("ios")
                  location.href=url
              }
         },
@@ -212,16 +218,17 @@ export default {
                 var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
                 var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
                  if(isAndroid) {
-                  window.location.href="  https://www.pgyer.com/9Abz"
+                  window.location.href="  https://www.pgyer.com/9Abz "
                } else if(isiOS) {
-                  window.location.href="http://s73.nyvpy.kuaiff.cn/zoQWz3"
+                  window.location.href=" http://s73.nyvpy.kuaiff.cn/zoQWz3"
+                 
               } 
 
         },
         getUpdate(){ // 获取历史版本号
                axiosPost("/customer/getVersion")
                .then(res=>{
-                //    console.log(res)
+                //    console.log(res)  
                    if(res.data.success){
                       let version=res.data.data
                       this.versionAndroid=parseFloat(version[0].version)
@@ -429,6 +436,15 @@ export default {
             height: 70%;
             border-right: solid 4px #ffa800;
             margin-top: 15px;
+            text-align: center;
+            font-size: 34px;
+            font-weight: bold;
+            color:#F79E00;
+            >p {
+                &:nth-of-type(1){
+                    padding-bottom: 10px;
+                }
+            }
             img{
                 width: 85px;
                 height: 85px;

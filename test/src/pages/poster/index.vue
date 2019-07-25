@@ -9,7 +9,7 @@
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
         <div class="btn ">
-            <!-- <div @click="handlechangeRandom" class="change center">换一换</div> -->
+            <div @click="handlechangeRandom" class="change center">换一换</div>
             <div @click="handlePrivacySettings" class="rightnow center">隐私设置</div>
             <div @click="savePoster" class="rightnow center">立即合成</div>
         </div>
@@ -68,7 +68,7 @@ export default {
             url: 'http://fx.91dianji.com.cn',
             qrcode: '',
             random: '01',
-            // random: null,
+            num:"",
             shares:null,
             sharewx:null,
             Sharewxf:false,
@@ -112,10 +112,12 @@ export default {
         sharewxCirMessage(){
               let that=this
           that.sharewx.send(
-                { content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
+              {
+                type:'web',   
+                content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
                 thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
-                 href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" } }
+                 href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" }}
                 , function(){
                 // alert("分享成功！");
             }, function(e){
@@ -125,7 +127,8 @@ export default {
          shareWeixinMessage() {
              let that=this
              that.sharewx.send(
-                 { 
+                 {   
+                     type:'web',
                      content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
                      thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],
@@ -147,7 +150,15 @@ export default {
         // 随机数
         handlechangeRandom(){
             this.componentload = true;
-            var ran = Math.ceil((Math.random())*3);
+            // var ran = Math.ceil((Math.random())*3);
+            let ran=0
+            if(this.num=='1'){
+              ran=  this.getRundom(9,16)
+            } else if(this.num=='2'){
+                ran=this.getRundom(1,8)
+            } else {
+                ran=this.getRundom(17,23)
+            }
             var random = '';
             if(ran < 10){
                 random = '0' + ran;
@@ -171,7 +182,7 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2000);
+                },2500);
             };
             var qrcode = new Image();
             qrcode.src = 'http://fx.91dianji.com.cn/' + this.qrcode;
@@ -199,7 +210,7 @@ export default {
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
                     this.componentload = false;
-                },2000);
+                },2500);
             };
             
             var qrcode = new Image();
@@ -221,6 +232,11 @@ export default {
             setTimeout(()=>{
                 this.componentload = false;
             },3000);
+        },
+        getRundom(min,max){
+
+            return  Math.floor(Math.random() * (max-min) +min)
+
         },
         savePoster(){
             this.imgShow = true;
@@ -249,7 +265,7 @@ export default {
                                 this.qrcode = res.data.data;
                                 setTimeout(() =>{
                                     this.componentload = false;
-                                },1000);
+                                },2500);
                                 this.handlePoster();
                             }else{
                                 this.$toast('二维码请求失败');
@@ -295,7 +311,7 @@ export default {
 
     },
     created () {
-        this.random=this.$route.query.num
+        this.num=this.$route.query.num
         this.tip=this.$route.query.title
     },
     mounted(){

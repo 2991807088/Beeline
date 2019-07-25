@@ -81,6 +81,9 @@ export default {
          }, 
          onConfirm(value){
             this.area=value.join("-")
+             if(this.area=='北京市-'){
+                this.area='北京市-北京市'
+            }
             this.showFlag=false
          },
          showPick(){
@@ -98,7 +101,7 @@ export default {
                     })
                     return
               }
-               let partten = /0?(13|14|15|17|18|19)[0-9]{9}/ 
+               let partten = /0?(13|14|15|16|17|18|19)[0-9]{9}/ 
                if(!partten.test(this.mobileNo)){
                  this.$toast({
                     message:"请填写11位手机号码"
@@ -204,9 +207,6 @@ export default {
                                font-weight: bold;
                            }
                        }
-                       &:last-child {
-                        //    border:none;
-                       }
                        >span {
                            &:nth-of-type(2){
                                padding:0 10px;
@@ -221,11 +221,12 @@ export default {
                            flex: 1;
                            font-size: 30px;
                            text-align: right;
+                           height: 100%;
 
                        }
                        input::-webkit-input-placeholder {
                            font-size: 28px;
-                           padding-top: 8px;
+                           padding-top: 10px;
                            height: 30px;
                            line-height: 30px;
                        }
@@ -236,7 +237,7 @@ export default {
                    color:#000;
                }
                .van-picker-column__item--selected {
-                   color:#4B66AF;
+                   color:#ffa800;
                    font-weight: bold;
                }
                .van-picker__toolbar{

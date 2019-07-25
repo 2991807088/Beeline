@@ -9,7 +9,7 @@
             <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
             <router-link tag="div" to="/radar" class="circle center">
                 <img src="http://fx.91dianji.com.cn/AI@2x.png" alt="">
-                <img src="http://fx.91dianji.com.cn/leida@2x.png" alt="">
+                <img src="http://fx.91dianji.com.cn/leida@2x.png" class="logo" alt="">
                 <p>蜂行雷达</p>
             </router-link>
             <div class="btn">
@@ -33,19 +33,19 @@
                 <div class="title start-center van-hairline--bottom">推广素材图</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link> -->
-            <router-link tag="div" :to="{path: '/share/poster',query: {title: '海报分享',num:'01'}}" class="per_menu row">
+            <router-link tag="div" :to="{path: '/share/poster',query: {title: '海报分享',num:'1'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
                 <div class="title start-center van-hairline--bottom">海报分享</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
-             <router-link tag="div" :to="{path: '/share/poster',query: {title: '信用卡图推广',num:'02'}}" class="per_menu row">
+             <router-link tag="div" :to="{path: '/share/poster',query: {title: '信用卡图推广',num:'2'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
                 <div class="title start-center van-hairline--bottom">信用卡图推广</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
-             <router-link tag="div" :to="{path: '/share/poster',query: {title: '推广素材图',num:'03'}}" class="per_menu row">
+             <router-link tag="div" :to="{path: '/share/poster',query: {title: '推广素材图',num:'3'}}" class="per_menu row">
                 <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_poster.png"/></div>
-                <div class="title start-center van-hairline--bottom">信用卡图推广</div>
+                <div class="title start-center van-hairline--bottom">推广素材图</div>
                 <div class="more center van-hairline--bottom"><van-icon size="20px" name="arrow"/></div>
             </router-link>
         </div>
@@ -70,7 +70,7 @@ export default {
             this.$toast("敬请期待")
         },
         changeActive(obj){
-            console.log('obj', obj);
+            // console.log('obj', obj);
         }
     }
 }
@@ -153,6 +153,7 @@ export default {
                     position: absolute;
                     z-index: 2;
                     top: 264.5px;
+                    left:41%;
                 }
                 @keyframes myMove1 {
                     from {transform: rotate(360deg);}
@@ -163,6 +164,27 @@ export default {
                     from {transform: rotate(360deg);}
                     to {transform: rotate(0deg);}
                 }
+                .logo{
+                        // width: 20vw;
+                        // height: auto;
+                        // position: absolute;
+                        // top: 35vw;
+                        // left: 35vw;
+                        z-index: 4;
+                        animation:  bling 1s linear infinite;
+                        -webkit-animation:  bling 1s linear infinite;
+                    }
+                    @keyframes bling {
+                        0%{
+                            transform: scale(0.8);
+                        }
+                        50%{
+                            transform: scale(1);
+                        }
+                        100%{
+                            transform: scale(0.8);
+                        }
+                    }
             }
             .btn{
                 width: 100%;

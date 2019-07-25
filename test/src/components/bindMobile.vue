@@ -61,7 +61,6 @@ export default {
                             }
                         },1000)
                     }
-                    
                 })
                 .catch(res =>{
                    this.$toast("请勿重复发送短信");
@@ -108,7 +107,6 @@ export default {
             }
              axiosPost("/customer/updatePassWord",data)
              .then(res =>{
-                //  console.log('绑定成功',res);
                  this.$toast({
                      message:res.data.message
                  })
@@ -135,7 +133,7 @@ export default {
 </script>
 <style lang="less">
     #bindMobile{
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;

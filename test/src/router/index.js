@@ -137,6 +137,7 @@ import help from '@/pages/help/index'
 import myrate from '@/pages/personalCenter/rate'
 // 信用卡推广图
 import pictures from '@/pages/financialCircle/picture'
+import activeComponent from '@/pages/active' // 大额激活
 
 export default new Router({
   mode:"hash",
@@ -170,6 +171,7 @@ export default new Router({
     {path:"/home/insertEsiCash/iframe",component:iframeComponent}, //绑定第三方信用卡返回页面
     {path:"/home/largeAmount",component:largeAmountComponent}, // 大额鉴权
     {path:"/home/largeCard",component:largeCardComponent},
+    {path:"/home/active",component:activeComponent}, // 大额激活
     {path:"/share/inviteFriends/inviteShare",component:inviteShareComponent},
     {path:"/share/poster",component:posterComponent},
     {path:"/share/promotionMaterial",component:promotionMaterialComponent},

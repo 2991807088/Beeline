@@ -6,15 +6,21 @@
             <span></span>
         </header>
         <div class="container">
-           <div  v-show="showRecord" class="total">
+           <div  v-show="showlist" class="total">
                <ul>
                    <li v-for="(item, index) in recordList" :key="index">
-                       <span>提现金额：{{item.withdraw_apply_total}}</span>
+                       <!-- <span>提现金额：{{item.withdraw_apply_total}}</span>
                        <span>到账金额：{{item.withdraw_apply_amount}}</span>
                        <span v-if="item.status == 0">被驳回</span>
                        <span v-if="item.status == 1">待审核</span>
                        <span v-if="item.status == 3">已完成</span>
-                       <span>{{item.withdraw_apply_time}}</span>
+                       <span>{{item.withdraw_apply_time}}</span> -->
+                       <p>提现金额：{{item.withdraw_apply_total}}</p>
+                       <p>到账金额：{{item.withdraw_apply_amount}}</p>
+                       <p>交易进程：<span v-if="item.status == 0">被驳回</span>
+                       <span v-if="item.status == 1">待审核</span>
+                       <span v-if="item.status == 3">已完成</span></p>
+                       <p>交易时间：{{item.withdraw_apply_time}}</p>
                    </li>
                </ul>
            </div>
@@ -31,7 +37,7 @@ export default {
     data() {
         return {
             recordList:[],
-            showRecord:false
+            showlist:false
         }
     },
     methods:{
@@ -39,34 +45,31 @@ export default {
             this.$router.go(-1);
         },
         getRecord(){
-            let that = this
-            let cid=storage.get("cid")
             let data={
-                cid:cid
+                page:'10',
+                pageSize:'100'
             }
-             axiosPost("/customer/getWithdrawalById",data)
-             .then(function(res){
+             axiosPost("/customer/getWithdrawalList",data)
+             .then(res=>{
                  if(!res.data.success){
-                     that.$toast({
+                     this.$toast({
                          message:res.data.message
                      })
-                     return
-                 }
-                 if(res.data.data.length===0){
-                     that.$toast({
-                         message:"您还没有提现记录哦！"
-                     })
                  } else {
-                     that.showRecord=true
-                      that.recordList=res.data.data
+                     if(res.data.data.data.length===0){
+                         this.$toast("暂无记录")
+                     } else {
+                         this.showlist=true
+                           this.recordList=res.data.data.data
+                     }
+                    //  console.log("ewoiu")
                  }
+
              })
-             .catch(function(err){
-                that.$toast({
-                    message:"请先登录"
-                })
-                 
+             .catch(err=>{
+
              })
+
         }
     },
     created () {
@@ -104,12 +107,17 @@ export default {
           >.total {
               margin:20px 30px;
               >ul {
-                  border:2px solid #ccc;
-                  border-radius: 10px;
-                  padding:20px;
+                 
+                  padding:10px;
                   >li {
-                      display: flex;
-                      justify-content: space-between;
+                    //   display: flex;
+                    //   justify-content: space-between;
+                     border:2px solid #ffa800;
+                      border-radius: 10px;
+                      margin-bottom: 10px;
+                    >p {
+                        padding:10px;
+                    }
                       >span{
                           &:nth-of-type(1){
                               color: red;
