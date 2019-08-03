@@ -5,11 +5,7 @@
             <span>{{title}}</span>
             <span></span>
         </header>
-        <!-- <div class="container">
-            <div class="box" >　
-            　  <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
-            </div>
-        </div> -->
+       
          <iframe class="iframe"  :src="url" frameborder="0" target="_self"></iframe>
     </div>
 

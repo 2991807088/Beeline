@@ -58,6 +58,8 @@ import largeCardComponent from '@/pages/largeCard'
 import downComponent from '@/pages/userAccountManage/down.vue' //下载
 
 
+import largeZYComponent from '@/pages/largeZY'  //哲杨大额
+import largeVerificateComponent from '@/pages/largeVerificate'  // 哲杨大额短信验证
 
 import loan from '@/pages/loan'
 import loandetail from '@/pages/loan/detail'
@@ -139,6 +141,11 @@ import myrate from '@/pages/personalCenter/rate'
 import pictures from '@/pages/financialCircle/picture'
 import activeComponent from '@/pages/active' // 大额激活
 
+import largeWFcardComponent from '@/pages/largeWFcard'  //WF大额绑卡
+import largeWFverifyComponent from '@/pages/largeWFcard/verify'  //WF大额短信验证
+import largeWFxeComponent from '@/pages/largeWFxe'  //WF小额绑卡
+import largeWFxeverifyComponent from '@/pages/largeWFxe/verify'  //WF小额短信验证
+
 export default new Router({
   mode:"hash",
   routes: [
@@ -172,6 +179,15 @@ export default new Router({
     {path:"/home/largeAmount",component:largeAmountComponent}, // 大额鉴权
     {path:"/home/largeCard",component:largeCardComponent},
     {path:"/home/active",component:activeComponent}, // 大额激活
+
+    {path:"/home/largeZY",component:largeZYComponent}, //哲杨发送短信  
+    {path:"/home/largeVerificate",component:largeVerificateComponent}, //哲杨短信验证
+
+    {path:"/home/largeWFcard",component:largeWFcardComponent}, //WF大额通道绑卡
+    {path:"/home/largeWFcard/verify",component:largeWFverifyComponent}, //WF大额通道验证
+    {path:"/home/largeWFxe",component:largeWFxeComponent}, //WF小额通道绑卡
+    {path:"/home/largeWFxe/verify",component:largeWFxeverifyComponent}, //WF小额通道绑卡
+
     {path:"/share/inviteFriends/inviteShare",component:inviteShareComponent},
     {path:"/share/poster",component:posterComponent},
     {path:"/share/promotionMaterial",component:promotionMaterialComponent},

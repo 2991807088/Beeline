@@ -26,11 +26,11 @@
                    </li> 
                     <li>
                         <span>有效期：</span>
-                       <input v-model="validity"  type="number" placeholder="信用卡有效期">
+                       <input v-model="validity"  type="number" placeholder="信用卡有效期如05/22 请填写0522">
                    </li>
                     <li>
                        <span>安全码：</span>
-                       <input type="number" v-model="cvv2" placeholder="信用卡后三位安全码如05/22 请填写0522">
+                       <input type="number" v-model="cvv2" placeholder="信用卡后三位安全码">
                    </li> 
                </ul>
               <div @click="bindingCard" class="btn">
@@ -38,17 +38,23 @@
              </div>
            </div>
         </div>
+         <loading :componentload="componentload"></loading>
     </div>
 </template>
 <script>
 import area from '@/config/area.js'
+import loading from '@/components/loading'
 import {axiosPost,axiosGet} from '@/lib/http'
 import storage from '@/lib/storage'
 export default {
+     components:{
+      loading
+    },
     data(){
         return{
             area: '请选择支行地址',
             show: false,
+            componentload: false,
             title: '获取验证码',
             areaList:{},
             user_name:"",
@@ -57,11 +63,17 @@ export default {
             phone:"",
             validity:"",
             cvv2:"",
-            bindId:""
+            info:"",
         }
     },
     created(){
-        this.bindId=this.$route.query.info
+        this.info=this.$route.query.info
+        this.user_name=this.info.payerName
+        this.id_no=this.info.idCardNo
+        this.card_no=this.info.cardNo
+        this.phone=this.info.phone
+        this.cvv2=this.info.cvv2
+        this.validity=this.info.month+this.info.year
     },
     methods:{
         handleReturnHome(){
@@ -107,7 +119,10 @@ export default {
              }
               axiosPost("/vtdcreditCard/insertEnterNet",data)
               .then(res=>{
-                  if(!res.data.success){
+                    this.componentload=true
+                  setTimeout(()=>{
+                     this.componentload=false
+                      if(!res.data.success){
                       this.$toast({
                           message:res.data.message
                       })
@@ -120,8 +135,9 @@ export default {
                               info:this.info
                           }
                       })
-                    //   this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
-                  }               
+                  }  
+
+                },1000)            
               })
               .catch(err=>{
                   

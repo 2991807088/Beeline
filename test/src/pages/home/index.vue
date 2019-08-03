@@ -27,10 +27,16 @@
             </router-link>
         </div>
         <div class="menus van-hairline--top">
-            <div class="per_menu van-hairline--surround" @click="handleIsAuth('/home/cardCenter')">
+            <!-- <div class="per_menu van-hairline--surround" @click="handleIsAuth('/home/cardCenter')">
+                <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_card.png" size="28px"/></div>
+                <div class="title center">信用卡办理</div>
+            </div> -->
+
+             <div class="per_menu van-hairline--surround" @click="applycard('https://creditcard.feierlaiedu.com/?token=5b842e25964f78313326b53f9e331c54','办卡中心')">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_card.png" size="28px"/></div>
                 <div class="title center">信用卡办理</div>
             </div>
+
             <div class="per_menu van-hairline--surround" @click="handleIsAuth('/loan/detail')">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_daikuan.png" size="28px"/></div>
                 <div class="title center">贷款</div>
@@ -187,6 +193,14 @@ export default {
    methods:{
         isShow() {
             this.showAaside=true
+        },
+        applycard(url,title){
+             if(this.iscertification == '0'){
+                //未认证
+                this.$toast('请先实名认证');
+            }else{
+                this.changeLink(url,title)
+            }
         },
         changeLink(url,title){
             //   this.$router.push({

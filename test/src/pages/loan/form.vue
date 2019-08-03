@@ -215,6 +215,7 @@ export default {
                         let url=res.data.data;
                         this.componentload=true
                         setTimeout(()=>{
+                            
                         //     this.$router.push({
                         //     path:"/home/online",
                         //     query:{
@@ -237,6 +238,7 @@ export default {
                                  this.componentload=false
                                  location.href=url
                             }
+                        
                         },1000)
                    }
                    
