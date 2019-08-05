@@ -140,6 +140,10 @@ import myrate from '@/pages/personalCenter/rate'
 // 信用卡推广图
 import pictures from '@/pages/financialCircle/picture'
 import activeComponent from '@/pages/active' // 大额激活
+// AI雷达
+import nextLevel from '@/pages/AIRadar/nextdetail'
+import nextList from '@/pages/AIRadar/nextList'
+import nextOtherList from '@/pages/AIRadar/nextOtherList'
 
 import largeWFcardComponent from '@/pages/largeWFcard'  //WF大额绑卡
 import largeWFverifyComponent from '@/pages/largeWFcard/verify'  //WF大额短信验证
@@ -263,5 +267,8 @@ export default new Router({
     {path: '/help',component: help},
     {path: '/myrate',component: myrate},
     {path: '/picture',component: pictures},
+    {path: '/nextLevel',component: nextLevel},
+    {path: '/nextList',component: nextList},
+    {path: '/nextOtherList',component: nextOtherList},
   ]
 })

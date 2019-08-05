@@ -4,7 +4,7 @@
             <div class="bind">
                 <div class="title center">绑定手机号</div>
                 <div class="mobile"><input type="text" v-model="mobile" placeholder="请输入手机号"/></div>
-                <div class="mobile"><input type="password" v-model="newPassword" placeholder="请输入密码" /></div>
+                <div class="mobile"><input type="password" v-model="newPassword" placeholder="请输入6-18位字母数字密码" /></div>
                 <div class="mobile"><input type="password" v-model="suerPassword" placeholder="请确认密码" /></div>
                 <div class="mobile row">
                     <input type="number" v-model="authcode" placeholder="请输入验证码" />
@@ -75,12 +75,6 @@ export default {
                 })
                  return
             }
-            if(this.authcode.trim().length===0){
-                 this.$toast({
-                    message:"请输入验证码"
-                })
-                 return
-            }
             if(this.newPassword.trim().length===0){
                  this.$toast({
                     message:"请输入新密码"
@@ -96,7 +90,13 @@ export default {
             }
             if(this.newPassword !== this.suerPassword){
                  this.$toast({
-                    message:"两次输入的密码不一致，请重新填写"
+                    message:"两次输入的密码不一致"
+                })
+                 return
+            }
+            if(this.authcode.trim().length===0){
+                 this.$toast({
+                    message:"请输入验证码"
                 })
                  return
             }

@@ -6,14 +6,14 @@
             <div class="home center">首页</div>
             <span class="iconfont icon-huangguan"></span>
             <div class="receivables row">
-                <div class="per_receivables" @click="handleIsAuth('/home/collect')">
+                <div class="per_receivables" @click="handleIsAuth('/home/collect','1')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zaixainshouykuan.png" size="45px"/></div>
                     <div class="title center">在线收款</div>
                 </div>
-                <router-link tag="div" class="per_receivables" to="/home/creditHousekeeper">
+                <div class="per_receivables" @click="handleIsAuth('/home/creditHousekeeper','3')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zhinenghuankuan.png" size="45px"/></div>
                     <div class="title center">智能还款</div>
-                </router-link>
+                </div>
             </div>
         </div>
         <div class="marqueen row">
@@ -36,8 +36,7 @@
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_card.png" size="28px"/></div>
                 <div class="title center">信用卡办理</div>
             </div>
-
-            <div class="per_menu van-hairline--surround" @click="handleIsAuth('/loan/detail')">
+            <div class="per_menu van-hairline--surround" @click="handleIsAuth('/loan/detail','4')">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_daikuan.png" size="28px"/></div>
                 <div class="title center">贷款</div>
             </div>
@@ -353,14 +352,27 @@ export default {
                 // console.log('查询个人设置失败',res);
             })
         },
+        // AI来打行为插入
+        handleAIRadarInsert(obj){
+            let params = {
+                type: obj
+            };
+            let url = '/behavior/insertBehavior';
+            axiosPost(url,params).then(res =>{
+                console.log('插入成功',res);
+            }).catch(res =>{
+                console.log('插入失败',res);
+            })
+        },
         // 判断是否实名认证
-        handleIsAuth(obj){ 
+        handleIsAuth(obj,type){ 
             if(this.iscertification == '0'){
                 //未认证
                 this.$toast('请先实名认证');
             }else{
                 this.$router.push(obj);
             }
+            this.handleAIRadarInsert(type);
         }
     },
     created(){
