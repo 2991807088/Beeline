@@ -40,8 +40,8 @@
                 <div class="title">黄金会员</div>
                 <div class="price">¥398.00</div>
                 <div class="nowlevel" v-if="level == '1' && ispartner == '0'">当前等级</div>
-                <div class="upgrade center" v-if="level == '0'" @click="handleOneClickUp('398')">一键升级</div>
-                <div class="upgrade_dine center" v-if="level == '2'" @click="handleOneClickUp('none')">一键升级</div>
+                <div class="upgrade center" v-if="level == '0'" @click="handleOneClickUp('398','5')">一键升级</div>
+                <div class="upgrade_dine center" v-if="level == '2'" @click="handleOneClickUp('none','5')">一键升级</div>
                 <div class="detail center" @click="handleSeeDetail('1')">查看明细</div>
                 <div class="desc">
                     <div>推广佣金比例</div>
@@ -55,7 +55,7 @@
                 <div class="title">钻石会员</div>
                 <div class="price">¥998.00</div>
                 <div class="nowlevel" v-if="level == '2' && ispartner == '0'">当前等级</div>
-                <div class="upgrade center" v-if="level != '2'" @click="handleOneClickUp('998')">一键升级</div>
+                <div class="upgrade center" v-if="level != '2'" @click="handleOneClickUp('998','6')">一键升级</div>
                 <!-- <div class="upgrade_dine center" v-if="ispartner == '1'" @click="handleOneClickUp('none')">一键升级</div> -->
                 <div class="detail center" @click="handleSeeDetail('2')">查看明细</div>
                 <div class="desc">
@@ -70,7 +70,7 @@
                 <div class="title">城市合伙人</div>
                 <div class="price">¥19800.00</div>
                 <div class="nowlevel" v-if="ispartner == '1'">当前等级</div>
-                <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs">联系我们</div>
+                <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs('7')">联系我们</div>
                 <div class="detail center" @click="handleSeeDetail('3')">查看明细</div>
                 <div class="desc">
                     <div>推广佣金比例</div>
@@ -83,7 +83,7 @@
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt=""></div>
                 <div class="title">城市运营商</div>
                 <div class="price">¥28000.00——¥188000.00</div>
-                <div class="upgrade center" @click="handleContactUs">联系我们</div>
+                <div class="upgrade center" @click="handleContactUs('8')">联系我们</div>
                 <div class="detail center" @click="handleSeeDetail('4')">查看明细</div>
                 <div class="desc">
                     <div>品牌独立</div>
@@ -104,28 +104,28 @@
                         <div class="start-center">服务时间： 周一至周日（09：00-22：00）</div>
                         <div></div>
                     </div>
-                    <div class="per_detail row">
+                    <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                         <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;刘经理 </div>
                         <div class="btn center">
                             <span><a href="tel:18755291160">拨打</a></span>
                         </div>
                     </div>
-                    <div class="per_detail row">
+                    <div class="per_detail row" @click="handleATRadarInsert('13')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                         <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18755291160 </div>
                         <div  class="btn center">
                             <span @click="handleCopy('18755291160')">复制</span>
                         </div>
                     </div>
-                    <div class="per_detail row">
+                    <div class="per_detail row" @click="handleATRadarInsert('12')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
                         <div class="start-center">客服电话：400-6169-609  </div>
                         <div  class="btn center">
                             <span><a href="tel:400-6169-609">拨打</a></span>
                         </div>
                     </div>
-                    <div class="per_detail row">
+                    <div class="per_detail row" @click="handleATRadarInsert('13')">
                        <div class="start-center"> <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                         <div class="start-center" id="mobile">客服微信：18755287073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
                         <div  class="btn center">
@@ -382,8 +382,9 @@ export default {
             })
         },
         // 一键升级
-        handleOneClickUp(obj){
+        handleOneClickUp(obj,type){
             // console.log('一键升级',obj);
+            this.handleAIRadarInsert(type);
             if(obj == 'none'){
                 this.$toast('您已升级过该等级会员');
             }else{
@@ -404,7 +405,8 @@ export default {
             }
         },
         // 联系我们
-        handleContactUs(){
+        handleContactUs(type){
+            this.handleAIRadarInsert(type);
             this.contactus = true;
         },
         // 关闭联系我们
@@ -438,6 +440,18 @@ export default {
         },
          Tocontfive(){
              document.querySelector("#level4").scrollIntoView(true);
+        },
+        // AI来打行为插入
+        handleAIRadarInsert(obj){
+            let params = {
+                type: obj
+            };
+            let url = '/behavior/insertBehavior';
+            axiosPost(url,params).then(res =>{
+                console.log('插入成功',res);
+            }).catch(res =>{
+                console.log('插入失败',res);
+            })
         },
     },
     created(){

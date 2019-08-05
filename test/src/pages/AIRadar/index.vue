@@ -378,7 +378,7 @@ export default {
                         padding-top: 20px;
                         span{
                             padding: 15px 20px;
-                            background: #ffa800;
+                            background: #4367B5;
                             color: #fff;
                             font-size: 28px;
                             border-radius: 10px;
@@ -405,7 +405,7 @@ export default {
                             border: solid 1px #ccc;
                             font-size: 28px;
                             text-align: center;
-                            color: #ffa800;
+                            color: #4367B5;
                         }
                     }
                 }

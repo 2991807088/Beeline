@@ -13,8 +13,14 @@
                 <p>蜂行雷达</p>
             </router-link>
             <div class="btn">
-                <div class="center" @click="handleExpect">AI报表</div>
-                <div class="center" @click="handleExpect">客户表单</div>
+                <div class="column" @click="handleRouter('1')">
+                    <div class="center">下级浏览数</div>
+                    <div class="center">{{browseCount}}</div>
+                </div>
+                <div class="column" @click="handleRouter('3')">
+                    <div class="center">我的团队</div>
+                    <div class="center">{{teamCount}}</div>
+                </div>
             </div>
         </div>
         <div class="menus">
@@ -55,10 +61,13 @@
 
 <script>
 import footerMenu from '@/components/footer'
+import {axiosPost} from '@/lib/http'
 export default {
     data(){
         return{
             active: 4,
+            browseCount: 0,
+            teamCount: 0,
         }
     },
     components: {
@@ -71,7 +80,24 @@ export default {
         },
         changeActive(obj){
             // console.log('obj', obj);
-        }
+        },
+        // 获取AI雷达统计数据
+        handleAIRadar(){
+            axiosPost('/behavior/getIndexRecord').then(res =>{
+                if(res.data.success){
+                    console.log('AI请求成功',res);
+                    this.browseCount = res.data.data.browseCount;
+                    this.teamCount = res.data.data.teamCount;
+                }else{
+                   console.log('AI请求失败',res); 
+                }
+            }).catch(res =>{
+                console.log('AI请求失败',res); 
+            })
+        },
+    },
+    created(){
+        this.handleAIRadar();
     }
 }
 </script>
@@ -189,30 +215,43 @@ export default {
             .btn{
                 width: 100%;
                 height: auto;
-                position: absolute;
-                bottom: 20px;
-                right: 0px;
-                z-index: 3;
                 display: flex;
                 display: -webkit-flex;
                 justify-content: space-around;
-                div:nth-child(1){
+                position: absolute;
+                left: 0;
+                bottom: 20px;
+                >div:nth-child(1){
                     width: 40%;
-                    height: 90px;
-                    background-color: #e99f04;
-                    border-radius: 45px;
-                    color: #ffffff;
-                    font-size: 30px;
-                    font-weight: 700;
+                    height: 80px;
+                    padding: 10px 0px;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 50px;
+                    color: #fff;
+                    div{
+                        width: 100%;
+                        height: 40px;
+                        font-size: 28px;
+                    }
+                    >div:nth-child(1){
+                        font-weight: 700;
+                    }
                 }
-                div:nth-child(2){
+                >div:nth-child(2){
                     width: 40%;
-                    height: 90px;
-                    background-color: #bc8331;
-                    border-radius: 45px;
-                    color: #ffffff;
-                    font-size: 30px;
-                    font-weight: 700;
+                    height: 80px;
+                    padding: 10px 0px;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 50px;
+                    color: #fff;
+                    div{
+                        width: 100%;
+                        height: 40px;
+                        font-size: 28px;
+                    }
+                    >div:nth-child(1){
+                        font-weight: 700;
+                    }
                 }
             }
         }    
