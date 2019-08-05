@@ -215,7 +215,7 @@ export default {
                         let url=res.data.data;
                         this.componentload=true
                         setTimeout(()=>{
-                            
+
                         //     this.$router.push({
                         //     path:"/home/online",
                         //     query:{
