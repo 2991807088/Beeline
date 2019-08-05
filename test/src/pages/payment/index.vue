@@ -252,7 +252,6 @@ export default {
                         //    })
 
                      if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            // console.log("and")
                             this.$router.push({
                             path:"/loan/form/myOrder",
                             query:{
@@ -264,6 +263,7 @@ export default {
                                  this.componentload=false
                                 location.href=url
                             }
+                    
                         },1000)
                      }
                })

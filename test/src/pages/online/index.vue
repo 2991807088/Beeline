@@ -5,7 +5,7 @@
             <div class="top-title center">{{title}}</div>
             <div class="right-icon center"></div>
         </header>
-        <!-- <iframe :src="url"  class="iframe" frameborder="0" ></iframe> -->
+        <iframe :src="url"  class="iframe" frameborder="0" ></iframe>
     </div>
 
 </template>
