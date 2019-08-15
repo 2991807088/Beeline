@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-06-16 10:28:13
+ * @LastEditTime: 2019-08-15 17:24:02
+ * @LastEditors: Please set LastEditors
+ -->
 <template>
     <div id="customerService">
         <header class="header-top row">
@@ -17,34 +24,34 @@
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                 <div class="contact_title">加盟热线:</div>
                 <div class="jiameng_rexian">
-                    <span>18755291160</span>
-                    <span>刘经理</span>
+                    <span>18221188860</span>
+                    <span>张经理</span>
                 </div>
                 <div class="btn center">
-                    <span><a href="tel:18755291160">拨打</a></span>
+                    <span><a href="tel:18221188860">拨打</a></span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                 <div class="contact_title">微信号码:</div>
-                <div class="contact_detail start-center" id="mobile">18755291160</div>
+                <div class="contact_detail start-center" id="mobile">18221188860</div>
                 <div class="btn center">
-                    <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18755291160')">复制</span>
+                    <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18221188860')">复制</span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
                 <div class="contact_title">客服电话:</div>
-                <div class="contact_detail start-center">400-6169-609</div>
+                <div class="contact_detail start-center">18221188860</div>
                 <div class="btn center">
-                    <span><a href="tel:400-6169-609">拨打</a></span>
+                    <span><a href="tel:18221188860">拨打</a></span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                 <div class="contact_title">客服微信:</div>
                 <div class="jiameng_rexian">
-                    <span>18755287073</span>
+                    <span>18221188860</span>
                     <span>张经理</span>
                 </div>
                 <div class="btn center">
