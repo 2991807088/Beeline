@@ -1,7 +1,7 @@
 <template>
     <div id="verified-name">
         <header class="header-top row">
-            <div class="left-icon start-center" @click="handleReturnHome"><van-icon color="white" size="20px" name="arrow-left"/></div>
+            <div class="left-icon start-center"  @click="handleReturnHome"><van-icon color="white" size="20px" name="arrow-left"/></div>
             <div class="top-title center">实名认证</div>
             <div class="right-icon varify center">{{status}}</div>
         </header>
@@ -18,7 +18,7 @@
                     <div class="name-input"><input type="text" v-model="idcardnumber" placeholder="请输入身份证号"></div>
                </div>
            </div>
-           <div class="upload">
+           <!-- <div class="upload">
                <h3>身份证持证照：</h3>
                <p>*请确保证件和人脸能同时看清楚，文件大小不超过2M</p>
            </div>
@@ -39,8 +39,10 @@
                         <img :src="url+cardback" />
                     </van-uploader>
                 </div>
-            </div>
-           <div class="submit center" @click="submit" v-if="status == '未认证'"><van-button class="van-button" type="default">提交</van-button></div>
+            </div> -->
+           <!-- <div class="submit center" @click="submit" v-if="status == '未认证'"><van-button class="van-button" type="default">提交</van-button></div> -->
+           <div class="submit center" @click="submit" v-if="status  != '已认证'"><van-button class="van-button" type="default">提交</van-button></div>
+           <div class="submit center" v-else><van-button class="van-button" disabled   type="info">已提交</van-button></div>
         </div>
         <loading :componentload="componentload"></loading>
     </div>
@@ -59,14 +61,14 @@ export default {
     },
     data() {
         return {
-            componentload: true,
+            componentload: false,
             url: 'http://fx.91dianji.com.cn/',
             name:"",
             idcardnumber:"",
             picshowList: [],
             front: '',
-            cardfront: 'idcardfront.jpg',
-            cardback: 'idcardback.jpg',
+            // cardfront: 'idcardfront.jpg',
+            // cardback: 'idcardback.jpg',
             cardfrontup: '',
             cardbackup: '',
             back: '',
@@ -77,78 +79,113 @@ export default {
     },
     methods:{
         // 身份证正面
-         onRead(file) {
-            this.componentload = true;
-            var form = new FormData()
-            form.append('file',file.file)
-            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg'
-            let config = {
-                headers: { "Content-Type": "multipart/form-data" }
-            };
-            axios.post(url,form,config).then(res =>{
-                if(res.data.success){
-                    this.cardfront = res.data.data.thumImgUrl
-                    this.cardfrontup = res.data.data.imgUrl
-                    setTimeout(()=>{
-                        this.componentload = false;
-                    },500)
-                }
-            }).catch(res =>{
-            })
+        //  onRead(file) {
+        //     this.componentload = true;
+        //     var form = new FormData()
+        //     form.append('file',file.file)
+        //     let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg'
+        //     let config = {
+        //         headers: { "Content-Type": "multipart/form-data" }
+        //     };
+        //     axios.post(url,form,config).then(res =>{
+        //         if(res.data.success){
+        //             this.cardfront = res.data.data.thumImgUrl
+        //             this.cardfrontup = res.data.data.imgUrl
+        //             setTimeout(()=>{
+        //                 this.componentload = false;
+        //             },500)
+        //         }
+        //     }).catch(res =>{
+        //     })
             
-        },
+        // },
         // 身份证反面
-        onReadFanm(file){
-            this.componentload = true;
-            var form = new FormData();
-            form.append('file',file.file);
-            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg';
-            let config = {
-                headers: { "Content-Type": "multipart/form-data" }
-            };
-            axios.post(url,form,config).then(res =>{
-                if(res.data.success){
-                    this.cardback = res.data.data.thumImgUrl;
-                    this.cardbackup = res.data.data.imgUrl;
-                    setTimeout(()=>{
-                        this.componentload = false;
-                    },500)
-                }
-            }).catch(res =>{
-                })
-        },
+        // onReadFanm(file){
+        //     this.componentload = true;
+        //     var form = new FormData();
+        //     form.append('file',file.file);
+        //     let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg';
+        //     let config = {
+        //         headers: { "Content-Type": "multipart/form-data" }
+        //     };
+        //     axios.post(url,form,config).then(res =>{
+        //         if(res.data.success){
+        //             this.cardback = res.data.data.thumImgUrl;
+        //             this.cardbackup = res.data.data.imgUrl;
+        //             setTimeout(()=>{
+        //                 this.componentload = false;
+        //             },500)
+        //         }
+        //     }).catch(res =>{
+        //         })
+        // },
+        // submit(){
+            // this.componentload = true;
+            // let url = '/customer/identification';
+            // let params = {
+            //     openid: this.$store.state.wechat.openid,
+            //     idcardnumber: this.idcardnumber,
+            //     name: this.name,
+            //     idcardfront: this.cardfrontup,
+            //     idcardback: this.cardbackup,
+            //     cid: storage.get('cid')
+            // };
+            // axiosPost(url,params).then(res =>{
+            //     if(res.data.success){
+            //         this.loading = false;
+            //         this.$toast('提交成功');
+            //         this.$router.push({path:'/home'})
+            //          setTimeout(()=>{
+            //             this.componentload = false;
+            //         },500)
+            //     }else{
+            //         this.loading = false;
+            //         this.$toast(res.data.message);
+            //         setTimeout(()=>{
+            //             this.componentload = false;
+            //         },500)
+            //     }
+            // }).catch(res =>{
+            //      setTimeout(()=>{
+            //         this.componentload = false;
+            //     },500)
+            //     this.$toast('认证失败');
+            // })
+        // },
         submit(){
-            this.componentload = true;
-            let url = '/customer/identification';
-            let params = {
-                openid: this.$store.state.wechat.openid,
-                idcardnumber: this.idcardnumber,
-                name: this.name,
-                idcardfront: this.cardfrontup,
-                idcardback: this.cardbackup,
-                cid: storage.get('cid')
-            };
-            axiosPost(url,params).then(res =>{
-                if(res.data.success){
-                    this.loading = false;
+            if(this.name.trim().length==0 || this.idcardnumber.trim().length==0){
+                this.$toast("请将信息填写完整")
+                return
+            }
+            let data={
+                idcardnumber:this.idcardnumber,
+                name:this.name
+            }
+             axiosPost("/customer/insertIdentification",data)
+             .then(res=>{
+                 if(res.data.success){
+                     this.loading = false;
                     this.$toast('提交成功');
-                    this.$router.push({path:'/home'})
+                    this.$store.commit('iscertification','2');
+                    this.$router.push({path:'/personalCenter'})
                      setTimeout(()=>{
                         this.componentload = false;
                     },500)
-                }else{
-                    this.loading = false;
+                 } else {
+                     this.loading = false;
                     this.$toast(res.data.message);
                     setTimeout(()=>{
                         this.componentload = false;
-                    },500)
-                }
-            }).catch(res =>{
+                    },500) 
+                 }
+             })
+             .catch(res=>{
                  setTimeout(()=>{
                     this.componentload = false;
                 },500)
                 this.$toast('认证失败');
-            })
+                this.status = '信息不符,请重试';
+             })
         },
         handleReturnHome() {
             this.$router.go(-1);
@@ -164,9 +201,15 @@ export default {
                 },500)
                 if(res.data.data.status != '0'){
                     this.name = res.data.data.name;
+                     if(this.name.length==2){
+                        this.name=this.hidden(this.name,1,0)
+                    } else {
+                        this.name=this.hidden(this.name,1,1)
+                    }
                     this.idcardnumber = res.data.data.idcardnumber;
-                    this.cardback = 'thum_' + res.data.data.idcardback;
-                    this.cardfront = 'thum_' + res.data.data.idcardfront;
+
+                    this.idcardnumber=this.hidden(this.idcardnumber,4,4)
+
                    if(res.data.data.status == '1'){
                         this.status = '审核中'
                     }else{
@@ -185,10 +228,12 @@ export default {
     },
     created(){
         
+         this.$store.state.wechat.iscertification == '0' ? this.status = '未实名' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '信息不符,请重试';
+         this.$store.state.wechat.iscertification == '0' ? this.status = '信息不符,请重试' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '信息不符,请重试';
         
     },
     mounted(){
-        this.handleGetAOuth();
+        // this.handleGetAOuth();
     }
 }
 </script>
@@ -209,6 +254,7 @@ export default {
            z-index: 999;
            .varify{
               font-size: 24px;
+              width:300px;
            }
            >span {
                &:nth-of-type(1) {

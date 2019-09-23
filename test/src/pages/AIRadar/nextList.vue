@@ -29,7 +29,7 @@
                         <span v-if="type == '2'">在线收款</span>
                         <span v-if="type == '3'">智能管家</span>
                         <span v-if="type == '4'">我要贷款</span>
-                        <span v-if="type == '5'">白金会员</span>
+                        <span v-if="type == '5'">黄金会员</span>
                         <span v-if="type == '6'">钻石会员</span>
                         <span v-if="type == '7'">合伙人</span>
                         <span v-if="type == '8'">OEM</span>
@@ -45,7 +45,7 @@
                     <div>访问次数&nbsp;({{item.count}})</div>
                     <div>
                         <div class="center" v-if="item.level == '0'">免费粉丝</div>
-                        <div class="center" v-if="item.level == '1'">白金会员</div>
+                        <div class="center" v-if="item.level == '1'">黄金会员</div>
                         <div class="center" v-if="item.level == '2'">钻石会员</div>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                         <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '5'"/>
                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                     </span>
-                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">白金会员</span>
+                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
                 </div>
                 <div class="start-center" @click="handleGetListByType('6')">
                     <span class="start-center">
@@ -266,7 +266,6 @@ export default {
     },
     created(){
         this.type = this.$route.query.type;
-        console.log('传递参数',this.$route.query.type);
         this.startdate = this.$route.query.startdate;
         this.enddate = this.$route.query.enddate;
         this.handleGetListByTypeCheck();

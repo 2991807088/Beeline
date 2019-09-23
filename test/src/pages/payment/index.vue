@@ -245,24 +245,24 @@ export default {
 
                         //     this.$router.push({
                         //     path:"/loan/form/myOrder",
-                        //     query:{
+                        //       query:{
                         //         info:url,
                         //         title:"支付"
                         //       }
                         //    })
 
-                     if (!navigator.userAgent.match(/iPad|iPhone/i)){
-                            this.$router.push({
-                            path:"/loan/form/myOrder",
-                            query:{
-                                info:url,
-                                title:"支付"
-                              }
-                             })
-                            } else {
-                                 this.componentload=false
-                                location.href=url
-                            }
+                         if (!navigator.userAgent.match(/iPad|iPhone/i)){
+                                this.$router.push({
+                                path:"/loan/form/myOrder",
+                                query:{
+                                    info:url,
+                                    title:"支付"
+                                }
+                                })
+                                } else {
+                                    this.componentload=false
+                                    location.href=url
+                                }
                     
                         },1000)
                      }

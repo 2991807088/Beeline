@@ -279,49 +279,56 @@ export default {
         },
          // 查询大额通道是否签约
         largePass(i){
-             let data={
-               bindId:i.bindId 
-            }
-             axiosPost("/vtdcreditCard/getEnterNet",data)
-             .then(res=>{
-                  if( !res.data.success  ){
-                     this.$router.push({
-                         path:"/home/largeAmount",
-                         query:{
-                             info:i
-                          }
-                     })
-                 } else  {
-                     if(res.data.data.user_no && res.data.data.state==="0"){
-                     this.$router.push({
-                         path:"/home/active",
-                         query:{
-                             user:res.data.data.user_no,
-                             info:i
-                         }
-                     })
 
-                 }else {
-                      storage.set('channel',"2");
-                     this.$router.push({
-                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-                         query:{
-                             info:i
-                         }
-                     })
-                   }
-                 } 
-             })
-             .catch(err=>{
-                //  if(!err.data.success){
-                //       this.$router.push({
-                //         path:"/home/largeAmount",
-                //        query:{
-                //             info:i
-                //        }
-                //     })
-                //  }
-             })
+             let data={
+                accountNumber:i.cardNo
+            }
+                axiosPost("/zypay/getZYPayExist",data)
+                .then(res=>{
+                    if(!res.data.success && res.data.code=='100'){
+                        this.$router.push({
+                            path:"/home/largeZY",
+                            query:{
+                                info:i
+                            }
+                        })
+                    } else {
+                        let params={
+                        bankCardNo:i.cardNo,
+                        channel:"2"
+                    }
+                    axiosPost("/wfpay/getBindCardExist",params)
+                    .then(res=>{
+                    //  console.log(res,'resultWF')
+                    if(res.data.success){
+
+                        if(res.data.data==null || res.data.data.state!="1"){ //去签约
+                                this.$router.push({
+                                path:"/home/largeWFcard",
+                                query:{
+                                    info:i
+                                }
+                            })
+                        } else {
+                                storage.set('channel',"2");
+                                this.$router.push({
+                                path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
+                                query:{
+                                    info:i
+                                }
+                            })  
+                        }
+
+                    } else {
+                        this.$toast(res.data.message)
+                    }
+                    })
+                    .catch(err=>{
+                    this.$toast("登录超时，请重新登录")
+                    })
+            }
+        })
+            
         },
          // 查询小额通道是否签约
         smallPass(i){
@@ -330,28 +337,50 @@ export default {
             }
              axiosPost("/creditCard/getEsicashExist",data)
              .then(res=>{
-                 if(res.data.success){
-                      storage.set('channel',"1")
-                       this.$router.push({
-                         path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-                         query:{
-                             info:i
-                          }
+                 if(!res.data.success){
+                     this.$router.push({
+                         path:"/home/insertEsiCash",
+                         query:{info:i}
                      })
-                 } else {
-                      this.$router.push({
-                        path:"/home/insertEsiCash",
-                        query:{info:i}
-                     })
+                   
+                 } else {   // wf小额签约
+                      let params={
+                                bankCardNo:i.cardNo,
+                                channel:"1"
+                            } 
+                         axiosPost("/wfpay/getBindCardExist",params)
+                         .then(res=>{
+                            //  console.log(res,'resultWF')
+                            if(res.data.success){
+
+                                if(res.data.data==null || res.data.data.state!="1"){ //去签约
+                                     this.$router.push({
+                                        path:"/home/largeWFxe",
+                                        query:{
+                                            info:i
+                                        }
+                                  })
+                                } else {
+                                        storage.set('channel',"1");
+                                        this.$router.push({
+                                            path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
+                                            query:{
+                                                info:i
+                                            }
+                                        })
+                                      }
+                            } else {
+                                this.$toast(res.data.message)
+                            }
+                         })
+                         .catch(err=>{
+                            this.$toast("登录超时，请重新登录")
+                         })
                  }
-                //  console.log(res,"res   success")
-                      
+                 
              })
-             .catch(res=>{
-                  this.$router.push({
-                        path:"/home/insertEsiCash",
-                        query:{info:i}
-                     })
+             .catch(err=>{
+                this.$toast("登录超时，请重新登录")
              })
         },
          repayment(i){

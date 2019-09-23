@@ -25,7 +25,7 @@
                         <div class="start-center">来自扫码</div>
                     </div>
                     <div class="type end-start">
-                        <span v-if="type == '1'">白金会员</span>
+                        <span v-if="type == '1'">黄金会员</span>
                         <span v-if="type == '2'">钻石会员</span>
                         <span v-if="type == '3'">已实名未充值</span>
                         <span v-if="type == '4'">未实名未充值</span>
@@ -59,7 +59,7 @@
                         <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '1'"/>
                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                     </span>
-                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">白金会员</span>
+                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
                 </div>
                 <div class="start-center" @click="handleDetailByTypeCheck('2')">
                     <span class="start-center">

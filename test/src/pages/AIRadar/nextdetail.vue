@@ -25,7 +25,7 @@
                         <div class="row" @click="handleSeeDetail('1')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '1'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '1'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">信用卡办理</span>
@@ -37,7 +37,7 @@
                         <div class="row" @click="handleSeeDetail('2')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '2'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '2'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">在线收款</span>
@@ -49,7 +49,7 @@
                         <div class="row" @click="handleSeeDetail('3')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '3'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '3'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">智能管家</span>
@@ -61,7 +61,7 @@
                         <div class="row" @click="handleSeeDetail('4')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '4'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '4'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">我要贷款</span>
@@ -74,7 +74,7 @@
                         <div class="row" @click="handleSeeDetail('9')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '9'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '9'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">升级</span>
@@ -84,14 +84,14 @@
                         </div>
                     </div> -->
                     <div class="per-type">
-                        <!-- 白金会员 -->
+                        <!-- 黄金会员 -->
                         <div class="row" @click="handleSeeDetail('5')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '5'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '5'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
-                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">白金会员</span>
+                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
                                 
                             </div>
                             <div class="center">{{huangjin_number}}</div>
@@ -100,7 +100,7 @@
                         <div class="row" @click="handleSeeDetail('6')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '6'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '6'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
@@ -112,7 +112,7 @@
                         <!-- <div class="row" @click="handleSeeDetail('7')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '7'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '7'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">合伙人</span>
@@ -124,7 +124,7 @@
                         <!-- <div class="row" @click="handleSeeDetail('8')">
                             <div class="start-center">
                                 <span class="start-center">
-                                    <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '8'"/>
+                                    <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '8'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
                                 <span class="start-center" style="box-sizing:border-box;padding-left:4px">运营商</span>
@@ -144,14 +144,14 @@
                 </div>
                 <div class="type-right">
                         <div class="per-type">
-                            <!-- 白金会员 -->
+                            <!-- 黄金会员 -->
                             <div class="row" @click="handleSeeNewAdd('1')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '1'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '1'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">白金会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
                                     
                                 </div>
                                 <div class="center">{{huangjin_vip_number}}</div>
@@ -161,7 +161,7 @@
                             <div class="row" @click="handleSeeNewAdd('2')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '2'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '2'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
@@ -176,7 +176,7 @@
                             <div class="row" @click="handleSeeNewAdd('3')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '3'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '3'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">已实名未充值</span>
@@ -189,7 +189,7 @@
                             <div class="row" @click="handleSeeNewAdd('4')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '4'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '4'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">未实名未充值</span>
@@ -214,7 +214,7 @@
                             <div class="row" @click="handleSeeDetail('10')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '10'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '10'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">拨打上级</span>
@@ -229,7 +229,7 @@
                             <div class="row" @click="handleSeeDetail('11')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '11'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '11'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">联系我们</span>
@@ -242,7 +242,7 @@
                             <div class="row" @click="handleSeeDetail('12')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '12'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '12'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">400电话</span>
@@ -255,7 +255,7 @@
                             <div class="row" @click="handleSeeDetail('13')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '13'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '13'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">复制微信</span>
@@ -275,14 +275,14 @@
                 </div>
                 <div class="type-right">
                         <div class="per-type">
-                            <!-- 白金会员 -->
+                            <!-- 黄金会员 -->
                             <div class="row" @click="handleSeeNewAdd('1')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '1'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '1'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">白金会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
                                     
                                 </div>
                                 <div class="center">{{huangjin_add_number}}</div>
@@ -291,7 +291,7 @@
                             <div class="row" @click="handleSeeNewAdd('2')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '2'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '2'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
@@ -305,7 +305,7 @@
                             <div class="row" @click="handleSeeNewAdd('3')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '3'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '3'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">已实名未充值</span>
@@ -317,7 +317,7 @@
                             <div class="row" @click="handleSeeNewAdd('4')">
                                 <div class="start-center">
                                     <span class="start-center">
-                                        <van-icon name="checked" color="#4b66af" size="18px" v-if="type == '4'"/>
+                                        <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '4'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
                                     <span class="start-center" style="box-sizing:border-box;padding-left:4px">未实名未充值</span>
@@ -480,7 +480,6 @@ export default {
             let url = '/behavior/getClickDetailCount';
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
-                    console.log('查询点击联系方式成功',res);
                     this.bodasahngji_number = res.data.data.browseDetailCount[0].count;
                     this.lianxiwomen_number = res.data.data.browseDetailCount[1].count;
                     this.dianhuas_number = res.data.data.browseDetailCount[2].count;
@@ -491,10 +490,10 @@ export default {
                     })
                     this.rollDigits = this.handleAutoShiftZero(this.number);
                 }else{
-                    console.log('查询点击联系方式失败',res);
+                    
                 }
             }).catch(res =>{
-                console.log('查询点击联系方式失败',res);
+                
             })
         },
         // 查询我的团队
@@ -506,7 +505,6 @@ export default {
             let url = '/behavior/getMyTeamDetailCount';
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
-                    console.log('查询我的团队成功',res);
                     this.huangjin_vip_number = res.data.data.teamDetailCount[0].count;
                     this.zuanshi_vip_number = res.data.data.teamDetailCount[1].count;
                     this.yishiming_weichongzhi_number = res.data.data.teamDetailCount[2].count;
@@ -517,10 +515,10 @@ export default {
                     })
                     this.rollDigits = this.handleAutoShiftZero(this.number);
                 }else{
-                    console.log('查询我的团队失败',res);
+                   
                 }
             }).catch(res =>{
-                console.log('查询我的团队失败',res);
+                
             }) 
         },
         // 查询新增客户
@@ -532,7 +530,7 @@ export default {
             };
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
-                    console.log('查询新增客户成功',res);
+                  
                     this.huangjin_add_number = res.data.data.teamDetailCount[0].count;
                     this.zuanshi_add_number = res.data.data.teamDetailCount[1].count;
                     this.add_yishiming_weichongzhi_number = res.data.data.teamDetailCount[2].count;
@@ -543,10 +541,10 @@ export default {
                     })
                     this.rollDigits = this.handleAutoShiftZero(this.number);
                 }else{
-                    console.log('查询新增客户失败',res);
+                  
                 }
             }).catch(res =>{
-                console.log('查询新增客户失败',res);
+               
             })
         },
         // 日期格式转换
@@ -583,7 +581,7 @@ export default {
         },
         // 根据选择参数查看下级浏览数以及点击联系方式列表明细
         handleSeeDetail(item){
-            console.log('参数',item);
+          
             this.type = item;
             setTimeout(() =>{
                 this.$router.push({
@@ -598,7 +596,7 @@ export default {
         },
         // 根据选择参数查下新增客户,我的团队列表明细
         handleSeeNewAdd(item){
-            // console.log('选择参数',item);
+           
             this.type = item;
             setTimeout(() =>{
                 this.$router.push({
@@ -618,7 +616,7 @@ export default {
             for(var i = 0; i < length; i++){
                 array.unshift('0');
             }
-            console.log('组合后的数据',array.join(""));
+          
             return array.join("");
 
         }
@@ -628,7 +626,6 @@ export default {
         this.id = this.$route.query.id;
         this.startdate = this.$route.query.startdate;
         this.enddate = this.$route.query.enddate;
-        console.log('VUEX',this.$route.query);
         if(this.$route.query.id == '0'){
             // 下级浏览数
             this.handleBrowseDetailCount();

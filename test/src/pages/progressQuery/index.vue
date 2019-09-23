@@ -65,7 +65,6 @@ export default {
         this.url=this.$route.query.info
          this.title=this.$route.query.title
         //  this.webview();
-       
     }
 }
 </script>

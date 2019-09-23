@@ -157,7 +157,7 @@ export default {
     },
     methods:{
         goBack() {
-            this.$router.push('/home/creditHousekeeper')
+            this.$router.go(-1)
         },
           // 点击遮盖层，通道隐藏
         showcover(){

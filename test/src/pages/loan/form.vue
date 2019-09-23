@@ -210,7 +210,7 @@ export default {
                        this.$toast({
                            message:res.data.message
                        })
-                       return
+                        this.componentload=false
                    } else {
                         let url=res.data.data;
                         this.componentload=true

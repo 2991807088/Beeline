@@ -10,12 +10,13 @@
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zaixainshouykuan.png" size="45px"/></div>
                     <div class="title center">在线收款</div>
                 </div>
-                <div class="per_receivables" @click="handleIsAuth('/home/creditHousekeeper','3')">
+                <div class="per_receivables" @click="handleIsAuth('/home/creditHousekeeper/aisleHousekeeper','3')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zhinenghuankuan.png" size="45px"/></div>
                     <div class="title center">智能还款</div>
                 </div>
             </div>
         </div>
+
         <div class="marqueen row">
             <div class="pannel-title ">
                 <!-- <img src="http://fx.91dianji.com.cn/fengxingzixun.png" alt=""> -->
@@ -32,7 +33,7 @@
                 <div class="title center">信用卡办理</div>
             </div> -->
 
-             <div class="per_menu van-hairline--surround" @click="applycard('https://creditcard.feierlaiedu.com/?token=5b842e25964f78313326b53f9e331c54','办卡中心')">
+             <div class="per_menu van-hairline--surround" @click="applycard('https://wsdev.1sta.cn/wechat/pages/wailian/wailian.html?merCode=b480446df76a4494948e3b95845db8ca','办卡中心')">
                 <div class="icon center-end"><van-icon name="http://fx.91dianji.com.cn/fengxing_card.png" size="28px"/></div>
                 <div class="title center">信用卡办理</div>
             </div>
@@ -126,7 +127,8 @@
                     </div>
                     <ul>
                         <router-link tag="li" to="/home/systemNews">系统消息</router-link>
-                        <router-link tag="li" to="/home/verified">实名认证</router-link>
+                        <!-- <router-link tag="li" to="/home/verified">实名认证</router-link> -->
+                         <li @click="handleAuth">实名认证</li>
                         <router-link to="/home/bindingPhone" tag="li">绑定手机</router-link>
                         <router-link to="/home/aboutUs" tag="li">联系客服</router-link>
                         <router-link to="/home/aboutUs" tag="li">关于我们</router-link>
@@ -192,6 +194,13 @@ export default {
    methods:{
         isShow() {
             this.showAaside=true
+        },
+         handleAuth(){
+             if(this.iscertification == '2'){
+                this.$router.push('/home/verified/verifiedName');
+            }else{
+                this.$router.push('/home/verified');
+            }
         },
         applycard(url,title){
              if(this.iscertification == '0'){
@@ -359,20 +368,21 @@ export default {
             };
             let url = '/behavior/insertBehavior';
             axiosPost(url,params).then(res =>{
-                console.log('插入成功',res);
+                // console.log('插入成功',res);
             }).catch(res =>{
-                console.log('插入失败',res);
+                // console.log('插入失败',res);
             })
         },
         // 判断是否实名认证
         handleIsAuth(obj,type){ 
+             this.handleAIRadarInsert(type);
             if(this.iscertification == '0'){
                 //未认证
                 this.$toast('请先实名认证');
             }else{
                 this.$router.push(obj);
             }
-            this.handleAIRadarInsert(type);
+           
         }
     },
     created(){

@@ -1,7 +1,7 @@
 <template>
     <div id="verified">
         <header>
-            <span @click="goBack"><van-icon name="arrow-left"/></span>
+            <span @click="goBack"><van-icon size="16px" name="arrow-left"/></span>
             <span>实名认证</span>
             <span></span>
         </header>

@@ -78,21 +78,41 @@ export default {
         handleExpect(){
             this.$toast("敬请期待")
         },
+         handleRouter(item){
+            if(item == '1'){
+                this.$router.push({
+                    path: '/nextLevel',
+                    query:{
+                        title: '下级浏览数',
+                        number: this.browseCount,
+                        id: '0',
+                    }
+                })
+            }else{
+              this.$router.push({
+                    path: '/nextLevel',
+                    query:{
+                        title: '我的团队',
+                        number: this.teamCount,
+                        id: '3',
+                    }
+                })  
+            }
+        },
         changeActive(obj){
-            // console.log('obj', obj);
+           
         },
         // 获取AI雷达统计数据
         handleAIRadar(){
             axiosPost('/behavior/getIndexRecord').then(res =>{
                 if(res.data.success){
-                    console.log('AI请求成功',res);
                     this.browseCount = res.data.data.browseCount;
                     this.teamCount = res.data.data.teamCount;
                 }else{
-                   console.log('AI请求失败',res); 
+                    this.$toast("查询失败")
                 }
             }).catch(res =>{
-                console.log('AI请求失败',res); 
+                
             })
         },
     },

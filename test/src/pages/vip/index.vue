@@ -258,7 +258,7 @@ export default {
         isShowDiamonds(){
              this.ShowDiamonds = true
         },
-        // 白金会员权益说明
+        // 黄金会员权益说明
         isShowGold(){
              this.ShowGold = true
         },
@@ -448,9 +448,9 @@ export default {
             };
             let url = '/behavior/insertBehavior';
             axiosPost(url,params).then(res =>{
-                console.log('插入成功',res);
+               
             }).catch(res =>{
-                console.log('插入失败',res);
+               
             })
         },
     },
@@ -459,7 +459,6 @@ export default {
         this.handlePersonalDetail();
     },
     mounted(){
-        //  console.log(this.$route.query.num,'num')
         if(this.$route.query.num=="0"){
             
                 this.Tocontone()
