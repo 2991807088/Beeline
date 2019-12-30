@@ -36,7 +36,7 @@
         </div>
         <div class="upgrade">
             <div class="icon center"><van-icon size="24px" name="http://fx.91dianji.com.cn/fengxing_dunpai.png"/></div>
-            <div class="title center">升级钻石会员，享更多会员权益</div>
+            <div class="title center">升级银蜜蜂，享更多会员权益</div>
             <router-link tag="div" to="/vip" class="now center"><div class="center">立即升级</div></router-link>
         </div>
         <div class="menus">
@@ -47,12 +47,12 @@
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
             </router-link>
             
-            <router-link tag="div" to="/ponserCenter/userAccountManage/down" class="per_menu">
+            <!-- <router-link tag="div" to="/ponserCenter/userAccountManage/down" class="per_menu">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/down.png" size="24px"/></div>
                 <div class="title start-center">客户端下载</div>
                 <div class="state end-center"></div>
                 <div class="more end-center"><van-icon name="arrow"/></div>
-            </router-link>
+            </router-link> -->
             <div class="kong"></div>
             <!-- <router-link tag="div" :to="{path: '/ponserCenter/userAccountManage',query: {amount: amount,amountSum: amountSum}}" class="per_menu">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zhanghu.png" size="24px"/></div>
@@ -98,14 +98,14 @@
             </router-link>
 
             
-            <router-link tag="div" to="/register" class="per_menu">
+            <!-- <router-link tag="div" to="/register" class="per_menu">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_shezhi@2x.png" size="24px"/></div>
                 <div class="title start-center">设置</div>
                 <div class="state end-center"></div>
                 <div class="more end-center"><van-icon name="arrow"/></div>
-            </router-link>
+            </router-link> -->
 
-            <div class="kong"></div>
+           
 
             <router-link tag="div" to="/help" class="per_menu line">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_help.png" size="24px"/></div>
@@ -113,6 +113,8 @@
                 <div class="state end-center van-hairline--bottom"></div>
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
             </router-link>
+
+             <div class="kong"></div>
 
              <router-link tag="div" to="/home/accountManagement/modifyLoginPassword" class="per_menu ">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/xiugai.png" size="24px"/></div>

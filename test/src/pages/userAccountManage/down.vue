@@ -52,7 +52,7 @@ export default {
             this.$router.go(-1);
         },
         download(){
-             window.location.href='http://s73.nyvpy.kuaiff.cn/zoQWz3'
+             window.location.href='https://wyuq.com/NR1F'
         },
         downloadAnd(){
             window.location.href='https://www.pgyer.com/9Abz'

@@ -24,26 +24,24 @@ export const axiosPost = (  url, params = {}) =>{;
     })
 
     
-//     return _axios.post(url,qs.stringify(params)).then(res =>{
-//         if(url=='/customer/getCustomer') {
-//             setTimeout(() => {
-//                 if(res.data.code==-1){
-//                     window.location.href = '#/logIn';
-//                 }
+    // return _axios.post(url,qs.stringify(params)).then(res =>{
+    //     if(url=='/customer/getCustomer') {
+    //         setTimeout(() => {
+    //             if(res.data.code==-1){
+    //                 window.location.href = '#/logIn';
+    //             }
                 
-//             }, 0);
-//         } else if(res.data.code == -1){
-//             this.$toast('请重新登陆');
-//             setTimeout(()=>{s
-//                 window.location.href = '#/logIn';
-//             },1000);
-//         }
-//          return res; 
-//     }).catch(res =>{
-//         return res;
-//     })
-
-
+    //         }, 0);
+    //     } else if(res.data.code == -1){
+    //         this.$toast('请重新登陆');
+    //         setTimeout(()=>{s
+    //             window.location.href = '#/logIn';
+    //         },1000);
+    //     }
+    //      return res; 
+    // }).catch(res =>{
+    //     return res;
+    // })
 
 }
 // 封装GET请求

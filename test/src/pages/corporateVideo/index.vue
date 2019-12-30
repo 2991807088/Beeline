@@ -2,7 +2,7 @@
     <div id="progress-query">
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
-            <span>蜂行卡包企业视频</span>
+            <span>金蜜蜂企业视频</span>
             <span><van-icon name="ellipsis"/></span>
         </header>
         <div class="container">

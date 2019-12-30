@@ -149,6 +149,32 @@
                                 </div>
                              </div>
                        </div>
+                        <!-- <div v-show="showpass" @click.capture="showcover" :class="num==index?'cover':''">
+                           <div  v-show="num==index"  class="pop">
+                               <h3>还款方式</h3>
+                                <p>请选择还款方式</p>
+                                <div class="small" @click.stop="small(item,'1')">
+                                    <van-icon name="http://fx.91dianji.com.cn/smalle.png" size="26px"/>
+                                    <div class="middle">
+                                          <p>低费率通道 <span>预留额度5%-2000</span></p>
+                                          <span class="edu">还款金额为1000-30000</span>
+                                    </div>
+                                    <p> <van-icon name="checked" :color="colors" size="20px"/></p>
+                                </div>
+                                <div class="large" @click.stop="large(item,'2')">
+                                    <van-icon name="http://fx.91dianji.com.cn/bige.png" size="26px"/>
+                                   <div class="middle">
+                                        <p>大额通道&nbsp;&nbsp;<span>快速提额</span></p>
+                                        <span class="edu">优质银行商户通道，推荐高净值高授信用户使用</span>
+                                   </div>
+                                    <p> <van-icon name="checked" :color="colorl" size="20px"/></p>
+                                </div>
+
+                                <div class="sure">
+                                    <van-button size="large" @click.stop="selectPass" type="info">确定</van-button>
+                                </div>
+                             </div>
+                       </div> -->
                        
                    </li>
             </ul>
@@ -175,19 +201,23 @@ export default {
     data(){
         return{
             showFlag:false,
-            active: 1,
+            // active: 1,
             nickname: '',
             headimg: '',
             promotioncode: '',
             // showpayment:false,
             cardList:[],
-             showpass:false,
-              showdis:false,
-              num:null,
-              amount:"",
-              showList:true,
-              datas:[],
-              showcompleted:false
+            showpass:false,
+            showdis:false,
+            num:null,
+            amount:"",
+            showList:true,
+            datas:[],
+            showcompleted:false,
+            colors:"",
+            colorl:"",
+            number:"",
+            cardinfo:"",
          }
     },
     methods:{
@@ -277,59 +307,74 @@ export default {
              })
 
         },
+         //小额
+        small(info,num){
+            this.colors="#007130"
+            this.colorl=""
+            this.showpass=true
+            this.cardinfo=info
+            this.number=num
+        },
+        //大额
+        large(info,num){
+             this.colorl="#00479D"   
+            this.colors=""  
+            this.showpass=true
+            this.cardinfo=info
+            this.number=num
+        },
+          // 确定按钮
+        selectPass(){
+           if(this.number=="1"){
+               this.smallPass(this.cardinfo)
+           } else if(this.number=="2"){
+               this.largePass(this.cardinfo)
+           } else {
+               this.$toast("请先选择还款通道")
+           }
+
+        },
          // 查询大额通道是否签约
         largePass(i){
-
-             let data={
-                accountNumber:i.cardNo
+        let data={
+                bankcardNum:i.cardNo
             }
-                axiosPost("/zypay/getZYPayExist",data)
-                .then(res=>{
-                    if(!res.data.success && res.data.code=='100'){
+
+            axiosPost("hcpay/getHcOpenCard",data)
+            .then(res=>{
+                if(res.data.success){
+                        storage.set('channel',"2");
                         this.$router.push({
-                            path:"/home/largeZY",
+                            path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
                             query:{
+                            info:i
+                        }
+                    })  
+                } else {
+                    axiosPost("hcpay/getHcMerchant")
+                    .then(res=>{
+                        if(res.data.success){   // 如果已注册,则直接去发送短信
+                            let merchantno=res.data.data.merchantno
+                            this.$router.push({
+                            path:"/home/largeAmountHC/sendmsgHC",
+                            query:{
+                                merchantno:merchantno,
                                 info:i
                             }
-                        })
-                    } else {
-                        let params={
-                        bankCardNo:i.cardNo,
-                        channel:"2"
-                    }
-                    axiosPost("/wfpay/getBindCardExist",params)
-                    .then(res=>{
-                    //  console.log(res,'resultWF')
-                    if(res.data.success){
-
-                        if(res.data.data==null || res.data.data.state!="1"){ //去签约
-                                this.$router.push({
-                                path:"/home/largeWFcard",
+                    })
+                        } else {   // 去注册
+                            this.$router.push({
+                                path:"/home/largeAmountHC",
                                 query:{
                                     info:i
                                 }
                             })
-                        } else {
-                                storage.set('channel',"2");
-                                this.$router.push({
-                                path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-                                query:{
-                                    info:i
-                                }
-                            })  
                         }
-
-                    } else {
-                        this.$toast(res.data.message)
-                    }
                     })
-                    .catch(err=>{
-                    this.$toast("登录超时，请重新登录")
-                    })
-            }
-        })
-            
+                }
+            })
         },
+
          // 查询小额通道是否签约
         smallPass(i){
             let data={
@@ -344,23 +389,23 @@ export default {
                      })
                    
                  } else {   // wf小额签约
-                      let params={
-                                bankCardNo:i.cardNo,
-                                channel:"1"
-                            } 
-                         axiosPost("/wfpay/getBindCardExist",params)
-                         .then(res=>{
-                            //  console.log(res,'resultWF')
-                            if(res.data.success){
+                    //   let params={
+                    //             bankCardNo:i.cardNo,
+                    //             channel:"1"
+                    //         } 
+                    //      axiosPost("/wfpay/getBindCardExist",params)
+                    //      .then(res=>{
+                    //         //  console.log(res,'resultWF')
+                    //         if(res.data.success){
 
-                                if(res.data.data==null || res.data.data.state!="1"){ //去签约
-                                     this.$router.push({
-                                        path:"/home/largeWFxe",
-                                        query:{
-                                            info:i
-                                        }
-                                  })
-                                } else {
+                    //             if(res.data.data==null || res.data.data.state!="1"){ //去签约
+                    //                  this.$router.push({
+                    //                     path:"/home/largeWFxe",
+                    //                     query:{
+                    //                         info:i
+                    //                     }
+                    //               })
+                    //             } else {
                                         storage.set('channel',"1");
                                         this.$router.push({
                                             path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
@@ -368,14 +413,14 @@ export default {
                                                 info:i
                                             }
                                         })
-                                      }
-                            } else {
-                                this.$toast(res.data.message)
-                            }
-                         })
-                         .catch(err=>{
-                            this.$toast("登录超时，请重新登录")
-                         })
+                                    //   }
+                        //     } else {
+                        //         this.$toast(res.data.message)
+                        //     }
+                        //  })
+                        //  .catch(err=>{
+                        //     this.$toast("登录超时，请重新登录")
+                        //  })
                  }
                  
              })
@@ -385,43 +430,8 @@ export default {
         },
          repayment(i){
             this.num=i
-            // this.showPass=true
-            // this.showdis=true
             this.showpass=true
-            // 查询小额通道签约
-            // let data={
-            //    bindId:i.bindId 
-            // }
-            //  axiosPost("/creditCard/getEsicashExist",data)
-            //  .then(res=>{
-            //      if(!res.data.success){
-            //          this.$router.push({
-            //              path:"/home/insertEsiCash",
-            //              query:{info:i}
-            //          })
-            //      } else {
-            //           let planList=res.data.data
-            //          this.$router.push({
-            //              path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //              query:{ 
-            //                 //  list:planList,
-            //                 //  area:this.area,
-            //                 //  item:i
-            //                 info:i
-            //              }
-            //          })
-            //      }
-                 
-            //  })
-            //  .catch(err=>{
-                 
-            //  })
-            // this.$router.push({
-            //     path:"/home/creditHousekeeper/aisleHousekeeper/repaymentChannel",
-            //     query:{
-            //         info:item
-            //     }
-            // })
+           
         },
          unbinding(item){
              let that =this
@@ -811,7 +821,7 @@ export default {
                         border-color: #ffa800;
                           color:#ffa800;
                       }
-                      .cover {
+                     .cover {
                           position: fixed;
                           top:0px;
                           bottom: 0px;
@@ -821,13 +831,36 @@ export default {
                           z-index: 99;
                           .pop {
                           position: absolute;
-                          top:40%;
-                          left:6%;
+                          top:26%;
+                          left:9%;
                           width: 600px;
                           padding:10px;
                           background-color: #fff;
                           border:1px solid #ccc;
-                            z-index: 999;
+                          color:#000;
+                          z-index: 999;
+                          border-radius: 15px;
+                          h3 {
+                              text-align: center;
+                              font-weight: bold;
+                              font-size: 34px;
+                              padding:30px 0px 15px 0px;
+                          }
+                          >p {
+                              text-align: center;
+                              padding:18px 0px;
+                              border-bottom: 1px solid #ccc;
+                              color:#808080;
+                          }
+                          .sure {
+                              padding:30px;
+                          }
+                          .van-button--info {
+                                background: linear-gradient(to right,#D8B56D, #886929 );
+                                height: 80px;
+                                line-height: 80px;
+                                color:#fff;
+                          }
                           >.small ,
                            .large {
                               display: flex;
@@ -836,10 +869,29 @@ export default {
                               align-items: center;
                               z-index: 999;
                               background-color: #fff;
-                              >p {
+                              padding:15px;
+                              .middle {
+                                  flex:1;
+                                  padding-left:20px;
+                                  padding-bottom: 10px;
+                                  span {
+                                      font-size: 24px;
+                                  }
+                                  .edu {
+                                      color:#BCB291;
+                                      background-color: rgba(223, 219, 191, .2);
+                                      line-height: 38px;
+                                  }
+                              }
+                              p {
                                   font-size: 32px;
-                                  color:#ffa800;
                                   font-weight: bold;
+                                  padding: 25px 0;
+                                  span{
+                                      font-weight: normal;
+                                      font-size: 26px;
+                                      color:#808080;
+                                  }
                               }
                           }
                           .small {
@@ -849,9 +901,7 @@ export default {
                                margin-top:5px;
                            }
                       }
-                      }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-                    //   border:2px solid #ccc;
-                    //   background-color:#4AA3E2;
+                      }
                       color:#fff;
                       padding:10px;
                        box-sizing: border-box;

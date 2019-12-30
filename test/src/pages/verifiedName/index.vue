@@ -67,8 +67,8 @@ export default {
             idcardnumber:"",
             picshowList: [],
             front: '',
-            // cardfront: 'idcardfront.jpg',
-            // cardback: 'idcardback.jpg',
+            cardfront: 'idcardfront.jpg',
+            cardback: 'idcardback.jpg',
             cardfrontup: '',
             cardbackup: '',
             back: '',
@@ -79,79 +79,80 @@ export default {
     },
     methods:{
         // 身份证正面
-        //  onRead(file) {
-        //     this.componentload = true;
-        //     var form = new FormData()
-        //     form.append('file',file.file)
-        //     let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg'
-        //     let config = {
-        //         headers: { "Content-Type": "multipart/form-data" }
-        //     };
-        //     axios.post(url,form,config).then(res =>{
-        //         if(res.data.success){
-        //             this.cardfront = res.data.data.thumImgUrl
-        //             this.cardfrontup = res.data.data.imgUrl
-        //             setTimeout(()=>{
-        //                 this.componentload = false;
-        //             },500)
-        //         }
-        //     }).catch(res =>{
-        //     })
+         onRead(file) {
+            this.componentload = true;
+            var form = new FormData()
+            form.append('file',file.file)
+            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg'
+            let config = {
+                headers: { "Content-Type": "multipart/form-data" }
+            };
+            axios.post(url,form,config).then(res =>{
+                if(res.data.success){
+                    this.cardfront = res.data.data.thumImgUrl
+                    this.cardfrontup = res.data.data.imgUrl
+                    setTimeout(()=>{
+                        this.componentload = false;
+                    },500)
+                }
+            }).catch(res =>{
+            })
             
-        // },
+        },
         // 身份证反面
-        // onReadFanm(file){
+        onReadFanm(file){
+            this.componentload = true;
+            var form = new FormData();
+            form.append('file',file.file);
+            let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg';
+            let config = {
+                headers: { "Content-Type": "multipart/form-data" }
+            };
+            axios.post(url,form,config).then(res =>{
+                if(res.data.success){
+                    this.cardback = res.data.data.thumImgUrl;
+                    this.cardbackup = res.data.data.imgUrl;
+                    setTimeout(()=>{
+                        this.componentload = false;
+                    },500)
+                }
+            }).catch(res =>{
+                })
+        },
+        // submit(){
         //     this.componentload = true;
-        //     var form = new FormData();
-        //     form.append('file',file.file);
-        //     let url = 'http://fx.91dianji.com.cn/api/upload/uploadImg';
-        //     let config = {
-        //         headers: { "Content-Type": "multipart/form-data" }
+        //     let url = '/customer/identification';
+        //     let params = {
+        //         openid: this.$store.state.wechat.openid,
+        //         idcardnumber: this.idcardnumber,
+        //         name: this.name,
+        //         idcardfront: this.cardfrontup,
+        //         idcardback: this.cardbackup,
+        //         cid: storage.get('cid')
         //     };
-        //     axios.post(url,form,config).then(res =>{
+        //     axiosPost(url,params).then(res =>{
         //         if(res.data.success){
-        //             this.cardback = res.data.data.thumImgUrl;
-        //             this.cardbackup = res.data.data.imgUrl;
+        //             this.loading = false;
+        //             this.$toast('提交成功');
+        //             this.$router.push({path:'/home'})
+        //              setTimeout(()=>{
+        //                 this.componentload = false;
+        //             },500)
+        //         }else{
+        //             this.loading = false;
+        //             this.$toast(res.data.message);
         //             setTimeout(()=>{
         //                 this.componentload = false;
         //             },500)
         //         }
         //     }).catch(res =>{
-        //         })
+        //          setTimeout(()=>{
+        //             this.componentload = false;
+        //         },500)
+        //         this.$toast('认证失败');
+        //     })
         // },
-        // submit(){
-            // this.componentload = true;
-            // let url = '/customer/identification';
-            // let params = {
-            //     openid: this.$store.state.wechat.openid,
-            //     idcardnumber: this.idcardnumber,
-            //     name: this.name,
-            //     idcardfront: this.cardfrontup,
-            //     idcardback: this.cardbackup,
-            //     cid: storage.get('cid')
-            // };
-            // axiosPost(url,params).then(res =>{
-            //     if(res.data.success){
-            //         this.loading = false;
-            //         this.$toast('提交成功');
-            //         this.$router.push({path:'/home'})
-            //          setTimeout(()=>{
-            //             this.componentload = false;
-            //         },500)
-            //     }else{
-            //         this.loading = false;
-            //         this.$toast(res.data.message);
-            //         setTimeout(()=>{
-            //             this.componentload = false;
-            //         },500)
-            //     }
-            // }).catch(res =>{
-            //      setTimeout(()=>{
-            //         this.componentload = false;
-            //     },500)
-            //     this.$toast('认证失败');
-            // })
-        // },
+
         submit(){
             if(this.name.trim().length==0 || this.idcardnumber.trim().length==0){
                 this.$toast("请将信息填写完整")
@@ -228,8 +229,8 @@ export default {
     },
     created(){
         
-         this.$store.state.wechat.iscertification == '0' ? this.status = '未实名' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '信息不符,请重试';
-         this.$store.state.wechat.iscertification == '0' ? this.status = '信息不符,请重试' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '信息不符,请重试';
+         this.$store.state.wechat.iscertification == '0' ? this.status = '未实名' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '';
+         this.$store.state.wechat.iscertification == '0' ? this.status = '' : (this.$store.state.wechat.iscertification == '2') ? this.status = '认证成功' : this.status = '';
         
     },
     mounted(){
@@ -282,7 +283,7 @@ export default {
                        height: 100%;
                    }
                    .name-title{
-                       width: 15%;
+                       width: 17%;
                        height: 100%;
                        font-size: 26px;
                    }

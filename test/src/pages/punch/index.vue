@@ -22,7 +22,9 @@
                             <ul>
                                 <li @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in list" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <p>{{item.cardNo}}</p>
+                                    
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -69,7 +71,7 @@
                             <ul>
                                 <li v-show="item.state=='0'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -110,7 +112,7 @@
                             <ul>
                                 <li v-show="item.state=='1'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -150,7 +152,7 @@
                             <ul>
                                 <li v-show="item.state=='2'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -191,7 +193,7 @@
                             <ul>
                                 <li v-show="item.state=='3'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -231,7 +233,7 @@
                             <ul>
                                 <li v-show="item.state=='4'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p>
+                                        <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
@@ -334,8 +336,6 @@ export default {
              
         },
         onClick(index, title){
-            //  this.$toast(title);
-            //  console.log(index)
              let data={
                   bindId:this.bindId,
                     page:"1",
@@ -393,7 +393,9 @@ export default {
                      let arr= res.data.data.data
                      let arrXun=[]
                      arr.forEach((item,i) => {
-                         item.bankNick=bankCardAttribution(item.cardNo).bankName
+                          if(item.bankname===undefined || item.bankname===null || item.bankname===""){
+                              item.bankname=bankCardAttribution(item.cardNo).bankName
+                         }
                          arrXun.push(item)
                      });
                      this.list=arrXun
@@ -406,10 +408,10 @@ export default {
     },
     created () {
         this.bindId=  this.$route.query.bindId 
-        this.getMainPlan()
+        // this.getMainPlan()
     },
     mounted () {
-
+         this.getMainPlan()
     }
 
 }

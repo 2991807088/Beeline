@@ -65,7 +65,7 @@ import {axiosPost} from '@/lib/http'
 export default {
     data(){
         return{
-            active: 4,
+            active: 3,
             browseCount: 0,
             teamCount: 0,
         }

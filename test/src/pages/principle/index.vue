@@ -6,7 +6,7 @@
             <span><van-icon name="ellipsis"/></span>
         </header>
         <div class="container">
-            <p>关于蜂行卡包推广原则</p>
+            <p>关于金蜜蜂推广原则</p>
         </div>
     </div>
 

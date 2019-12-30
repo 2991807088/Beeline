@@ -21,7 +21,7 @@
                 <div :class="cardLength == '0' ? 'apply-card-one' : 'apply-card-two' "></div>
                 <router-link tag="div" to="/personalCenter/incomedetail/addcard" class="more center"><i class="iconfont icon-more"></i></router-link>
             </div>
-            <div class="desc">注:蜂行卡包提现工作日1-2天到账，手续费5%+1元/笔，最低提现金额100元起提。</div>
+            <div class="desc">注:金蜜蜂提现工作日1-2天到账，手续费5%+1元/笔，最低提现金额100元起提。</div>
             <div class="checkbank row">
                 <div class="bankname start-center">{{bankname}}</div>
                 <div class="selectbank" @click="handleOpenBankList"><i class="iconfont icon-more"></i></div>
@@ -45,7 +45,7 @@
                 <p v-if="service">本次提现所需手续费为<span>¥{{charge}}</span>,实际到账金额为<span>¥{{truecash}}</span></p>
             </div>
             <div class="desc-two">
-                <p>亲爱的蜂行卡包会员，您提交提现申请后将进入人工审核状态，工作时间内1-2天将完成审核，请合理安排提现。</p>
+                <p>亲爱的金蜜蜂会员，您提交提现申请后将进入人工审核状态，工作时间内1-2天将完成审核，请合理安排提现。</p>
             </div>
             <div @click="handleCash" class="Immediate-withdrawals center">立即提现</div>
         </div>

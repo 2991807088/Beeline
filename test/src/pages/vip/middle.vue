@@ -13,20 +13,20 @@
         </div>
         <div class="header huangjin">
             <img class="avator" :src="headimg" alt="">
-            <div class="level" v-if="level == '0'">免费粉丝</div>
-            <div class="level" v-if="level == '1'">黄金会员</div>
-            <div class="level" v-if="level == '2'">钻石会员</div>
-            <div class="level" v-if="level == '3'">城市合伙人</div>
+            <div class="level" v-if="level == '0'">免费花粉</div>
+            <div class="level" v-if="level == '1'">铜蜂蜜</div>
+            <!-- <div class="level" v-if="level == '2'">银蜜蜂</div> -->
+            <div class="level" v-if="level == '3'">金蜜蜂</div>
             <div class="level" v-if="level == '4'">城市运营商</div>
             <img class="vip_icon" v-if="level == '0'" src="http://fx.91dianji.com.cn/fengxing_mianfeifensi_mini.png" alt="">
             <img class="vip_icon" v-if="level == '1'" src="http://fx.91dianji.com.cn/fengxing_huangjinhuiyuan_mini.png" alt="">
             <img class="vip_icon" v-if="level == '2'" src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_mini.png" alt="">
             <img class="vip_icon" v-if="level == '3'" src="http://fx.91dianji.com.cn/fengxing_hehuoren_mini.png" alt="">
             <img class="vip_icon" v-if="level == '4'" src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt="">
-            <div class="slogan start-center" v-if="level == '0'">免费粉丝相关权益</div>
-            <div class="slogan start-center" v-if="level == '1'">黄金会员相关权益</div>
-            <div class="slogan start-center" v-if="level == '2'">钻石会员相关权益</div>
-            <div class="slogan start-center" v-if="level == '3'">城市合伙人相关权益</div>
+            <div class="slogan start-center" v-if="level == '0'">免费花粉相关权益</div>
+            <div class="slogan start-center" v-if="level == '1'">铜蜂蜜相关权益</div>
+            <div class="slogan start-center" v-if="level == '2'">银蜜蜂相关权益</div>
+            <div class="slogan start-center" v-if="level == '3'">金蜜蜂相关权益</div>
             <div class="slogan start-center" v-if="level == '4'">城市运营商相关权益</div>
         </div>
         <div v-if="level == '0'">
@@ -37,8 +37,12 @@
                     <div class="center">对应费率</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通商户收款费率</div>
                     <div class="end-center">0.60%+3元/笔</div>
+                </div>
+                  <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质商户收款费率</div>
+                    <div class="end-center">0.70%+3元/笔</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
@@ -56,7 +60,7 @@
                     <div class="center">领取条件</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>直推398元/个，奖40元/个</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>直推398元/个，奖100元/个</div>
                     <div class="end-center">升级任意<br/>会员可领</div>
                 </div>
                 <div class="rows row">
@@ -65,11 +69,11 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>直推998元/个，奖100元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>间推998元/个，奖150元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
             </div>
 
@@ -96,7 +100,7 @@
 
         </div>
 
-        <!-- 黄金会员 -->
+        <!-- 铜蜂蜜 -->
         <div v-if="level == '1'">
             <div class="big_title center">当前费率</div>
             <div class="rate">
@@ -105,8 +109,12 @@
                     <div class="center">对应费率</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通商户收款费率</div>
                     <div class="end-center">0.55%+2元/笔</div>
+                </div>
+                 <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质商户收款费率</div>
+                    <div class="end-center">0.65%+2元/笔</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
@@ -164,7 +172,7 @@
 
         </div>
 
-        <!-- 钻石会员 -->
+        <!-- 银蜜蜂 -->
         <div v-if="level == '2'">
             <div class="big_title center">当前费率</div>
             <div class="rate">
@@ -172,9 +180,13 @@
                     <div class="center">对应通道</div>
                     <div class="center">对应费率</div>
                 </div>
-                <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
+                 <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通商户收款费率</div>
                     <div class="end-center">0.50%+2元/笔</div>
+                </div>
+                <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质商户收款费率</div>
+                    <div class="end-center">0.60%+2元/笔</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
@@ -239,7 +251,11 @@
                     <div class="center">对应费率</div>
                 </div>
                 <div class="rows row">
-                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通商户收款费率</div>
+                    <div class="end-center">对应会员等级</div>
+                </div>
+                  <div class="rows row">
+                    <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质商户收款费率</div>
                     <div class="end-center">对应会员等级</div>
                 </div>
                 <div class="rows row">

@@ -149,7 +149,6 @@ export default {
        },
        getCard(item,i){
            this.showClass=i
-        //    console.log(this.showClass)
            this.realName=item.payerName
             this.idCard=item.idCardNo
             this.accNo=item.cardNo
@@ -157,25 +156,7 @@ export default {
             this.show=false
        },
        
-    //    recordSearch(){
-        //    let data={
-        //        chMerCode:this.chMerCode,
-        //        orderCode:this.number
-        //    }
-        //    axiosPost("/creditCard/getTradeQuery",data)
-        //    .then(res=>{
-        //        if(!res.data.success){
-        //            this.$toast({
-        //                message:res.data.message
-        //            })
-        //        } else {
-        //         //    this.showrecord=true
-        //             this.record=res.data.data
-        //        }
-        //    })
-        //    .catch(err=>{
-        //    })
-    //    },
+  
        pay(){
            let partten=/0?(13|14|15|16|17|18|19)[0-9]{9}/ 
            if(this.orderAmount.trim().length===0 || this.realName.trim().length===0 || this.idCard.trim().length===0

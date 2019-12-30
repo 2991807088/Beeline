@@ -3,7 +3,7 @@
         <div id="loading-components" class="center" v-if="componentload">
             <div class="column">
                 <div class="load center"><van-loading color="white" size="50px" /></div>
-                <div class="moneybay center">蜂行卡包</div>
+                <div class="moneybay center">金蜜蜂</div>
             </div>
         </div>    
     </transition>
@@ -33,7 +33,6 @@ export default {
         background: rgba(0, 0, 0, 0.5);
         .load{
             width: 100vw;
-            // margin-top: 80%;
         }
         .moneybay{
             width: 100vw;

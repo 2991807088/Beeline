@@ -38,8 +38,8 @@
                         <span v-if="item.type == '2'">在线收款</span>
                         <span v-if="item.type == '3'">智能管家</span>
                         <span v-if="item.type == '4'">我要贷款</span>
-                        <span v-if="item.type == '5'">黄金会员</span>
-                        <span v-if="item.type == '6'">钻石会员</span>
+                        <span v-if="item.type == '5'">铜蜂蜜</span>
+                        <span v-if="item.type == '6'">银蜜蜂</span>
                         <span v-if="item.type == '7'">合伙人</span>
                         <span v-if="item.type == '8'">OEM</span>
                         <span v-if="item.type == '9'">升级</span>
@@ -53,9 +53,9 @@
                 <div class="middle">
                     <div>访问次数&nbsp;({{item.count}})</div>
                     <div>
-                        <div class="center" v-if="item.level == '0'">免费粉丝</div>
-                        <div class="center" v-if="item.level == '1'">黄金会员</div>
-                        <div class="center" v-if="item.level == '2'">钻石会员</div>
+                        <div class="center" v-if="item.level == '0'">免费花粉</div>
+                        <div class="center" v-if="item.level == '1'">铜蜂蜜</div>
+                        <div class="center" v-if="item.level == '2'">银蜜蜂</div>
                     </div>
                 </div>
                 <div class="bottom">

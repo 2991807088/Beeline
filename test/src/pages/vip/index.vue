@@ -15,10 +15,10 @@
                 <img v-if="ispartner == '1'" src="http://fx.91dianji.com.cn/fengxing_hehuoren_top.png" alt="">
                 </div>
             <div class="vip_title center">
-                <span v-if="level == '0' && ispartner == '0'">免费粉丝</span>
-                <span v-if="level == '1' && ispartner == '0'">黄金会员</span>
-                <span v-if="level == '2' && ispartner == '0'">钻石会员</span>
-                <span v-if="ispartner == '1'">城市合伙人</span>
+                <span v-if="level == '0' && ispartner == '0'">免费花粉</span>
+                <span v-if="level == '1' && ispartner == '0'">铜蜜蜂</span>
+                <span v-if="level == '2' && ispartner == '0'">银蜜蜂</span>
+                <span v-if="ispartner == '1'">金蜜蜂</span>
             </div>
         </div>
         <div class="level">
@@ -31,7 +31,7 @@
         <div class="goods_list">
             <div class="per_goods fensi" id="level0">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_mianfeifensi_mini.png" alt=""></div>
-                <div class="title">免费粉丝</div>
+                <div class="title">免费花粉</div>
                 <div class="price">¥0.00</div>
                 <div class="nowlevel" v-if="level == '0' && ispartner == '0'">当前等级</div>
                 <div class="detail center" @click="handleSeeDetail('0')">查看明细</div>
@@ -44,7 +44,7 @@
             </div>
             <div class="per_goods huangjin" id="level1">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_huangjinhuiyuan_mini.png" alt=""></div>
-                <div class="title">黄金会员</div>
+                <div class="title">铜蜜蜂</div>
                 <div class="price">¥398.00</div>
                 <div class="nowlevel" v-if="level == '1' && ispartner == '0'">当前等级</div>
                 <div class="upgrade center" v-if="level == '0'" @click="handleOneClickUp('398','5')">一键升级</div>
@@ -59,7 +59,7 @@
             </div>
             <div class="per_goods zuanshi" id="level2">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_zuanshihuiyuan_mini.png" alt=""></div>
-                <div class="title">钻石会员</div>
+                <div class="title">银蜜蜂</div>
                 <div class="price">¥998.00</div>
                 <div class="nowlevel" v-if="level == '2' && ispartner == '0'">当前等级</div>
                 <div class="upgrade center" v-if="level != '2'" @click="handleOneClickUp('998','6')">一键升级</div>
@@ -74,11 +74,12 @@
             </div>
             <div class="per_goods hehuoren" id="level3">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_hehuoren_mini.png" alt=""></div>
-                <div class="title">城市合伙人</div>
-                <div class="price">¥19800.00</div>
+                <div class="title">金蜜蜂</div>
+                <div class="price">¥9800.00</div>
                 <div class="nowlevel" v-if="ispartner == '1'">当前等级</div>
                 <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs('7')">联系我们</div>
-                <div class="detail center" @click="handleSeeDetail('3')">查看明细</div>
+                <!-- <div class="detail center" @click="handleSeeDetail('3')">查看明细</div> -->
+
                 <div class="desc">
                     <div>推广佣金比例</div>
                     <div>直接-60%</div>
@@ -86,7 +87,7 @@
                     <div>V3-10%</div>
                 </div>
             </div>
-            <div class="per_goods yunyingshang" id="level4">
+            <!-- <div class="per_goods yunyingshang" id="level4">
                 <div class="icon"><img src="http://fx.91dianji.com.cn/fengxing_yunyingshang_mini.png" alt=""></div>
                 <div class="title">城市运营商</div>
                 <div class="price">¥28000.00——¥188000.00</div>
@@ -98,7 +99,7 @@
                     <div>利润100%</div>
                     <div>招商加盟</div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <!-- 联系我们 -->
@@ -113,30 +114,41 @@
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
-                        <div class="start-center">加盟热线：18221188860 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理 </div>
+                        <div class="start-center">加盟热线：13855197505 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李经理 </div>
                         <div class="btn center">
-                            <span><a href="tel:18221188860">拨打</a></span>
+                            <span><a href="tel:13855197505">拨打</a></span>
+                        </div>
+                    </div>
+                     <div class="per_detail row" @click="handleATRadarInsert('11')">
+                        <div class="start-center">
+                            <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/>
+                            </div>
+                        <div class="start-center">
+                            加盟热线：
+                           18356067921 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陶经理 </div>
+                        <div class="btn center">
+                            <span><a href="tel:18356067921">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18221188860 </div>
+                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：13855197505 </div>
                         <div  class="btn center">
-                            <span @click="handleCopy('18221188860')">复制</span>
+                            <span @click="handleCopy('13855197505')">复制</span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('12')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
-                        <div class="start-center">客服电话：18221188860  </div>
+                        <div class="start-center">客服电话：13855197505 </div>
                         <div  class="btn center">
-                            <span><a href="tel:18221188860">拨打</a></span>
+                            <span><a href="tel:13855197505">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                        <div class="start-center"> <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center" id="mobile">客服微信：18221188860&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
+                        <div class="start-center" id="mobile">客服微信：13855197505&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李经理</div>
                         <div  class="btn center">
-                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18221188860')">复制</span>
+                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('13855197505')">复制</span>
                         </div>
                     </div>
 
@@ -155,7 +167,7 @@
                     </div>
                     <div class="recom-info center">
                         <div class="mini-info center">
-                            Hi!,{{recomname}}邀请您成为创业合伙人，蜂行卡包大舞台等你来创造奇迹
+                            Hi!,{{recomname}}邀请您成为创业合伙人，金蜜蜂大舞台等你来创造奇迹
                         </div>
                     </div>
                 </div>
@@ -214,7 +226,7 @@ export default {
     },
     data(){
         return{
-            active: 3,
+            active: 1,
             ShowDiamonds:false,
             ShowGold: false,
             showRule:false,
@@ -261,11 +273,11 @@ export default {
         },
         changeActive(obj){
         },
-        // 钻石会员权益说明
+        // 银蜜蜂权益说明
         isShowDiamonds(){
              this.ShowDiamonds = true
         },
-        // 黄金会员权益说明
+        //  铜蜜蜂权益说明
         isShowGold(){
              this.ShowGold = true
         },
@@ -275,7 +287,7 @@ export default {
         // 会员充值
         handleVip(obj){
             this.price = obj;
-            obj == '998' ? this.level = '蜂行卡包钻石会员' : this.level = '蜂行卡包黄金会员';
+            obj == '998' ? this.level = '金蜜蜂银蜜蜂' : this.level = '金蜜蜂铜蜜蜂';
             this.pup1 = true;
             
         },
@@ -289,9 +301,9 @@ export default {
             this.pup2 = true;
             let name = '';
             if(this.price == '998'){
-                name = '蜂行卡包钻石会员';
+                name = '金蜜蜂银蜜蜂';
             }else{
-                name = '蜂行卡包黄金会员'
+                name = '金蜜蜂铜蜜蜂'
             }
             let url = '/order/insertOrder';
             let params = {
@@ -397,7 +409,7 @@ export default {
             }else{
                 this.price = obj;
                 this.pup2 = true;
-                obj == '998' ? this.goodsname = '钻石会员' : this.goodsname = '黄金会员';
+                obj == '998' ? this.goodsname = '银蜜蜂' : this.goodsname = '铜蜜蜂';
                 let url = '/order/insertOrder';
                 let params = {
                     amount: this.price,

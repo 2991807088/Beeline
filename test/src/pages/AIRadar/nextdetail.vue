@@ -84,26 +84,26 @@
                         </div>
                     </div> -->
                     <div class="per-type">
-                        <!-- 黄金会员 -->
+                        <!-- 铜蜂蜜 -->
                         <div class="row" @click="handleSeeDetail('5')">
                             <div class="start-center">
                                 <span class="start-center">
                                     <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '5'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
-                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
+                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">铜蜂蜜</span>
                                 
                             </div>
                             <div class="center">{{huangjin_number}}</div>
                         </div>
-                        <!-- 钻石会员 -->
+                        <!-- 银蜜蜂 -->
                         <div class="row" @click="handleSeeDetail('6')">
                             <div class="start-center">
                                 <span class="start-center">
                                     <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '6'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
-                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
+                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">银蜜蜂</span>
                                 
                             </div>
                             <div class="center">{{zuanshi_number}}</div>
@@ -144,27 +144,27 @@
                 </div>
                 <div class="type-right">
                         <div class="per-type">
-                            <!-- 黄金会员 -->
+                            <!-- 铜蜂蜜 -->
                             <div class="row" @click="handleSeeNewAdd('1')">
                                 <div class="start-center">
                                     <span class="start-center">
                                         <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '1'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">铜蜂蜜</span>
                                     
                                 </div>
                                 <div class="center">{{huangjin_vip_number}}</div>
                             </div>
                             
-                            <!-- 钻石会员 -->
+                            <!-- 银蜜蜂 -->
                             <div class="row" @click="handleSeeNewAdd('2')">
                                 <div class="start-center">
                                     <span class="start-center">
                                         <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '2'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">银蜜蜂</span>
                                     
                                 </div>
                                 <div class="center">{{zuanshi_vip_number}}</div>
@@ -275,26 +275,26 @@
                 </div>
                 <div class="type-right">
                         <div class="per-type">
-                            <!-- 黄金会员 -->
+                            <!-- 铜蜂蜜 -->
                             <div class="row" @click="handleSeeNewAdd('1')">
                                 <div class="start-center">
                                     <span class="start-center">
                                         <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '1'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">黄金会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">铜蜂蜜</span>
                                     
                                 </div>
                                 <div class="center">{{huangjin_add_number}}</div>
                             </div>
-                            <!-- 钻石会员 -->
+                            <!-- 银蜜蜂 -->
                             <div class="row" @click="handleSeeNewAdd('2')">
                                 <div class="start-center">
                                     <span class="start-center">
                                         <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '2'"/>
                                         <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                     </span>
-                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">钻石会员</span>
+                                    <span class="start-center" style="box-sizing:border-box;padding-left:4px">银蜜蜂</span>
                                     
                                 </div>
                                 <div class="center">{{zuanshi_add_number}}</div>

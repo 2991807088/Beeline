@@ -114,31 +114,44 @@
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_jiamengrexian_active.png"/></div>
                 <div class="contact_title">加盟热线:</div>
                 <div class="jiameng_rexian">
-                    <span>18221188860</span>
-                    <span>张经理</span>
+                    <span>13855197505</span>
+                    <span>李经理</span>
                 </div>
-                <div class="btn center"><span><a href="tel:18221188860">拨打</a></span></div>
+                <div class="btn center"><span><a href="tel:13855197505">拨打</a></span></div>
+            </div>
+             <div class="contact_us row">
+                <div class="icon center">
+                    <!-- <van-icon name="http://fx.91dianji.com.cn/fengxing_jiamengrexian_active.png"/> -->
+                    </div>
+                <div class="contact_title">
+                    <!-- 加盟热线: -->
+                    </div>
+                <div class="jiameng_rexian">
+                    <span> 18356067921</span>
+                    <span>陶经理</span>
+                </div>
+                <div class="btn center"><span><a href="tel: 18356067921">拨打</a></span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin_active.png"/></div>
                 <div class="contact_title">微信号码:</div>
-                <div class="contact_detail start-center" id="mobile">18221188860</div>
-                <div class="btn center"><span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18221188860')">复制</span></div>
+                <div class="contact_detail start-center" id="mobile">13855197505</div>
+                <div class="btn center"><span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('13855197505')">复制</span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zuoji_active.png"/></div>
                 <div class="contact_title">客服电话:</div>
-                <div class="contact_detail start-center">18221188860</div>
-                <div class="btn center"><span><a href="tel:18221188860">拨打</a></span></div>
+                <div class="contact_detail start-center">13855197505</div>
+                <div class="btn center"><span><a href="tel:13855197505">拨打</a></span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin_active.png"/></div>
                 <div class="contact_title">客服微信:</div>
                 <div class="jiameng_rexian">
-                    <span>18221188860</span>
-                    <span>张经理</span>
+                    <span>13855197505</span>
+                    <span>李经理</span>
                 </div>
-                <div class="btn center"><span   @click="handleCopy('18221188860')">复制</span></div>
+                <div class="btn center"><span   @click="handleCopy('13855197505')">复制</span></div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_youxiang_active.png"/></div>
