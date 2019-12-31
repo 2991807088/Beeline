@@ -107,14 +107,14 @@
 
            
 
-            <router-link tag="div" to="/help" class="per_menu line">
+            <!-- <router-link tag="div" to="/help" class="per_menu line">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_help.png" size="24px"/></div>
                 <div class="title start-center van-hairline--bottom">帮助中心</div>
                 <div class="state end-center van-hairline--bottom"></div>
                 <div class="more end-center van-hairline--bottom"><van-icon name="arrow"/></div>
-            </router-link>
+            </router-link> -->
 
-             <div class="kong"></div>
+             <!-- <div class="kong"></div> -->
 
              <router-link tag="div" to="/home/accountManagement/modifyLoginPassword" class="per_menu ">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/xiugai.png" size="24px"/></div>

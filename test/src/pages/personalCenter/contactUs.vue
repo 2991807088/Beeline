@@ -7,17 +7,17 @@
         </header>
         <div class="big-title">联系我们</div>
         <div class="small-title">
-            公司名称：青岛宏盛和投资管理有限公司
+            公司名称：深圳市顶力备科技有限公司
         </div>
-        <div class="small-title">
+        <!-- <div class="small-title">
             邮箱：wangguanhui@126.com
-        </div>
+        </div> -->
         <div class="small-title">
-            电话：15953385222
+            电话：15015207377
         </div>
-         <div class="small-title">
+         <!-- <div class="small-title">
             公司地址：山东省青岛胶州市徐州路科润城上河德天经济咨询服务有限公司
-        </div>
+        </div> -->
     </div>
 </template>
 <script>

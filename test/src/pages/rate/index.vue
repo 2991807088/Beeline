@@ -3,7 +3,7 @@
         <header>
             <span @click="goBack"><van-icon name="arrow-left" /></span>
             <span>我的费率</span>
-            <span><van-icon name="ellipsis" /></span>
+            <span></span>
         </header>
         <div class="container">
             <div class="partner">

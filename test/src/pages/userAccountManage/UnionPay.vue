@@ -28,6 +28,9 @@ import {axiosPost,axiosGet} from '@/lib/http'
 import loading from '@/components/loading'
 import storage from '@/lib/storage'
 export default {
+     components:{
+        loading
+    },
     data(){
         return{
             area: '请选择支行地址',

@@ -12,7 +12,7 @@
                <p><span> <van-icon name="phone"/></span> 18217788778</p>
                <p><span> <van-icon name="manager"/></span> 190234568@qq.com</p>
                <p><span> <van-icon name="location"/></span> 上海市宝山区泰和路2038号</p>
-               <p><span> <van-icon name="column"/></span> 传帮带（上海）网络科技有限公司</p>
+               <p><span> <van-icon name="column"/></span> 深圳市顶力备科技有限公司</p>
            </div>
            <div class="cfo">
                <p>夏竹CFO（首席财务官）</p>

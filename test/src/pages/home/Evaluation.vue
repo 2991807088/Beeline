@@ -85,7 +85,7 @@
                     　　7.1如果您对本协议或本服务有意见或建议，可与金蜜蜂客户服务部门联系，我们会给予您必要的帮助。（正文完）<br/>
                     　<br/><br/>
                     
-                     <div style="width:100%" class="end-center">传帮带（上海）网络科技有限公司</div>
+                     <div style="width:100%" class="end-center">深圳市顶力备科技有限公司</div>
 
                 </div>
             </div>
@@ -299,7 +299,7 @@ export default {
                 margin-bottom: 8px;
             }
             span{
-                color: #4B66AF;
+                color: #ffa800;
             }
         }
         .popup{

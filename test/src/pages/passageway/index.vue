@@ -150,7 +150,7 @@ export default {
            .data {
                margin-top:50px;
                .trade {
-                //    color:#4B66AF;
+                //    color:#ffa800;
                    text-align: center;
                    margin-bottom: 30px;
                    font-size: 36px;

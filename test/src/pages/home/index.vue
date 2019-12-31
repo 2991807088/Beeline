@@ -2,9 +2,16 @@
 <template>
     <div id="home-component">
         <div class="header">
-            <van-icon class="menu" name="http://fx.91dianji.com.cn/order.png" size="24px" @click="isShow"/>
+            <p @click="isShow">
+                <van-icon  name="http://fx.91dianji.com.cn/order.png" size="24px" />
+                <span>菜单</span>
+            </p>
+           
+
+            <!-- <p class="menu"><van-icon  name="http://fx.91dianji.com.cn/order.png" size="24px" @click="isShow"/>菜单</p>
+            
             <div class="home center"></div>
-            <span class="iconfont icon-huangguan"></span>
+            <span class="iconfont icon-huangguan"></span> -->
             <!-- <div class="receivables row">
                  <div class="per_receivables" @click="handleIsAuth('/home/collect','1')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zaixainshouykuan.png" size="45px"/></div>
@@ -137,10 +144,10 @@
                     <p> <van-icon name="http://fx.91dianji.com.cn/haikuan.png" size="45px"/></p>
                     <p>信用维护</p>
                 </li>
-                   <li>
+                 <router-link tag="li" :to="{path: '/personalCenter/income',query:{amountSum: amountSum}}" >
                     <p> <van-icon name="http://fx.91dianji.com.cn/shouyi.png" size="45px"/></p>
                     <p>收益明细</p>
-                </li>
+                 </router-link>
                 <router-link to="/vip" tag="li">
                     <p> <van-icon name="http://fx.91dianji.com.cn/shengji.png" size="45px"/></p>
                     <p>升级代理</p>
@@ -261,6 +268,7 @@ export default {
             updateVerson:0 , // 设备版本号
             showpass:false,
             paychennel:"",
+            amountSum:""
         }
   },
    methods:{
@@ -460,7 +468,8 @@ export default {
             };
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
-               
+                    // console.log(res,"查询实名认证")
+                   this.amountSum = res.data.data.amountSum;
                    this.iscertification = res.data.data.iscertification;
                    this.$store.commit('mobile',res.data.data.mobile);
                 }
@@ -523,27 +532,19 @@ export default {
         // background-blend-mode: normal,normal;
         position: relative;
         z-index: 1;
-        .home{
-            width: 100%;
-            color:#ffffff;
-            position: absolute;
-            z-index: 2;
-            top: 22px;
-            font-family: SourceHanSansCN-Medium;
-            font-size: 36px;
-            font-weight: normal;
-            font-stretch: normal;
-            line-height: 28.8px;
-            letter-spacing: 0px;
-            color: #ffffff;
-        }
-        .menu{
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 3;
-            color: #ffffff;
-        }
+       p{
+           display: flex;
+           align-items: center;
+           color:#fff;
+           padding-left:20px;
+           padding-top:20px;
+           span{
+               display: inline-block;
+               margin-left:10px;
+           }
+       }
+       
+       
         .receivables{
             width: 100%;
             height: 67%;

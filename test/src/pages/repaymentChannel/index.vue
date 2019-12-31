@@ -11,7 +11,6 @@
                    <li>
                        <div class="top">
                           <div class="bankName">
-                              <p class="circle"></p>
                               <p >{{item.bankNick}}</p>
                                <p >{{item.payerName}}</p>
                               <p>*<span>{{item.cardNo.substr(item.cardNo.length-4)}}</span></p>
@@ -57,7 +56,7 @@
                <ul>
                    <li @click="makePlan('1')">
                        <div class="image">
-                            <van-icon name="http://fx.91dianji.com.cn/luodi.png" size="40px" />
+                            <van-icon name="http://pay.91dianji.com.cn/luodi.png" size="40px" />
                        </div>
                        <div class="middle">
                            <h3><span class="bold">本地真实落地商户</span>&nbsp;&nbsp;<span class="orange">还款通道&nbsp;</span>(预留5%起)</h3>
@@ -69,7 +68,7 @@
                    </li>
                    <li @click="makePlan('2')">
                        <div class="image">
-                            <van-icon name="http://fx.91dianji.com.cn/shau3huan1.png" size="40px" />
+                            <van-icon name="http://pay.91dianji.com.cn/shau3huan1.png" size="40px" />
                        </div>
                        <div class="middle">
                            <h3><span class="bold">刷3还1</span>&nbsp;(预留5%起)</h3>
@@ -99,6 +98,7 @@
 
 
 <script>
+import storage from '@/lib/storage'
 export default {
     data() {
         return {
@@ -108,7 +108,7 @@ export default {
     },
     methods:{
         goBack() {
-            this.$router.go(-1)
+            this.$router.push("/home/creditHousekeeper/aisleHousekeeper");
         },
         handleAgree(val){
         },
@@ -120,11 +120,15 @@ export default {
                 })
                 return
             }
+
+
+            storage.set('type',i)
+
             this.$router.push({
                 path:"/home/creditHousekeeper/aisleHousekeeper/makePlan",
                 query:{
                     info:this.item,
-                    type:i
+                    // type:i
                 }
             })
 
@@ -140,7 +144,7 @@ export default {
 <style lang="less">
    #repayment-channel {
        >header {
-           background: #ffa800;
+           background-color: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -174,40 +178,23 @@ export default {
                       border-radius: 10px;
                       box-sizing: border-box;
                       margin-bottom: 15px;
-                    // background-color: #C2AF77;
-                    // linear-gradient(
-                    //             #4f60c8, 
-                    //             #4f60c8);
-                    background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
+                      background-image:url("http://pay.91dianji.com.cn/bgc5.jpg");
                       background-repeat: no-repeat;
-                      height: 300px;
+                      height: 410px;
                       background-size:100%;
                       padding:10px;
                        >.top {
                            padding-top:13px;
                            height:20px !important;
                            .bankName {
-                               > p {
-                                   &:nth-of-type(2){
-                                    //    margin-right:40px;
-                                    margin-left:-50px;
-                                   }
-                               }
-                               .circle {
-                                   width:30px;
-                                   height: 30px;
-                                   background-color: #fff;
-                                   border-radius: 50%;
-                               }
-                                margin-top:20px;
-                                display: flex;
-                                justify-content: space-around;
-                                margin-bottom: 15px;
+                          display: flex;
+                          justify-content: space-around;
+                          margin-bottom: 15px;
                          }
                        }
                       .bottom {
-                        //  margin-bottom:35px;
-                        margin-top:120px;
+                         margin-bottom:35px;
+                         margin-top:50px;
                           >ul{
                               display: flex;
                               justify-content: space-around;
@@ -221,11 +208,10 @@ export default {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-top:20px;
-                                          margin-bottom: 10px;
+                                          margin-bottom: 20px;
                                       }
                                       &:nth-of-type(2){
-                                        //   margin-bottom: 20px;
-                                        margin-top:30px;
+                                          margin-bottom: 20px;
                                       }
                                   }
 
@@ -260,7 +246,7 @@ export default {
                                   font-weight: bold;
                               }
                               >.orange {
-                                  color:cornflowerblue;
+                                  color:#ffa800;
                               }
                           }
                       }
@@ -286,7 +272,7 @@ export default {
                       justify-content: space-between;
                       margin-top:10px;
                   }
-                   .van-checkbox__icon .van-icon{
+                  .van-checkbox__icon .van-icon{
                       border:1px solid #000;
                       margin-bottom: 8px !important;
                   }

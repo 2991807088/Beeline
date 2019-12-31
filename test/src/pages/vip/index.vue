@@ -114,9 +114,9 @@
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
-                        <div class="start-center">加盟热线：13855197505 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李经理 </div>
+                        <div class="start-center">加盟热线：15015207377 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周经理 </div>
                         <div class="btn center">
-                            <span><a href="tel:13855197505">拨打</a></span>
+                            <span><a href="tel:15015207377">拨打</a></span>
                         </div>
                     </div>
                      <div class="per_detail row" @click="handleATRadarInsert('11')">
@@ -125,30 +125,30 @@
                             </div>
                         <div class="start-center">
                             加盟热线：
-                           18356067921 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;陶经理 </div>
+                           15015207377 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周经理 </div>
                         <div class="btn center">
-                            <span><a href="tel:18356067921">拨打</a></span>
+                            <span><a href="tel:15015207377">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：13855197505 </div>
+                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：15015207377 </div>
                         <div  class="btn center">
-                            <span @click="handleCopy('13855197505')">复制</span>
+                            <span @click="handleCopy('15015207377')">复制</span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('12')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
-                        <div class="start-center">客服电话：13855197505 </div>
+                        <div class="start-center">客服电话：15015207377 </div>
                         <div  class="btn center">
-                            <span><a href="tel:13855197505">拨打</a></span>
+                            <span><a href="tel:15015207377">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                        <div class="start-center"> <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center" id="mobile">客服微信：13855197505&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;李经理</div>
+                        <div class="start-center" id="mobile">客服微信：15015207377&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周经理</div>
                         <div  class="btn center">
-                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('13855197505')">复制</span>
+                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('15015207377')">复制</span>
                         </div>
                     </div>
 

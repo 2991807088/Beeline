@@ -12,7 +12,7 @@
             <div class="top-title center">关于我们</div>
             <div class="right-icon varify center"></div>
         </header>
-        <div class="logo center"><img src="http://fx.91dianji.com.cn/logo.png"/></div>
+        <div class="logo center"><img src="http://fx.91dianji.com.cn/slogo.png"/></div>
         <div class="container">
             <div class="title start-center">联系我们</div>
             <div class="contact_us row">
@@ -24,11 +24,11 @@
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                 <div class="contact_title">加盟热线:</div>
                 <div class="jiameng_rexian">
-                    <span>13855197505</span>
-                    <span>李经理</span>
+                    <span>15015207377</span>
+                    <span>周经理</span>
                 </div>
                 <div class="btn center">
-                    <span><a href="tel:13855197505">拨打</a></span>
+                    <span><a href="tel:15015207377">拨打</a></span>
                 </div>
             </div>
              <div class="contact_us row">
@@ -39,40 +39,40 @@
                     <!-- 加盟热线: -->
                     </div>
                 <div class="jiameng_rexian">
-                    <span> 18356067921</span>
-                    <span>陶经理</span>
+                    <span> 15015207377</span>
+                    <span>周经理</span>
                 </div>
                 <div class="btn center">
-                    <span><a href="tel: 18356067921">拨打</a></span>
+                    <span><a href="tel: 15015207377">拨打</a></span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                 <div class="contact_title">微信号码:</div>
-                <div class="contact_detail start-center" id="mobile">13855197505</div>
+                <div class="contact_detail start-center" id="mobile">15015207377</div>
                 <div class="btn center">
-                    <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('13855197505')">复制</span>
+                    <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('15015207377')">复制</span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
                 <div class="contact_title">客服电话:</div>
-                <!-- <div class="contact_detail start-center">13855197505</div> -->
+                <!-- <div class="contact_detail start-center">15015207377</div> -->
                 <div class="jiameng_rexian">
-                    <span>13855197505</span>
-                    <span>李经理</span>
+                    <span>15015207377</span>
+                    <span>周经理</span>
                 </div>
                 <div class="btn center">
-                    <span><a href="tel:13855197505">拨打</a></span>
+                    <span><a href="tel:15015207377">拨打</a></span>
                 </div>
             </div>
             <div class="contact_us row">
                 <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
                 <div class="contact_title">客服微信:</div>
-                <div class="contact_detail start-center">13855197505</div>
+                <div class="contact_detail start-center">15015207377</div>
                 <div class="btn center">
-                   <!-- <span><a href="tel:13855197505">拨打</a></span> -->
-                     <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('13855197505')">复制</span>
+                   <!-- <span><a href="tel:15015207377">拨打</a></span> -->
+                     <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('15015207377')">复制</span>
                 </div>
             </div>
         </div>
