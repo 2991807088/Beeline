@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:15
- * @LastEditTime : 2019-12-31 14:20:34
+ * @LastEditTime : 2019-12-31 15:47:47
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -191,12 +191,12 @@
                             </svg>
                             微信支付
                         </div>
-                        <div class="paytypes center" :class="{'alipay': paytype == 'alipay'}" @click="handlePayType('alipay')">
+                        <!-- <div class="paytypes center" :class="{'alipay': paytype == 'alipay'}" @click="handlePayType('alipay')">
                             <svg class="icon payicon" aria-hidden="true">
                                 <use xlink:href="#icon-alipay"></use>
                             </svg>
                             支付宝支付
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="per-title row">
@@ -314,20 +314,21 @@ export default {
             };
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
+                    console.log('上级推荐人',this.$store.state.wechat.recommendedcode)
                     this.orderid = res.data.data.orderid;
-                    // 请求上级推荐人
-                    let url = '/customer/getCustomerUP';
-                    let params = {
-                        recommendedcode: this.$store.state.wechat.recommendedcode
-                    };
-                    axiosPost(url,params).then(res =>{
-                        if(res.data.success){
-                            this.recomname = res.data.data.nickname;
-                            this.recomcode = res.data.data.promotioncode;
-                            this.recomheadimg = res.data.data.photo;
-                        }
-                    }).catch(res =>{
-                    })
+                    // // 请求上级推荐人
+                    // let url = '/customer/getCustomerUP';
+                    // let params = {
+                    //     recommendedcode: this.$store.state.wechat.recommendedcode
+                    // };
+                    // axiosPost(url,params).then(res =>{
+                    //     if(res.data.success){
+                    //         this.recomname = res.data.data.nickname;
+                    //         this.recomcode = res.data.data.promotioncode;
+                    //         this.recomheadimg = res.data.data.photo;
+                    //     }
+                    // }).catch(res =>{
+                    // })
                 }
             }).catch(res =>{
             })
@@ -437,7 +438,7 @@ export default {
         // 查询上级
         handleCustomerUP(){
             let params = {
-                recommendedcode: storage.get('code')
+                recommendedcode: this.$store.state.wechat.recommendedcode
             };
             axiosPost('/customer/getCustomerUP',params).then(res =>{
                 this.recomname = res.data.data.nickname;

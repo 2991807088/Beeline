@@ -15,11 +15,6 @@ export default {
       active:0,
       code: '',
       openid: '',
-      access_token: '',
-      refresh_token: '',
-      // newaccess_token: '',
-      nickname: '',
-      photo: '',
     }
   },
   methods:{
@@ -38,13 +33,11 @@ export default {
     handleAccessToken(){
         let url = 'http://fx.91dianji.com.cn/wxApi/sns/oauth2/access_token?appid=wx6ebccdf81027eb46&secret=a63831156ef69f98caf3ed3bbcca5eb6&code='+this.code+'&grant_type=authorization_code';
         axiosGet(url).then(res =>{
-          console.log('获取的啥',res.data)
             storage.set('access_token',res.data.access_token); 
+            storage.set('openid',res.data.openid);
             // 继续请求昵称头像等信息
             let url = 'http://fx.91dianji.com.cn/wxApi/sns/userinfo?access_token='+ storage.get('access_token') +'&openid='+ res.data.openid +'&lang=zh_CN';
             axiosGet(url).then(res =>{
-                this.nickname = res.data.nickname;
-                this.photo = res.data.headimgurl;
                 this.$store.commit('openid',res.data.openid);
                 this.$store.commit('nickname',res.data.nickname);
                 this.$store.commit('headimg',res.data.headimgurl);
@@ -52,7 +45,6 @@ export default {
                 let params = {
                   openid: res.data.openid
                 };
-                // let url = '/customer/getOpenidIsExist'; //开发环境
                 let url = '/customer/getOpenidIsExist' // 生产环境
                 axiosPost(url,params).then(res =>{
                   if(res.data.data == '0'){
@@ -67,78 +59,18 @@ export default {
                     axiosPost(url,params)
                     .then(res =>{
                       if(res.data.success){
+                        storage.set('openid',this.$store.state.wechat.openid)
                         // 登录
-                        let url = '/customer/loginByWechat';
-                        let params = {
-                            openid: this.$store.state.wechat.openid
-                        };
-                        axiosPost(url,params)
-                        .then(res =>{
-                            if(res.data.success){
-                                storage.set('cid',res.data.data.id);
-                                this.$store.commit('iscertification',res.data.data.iscertification);
-                                this.$store.commit('level',res.data.data.level);
-                                this.$store.commit('promotioncode',res.data.data.promotioncode);
-                                this.$store.commit('mobile',res.data.data.mobile);
-                                this.$store.commit('vip',res.data.data.vip);
-                                this.$store.commit('recommendedcode',res.data.data.recommendedcode);
-                                this.$store.commit('city',res.data.data.city);
-                                this.$store.commit('ispartner',res.data.data.ispartner);
-                                this.$toast('登陆成功');
-                                this.$router.push('/home');
-                                let url = '/customer/getCustomer';
-                                let params = {
-                                    openid:this.$store.state.wechat.openid,
-                                };
-                                axiosPost(url,params)
-                                .then(res =>{
-                                    if(res.data.success){
-                                      this.iscertification = res.data.data.iscertification;
-                                    }
-                                })
-                                .catch(res =>{
-                                })
-                              }else{
-                                this.$toast('登陆失败');
-                              }
-                        })
-                        .catch(res =>{
-                            this.$toast('登陆失败');
-                        })
-                        }else{
-                          this.$toast('注册失败了');
-                        }
+                        this.handleLoginByWechat();
+                      }else{
+                        this.$toast('注册失败了');
+                      }
                     })
                     .catch(res =>{
                     })
                   }else{
                     // 已注册
-                    // 登录
-                    let params = {
-                        openid: this.$store.state.wechat.openid
-                    }
-                    let url = '/customer/loginByWechat';
-                    axiosPost(url,params).then(res =>{
-                        if(res.data.success){
-                          storage.set('cid',res.data.data.id);
-                          storage.set('openid',res.data.data.openid);
-                          this.$store.commit('iscertification',res.data.data.iscertification);
-                          this.$store.commit('level',res.data.data.level);
-                          this.$store.commit('promotioncode',res.data.data.promotioncode);
-                          this.$store.commit('mobile',res.data.data.mobile);
-                          this.$store.commit('vip',res.data.data.vip);
-                          this.$store.commit('recommendedcode',res.data.data.recommendedcode);
-                          this.$store.commit('amount',res.data.data.amount);
-                          this.$store.commit('city',res.data.data.city);
-                          this.$store.commit('ispartner',res.data.data.ispartner);
-                          this.$router.push('/home');
-                          this.$toast('登陆成功');
-                        }else{
-                          this.$toast('登陆失败');
-                        }
-                    }).catch(res =>{
-                        this.$toast('登陆失败');
-                    })
+                    this.handleLoginByWechat();
                   }
                   
                 }).catch(res =>{
@@ -148,73 +80,64 @@ export default {
         }).catch(res =>{
         })
     },
+    // 微信登录
+    handleLoginByWechat(){
+      let params = {
+        openid: this.$store.state.wechat.openid
+      }
+      let url = '/customer/loginByWechat';
+      axiosPost(url,params).then(res =>{
+          if(res.data.success){
+            storage.set('cid',res.data.data.id);
+            storage.set('openid',res.data.data.openid);
+            this.$store.commit('iscertification',res.data.data.iscertification);
+            this.$store.commit('level',res.data.data.level);
+            this.$store.commit('promotioncode',res.data.data.promotioncode);
+            this.$store.commit('mobile',res.data.data.mobile);
+            this.$store.commit('vip',res.data.data.vip);
+            this.$store.commit('recommendedcode',res.data.data.recommendedcode);
+            this.$store.commit('amount',res.data.data.amount);
+            this.$store.commit('headimg',res.data.data.photo);
+            this.$store.commit('nickname',res.data.data.nickname);
+            this.$store.commit('openid',res.data.data.openid);
+            this.$store.commit('city',res.data.data.city);
+            this.$store.commit('ispartner',res.data.data.ispartner);
+            this.$router.push('/home');
+            this.$toast('登陆成功');
+          }else{
+            this.$toast('登陆失败');
+          }
+      }).catch(res =>{
+          this.$toast('登陆失败');
+      })
+    }
   },
   created(){
-    // var ua = navigator.userAgent.toLowerCase();
-    // if(ua.match(/MicroMessenger/i)=="micromessenger") {
-        // 微信浏览器
-
-
-
-
-        // 首先判断是否存储了openid
-        if(storage.get('openid') != '' && storage.get('openid') !== null){
-          // 已经注册过，可直接登录，无需再次授权
-          let params = {
-            openid: storage.get('openid')
-          }
-          let url = '/customer/loginByWechat';
-          axiosPost(url,params).then(res =>{
-              if(res.data.success){
-                storage.set('cid',res.data.data.id);
-                storage.set('openid',res.data.data.openid);
-                this.$store.commit('iscertification',res.data.data.iscertification);
-                this.$store.commit('level',res.data.data.level);
-                this.$store.commit('promotioncode',res.data.data.promotioncode);
-                this.$store.commit('mobile',res.data.data.mobile);
-                this.$store.commit('vip',res.data.data.vip);
-                this.$store.commit('recommendedcode',res.data.data.recommendedcode);
-                this.$store.commit('amount',res.data.data.amount);
-                this.$store.commit('headimg',res.data.data.photo);
-                this.$store.commit('nickname',res.data.data.nickname);
-                this.$store.commit('openid',res.data.data.openid);
-                this.$store.commit('city',res.data.data.city);
-                this.$store.commit('ispartner',res.data.data.ispartner);
-                this.$router.push('/home');
-                this.$toast('登陆成功');
-              }else{
-                this.$toast('登陆失败');
-              }
-          }).catch(res =>{
-              this.$toast('登陆失败');
-          })
-        }else{
-          // 拿不到openid，需要授权登录
-          if(this.$router.currentRoute.query.promotioncode != '' && typeof(this.$router.currentRoute.query.promotioncode) != 'undefined'){
-            storage.set('recommendedcode',this.$router.currentRoute.query.promotioncode);
-          }
-          // 判断是否是微信浏览器
-          var ua = navigator.userAgent.toLowerCase();
-          if(ua.match(/MicroMessenger/i)=="micromessenger") {
-            // 微信浏览器
-            if(this.GetUrlParam('code') === null){
-            // 未授权
-              this.handleOauth();
-            }else{
-            // 已授权
-              this.code = this.GetUrlParam('code');
-              this.handleAccessToken();
-            }
-          }else{
-            // 非微信浏览器
-          }  
+      // 首先判断是否存储了openid
+      if(storage.get('openid') != '' && storage.get('openid') !== null){
+        // 已经注册过，可直接登录，无需再次授权
+        this.handleLoginByWechat();
+      }else{
+        // 拿不到openid，需要授权登录
+        if(this.$router.currentRoute.query.promotioncode != '' && typeof(this.$router.currentRoute.query.promotioncode) != 'undefined'){
+          storage.set('recommendedcode',this.$router.currentRoute.query.promotioncode);
         }
-
-    // }else{
-    //   // 非微信浏览器
-    //   window.location.href = 'http://fx.91dianji.com.cn/openWechat.html';
-    // }  
-    
+        // 判断是否是微信浏览器
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.match(/MicroMessenger/i)=="micromessenger") {
+          // 微信浏览器
+          if(this.GetUrlParam('code') === null){
+          // 未授权
+            this.handleOauth();
+          }else{
+          // 已授权
+            this.code = this.GetUrlParam('code');
+            this.handleAccessToken();
+          }
+        }else{
+          // 非微信浏览器
+        }  
+      }
   },
   mounted(){
     // js-sdk的access_token 
@@ -237,7 +160,6 @@ export default {
           timestamp: timestamp
         };
         axiosPost(posturl,params).then(res =>{
-          let that = this;
           wx.config({
               debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
               appId: 'wx6ebccdf81027eb46', // 必填，公众号的唯一标识
@@ -245,24 +167,31 @@ export default {
               nonceStr: radom, // 必填，生成签名的随机串
               signature: res.data.data.signature,// 必填，签名
               jsApiList: [
-                'chooseImage',
-                'uploadImage',
-                'getLocation',
                 'updateAppMessageShareData',
-                'onMenuShareTimeline',
-                'onMenuShareAppMessage',
+                'updateTimelineShareData',
                 'chooseWXPay'
               ] // 必填，需要使用的JS接口列表
           });
           wx.ready(function(){
-              wx.onMenuShareAppMessage({ 
-                  title: '综合金融服务推广平台，点滴成就未来', // 分享标题
-                  desc: '让每个人都能找到人生的意义', // 分享描述
-                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + that.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+            // 分享给朋友
+              wx.updateAppMessageShareData({ 
+                  title: '综合金融服务推广平台', // 分享标题
+                  desc: '点滴成就未来', // 分享描述
+                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                   imgUrl: 'http://fx.91dianji.com.cn/share.png', // 分享图标
                   success: function (res) {
                   }
-              })
+              });
+              // 分享到朋友圈
+              wx.updateTimelineShareData({ 
+                  title: '综合金融服务推广平台', // 分享标题
+                  desc: '点滴成就未来', // 分享描述
+                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                  imgUrl: 'http://fx.91dianji.com.cn/share.png', // 分享图标
+                  success: function (res) {
+                    
+                  }
+              });
           });
           wx.error(function(res){
     

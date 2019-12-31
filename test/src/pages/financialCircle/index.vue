@@ -9,8 +9,8 @@
             <div class="Analysis end-center" @click="handleExpect">数据分析&nbsp; <van-icon size="20px" name="http://fx.91dianji.com.cn/fengxing_jiantou.png"/></div>
             <router-link tag="div" to="/radar" class="circle center">
                 <img src="http://fx.91dianji.com.cn/AI@2x.png" alt="">
-                <img src="http://fx.91dianji.com.cn/leida@2x.png" class="logo" alt="">
-                <p>蜂行雷达</p>
+                <img src="http://fx.91dianji.com.cn/share.png" class="logo" alt="">
+                <p>蜜蜂雷达</p>
             </router-link>
             <div class="btn">
                 <div class="column" @click="handleRouter('1')">

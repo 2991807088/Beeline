@@ -202,7 +202,7 @@
                     <div class="avatar">
                          <span><van-icon :name="headimg" /></span>
                          <p>{{nickname}}</p>
-                    </div>
+                    </div>  
                     <ul>
                         <router-link tag="li" to="/home/systemNews">系统消息</router-link>
                          <li @click="handleAuth">实名认证</li>
@@ -210,6 +210,7 @@
                         <router-link to="/home/aboutUs" tag="li">联系客服</router-link>
                         <router-link to="/home/aboutUs" tag="li">关于我们</router-link>
                         <router-link to="/home/accountManagement" tag="li">账户管理</router-link>
+                        <li @click="handleClear">清除缓存</li>
                     </ul>
                    
                       <div  @click="signOut" class="sign-out">
@@ -498,7 +499,11 @@ export default {
             }else{
                 this.$router.push(obj);
             }
-           
+        },
+        handleClear(){
+            storage.remove('recommendedcode');
+            storage.remove('openid');
+            this.$toast('清除成功');
         }
     },
     created(){
@@ -509,7 +514,7 @@ export default {
         // H5不需要自动登录
         //  this.automatic() //自动登录
         //  this.getUpdate() //获取版本
-    }  ,
+    },
     mounted () {
         // 更新
         // this.update();
