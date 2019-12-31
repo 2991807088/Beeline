@@ -90,6 +90,7 @@ export default {
           if(res.data.success){
             storage.set('cid',res.data.data.id);
             storage.set('openid',res.data.data.openid);
+            storage.set('promotioncode',res.data.data.promotioncode)
             this.$store.commit('iscertification',res.data.data.iscertification);
             this.$store.commit('level',res.data.data.level);
             this.$store.commit('promotioncode',res.data.data.promotioncode);
@@ -177,7 +178,7 @@ export default {
               wx.updateAppMessageShareData({ 
                   title: '综合金融服务推广平台', // 分享标题
                   desc: '点滴成就未来', // 分享描述
-                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + storage.get('promotioncode'), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                   imgUrl: 'http://fx.91dianji.com.cn/share.png', // 分享图标
                   success: function (res) {
                   }
@@ -186,7 +187,7 @@ export default {
               wx.updateTimelineShareData({ 
                   title: '综合金融服务推广平台', // 分享标题
                   desc: '点滴成就未来', // 分享描述
-                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + this.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+                  link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + storage.get('promotioncode'), // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
                   imgUrl: 'http://fx.91dianji.com.cn/share.png', // 分享图标
                   success: function (res) {
                     
