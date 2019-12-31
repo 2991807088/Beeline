@@ -16,35 +16,40 @@
                         内容 {{ index }}
                     </van-tab>
                 </van-tabs> -->
-                <van-tabs  @click="onClick"  v-model="active"  title-active-color="#ffa800" color="#ffa800" >
+                <van-tabs  @click="onClick"  v-model="active"  title-active-color="#EBB541" color="#EBB541" >
                     <van-tab title="全部">
                          <div class="waiting">
                             <ul>
                                 <li @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in list" :key="index">
                                     <div class="top">
-                                        <p>{{item.cardNo}}</p>
-                                    
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                        <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                            <p>{{item.bankNick}}</p>
+                                          
                                              <div   class="sign-out">
                                                 <van-button v-show="item.state=='0' || item.state=='3'" @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button>
+                                                <!-- <van-button v-show="item.state=='1' || item.state=='2'" @click.stop="stopPlan(item.id)" type="disabled" round>停止计划</van-button> -->
+
+
                                             </div> 
-                                            <p v-show="item.state=='4'">{{item.remark}}</p>
+                                            <!-- <p v-show="item.state=='4'"> <span>{{item.remark}}</span></p> -->
                                         </div>
                                         <div class="m-right">
-                                            <p>执行状态</p>
                                             <!-- <p>{{item.state}}</p> -->
-                                            <p v-if="item.state=='0'">待执行</p>
-                                            <p v-if="item.state=='1'">已成功</p>
-                                            <p v-if="item.state=='2'">已取消</p>
-                                            <p v-if="item.state=='3'">进行中</p>
-                                            <p v-if="item.state=='4'">失败</p>
-                                           
+                                            <!-- <p v-if="item.state=='0'">待执行</p>
+                                            <p v-else-if="item.state=='1'">已成功</p>
+                                            <p v-else-if="item.state=='2'">已取消</p>
+                                            <p v-else-if="item.state=='3'">进行中</p> -->
+                                            <p v-if="item.state=='0'"><van-icon size="110px" name="http://pay.91dianji.com.cn/waiting.png"/></p>
+                                             <p v-else-if="item.state=='1'"><van-icon size="110px" name="http://pay.91dianji.com.cn/chenggong.png"/></p>
+                                            <p v-else-if="item.state=='2'"><van-icon size="110px" name="http://pay.91dianji.com.cn/quxiao.png"/></p>
+                                            <p v-else-if="item.state=='3'"><van-icon size="110px" name="http://pay.91dianji.com.cn/zhixing.png"/></p>
+                                            <p v-show="item.state=='4' || item.state=='5' "><span>{{item.remark}}</span>&nbsp; <span v-if="item.state=='4'"><van-icon size="110px" name="http://pay.91dianji.com.cn/shibai.png"/></span></p>    
+
                                         </div>
                                     </div>
                                     <div class="bottom">
@@ -72,19 +77,19 @@
                                 <li v-show="item.state=='0'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                          <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                            <p>{{item.bankNick}}</p>
+                                             <van-button @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button>
                                             <!-- <p>等待执行：2019/5/17:14:33:37</p> -->
                                         </div>
                                         <div class="m-right">
-                                            <p>执行状态</p>
-                                            <p>等待执行</p>
+                                            <p><van-icon size="100px" name="http://pay.91dianji.com.cn/waiting.png"/></p>
                                             
-                                            <van-button @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button>
+                                            <!-- <van-button @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button> -->
                                             
                                         </div>
                                     </div>
@@ -113,17 +118,18 @@
                                 <li v-show="item.state=='1'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                         <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                            <p>{{item.bankNick}}</p>
+                                           
                                             <!-- <p>等待执行：2019/5/17:14:33:37</p> -->
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
-                                            <p>还款成功</p>
+                                            <p><van-icon size="100px" name="http://pay.91dianji.com.cn/chenggong.png"/></p>
                                             <!-- <van-button @click.self="stopPlan(item.id)" type="default" round>停止计划</van-button> -->
                                             
                                         </div>
@@ -153,17 +159,18 @@
                                 <li v-show="item.state=='2'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                         <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                             <p>{{item.bankNick}}</p>
+                                            
                                             <!-- <p>已手动取消</p> -->
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
-                                            <p>已取消</p>
+                                            <p><van-icon size="100px" name="http://pay.91dianji.com.cn/quxiao.png"/></p>
                                             <!-- <van-button @click.self="stopPlan(item.id)" type="default" round>停止计划</van-button> -->
                                             
                                         </div>
@@ -194,17 +201,18 @@
                                 <li v-show="item.state=='3'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                           <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                            <p>{{item.bankNick}}</p>
+                                           
                                             <!-- <p>进行中</p> -->
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
-                                            <p>进行中</p>
+                                            <p><van-icon size="100px" name="http://pay.91dianji.com.cn/zhixing.png"/></p>
                                             <van-button @click.stop="stopPlan(item.id)" type="default" round>停止计划</van-button>
                                             
                                         </div>
@@ -234,17 +242,18 @@
                                 <li v-show="item.state=='4'" @click="goPlanDetail(item.id,item.bankNick,item.cardNo,item.payerName)" v-for="(item,index) in planList" :key="index">
                                     <div class="top">
                                         <!-- <p>{{item.cardNo.substr(item.cardNo.length-4)}}</p> -->
+                                           <p>{{item.bankNick}}</p>
                                         <p>{{item.payerName}}</p>
                                         <p>本期账单：￥<span>{{item.realamount}}</span></p>
                                     </div>
                                     <div class="middle">
                                         <div class="m-left">
-                                            <p>{{item.bankNick}}</p>
-                                            <p>{{item.remark}}</p>
+                                          
+                                            <!-- <p>失败</p> -->
                                         </div>
                                         <div class="m-right">
                                             <p>执行状态</p>
-                                            <p>失败</p>
+                                            <p><van-icon size="100px" name="http://pay.91dianji.com.cn/shibai.png"/></p>
                                             <!-- <van-button @click.self="stopPlan(item.id)" type="default" round>停止计划</van-button> -->
                                             
                                         </div>
@@ -291,7 +300,7 @@ export default {
     },
     methods:{
         goBack(){
-            this.$router.go(-1)
+            this.$router.push("/home/creditHousekeeper/aisleHousekeeper")
         },
         goPlanDetail(id,bankName,name,nick){
             this.$router.push({
@@ -342,12 +351,14 @@ export default {
                     pageSize:"100",
                     state:index-1
                 }
+                if(data.state=='4'){
+                    data.state='5'
+                }
                 if(data.state=="-1"){
                     this.getMainPlan()
                 } else{
                      axiosPost("/creditCard/getMainPlan",data)
                  .then(res=>{
-                // console.log(res)
                 if(!res.data.success){
                     this.$toast({
                         message:res.data.message
@@ -356,7 +367,6 @@ export default {
                      let arr= res.data.data.data
                      let arrXun=[]
                      arr.forEach((item,i) => {
-                        //  console.log(item.state)
                          item.bankNick=bankCardAttribution(item.cardNo).bankName
                          arrXun.push(item)
                      });
@@ -374,17 +384,14 @@ export default {
         },
         //获取主还款
         getMainPlan(){
-            //  console.log(this.bandId)
             this.i="1"
-            let data={
-                bindId:this.bindId,
+            let data ={
                 page:"1",
                 pageSize:"100",
                 state:""
             }
             axiosPost("/creditCard/getMainPlan",data)
             .then(res=>{
-                // console.log(res)
                 if(!res.data.success){
                     this.$toast({
                         message:res.data.message
@@ -392,10 +399,8 @@ export default {
                 } else {
                      let arr= res.data.data.data
                      let arrXun=[]
-                     arr.forEach((item,i) => {
-                          if(item.bankname===undefined || item.bankname===null || item.bankname===""){
-                              item.bankname=bankCardAttribution(item.cardNo).bankName
-                         }
+                     arr.forEach((item,index) => {
+                         item.bankNick=bankCardAttribution(item.cardNo).bankName
                          arrXun.push(item)
                      });
                      this.list=arrXun
@@ -411,7 +416,7 @@ export default {
         // this.getMainPlan()
     },
     mounted () {
-         this.getMainPlan()
+        this.getMainPlan()
     }
 
 }
@@ -420,7 +425,7 @@ export default {
 <style lang="less">
    #punch {
        >header {
-          background: #ffa800;
+          background-color: #EBB541;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -443,112 +448,123 @@ export default {
        >.container {
            padding-top:96px;
            padding-bottom: 50px;
+           overflow-y: scroll;
             .van-dialog .van-button {
                 /* border: 0; */
-                border: 1px solid #ffa800;
+                border: 1px solid #4b66af;
             }
            >.ranking {
                .waiting {
                    >ul{
                        padding:15px;
                        >li {
-                        color:#fff;
-                        border-radius: 10px;
-                        box-sizing: border-box;
+                        //   border:2px solid #ccc;
+                        //   background-color:#4AA3E2;
+                          color:#fff;
+                          border-radius: 10px;
+                          box-sizing: border-box;
                         margin-bottom: 15px;
-                         &:nth-of-type(6n+1){
-                        background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
-                        }
-                            &:nth-of-type(6n+2){
-                                background-image: linear-gradient(90deg, #B7BAE7 0%, #455788 100%);
-                        }
-                            &:nth-of-type(6n+3){
-                                background-image: linear-gradient(90deg, #B3D3BB 0%, #51A953 100%);
-                        }
-                            &:nth-of-type(6n+4){
-                                background-image: linear-gradient(90deg, #DFBBD3 0%, #B85678 100%);
-                        }
-                            &:nth-of-type(6n+5){
-                                background-image: linear-gradient(90deg, #E8CFC0 0%, #A8603C 100%);
-                        }
-                            &:nth-of-type(6n+6){
-                                background-image: linear-gradient(90deg, #D8D4AD 0%, #E69725 100%);
-                        }
-                        // background-image: linear-gradient(90deg, #f7cf6c 0%, #ffa800 100%);
                         background-repeat: no-repeat;
-                        height: 350px;
+                        height: 410px;
                         background-size:100%;
-                        padding:10px;
+                        // padding:10px;
+                         &:nth-of-type(10n+1){
+                         background-image: url("http://pay.91dianji.com.cn/bgc5.jpg")
+                        }
+                        &:nth-of-type(10n+2){
+                            background-image: url("http://pay.91dianji.com.cn/bgc6.jpg")
+                        }
+                        &:nth-of-type(10n+3){
+                            background-image: url("http://pay.91dianji.com.cn/bgc3.jpg")
+                        }
+                        &:nth-of-type(10n+4){
+                            background-image: url("http://pay.91dianji.com.cn/bgc7.jpg")
+                        }
+                        &:nth-of-type(10n+5){
+                            background-image: url("http://pay.91dianji.com.cn/bgc8.jpg")
+                        }
+                        &:nth-of-type(10n+6){
+                            background-image: url("http://pay.91dianji.com.cn/bgc9.jpg")
+                        }
+                        &:nth-of-type(10n+7){
+                            background-image: url("http://pay.91dianji.com.cn/bgc2.jpg")
+                        }
+                        &:nth-of-type(10n+8){
+                            background-image: url("http://pay.91dianji.com.cn/bgc1.jpg")
+                        }
+                        &:nth-of-type(10n+9){
+                            background-image: url("http://pay.91dianji.com.cn/bgc4.jpg")
+                        }
+                        &:nth-of-type(10n+10){
+                            background-image: url("http://pay.91dianji.com.cn/bgc10.jpg")
+                        }
+
                           >.top {
-                            //   background-color: rgba(0, 0, 0, .5);
                              padding-top:13px;
                              height:20px !important;
-                              padding:20px 5px 20px 10px;
+                              padding:20px 10px;
                               display: flex;
-                              justify-content: space-around;
-                              margin:0px !important;
+                              justify-content: space-between;
+                              background-color: rgba(0, 0, 0, .2);
+                              margin-top:10px;
                           }
                           >.middle{
                                display: flex;
                               justify-content: space-around;
-                              margin-top:20px;
+                              align-items: center;
                               >.m-left {
                                   >p {
                                       &:nth-of-type(1){
                                           margin-bottom: 15px;
                                       }
                                       &:nth-of-type(2){
-                                          padding-top:15px;
+                                          background-color: rgba(0, 0, 0, .2);
+                                          padding:15px;
+                                          border-radius:20px;
                                       }
                                   }
                               }
                               >.m-right{
                                   >p {
                                       &:nth-of-type(1){
-                                          padding-bottom: 10px;
-                                      }
-                                      &:nth-of-type(2){
-                                          margin:10px 0px;
+                                        margin-left:50px;
                                       }
                                   }
                                   .sign-out {
-                                       margin-top:20px;
-                                       .van-button--default {
-                                           background-color: #fff;
-                                       }
+                                    //    margin-top:50px;
                                         .van-dialog,
                                         .van-dialog__message,
                                         .van-button {
                                             font-size: 30px;
                                         }
+                                        .van-button--round{
+                                            width:100px !important;
+                                            height:40px !important;
+                                        }
+
+
                                          .van-button .van-button--default .van-button--large .van-dialog__confirm .van-hairline--left{
                                             height:70px;
                                         }
                                          .van-dialog .van-button{
                                             height: 80px;
                                         }
-                                         .van-button--default{
-                                            background-color: #fff;
-                                        }
-
                                   }
 
                                   
                               }
                           }
                           >.bottom {
-                              margin-top:30px;
+                              margin-top:-20px;
                               >ul{
                                   display: flex;
-                                  padding:20px 5px;
-                                //   background-color: rgba(0, 0, 0, .1);
+                                  padding:10px 5px;
                                   >li {
-                                      padding-top:20px;
                                       width:33%;
                                       text-align: center;
                                       >p {
                                           &:nth-of-type(1){
-                                              padding-bottom: 10px;
+                                              padding-bottom: 30px;
                                           }
                                       }
                                   }
@@ -563,10 +579,6 @@ export default {
              }
 
            }
-
-
-
-          
        }
    }
 </style>

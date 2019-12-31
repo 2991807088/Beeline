@@ -112,10 +112,10 @@
             </div>
              <div class="statistics">
                  <ul>
-                    <router-link tag="li" :to="{path:'/home/news',query:{title:'收款示例图',url:'http://wy.91dianji.com.cn/shoukuantu.jpg'}}">                     
+                    <!-- <router-link tag="li" :to="{path:'/home/news',query:{title:'收款示例图',url:'http://wy.91dianji.com.cn/shoukuantu.jpg'}}">                     
                          <span><van-icon name="column" size="20px" color="#EBB541" /></span>
                          <p><span>操作流程说明</span><span><van-icon name="arrow" /></span></p>   
-                     </router-link>
+                     </router-link> -->
                      <!-- <li>
                          <span><van-icon name="underway" /></span>
                          <p><span>实名认证</span> <span><van-icon name="arrow" /></span> </p>                                       
@@ -124,10 +124,10 @@
                          <span><van-icon name="underway" /></span>
                          <p><span>我的分润</span> <span><van-icon name="arrow" /></span> </p>                                       
                      </li> -->
-                      <li @click="goRecords">
+                      <!-- <li @click="goRecords">
                          <span><van-icon name="underway"  size="20px" color="#EBB541"  /></span>
                          <p><span>在线收款明细</span> <span><van-icon name="arrow" /></span> </p>                                       
-                     </li>
+                     </li> -->
                       <!-- <li>
                          <span><van-icon name="underway" /></span>
                          <p><span>收款统计</span> <span><van-icon name="arrow" /></span> </p>                                       

@@ -2,7 +2,8 @@
     <div id="personal_center">
         <div class="header">
             <div class="top row">
-                <router-link tag="div" to="/register" class="setting start-center"><van-icon name="http://fx.91dianji.com.cn/fengxing_set_top.png" size="22px"/></router-link>
+                <!-- <router-link tag="div" to="/register" class="setting start-center"><van-icon name="http://fx.91dianji.com.cn/fengxing_set_top.png" size="22px"/></router-link> -->
+                <p class="setting start-center"></p>
                 <div class="title center">我的</div>
                 <router-link tag="div" to="/home/aboutUs" class="services end-center" @click="handleExpect"><van-icon name="http://fx.91dianji.com.cn/fengxing_services.png" size="22px"/></router-link>
             </div>
