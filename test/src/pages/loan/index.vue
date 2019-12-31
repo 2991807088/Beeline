@@ -20,7 +20,7 @@
         </div>
         <div class="news row">
             <div class="news-title column">
-                <div class="center-end">蜂行卡包</div>
+                <div class="center-end">金蜜蜂</div>
                 <div class="center-start">资讯</div>
             </div>
             <div class="news-icon center"><van-icon name="volume" size="1.6em" color="#9A9A9A" /></div>

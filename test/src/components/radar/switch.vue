@@ -39,13 +39,11 @@ export default {
     },
     methods:{
         changeChecked(obj){
-            // console.log('传递参数',obj);
             this.$emit('changeChecked',obj);
         },
         clickDay(date) {
             (this.date).push(date);
             this.date = (this.date).slice(-2);
-            console.log('所选择的时间',this.date);
             if((this.watch)%2 != '0'){
                 setTimeout(() =>{
                     this.showDate = false;
@@ -66,10 +64,10 @@ export default {
             }
         },
         changeDate(data) {
-            console.log(data); //左右点击切换月份
+            
         },
         clickToday(data) {
-            console.log(data); //跳到了本月
+           
         },
         handleCheckDate(){
             this.showDate = true;
@@ -77,7 +75,7 @@ export default {
     },
     watch: {
         watch(newVal,oldVal){
-            // console.log(newVal,oldVal);
+            
         }
     }
 }

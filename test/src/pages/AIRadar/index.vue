@@ -38,8 +38,8 @@
                         <span v-if="item.type == '2'">在线收款</span>
                         <span v-if="item.type == '3'">智能管家</span>
                         <span v-if="item.type == '4'">我要贷款</span>
-                        <span v-if="item.type == '5'">黄金会员</span>
-                        <span v-if="item.type == '6'">钻石会员</span>
+                        <span v-if="item.type == '5'">铜蜂蜜</span>
+                        <span v-if="item.type == '6'">银蜜蜂</span>
                         <span v-if="item.type == '7'">合伙人</span>
                         <span v-if="item.type == '8'">OEM</span>
                         <span v-if="item.type == '9'">升级</span>
@@ -53,9 +53,9 @@
                 <div class="middle">
                     <div>访问次数&nbsp;({{item.count}})</div>
                     <div>
-                        <div class="center" v-if="item.level == '0'">免费粉丝</div>
-                        <div class="center" v-if="item.level == '1'">黄金会员</div>
-                        <div class="center" v-if="item.level == '2'">钻石会员</div>
+                        <div class="center" v-if="item.level == '0'">免费花粉</div>
+                        <div class="center" v-if="item.level == '1'">铜蜂蜜</div>
+                        <div class="center" v-if="item.level == '2'">银蜜蜂</div>
                     </div>
                 </div>
                 <div class="bottom">
@@ -130,7 +130,6 @@ export default {
         },
         // 更换选择
         handleChangeChecked(obj){
-            console.log('更换选择',obj);
             var other = this.reverse(obj.id);
             this.options[obj.id].checked = true;
             this.options[other].checked = false;
@@ -150,7 +149,6 @@ export default {
         },
         // 查看下级明细
         hanleNextDetail(item){
-            console.log('查看下级明细参数',item);
             this.$router.push({
                 path: '/nextLevel',
                 query: {
@@ -171,27 +169,22 @@ export default {
             let url = '/behavior/getTotalRecord';
             axiosPost(url,params).then(res =>{
                 if(res.data.success){
-                    console.log('统计数据请求成功',res);
                     this.details[0].number = res.data.data.browseCount;
                     this.details[1].number = res.data.data.newRegister;
                     this.details[2].number = res.data.data.clickContact;
                     this.details[3].number = res.data.data.teamCount;
                     this.list = res.data.data.list;
                 }else{
-                    console.log('统计数据请求失败',res);
+                   
                 }
             }).catch(res =>{
-                console.log('统计数据请求失败',res);
+               
             })
         },
         // 选择时间查询
         handleChildChangeTime(item){
-            console.log('时间参数',item);
             var start = (item.startdate).split('/');
             var end = (item.enddate).split('/');
-            
-            console.log('开始时间',this.handleTransferTime(start));
-            console.log('结束时间',this.handleTransferTime(end));
             this.startdate = this.handleTransferTime(start);
             this.enddate = this.handleTransferTime(end);
             this.handleAIRadarTotal();

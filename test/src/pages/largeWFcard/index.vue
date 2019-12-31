@@ -171,6 +171,14 @@ export default {
                  return
             }
 
+              if(this.expired.trim().length!=4){
+                return this.$toast("请输入正确格式的有效期")
+            }
+
+            let date=this.expired
+            let endmonth=date.substr(0,2)
+            let endyear=date.substr(2,2)
+
                 let data={
                     custCardValidDate:this.expired,
                     custCardCvv2:this.cvv2,
@@ -179,7 +187,8 @@ export default {
                     bankCardNo:this.accountNumber,
                     mobileNo:this.tel,
                     startDate:this.fnDate(new Date()),
-                    endDate:'20'+this.info.year+this.info.month+"01",
+                    // endDate:'20'+this.info.year+this.info.month+"01",
+                    endDate:'20'+endyear+endmonth+'01',
                     channel:"2",
                    };
 
@@ -232,7 +241,7 @@ export default {
 <style lang="less">
    #largewfcard{
        >header {
-           background-color: #4965AE;
+           background-color: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -267,7 +276,7 @@ export default {
                line-height: 80px;
            }
            .van-picker-column__item--selected{
-                color:#4B66AF;
+                color:#ffa800;
                 font-weight: bold;
             }
            >.info {
@@ -315,7 +324,7 @@ export default {
                 width: 30vw;
                 height: 100%;
                 >div{
-                    background: #4965AE;
+                    background: #ffa800;
                     color: white;
                     padding: 15px;
                     border-radius: 10px;
@@ -331,7 +340,7 @@ export default {
                    font-size: 28px;
                }
                .van-button--default {
-                   background-color: #4965AE;
+                   background-color: #ffa800;
                }
            }
        }

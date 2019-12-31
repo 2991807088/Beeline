@@ -150,6 +150,33 @@ import largeWFverifyComponent from '@/pages/largeWFcard/verify'  //WF大额短�
 import largeWFxeComponent from '@/pages/largeWFxe'  //WF小额绑卡
 import largeWFxeverifyComponent from '@/pages/largeWFxe/verify'  //WF小额短信验证
 
+const receiveXHComponent = () => import('@/pages/receiveXH')  // 收单小惠通道
+
+const cardCXComponent = () => import('@/pages/receiveXH/cardCX.vue')  // 收单小惠通道储蓄卡管理
+
+const payXHComponent = () => import('@/pages/receiveXH/payXH.vue')  // 收单小惠通道支付 
+
+const signXHComponent = () => import('@/pages/receiveXH/signXH.vue')  // 收单小惠通道签约
+
+
+const largeAmountHCComponent = () => import('@/pages/largeAmountHC')  //汇潮大额 注册商户
+
+const sendmsgHCComponent = () => import('@/pages/largeAmountHC/sendmsgHC.vue')  //汇潮大额 发送短信
+
+const uploadmsgComponent = () => import('@/pages/largeAmountHC/uploadmsg.vue')  //汇潮大额 短信验证
+
+const cancelCard = () =>import('@/pages/aisleHousekeeper/cancelCard')
+
+const smallAmountSCComponent = () => import('@/pages/smallAmountSC')  // sc小额
+
+const smallSCactiveComponent = () => import('@/pages/smallAmountSC/smallSCactive.vue')  // sc小额
+
+const largeAmountSCComponent = () => import('@/pages/largeAmountSC')  //SC大额通道 注册商户 
+
+const sendmsgSCComponent = () => import('@/pages/largeAmountSC/sendmsgSC.vue')  //汇潮大额 发送短信
+
+
+
 export default new Router({
   mode:"hash",
   routes: [
@@ -174,6 +201,9 @@ export default new Router({
     {path:"/home/creditHousekeeper/aisleHousekeeper/repayment",component:repaymentComponent},
     {path:"/home/creditHousekeeper/aisleHousekeeper/makePlan",component:makePlanComponent},
     {path:"/home/creditHousekeeper/aisleHousekeeper/planList",component:planListComponent},
+    {path:"/home/largeAmountHC",component:largeAmountHCComponent},  //汇潮大额 注册商户  
+    {path:"/home/largeAmountHC/sendmsgHC",component:sendmsgHCComponent},  //汇潮大额 发送短信 
+    {path:"/home/largeAmountHC/uploadmsg",component:uploadmsgComponent},  //汇潮大额 短信验证
     {path:"/home/changeCard",component:changeCardComponent},
     {path:"/home/collect/payment/records",component:recordsComponent},
     {path:"/home/creditHousekeeper",component:creditHousekeeperComponent},
@@ -184,6 +214,13 @@ export default new Router({
     {path:"/home/largeCard",component:largeCardComponent},
     {path:"/home/active",component:activeComponent}, // 大额激活
 
+
+    {path:"/home/smallAmountSC",component:smallAmountSCComponent},  //sc小额
+    {path:"/home/smallSCactive",component:smallSCactiveComponent},  //sc小额
+    {path:"/home/largeAmountSC",component:largeAmountSCComponent},  //SC大额通道 注册商户  
+    {path:"/home/largeAmountSC/sendmsgSC",component:sendmsgSCComponent},  //汇潮大额 短信验证
+    {path: '/cancelCard',component: cancelCard},
+
     {path:"/home/largeZY",component:largeZYComponent}, //哲杨发送短信  
     {path:"/home/largeVerificate",component:largeVerificateComponent}, //哲杨短信验证
 
@@ -191,6 +228,11 @@ export default new Router({
     {path:"/home/largeWFcard/verify",component:largeWFverifyComponent}, //WF大额通道验证
     {path:"/home/largeWFxe",component:largeWFxeComponent}, //WF小额通道绑卡
     {path:"/home/largeWFxe/verify",component:largeWFxeverifyComponent}, //WF小额通道绑卡
+
+    {path:"/home/receiveXH",component:receiveXHComponent},  //收单小惠通道  
+    {path:"/home/receiveXH/cardCX",component:cardCXComponent},  //收单小惠通道储蓄卡管理 
+    {path:"/home/receiveXH/payXH",component:payXHComponent},  //收单小惠通道支付
+    {path:"/home/receiveXH/signXH",component:signXHComponent},  //收单小惠通道签约
 
     {path:"/share/inviteFriends/inviteShare",component:inviteShareComponent},
     {path:"/share/poster",component:posterComponent},

@@ -2,8 +2,8 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:14
- * @LastEditTime: 2019-08-15 18:38:13
- * @LastEditors: Please set LastEditors
+ * @LastEditTime : 2019-12-31 14:20:13
+ * @LastEditors  : Please set LastEditors
  -->
 <template>
     <div id="rate_detail">
@@ -18,8 +18,12 @@
                 <div class="center">对应费率</div>
             </div>
             <div class="rows row" v-if="level == '0'">
-                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.55%</div>
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通通道收款费率</div>
+                <div class="end-center">0.60%+3元/笔</div>
+            </div>
+             <div class="rows row" v-if="level == '0'">
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质通道收款费率</div>
+                <div class="end-center">0.70%+3元/笔</div>
             </div>
             <div class="rows row" v-if="level == '0'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
@@ -31,8 +35,12 @@
             </div>
 
             <div class="rows row" v-if="level == '1'">
-                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.50%</div>
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通通道收款费率</div>
+                <div class="end-center">0.55%+2元/笔</div>
+            </div>
+              <div class="rows row" v-if="level == '1'">
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质通道收款费率</div>
+                <div class="end-center">0.65%+2元/笔</div>
             </div>
             <div class="rows row" v-if="level == '1'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
@@ -44,8 +52,12 @@
             </div>
 
             <div class="rows row" v-if="level == '2'">
-                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                <div class="end-center">0.45%</div>
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>普通通道收款费率</div>
+                <div class="end-center">0.50%+2元/笔</div>
+            </div>
+             <div class="rows row" v-if="level == '2'">
+                <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>优质通道收款费率</div>
+                <div class="end-center">0.60%+2元/笔</div>
             </div>
             <div class="rows row" v-if="level == '2'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>

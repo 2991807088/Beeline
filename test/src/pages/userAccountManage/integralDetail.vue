@@ -39,7 +39,7 @@ export default {
     },
     created(){
         this.$store.state.wechat.nickname == "" ? this.nickname = '姓名' : this.nickname = this.$store.state.wechat.nickname;
-        this.$store.state.wechat.level == "0" ? this.level = '免费粉丝' : (this.$store.state.wechat.level == "1" ? this.level = '黄金会员' : this.level = '钻石会员');
+        this.$store.state.wechat.level == "0" ? this.level = '免费花粉' : (this.$store.state.wechat.level == "1" ? this.level = '铜蜂蜜' : this.level = '银蜜蜂');
     }
 }
 </script>

@@ -147,7 +147,7 @@ export default {
 <style lang="less">
    #large-amount{
        >header {
-           background-color: #4965AE;
+           background-color: #ffa800;
            width:100%;
            height: 86px;
            line-height: 86px;
@@ -211,7 +211,7 @@ export default {
                 width: 30vw;
                 height: 100%;
                 >div{
-                    background: #4965AE;
+                    background: #ffa800;
                     color: white;
                     padding: 15px;
                     border-radius: 10px;
@@ -227,7 +227,7 @@ export default {
                    font-size: 28px;
                }
                .van-button--default {
-                   background-color: #4965AE;
+                   background-color: #ffa800;
                }
            }
        }

@@ -3,9 +3,9 @@
         <header class="header-top row">
             <div class="left-icon start-center" @click="goBack"><van-icon color="white" size="20px" name="arrow-left"/></div>
             <div class="top-title center">{{tip}}</div>
-            <div @click="showCover" class="right-icon center">
-                     <!-- <van-icon color="white" size="20px" name="weapp-nav"/> -->
-                </div>
+            <!-- <div @click="showCover" class="right-icon center">
+                     <van-icon color="white" size="20px" name="weapp-nav"/>
+            </div> -->
         </header>
         <div class="poster-canvas center"><canvas id="poster" width="375" height="667"></canvas>  </div>
         <div class="btn ">
@@ -114,7 +114,7 @@ export default {
           that.sharewx.send(
               {
                 type:'web',   
-                content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包",
+                content: "金蜜蜂综合金融服务推广平台，点滴成就未来",title:"金蜜蜂",
                 thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                 //  thumbs:"../../assets/images/slt.jpg",
                  href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode, extra: { scene: "WXSceneTimeline" }}
@@ -129,7 +129,7 @@ export default {
              that.sharewx.send(
                  {   
                      type:'web',
-                     content: "蜂行卡包综合金融服务推广平台，点滴成就未来",title:"蜂行卡包", 
+                     content: "金蜜蜂综合金融服务推广平台，点滴成就未来",title:"金蜜蜂", 
                      thumbs:["http://fx.91dianji.com.cn/share.jpg"],
                     //  thumbs:["../../assets/images/slt.jpg"],
                      href: "http://fx.91dianji.com.cn/#/home?promotioncode="+that.$store.state.wechat.promotioncode,
@@ -154,6 +154,7 @@ export default {
             let ran=0
             if(this.num=='1'){
               ran=  this.getRundom(9,16)
+              console.log(ran,"ran")
             } else if(this.num=='2'){
                 ran=this.getRundom(1,8)
             } else {

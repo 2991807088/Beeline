@@ -93,13 +93,13 @@
                 <div class="per-bold-content"><span class="bold-title">推广素材图：</span>点击（推广素材图）进入详情页面，在此可下载各种视频和图片进行推广</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡推广图：</span>点击（信用卡推广图）进入详情页面，生成信用卡推广图，一件锁粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">数据分析：</span>点击（数据分析）查看雷达数据报告分析</br></div>
-                <!-- <div class="per-bold-content"><span class="bold-title">蜂行卡包视频：</span>在分享页面点击（蜂行卡包视频）进入详情页面，用户可在此分享蜂行卡包视频</br></div>
+                <!-- <div class="per-bold-content"><span class="bold-title">金蜜蜂视频：</span>在分享页面点击（金蜜蜂视频）进入详情页面，用户可在此分享金蜜蜂视频</br></div>
                 <div class="per-bold-content"><span class="bold-title">名片推广：</span>在分享页面点击（名片推广）进入详情页面，分享名片，快速增粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">生成短链接：</span>在分享页面点击（生成短链接）进入详情页面，用户可在此快速生成短链接分享链接锁粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">链接转化二维码：</span>在分享页面点击（链接转化二维码）进入详情页面，用户可再次快速生成二维码分享锁粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">分享链接：</span>在分享页面点击（分享链接）进入详情页面，用户在此生链接分享给客户引流锁粉</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡链接：</span>在分享页面点击（信用卡链接）进入详情页面，在此生成信用卡链接分享带锁粉功能</br></div>
-                <div class="per-bold-content"><span class="bold-title">分享链接：</span>在分享页面点击（分享链接）进入详情页面，在此生成分享蜂行卡包链接</br></div>
+                <div class="per-bold-content"><span class="bold-title">分享链接：</span>在分享页面点击（分享链接）进入详情页面，在此生成分享金蜜蜂链接</br></div>
                 <div class="per-bold-content"><span class="bold-title">推广素材图：</span>在分享页面点击（推广素材图）进入详情页面，在此可下载各种视频和图片进行推广</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡推广图：</span>在分享页面点击（信用卡推广图）进入详情页面，生成信用卡推广图，一件锁粉</br></div>
                 <div class="per-bold-content"><div class="per-bold-content"><span class="bold-title">物资下载：</span>在分享页面点击（物资下载）进入详情页面，用户可在此下载宣传物料制作易拉宝、海报等</br></div></div> -->
@@ -116,7 +116,7 @@
             
             <div class="small-title">
                 1.会员升级</br>
-                目前的个人会员等级分为免费粉丝、黄金会员、钻石会员、用户可在个人中心里选择你想要升级你的会员等级，更高级别等级或者寻求合作请直接电话联系我们。欢迎您的来电。</br>
+                目前的个人会员等级分为免费花粉、铜蜂蜜、银蜜蜂、用户可在个人中心里选择你想要升级你的会员等级，更高级别等级或者寻求合作请直接电话联系我们。欢迎您的来电。</br>
                 2.APP中会员可通过哪些方式购买</br>
                 可通过
                 <!-- 微信支付， -->
@@ -253,7 +253,7 @@
                 <!-- 感谢你愿意使用APP，并将使用中遇到的BUG问题反馈给我们。<br>
                 反馈渠道<br> -->
                 当你遇到的异常情况，保留相关截图，拨打客服电话：400-6169-6092，我们会尽量解决你的问题。<br>   
-                对于文字难以表述的情况，可关注微信公众号〖蜂行卡包〗，提供｛异常截图+手机号+用户昵称｝并说明情况，或者直接电话联系，工作人员会尽快反馈给技术人员处理，谢谢你的支持 
+                对于文字难以表述的情况，可关注微信公众号〖金蜜蜂〗，提供｛异常截图+手机号+用户昵称｝并说明情况，或者直接电话联系，工作人员会尽快反馈给技术人员处理，谢谢你的支持 
                 <br>
                 感谢支持的用户，对于大家提出的建议，我们保持重视。<br>
                 APP在大家的监督和提醒下，一点点优化。再次感谢大家的支持！<br>

@@ -6,14 +6,14 @@
             <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/rep.jpg',title:'用户还款流程'}}">操作流程</router-link>
         </header>
        <div class="container">
-           <h3>蜂行卡包智能还款</h3>
+           <h3>金蜜蜂智能还款</h3>
            <p class="mode">普通，完美2种模式</p>
            <div class="light">
                <ul>
                    <!-- <li>
                        <p ><van-icon name="http://fx.91dianji.com.cn/110.png"/></p>
                        <div>
-                           <p>凡是钻石会员等级，即可操作！</p>
+                           <p>凡是银蜜蜂等级，即可操作！</p>
                            <p>打破部分人群绑卡操作困难痛点，自己后台替他人操作。一帮到底，真正做到一站式扶持，加速团队裂变！</p>
                        </div>
                    </li> -->

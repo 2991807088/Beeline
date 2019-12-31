@@ -45,7 +45,7 @@
         </router-link>
         <!-- <div class="agree row">
             <div class="checkbox"><van-checkbox v-model="checked" shape="square" checked-color="rgb(133, 107, 48)"></van-checkbox></div>
-            <div class="check-title">我已认真阅读<span>《蜂行卡包平台推广规范》</span>,认同平台的经营模式,并且自愿接受协议中的条款</div>
+            <div class="check-title">我已认真阅读<span>《金蜜蜂平台推广规范》</span>,认同平台的经营模式,并且自愿接受协议中的条款</div>
         </div> -->
     </div>
 </template>
@@ -76,7 +76,7 @@ export default {
         this.$store.state.wechat.nickname == "" ? this.nickname = '姓名' : this.nickname = this.$store.state.wechat.nickname;
         this.$store.state.wechat.headimg == '' ? this.headimg = 'http://fx.91dianji.com.cn/avators.png' : this.headimg  = this.$store.state.wechat.headimg;
         this.$store.state.wechat.recommendedcode == "" ? this.recomcode = '11111111' : this.recomcode  = this.$store.state.wechat.recommendedcode; 
-        this.$store.state.wechat.level == "0" ? this.level = '免费粉丝' : (this.$store.state.wechat.level == "1" ? this.level = '黄金会员' : this.level = '钻石会员');
+        this.$store.state.wechat.level == "0" ? this.level = '免费花粉' : (this.$store.state.wechat.level == "1" ? this.level = '铜蜂蜜' : this.level = '银蜜蜂');
         this.amount = this.$route.query.amount;
         this.amountSum = this.$route.query.amountSum;
     }

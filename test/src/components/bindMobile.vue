@@ -113,7 +113,6 @@ export default {
                  this.show = false;
              })
              .catch(res =>{
-                //  console.log('绑定失败',res);
              })
         },
         handleLate(){

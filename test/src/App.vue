@@ -25,7 +25,7 @@ export default {
   methods:{
      // 微信授权
     handleOauth(){
-        location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx13f3fb879b1f54b7&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
+        location.href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6ebccdf81027eb46&redirect_uri=http%3a%2f%2ffx.91dianji.com.cn%2f%23%2fhome&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect"
     },
     // 获取url参数
     GetUrlParam(name) {
@@ -36,8 +36,9 @@ export default {
     },
     // 获取access_token
     handleAccessToken(){
-        let url = 'http://fx.91dianji.com.cn/wxApi/sns/oauth2/access_token?appid=wx13f3fb879b1f54b7&secret=7b2322bd45d2908fc2d2a56a2d4927dd&code='+this.code+'&grant_type=authorization_code';
+        let url = 'http://fx.91dianji.com.cn/wxApi/sns/oauth2/access_token?appid=wx6ebccdf81027eb46&secret=a63831156ef69f98caf3ed3bbcca5eb6&code='+this.code+'&grant_type=authorization_code';
         axiosGet(url).then(res =>{
+          console.log('获取的啥',res.data)
             storage.set('access_token',res.data.access_token); 
             // 继续请求昵称头像等信息
             let url = 'http://fx.91dianji.com.cn/wxApi/sns/userinfo?access_token='+ storage.get('access_token') +'&openid='+ res.data.openid +'&lang=zh_CN';
@@ -84,6 +85,7 @@ export default {
                                 this.$store.commit('city',res.data.data.city);
                                 this.$store.commit('ispartner',res.data.data.ispartner);
                                 this.$toast('登陆成功');
+                                this.$router.push('/home');
                                 let url = '/customer/getCustomer';
                                 let params = {
                                     openid:this.$store.state.wechat.openid,
@@ -216,7 +218,7 @@ export default {
   },
   mounted(){
     // js-sdk的access_token 
-    let url = 'http://fx.91dianji.com.cn/wxApi/cgi-bin/token?grant_type=client_credential&appid=wx13f3fb879b1f54b7&secret=7b2322bd45d2908fc2d2a56a2d4927dd';
+    let url = 'http://fx.91dianji.com.cn/wxApi/cgi-bin/token?grant_type=client_credential&appid=wx6ebccdf81027eb46&secret=a63831156ef69f98caf3ed3bbcca5eb6';
     axiosGet(url).then(res =>{
       let url = 'http://fx.91dianji.com.cn/wxApi/cgi-bin/ticket/getticket?access_token='+ res.data.access_token +'&type=jsapi';
       axiosGet(url).then(res =>{
@@ -238,7 +240,7 @@ export default {
           let that = this;
           wx.config({
               debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
-              appId: 'wx13f3fb879b1f54b7', // 必填，公众号的唯一标识
+              appId: 'wx6ebccdf81027eb46', // 必填，公众号的唯一标识
               timestamp: timestamp, // 必填，生成签名的时间戳
               nonceStr: radom, // 必填，生成签名的随机串
               signature: res.data.data.signature,// 必填，签名
@@ -257,7 +259,7 @@ export default {
                   title: '综合金融服务推广平台，点滴成就未来', // 分享标题
                   desc: '让每个人都能找到人生的意义', // 分享描述
                   link: 'http://fx.91dianji.com.cn/#/home?promotioncode=' + that.$store.state.wechat.promotioncode, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                  imgUrl: 'http://fx.91dianji.com.cn/logo.png', // 分享图标
+                  imgUrl: 'http://fx.91dianji.com.cn/share.png', // 分享图标
                   success: function (res) {
                   }
               })
