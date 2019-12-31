@@ -224,7 +224,7 @@ export default {
            background-color: #EEEFF1;
            overflow-x: hidden;
            font-size: 34px;
-          
+           height: calc(100vh - 146px);
            >p {
                padding:30px;
                font-size: 30px;
