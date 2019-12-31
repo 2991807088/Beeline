@@ -168,6 +168,7 @@ export default {
            padding-bottom: 50px;
            background-color: #EEEFF1;
            font-size:30px;
+            padding-top:96px;
             >.phone {
                 .btn {
                         margin-top:30px;
@@ -226,6 +227,8 @@ export default {
           background-color: #ffa800 !important;
           height: 96px;
           line-height: 96px;
+          position: fixed;
+          width:100%;
          }
          .van-nav-bar__title {
              color:#fff;

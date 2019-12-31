@@ -152,7 +152,7 @@ export default {
            .dx {
                padding:30px;
                >p {
-                   color:#29305C;
+                   color:#ffa800;
                    font-weight: bold;
                    text-align: center;
                    padding:20px 0px;
@@ -171,7 +171,7 @@ export default {
                >.button {
                    margin-top:100px;
                      .van-button--default{
-                       background-color: #29305C;
+                       background-color: #ffa800;
                    }
                }
            }

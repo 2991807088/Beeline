@@ -67,7 +67,7 @@ export default {
             imgShow: false,
             url: 'http://fx.91dianji.com.cn',
             qrcode: '',
-            random: '01',
+            random: '1',
             num:"",
             shares:null,
             sharewx:null,
@@ -153,20 +153,19 @@ export default {
             // var ran = Math.ceil((Math.random())*3);
             let ran=0
             if(this.num=='1'){
-              ran=  this.getRundom(9,16)
-              console.log(ran,"ran")
+              ran=  this.getRundom(11,20)
             } else if(this.num=='2'){
-                ran=this.getRundom(1,8)
+                ran=this.getRundom(1,10)
             } else {
-                ran=this.getRundom(17,23)
+                ran=this.getRundom(21,30)
             }
             var random = '';
-            if(ran < 10){
-                random = '0' + ran;
-                this.random = random;
-            }else{
+            // if(ran < 10){
+            //     random = '0' + ran;
+            //     this.random = random;
+            // }else{
                 this.random = ran;
-            }
+            // }
             this.handlePoster();
         },
         handlePosterWithoutDetail(){
@@ -178,7 +177,7 @@ export default {
 
             var bigPoster = new Image();
             
-            bigPoster.src = 'http://fx.91dianji.com.cn/pop'+ this.random +'.jpg';
+            bigPoster.src = 'http://fx.91dianji.com.cn/POP'+ this.random +'.jpg';
             bigPoster.onload = function(){
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{
@@ -206,7 +205,7 @@ export default {
 
             var bigPoster = new Image();
             // console.log(this.random,"random")
-            bigPoster.src = 'http://fx.91dianji.com.cn/pop'+ this.random +'.jpg';
+            bigPoster.src = 'http://fx.91dianji.com.cn/POP'+ this.random +'.jpg';
             bigPoster.onload = function(){
                 ctx.drawImage(bigPoster,0,0,375,600);
                 setTimeout(()=>{

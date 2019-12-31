@@ -22,10 +22,10 @@
             </div>
         </div>
         <div class="level">
-            <img v-if="level == '0' && ispartner == '0'" src="http://fx.91dianji.com.cn/mianfeifensi_jindu.png" alt="">
-            <img v-if="level == '1' && ispartner == '0'" src="http://fx.91dianji.com.cn/huangjinhuiyuan_jindu.png" alt="">
-            <img v-if="level == '2' && ispartner == '0'" src="http://fx.91dianji.com.cn/zuanshihuiyuan_jindu.png" alt="">
-            <img v-if="ispartner == '1'" src="http://fx.91dianji.com.cn/hehuorenjindu_jindu.png" alt="">
+            <img v-if="level == '0' && ispartner == '0'" src="http://fx.91dianji.com.cn/mian.jpg" alt="">
+            <img v-if="level == '1' && ispartner == '0'" src="http://fx.91dianji.com.cn/tong.jpg" alt="">
+            <img v-if="level == '2' && ispartner == '0'" src="http://fx.91dianji.com.cn/yin.jpg" alt="">
+            <img v-if="ispartner == '1'" src="http://fx.91dianji.com.cn/jin.jpg" alt="">
             
         </div>
         <div class="goods_list">
@@ -77,8 +77,10 @@
                 <div class="title">金蜜蜂</div>
                 <div class="price">¥9800.00</div>
                 <div class="nowlevel" v-if="ispartner == '1'">当前等级</div>
-                <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs('7')">联系我们</div>
+                <!-- <div class="upgrade center" v-if="ispartner != '1'" @click="handleContactUs('7')">联系我们</div> -->
                 <!-- <div class="detail center" @click="handleSeeDetail('3')">查看明细</div> -->
+                <div class="detail center" @click="handleContactUs('7')">联系我们</div>
+
 
                 <div class="desc">
                     <div>推广佣金比例</div>
@@ -697,8 +699,8 @@ export default {
         z-index: 5;
         background: rgba(0, 0, 0, 0.3);
         .fade{
-            width: 87%;
-            height: 551px;
+            width: 89%;
+            height: 600px;
             background-image: linear-gradient(#434460, #434460), linear-gradient(#ffffff, #ffffff);
             background-blend-mode: normal, normal;
             border-radius: 10px;

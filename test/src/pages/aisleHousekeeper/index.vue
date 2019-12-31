@@ -285,21 +285,21 @@ export default {
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
          // 查询大额通道是否签约
         large(i){
-        //     let datas={
-        //     bankCard:i.cardNo
-        // }
-        //     axiosPost("/scpay/bindCardExist",datas)
-        //     .then(res=>{
-        //         if(res.data.success){
+            let datas={
+            bankCard:i.cardNo
+        }
+            axiosPost("/scpay/bindCardExist",datas)
+            .then(res=>{
+                if(res.data.success){
                     
-        //         // newscpay 大额
-        //             let params={
-        //                 bankCard: i.cardNo,
-        //                 channel:"2"
-        //             }
-        //                 axiosPost("/newscpay/bindCardExist",params)
-        //                 .then(res=>{
-        //                     if(res.data.success){
+                // newscpay 大额
+                    let params={
+                        bankCard: i.cardNo,
+                        channel:"2"
+                    }
+                        axiosPost("/newscpay/bindCardExist",params)
+                        .then(res=>{
+                            if(res.data.success){
 
                                 storage.set('channel',"2");
                                         this.$router.push({
@@ -309,25 +309,25 @@ export default {
                                         }
                                     })
                             
-            //                 } else {
-            //                     this.$router.push({
-            //                         path:"/home/smallAmountSC",
-            //                         query:{
-            //                             info:i,
-            //                             type:"2"
-            //                         }
-            //                     })
-            //                 }
-            //             })
-            //     }else {
-            //         this.$router.push({
-            //             path:"/home/largeAmountSC",
-            //             query:{
-            //                 info:i
-            //             }
-            //         })
-            //     }
-            // })
+                            } else {
+                                this.$router.push({
+                                    path:"/home/smallAmountSC",
+                                    query:{
+                                        info:i,
+                                        type:"2"
+                                    }
+                                })
+                            }
+                        })
+                }else {
+                    this.$router.push({
+                        path:"/home/largeAmountSC",
+                        query:{
+                            info:i
+                        }
+                    })
+                }
+            })
                
          } ,
      

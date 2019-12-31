@@ -17,9 +17,15 @@
             </div>
             <div class="rate-explain"> 
                 <p> <span ><van-icon name="label" /></span> &nbsp;&nbsp;<span>费率说明</span></p>
-                <div class="reduce">
-                    <p>自己刷卡可省：</p>
-                    <p>升到钻石LV3最高可省：<span>0.14%+0.4/每笔</span></p>
+                <div class="reduce" v-if="type==='1'">
+                    <p v-if="level===0">当前费率：<span>0.70%+3/每笔</span></p>
+                    <p v-if="level===1">当前费率：<span>0.65%+2/每笔</span></p>
+                    <p v-if="level===2">当前费率：<span>0.60%+2/每笔</span></p>
+                </div>
+                 <div class="reduce" v-if="type==='2'">
+                    <p v-if="level===0">当前费率：<span>0.60%+3/每笔</span></p>
+                    <p v-if="level===1">当前费率：<span>0.55%+2/每笔</span></p>
+                    <p v-if="level===2">当前费率：<span>0.50%+2/每笔</span></p>
                 </div>
             </div>
         </div>
@@ -32,7 +38,9 @@ export default {
         return {
             nickname:"",
             recommendedcode:"",
-            headimg:""
+            headimg:"",
+            type:"",
+            level:""
         }
     },
     methods:{
@@ -43,7 +51,9 @@ export default {
      created(){
         this.nickname=this.$store.state.wechat.nickname
         this.headimg=this.$store.state.wechat.headimg
-         this.recommendedcode=this.$store.state.wechat.recommendedcode
+        this.recommendedcode=this.$store.state.wechat.recommendedcode
+        this.level=this.$store.state.wechat.level
+        this.type=this.$route.query.type
     }
 }
 </script>
