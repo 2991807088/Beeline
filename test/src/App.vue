@@ -83,7 +83,7 @@ export default {
     // 微信登录
     handleLoginByWechat(){
       let params = {
-        openid: this.$store.state.wechat.openid
+        openid: storage.get('openid')
       }
       let url = '/customer/loginByWechat';
       axiosPost(url,params).then(res =>{

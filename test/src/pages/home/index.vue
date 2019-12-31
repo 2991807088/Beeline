@@ -208,7 +208,7 @@
                          <li @click="handleAuth">实名认证</li>
                         <router-link to="/home/bindingPhone" tag="li">绑定手机</router-link>
                         <router-link to="/home/aboutUs" tag="li">联系客服</router-link>
-                        <router-link to="/home/aboutUs" tag="li">关于我们</router-link>
+                        <!-- <router-link to="/home/aboutUs" tag="li">关于我们</router-link> -->
                         <router-link to="/home/accountManagement" tag="li">账户管理</router-link>
                         <li @click="handleClear">清除缓存</li>
                     </ul>

@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2019-06-16 10:26:51
+ * @LastEditTime: 2019-12-31 18:06:49
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \test\build\webpack.base.conf.js
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -14,6 +22,9 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js'
+  },
+  externals: {
+    'weixin-jsapi': 'wx',
   },
   output: {
     path: config.build.assetsRoot,

@@ -46,7 +46,7 @@
                           <div class="now">
                               <div>
                                   <p class="botton">{{amount}}</p>
-                                   <router-link :to="{path:'/home/changeBill',query:{info:item}}" tag="p">账单编辑</router-link>
+                                   <!-- <router-link :to="{path:'/home/changeBill',query:{info:item}}" tag="p">账单编辑</router-link> -->
                               </div>
                               <div class="pay">
                                   <!-- <p class="days">16</p> -->

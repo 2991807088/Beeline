@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:15
- * @LastEditTime : 2019-12-31 14:20:57
+ * @LastEditTime : 2019-12-31 17:58:58
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -141,11 +141,11 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>直推998元/个，奖100元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>间推998元/个，奖150元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
             </div>
 
@@ -283,11 +283,11 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>直推998元/个，奖120元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>间推998元/个，奖200元/个</div>
-                    <div class="end-center">升级钻石<br/>会员可领</div>
+                    <div class="end-center">升级银蜜蜂<br/>会员可领</div>
                 </div>
             </div>
 

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:13
- * @LastEditTime : 2019-12-31 14:18:44
+ * @LastEditTime : 2019-12-31 17:57:01
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -29,21 +29,6 @@
                 </div>
                 <div class="btn center">
                     <span><a href="tel:15015207377">拨打</a></span>
-                </div>
-            </div>
-             <div class="contact_us row">
-                <div class="icon center">
-                    <!-- <van-icon name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/> -->
-                    </div>
-                <div class="contact_title">
-                    <!-- 加盟热线: -->
-                    </div>
-                <div class="jiameng_rexian">
-                    <span> 15015207377</span>
-                    <span>周经理</span>
-                </div>
-                <div class="btn center">
-                    <span><a href="tel: 15015207377">拨打</a></span>
                 </div>
             </div>
             <div class="contact_us row">

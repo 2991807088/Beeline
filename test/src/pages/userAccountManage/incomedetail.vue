@@ -67,10 +67,10 @@
                                     <div class="right-line center">全部</div>
                                 </div>
                                 <div class="hidden-small-title center" :class="[level == '1' ? 'actives' : '']" @click="handleGetSmallType('1')">
-                                    <div class="right-line center">黄金</div>
+                                    <div class="right-line center">铜蜜蜂</div>
                                 </div>
                                 <div class="hidden-small-title center" :class="[level == '2' ? 'actives' : '']" @click="handleGetSmallType('2')">
-                                    <div class="center">钻石</div>
+                                    <div class="center">银蜜蜂</div>
                                 </div>
                             </div>
                         </div>
