@@ -175,6 +175,7 @@ const largeAmountSCComponent = () => import('@/pages/largeAmountSC')  //SC大额
 
 const sendmsgSCComponent = () => import('@/pages/largeAmountSC/sendmsgSC.vue')  //汇潮大额 发送短信
 
+import changeBillComponent from '@/pages/changeBill'  // 换信用卡信息  
 
 
 export default new Router({
@@ -214,7 +215,8 @@ export default new Router({
     {path:"/home/largeCard",component:largeCardComponent},
     {path:"/home/active",component:activeComponent}, // 大额激活
 
-
+    {path:"/home/changeBill",component:changeBillComponent}, //更换账单 
+ 
     {path:"/home/smallAmountSC",component:smallAmountSCComponent},  //sc小额
     {path:"/home/smallSCactive",component:smallSCactiveComponent},  //sc小额
     {path:"/home/largeAmountSC",component:largeAmountSCComponent},  //SC大额通道 注册商户  

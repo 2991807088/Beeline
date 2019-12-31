@@ -11,7 +11,7 @@
             
             <div class="small-title">
                 （1）侧边栏：点击可完善个人资料，展示个人信息</br>
-                （2）主要功能区：此版块包括平台最重要功能，用户可在此版块进行在线收款、智能还款</br>
+                （2）主要功能区：此版块包括平台最重要功能，用户可在此版块进行在线收款、信用维护</br>
                 （3）精品功能区：平台与银行合作的功能区，用户可在此享受申请办理信用卡、在线贷款、征信查询等功能</br>
                 （4）底部栏：可快速进入相应的功能页面</br>
             </div>
@@ -42,7 +42,7 @@
             <div class="big-title">首页</div>
             <div class="small-title">
                 <div class="per-bold-content"><span class="bold-title">在线收款：</span>在平台首页主要功能区点击（在线收款）进入详情页面，可在此页面查看费率、交易记录等</br></div>
-                <div class="per-bold-content"><span class="bold-title">智能还款：</span>在平台首页主要功能区点击（智能还款）进入详情页面，可在此页面设定您的还款计划</br></div>
+                <div class="per-bold-content"><span class="bold-title">信用维护：</span>在平台首页主要功能区点击（信用维护）进入详情页面，可在此页面设定您的还款计划</br></div>
                 <div class="per-bold-content"><span class="bold-title">征信查询：</span>在平台首页精品功能区点击（征信查询）进入详情页面，可在此页面查询大数据+运营商信用报告</br></div>
                 <div class="per-bold-content"><span class="bold-title">信用卡办理：</span>在平台首页金融功能区点击（信用卡办理）进入详情页面，可在此页面申请办理信用卡</br></div>
                 <div class="per-bold-content"><span class="bold-title">在线收款：</span>在平台首页金融通道功能区点击（在线收款）进入详情页面，可在此页面查看费率、交易记录等</br></div>
@@ -161,9 +161,9 @@
                 4.确认信息无误后，等待贷款平台审核。</br>
             </div>
 
-            <div class="big-title">智能还款操作流程</div>
+            <div class="big-title">信用维护操作流程</div>
             <div class="small-title">
-                1.进入APP首页，点击智能还款</br>
+                1.进入APP首页，点击信用维护</br>
                 2.绑定信用卡</br>
                 3.选择还款模式</br>
                 4.创建还款计划</br>

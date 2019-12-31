@@ -27,11 +27,11 @@
             </div>
             <div class="rows row" v-if="level == '0'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                <div class="end-center">0.60%</div>
+                <div class="end-center">0.75%+3元/笔</div>
             </div>
              <div class="rows row" v-if="level == '0'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                <div class="end-center">0.75%</div>
+                <div class="end-center">0.80%+3元/笔</div>
             </div>
 
             <div class="rows row" v-if="level == '1'">
@@ -44,11 +44,11 @@
             </div>
             <div class="rows row" v-if="level == '1'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                <div class="end-center">0.55%</div>
+                <div class="end-center">0.55%+2元/笔</div>
             </div>
              <div class="rows row" v-if="level == '1'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                <div class="end-center">0.70%</div>
+                <div class="end-center">0.70%+2元/笔</div>
             </div>
 
             <div class="rows row" v-if="level == '2'">
@@ -61,11 +61,11 @@
             </div>
             <div class="rows row" v-if="level == '2'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                <div class="end-center">0.50%</div>
+                <div class="end-center">0.55%+2元/笔</div>
             </div>
             <div class="rows row" v-if="level == '2'">
                 <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                <div class="end-center">0.65%</div>
+                <div class="end-center">0.60%+2元/笔</div>
             </div>
         </div>
     </div>

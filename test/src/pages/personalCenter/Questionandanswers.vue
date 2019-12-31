@@ -26,7 +26,7 @@
         <div class="small-title">为什么申请办卡失败了？</div>
         <div class="content">信用卡申请后银行会根据客户提交的资料审核客户的资质，满足银行发卡条件的情况下，银行才会批卡。首页→信用卡办理→新手指南，可以参考学习一下，具体的审批进度你可以通过银行官网去查看下。</div>
 
-        <div class="big-title">二. 智能还款问题</div>
+        <div class="big-title">二. 信用维护问题</div>
 
         <div class="small-title">消费成功还款不到账？</div>
         <div class="content">请先确认银行信用卡网银明细是否到账（有没有绑定其他渠道自动扣款），如确实未到账，请提供推荐码+未到账订单给客服处理。</div>

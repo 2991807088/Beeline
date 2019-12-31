@@ -19,7 +19,7 @@
                 </div>
                 <div class="per_receivables" @click="handleIsAuth('/home/creditHousekeeper/aisleHousekeeper','3')">
                     <div class="icon center"><van-icon name="http://fx.91dianji.com.cn/zhinenghuankuan.png" size="45px"/></div>
-                    <div class="title center">智能还款</div>
+                    <div class="title center">信用维护</div>
                 </div>
             </div> -->
         </div>

@@ -6,7 +6,7 @@
             <router-link tag="span" :to="{path:'/home/news',query:{url:'http://fx.91dianji.com.cn/rep.jpg',title:'用户还款流程'}}">操作流程</router-link>
         </header>
        <div class="container">
-           <h3>金蜜蜂智能还款</h3>
+           <h3>金蜜蜂信用维护</h3>
            <p class="mode">普通，完美2种模式</p>
            <div class="light">
                <ul>

@@ -784,16 +784,14 @@ export default {
             this.cardnumber=this.cardInfo.cardNo
         }
         if(this.lev=='0') {
-            this.lev="免费用户"
+            this.lev="免费花粉"
         }  else if(this.lev=='1'){
-            this.lev="初级合伙人"
+            this.lev="铜蜂蜜"
         } else if(this.lev=='2'){
-            this.lev="中级合伙人"
+            this.lev="银蜜蜂"
         } else if(this.lev=='3'){
-            this.lev="高级合伙人"
-        } else if(this.lev=='4'){
-            this.lev="顶级合伙人"
-        }
+            this.lev="金蜜蜂"
+        } 
     },
     mounted () {
         // this.searchInfo()
@@ -821,7 +819,7 @@ export default {
            background-color:#ECF0F3; 
             .covercx {
                .action {
-                   margin-top:30px;
+                   margin-top:80px;
                    margin-bottom: 20px;
                 //     display: flex;
                 //    justify-content: space-around;

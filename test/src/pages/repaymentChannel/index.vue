@@ -2,7 +2,7 @@
     <div id="repayment-channel">
         <header>
             <span @click="goBack"><van-icon name="arrow-left"/></span>
-            <span>智能还款</span>
+            <span>信用维护</span>
             <span></span>
         </header>
         <div class="container">

@@ -114,13 +114,13 @@
                         <div class="start-center">服务时间： 周一至周日（09：00-22：00）</div>
                         <div></div>
                     </div>
-                    <div class="per_detail row" @click="handleATRadarInsert('11')">
+                    <!-- <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
                         <div class="start-center">加盟热线：15015207377 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周经理 </div>
                         <div class="btn center">
                             <span><a href="tel:15015207377">拨打</a></span>
                         </div>
-                    </div>
+                    </div> -->
                      <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center">
                             <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/>
@@ -701,7 +701,7 @@ export default {
         background: rgba(0, 0, 0, 0.3);
         .fade{
             width: 89%;
-            height: 600px;
+            height: 550px;
             background-image: linear-gradient(#434460, #434460), linear-gradient(#ffffff, #ffffff);
             background-blend-mode: normal, normal;
             border-radius: 10px;
