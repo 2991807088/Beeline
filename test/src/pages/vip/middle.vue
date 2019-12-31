@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:15
- * @LastEditTime: 2019-08-15 17:20:18
+ * @LastEditTime: 2019-08-15 18:33:34
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -38,15 +38,15 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                    <div class="end-center">0.60%+3元/笔</div>
+                    <div class="end-center">0.50%</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                    <div class="end-center">0.75%+3元/笔</div>
+                    <div class="end-center">0.60%</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                    <div class="end-center">0.80%+3元/笔</div>
+                    <div class="end-center">0.75%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>
@@ -106,15 +106,15 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                    <div class="end-center">0.55%+2元/笔</div>
+                    <div class="end-center">0.50%</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                    <div class="end-center">0.65%+2元/笔</div>
+                    <div class="end-center">0.55%</div>
                 </div>
                  <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                    <div class="end-center">0.70%+2元/笔</div>
+                    <div class="end-center">0.70%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>
@@ -174,15 +174,15 @@
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>收款费率</div>
-                    <div class="end-center">0.50%+2元/笔</div>
+                    <div class="end-center">0.45%</div>
                 </div>
                 <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>小额还款费率</div>
-                    <div class="end-center">0.55%+2元/笔</div>
+                    <div class="end-center">0.50%</div>
                 </div>
                  <div class="rows row">
                     <div class="start-center"><van-icon size="28px" name="http://fx.91dianji.com.cn/yinlian.png"/>大额还款费率</div>
-                    <div class="end-center">0.60%+2元/笔</div>
+                    <div class="end-center">0.65%</div>
                 </div>
             </div>
             <div class="big_title center">推广充值奖励</div>

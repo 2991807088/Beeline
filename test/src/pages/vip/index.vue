@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-06-16 10:28:15
- * @LastEditTime: 2019-08-15 17:23:02
+ * @LastEditTime: 2019-08-15 18:19:56
  * @LastEditors: Please set LastEditors
  -->
 <template>
@@ -113,30 +113,30 @@
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('11')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_dianhua.png"/></div>
-                        <div class="start-center">加盟热线：18221188860 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理 </div>
+                        <div class="start-center">加盟热线：18755291160 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理 </div>
                         <div class="btn center">
-                            <span><a href="tel:18221188860">拨打</a></span>
+                            <span><a href="tel:18755291160">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18221188860 </div>
+                        <div class="start-center">微&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;信：18755291160 </div>
                         <div  class="btn center">
-                            <span @click="handleCopy('18221188860')">复制</span>
+                            <span @click="handleCopy('18755291160')">复制</span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('12')">
                         <div class="start-center"><van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_zuoji.png"/></div>
-                        <div class="start-center">客服电话：18221188860  </div>
+                        <div class="start-center">客服电话：400-6169-609  </div>
                         <div  class="btn center">
-                            <span><a href="tel:18221188860">拨打</a></span>
+                            <span><a href="tel:400-6169-609">拨打</a></span>
                         </div>
                     </div>
                     <div class="per_detail row" @click="handleATRadarInsert('13')">
                        <div class="start-center"> <van-icon size="22px" name="http://fx.91dianji.com.cn/fengxing_weixin.png"/></div>
-                        <div class="start-center" id="mobile">客服微信：18221188860&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
+                        <div class="start-center" id="mobile">客服微信：18755287073&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;张经理</div>
                         <div  class="btn center">
-                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18221188860')">复制</span>
+                            <span class="test" data-clipboard-action="copy" data-clipboard-target="#mobile" @click="handleCopy('18755287073')">复制</span>
                         </div>
                     </div>
 
