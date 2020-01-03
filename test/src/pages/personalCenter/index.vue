@@ -4,7 +4,7 @@
             <div class="top row">
                 <!-- <router-link tag="div" to="/register" class="setting start-center"><van-icon name="http://fx.91dianji.com.cn/fengxing_set_top.png" size="22px"/></router-link> -->
                 <p class="setting start-center"></p>
-                <div class="title center">我的</div>
+                <div class="title center"></div>
                 <router-link tag="div" to="/home/aboutUs" class="services end-center" @click="handleExpect"><van-icon name="http://fx.91dianji.com.cn/fengxing_services.png" size="22px"/></router-link>
             </div>
             <div class="middle">
@@ -237,13 +237,12 @@ export default {
                 width: 60%;
                 font-size: 40px;
                 height: 100%;
-
             }
         }
         .middle{
             width: 100%;
-            height: 50%;
-            padding-top: 2%;
+            height: 53%;
+            // padding-top: 2%;
             .avator{
                 width: 300px;
                 margin-left: auto;
@@ -290,6 +289,7 @@ export default {
                 color: #333333;
                 width: 100%;
                 height: 50px;
+                // padding-bottom: 20px;
                 background: url('http://fx.91dianji.com.cn/fengxing_promotioncode.png') center center no-repeat;
                 background-size: 290px 60px;
             }
@@ -300,7 +300,7 @@ export default {
             border-top: solid 1px #ffffff;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 20px;
+            margin-top: 40px;
             .detail{
                 width: calc(100% / 3);
                 height: 60%;
@@ -321,7 +321,7 @@ export default {
     }
     .upgrade{
         width: 90%;
-        height: 100px;
+        height: 8%;
         background-image: linear-gradient(90deg, #f5e8d4 0%, #f3cb7c 100%);
         border-radius: 10px;
         position: absolute;

@@ -45,14 +45,14 @@
                             </div>
                             <div class="center">{{shoukuan_number}}</div>
                         </div>
-                        <!-- 智能管家 -->
+                        <!-- 信用维护 -->
                         <div class="row" @click="handleSeeDetail('3')">
                             <div class="start-center">
                                 <span class="start-center">
                                     <van-icon name="checked" color="#ffa800" size="18px" v-if="type == '3'"/>
                                     <van-icon name="circle" color="#cccccc" size="18px" v-else/>
                                 </span>
-                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">智能管家</span>
+                                <span class="start-center" style="box-sizing:border-box;padding-left:4px">信用维护</span>
                                 
                             </div>
                             <div class="center">{{zhineng_number}}</div>

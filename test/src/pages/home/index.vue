@@ -577,7 +577,7 @@ export default {
     .order{
         position: absolute;
         left:3%;
-        top:20%;
+        top:23%;
         width:94%;
         z-index: 3;
         background-color: #fff;
@@ -985,12 +985,12 @@ export default {
                     right: 0px;
                     left:0px;
                     bottom: 0px;
-                    padding-bottom: 20px;
+                    padding-bottom: 15px;
                     z-index: 999;
                    animation: menus 1s ease-in-out;
                    -webkit-animation: menus 1s ease-in-out;
                     >.avatar {
-                        padding-top:50px;
+                        padding-top:46px;
                         >span {
                             font-size:100px;
                         }
@@ -1004,7 +1004,7 @@ export default {
                         margin-right:100px;
                         >li {
                             border-top:3px dashed #ccc;
-                            padding:50px 10px;
+                            padding:45px 10px;
                             font-size: 28px;
                              &.switch {
                              >p {
@@ -1015,6 +1015,7 @@ export default {
                     }
                     >.sign-out {
                         margin-top:20px;
+                        margin-bottom: 10px;
                          >span{
                             border:2px solid #fff;
                            background-color:#f7cf6c;

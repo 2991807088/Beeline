@@ -36,7 +36,7 @@
                     <div class="type end-start">
                         <span v-if="item.type == '1'">信用卡办理</span>
                         <span v-if="item.type == '2'">在线收款</span>
-                        <span v-if="item.type == '3'">智能管家</span>
+                        <span v-if="item.type == '3'">信用维护</span>
                         <span v-if="item.type == '4'">我要贷款</span>
                         <span v-if="item.type == '5'">铜蜂蜜</span>
                         <span v-if="item.type == '6'">银蜜蜂</span>
